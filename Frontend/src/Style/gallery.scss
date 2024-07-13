@@ -1,0 +1,134 @@
+@import "./variables.scss";
+
+.Gallery {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5em;
+    padding-top: 3em;
+
+    .GalleryHeaderContainer {
+        .GalleryHeader {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1em;
+
+            .Header {
+                font-size: 2em;
+                font-weight: 600;
+            }
+
+            .Description {
+                font-size: 1em;
+                font-weight: 400;
+                color: rgb(101, 100, 100);
+            }
+        }
+    }
+
+    .GalleryImageCollectionContainer {
+        // border: 1px solid green;
+        width: 80vw;
+
+        .GalleryImageCollection {
+            // border: 1px solid red;
+            padding: 1em;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 1em;
+
+            .Image_Card {
+                // border: 1px solid blue;
+                height: 250px;
+                width: 100%;
+                min-width: 100px;
+                border-radius: 1em;
+                cursor: pointer;
+                transition: all 0.5s;
+                display: flex;
+                gap: 0.5em;
+                position: relative;
+
+                -webkit-box-shadow: 5px 6px 4px 2px #dbdbdb;
+                -moz-box-shadow: 5px 6px 4px 2px #dbdbdb;
+                box-shadow: 5px 6px 4px 2px #dbdbdb;
+
+                .Image_Container {
+                    width: 100%;
+                    border-radius: 1em;
+                    overflow: hidden;
+                    z-index: 1;
+
+                    img {
+                        border-radius: inherit;
+                        height: 100%;
+                        width: 100%;
+                        object-fit: cover;
+                    }
+                }
+
+                .Image_Content {
+                    // border: 1px solid red;
+                    position: absolute;
+                    width: 100%;
+                    top: 0;
+                    left: 0;
+                    padding-top: 0.5em;
+                    opacity: 0;
+                    // transition: all 0.8s ease-in-out;
+
+
+                    .Image_Title {
+                        font-size: 1em;
+                        font-weight: 600;
+                    }
+
+                    .Image_Description {
+                        margin-top: 1em;
+                        font-size: 0.6em;
+                        color: gray;
+                        font-style: italic;
+                    }
+                }
+
+                &:hover {
+                    width: 250%;
+                    -webkit-box-shadow: 5px 6px 6px 3px #dbdbdb;
+                    -moz-box-shadow: 5px 6px 6px 3px #dbdbdb;
+                    box-shadow: 5px 6px 6px 3px #dbdbdb;
+                    .Image_Container {
+                        // border: 1px solid red;
+                        border-radius: 0;
+                        border-top-left-radius: 1em;
+                        border-bottom-left-radius: 1em;
+
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        bottom: 0;
+
+                        img {
+                            border-radius: 0;
+                            border-top-left-radius: 1em;
+                            border-bottom-left-radius: 1em;
+                        }
+
+
+                    }
+
+                    .Image_Content {
+                        // border: 1px solid red;
+                        left: auto;
+                        right: 0;
+                        opacity: 1;
+                    }
+
+                }
+            }
+        }
+
+    }
+}
