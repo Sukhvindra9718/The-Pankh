@@ -3,8 +3,8 @@ module.exports = {
     database: {
       user: 'postgres',
       host: 'localhost',
-      database: 'thepunkh',
-      password: '1',
+      database: 'thepankh',
+      password: '12345678',
       port: 5432,
     },
     jwtSecret: 'thisissecretconversationroomdontinterfere',

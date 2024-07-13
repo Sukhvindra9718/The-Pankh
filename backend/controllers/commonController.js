@@ -12,7 +12,7 @@ const registerContactUs = async (req, res) => {
         let id = uuid.v4();
 
         console.log(id,req.body);
-        await pool.query('INSERT INTO contactus (id,name,email,phone,organisation,designation,message) VALUES ($1, $2, $3,$4,$5,$6,$7) RETURNING *', [id,name, email,phone,organisation,designation,message]);
+        await pool.query('INSERT INTO contactus (id,name,email,phone,organization,designation,message) VALUES ($1, $2, $3,$4,$5,$6,$7) RETURNING *', [id,name, email,phone,organisation,designation,message]);
         res.status(201).json({success:true,msg:'Thank you for contacting us. We will get back to you soon.'});
     } catch (error) {
         res.status(500).send({success:false,userError:'Server Error',error:error.message});

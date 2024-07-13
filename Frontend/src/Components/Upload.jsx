@@ -63,12 +63,14 @@ function Upload({ setIsUpload, setUploadFormOpen, Uploadtitle, UploadType }) {
             formData.append('description', description)
             formData.append('image', image);
 
-            await fetch('/api/image/upload', {
-                mode: 'no-cors',
+            await fetch('http://localhost:3000/api/image/upload', {
+                // mode: 'no-cors',
                 method: 'POST',
                 body: formData
             }).then(res => {
-                console.log("res", res)
+                console.log("res", res);
+                const data = res.json();
+                console.log("data", data)
             }).catch(err => console.log(err))
 
 

@@ -7,6 +7,7 @@ const storage = multer.diskStorage({
     destination: (req, file, cb) => {
         if(file.fieldname === 'image') {
             const rootDir = path.dirname(require.main.filename);
+            console.log(rootDir)
             cb(null, path.join(rootDir, 'public/').concat('images'))
         }
     },

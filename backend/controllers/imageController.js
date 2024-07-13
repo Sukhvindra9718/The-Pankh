@@ -6,11 +6,13 @@ const uuid = require('uuid');
 // Images CRUD
 exports.addImage = async (req, res) => {
     try {
+        console.log(req.body);
         const { title, description } = req.body;
         const imagePath = req.file.path;
         const filename = req.file.filename;
         const id = uuid.v4();
-        await pool.query('INSERT INTO images (id,title,description,filename,imagePath) VALUES ($1, $2, $3,$4,$5) RETURNING *', [id, title, description, filename, imagePath]);
+        console.log(imagePath);
+        await pool.query('INSERT INTO images (id,title,description,filename,imagepath) VALUES ($1, $2, $3,$4,$5) RETURNING *', [id, title, description, filename, imagePath]);
 
         res.status(200).json({
             success: true,

@@ -10,7 +10,10 @@ const PORT = config.PORT;
 const {readdirSync} = require('fs');
 const path = require('path');
 const cors = require('cors');
-
+const cookieParser = require("cookie-parser");
+const os = require("os");
+const host = os.hostname();
+const pool = require('./db');
 
 readdirSync('./routes').map((route) => app.use('/api', require('./routes/' + route)))
 app.use('/public', express.static(path.join(__dirname, 'public')));
@@ -26,54 +29,61 @@ app.use('/api',require('./routes/videoRoutes'));
 app.use('/api',require('./routes/imagesRoutes'));
 
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+app.get('/', (req, res) => {
+  res.send('Hello World!');
 });
 
+// Handle uncaught exceptions
+process.on("uncaughtException", (err) => {
+  console.log(`ERROR: ${err.stack}`);
+  console.log("Shutting down due to uncaught exception");
+  process.exit(1);
+});
 
-// const express = require("express");
-// const cookieParser = require("cookie-parser");
-// const cors = require("cors");
-// const bodyParser = require("body-parser");
-// const app = express();
-// var os = require("os");
-// var host = os.hostname();
-
-// // Handle uncaught exceptions
-// process.on("uncaughtException", (err) => {
-//   console.log(`ERROR: ${err.stack}`);
-//   console.log("Shutting down due to uncaught exception");
-//   process.exit(1);
-// });
-
-// // Use Middlewares
-// app.use(cors());
-// app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({ extended: true }));
-// app.use(cookieParser());
+// Use Middlewares
+app.use(cors());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cookieParser());
 
 
+pool.connect((err, client, release) => {
+  if (err) {
+      return console.error('Error acquiring client', err.stack);
+  }
+  client.query('SELECT NOW()', (err, result) => {
+      release();
+      if (err) {
+          return console.error('Error executing query', err.stack);
+      }
+      console.log('Database connected:', result.rows);
+  });
+});
 
-// const server = app.listen(3001,(req,res)=>{
-//   console.log(`Server is working on ${host}:${3001}`);
-// })
+pool.on('error', (err) => {
+  console.error('Unexpected error on idle client', err);
+  process.exit(-1);
+});
+const server = app.listen(PORT,(req,res)=>{
+  console.log(`Server is working on ${host}:${PORT}`);
+})
 
 // // unhandled promise rejection
-// process.on("unhandledRejection",err => {
-//   console.log(`Error : ${err.message}`);
-//   console.log("Shuting down the server due to unhandled Promise Rejection");
-//   server.close(()=>{
-//       process.exit(1);
-//   });
-// });
-// process.once("SIGUSR2", function () {
-//   console.log("nodemon restart");
-//   process.kill(process.pid, "SIGUSR2");
-// });
+process.on("unhandledRejection",err => {
+  console.log(`Error : ${err.message}`);
+  console.log("Shuting down the server due to unhandled Promise Rejection");
+  server.close(()=>{
+      process.exit(1);
+  });
+});
+process.once("SIGUSR2", function () {
+  console.log("nodemon restart");
+  process.kill(process.pid, "SIGUSR2");
+});
 
-// process.on("SIGINT", function () {
-//   console.log("App terminated");
-//   process.kill(process.pid, "SIGINT");
-// });
+process.on("SIGINT", function () {
+  console.log("App terminated");
+  process.kill(process.pid, "SIGINT");
+});
 
 
