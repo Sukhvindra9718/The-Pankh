@@ -25,12 +25,14 @@ exports.addImage = async (req, res) => {
 
 exports.getAllImages = async (req, res) => {
     try {
+        console.log('get all images');
         const images = await pool.query('SELECT * FROM images');
         res.status(200).json({
             success: true,
             images:images.rows
         })
     } catch (error) {
+        console.log(error);
         res.status(400).json({
             success: false,
             error: error.message,

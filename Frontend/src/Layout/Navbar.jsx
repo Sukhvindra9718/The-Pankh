@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Logo from "../assets/image.png";
 import { Link } from "react-router-dom";
 import Loader from "../assets/Loader.png";
+
 const Navbar = () => {
   const [isLoading, setIsLoading] = useState(false);
+
+
   return (
     <div className="Navbar">
       <div className="Navbar__logo">
@@ -18,7 +21,11 @@ const Navbar = () => {
               Gallery
             </Link>
           </li>
-          <li>Contact</li>
+          <li>
+            <Link to="/contact">
+              Contact Us
+            </Link>
+          </li>
         </ul>
       </div>
       {isLoading && (

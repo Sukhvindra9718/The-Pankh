@@ -18,7 +18,9 @@ const pool = require('./db');
 readdirSync('./routes').map((route) => app.use('/api', require('./routes/' + route)))
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
-app.use(cors());
+// app.use(cors());
+app.use(cors({ origin: 'http://localhost:5173' }));
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(bodyParser.json());
@@ -29,9 +31,6 @@ app.use('/api',require('./routes/videoRoutes'));
 app.use('/api',require('./routes/imagesRoutes'));
 
 
-app.get('/', (req, res) => {
-  res.send('Hello World!');
-});
 
 // Handle uncaught exceptions
 process.on("uncaughtException", (err) => {
