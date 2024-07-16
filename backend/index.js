@@ -30,7 +30,7 @@ app.use('/api/common', commonRoutes);
 app.use('/api/v1',require('./routes/videoRoutes'));
 app.use('/api/v1',require('./routes/imagesRoutes'));
 app.use('/api/v1',require('./routes/bannerRoutes'));
-
+app.use('/api/v1',require('./routes/carousalRoutes'));
 
 
 // Handle uncaught exceptions

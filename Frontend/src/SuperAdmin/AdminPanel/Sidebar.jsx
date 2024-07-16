@@ -5,6 +5,9 @@ import { FaCaretDown, FaCaretLeft, FaVideo, FaImage } from "react-icons/fa6";
 import { GrGallery } from "react-icons/gr";
 import { MdContacts } from "react-icons/md";
 import { GiKnightBanner } from "react-icons/gi";
+import { BiCarousel } from "react-icons/bi";
+
+
 function Sidebar({
   menuActive,
   setMenuActive,
@@ -149,6 +152,20 @@ function Sidebar({
             size={30}
           />
           <h4>Key Contacts</h4>
+        </div>
+        <div
+          className={
+            menuActive === 5
+              ? "sidebar-menu-item selected"
+              : "sidebar-menu-item"
+          }
+          onClick={() => setMenuActive(5)}
+        >
+          <BiCarousel
+            fill={menuActive === 5 ? "#fff" : "#717171"}
+            size={30}
+          />
+          <h4>Carousal</h4>
         </div>
       </div>
 
