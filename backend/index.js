@@ -27,8 +27,9 @@ app.use(bodyParser.json());
 app.use('/api/auth', authRoutes);
 app.use('/api/user', userRoutes);
 app.use('/api/common', commonRoutes);
-app.use('/api',require('./routes/videoRoutes'));
-app.use('/api',require('./routes/imagesRoutes'));
+app.use('/api/v1',require('./routes/videoRoutes'));
+app.use('/api/v1',require('./routes/imagesRoutes'));
+app.use('/api/v1',require('./routes/bannerRoutes'));
 
 
 
@@ -44,8 +45,13 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
+app.use(express.static(path.join(__dirname, '../frontend/dist')));
 
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/dist', 'index.html'));
+});
 
+// Database Connection
 pool.connect((err, client, release) => {
   if (err) {
       return console.error('Error acquiring client', err.stack);

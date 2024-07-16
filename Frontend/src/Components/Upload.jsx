@@ -25,19 +25,19 @@ function Upload({ setIsUpload, setUploadFormOpen, Uploadtitle, UploadType }) {
     const handleUploadVideo = async (e) => {
         e.preventDefault();
         setLoading(true)
-        console.log("video", video)
         if (title) {
             const formData = new FormData();
             formData.append('title', title)
             formData.append('description', description)
             formData.append('video', video);
 
-            await fetch('/api/video/upload', {
+            await fetch('http://localhost:3000/api/v1/video/upload', {
                 mode: 'no-cors',
                 method: 'POST',
                 body: formData
-            }).then(res => {
-                console.log("res", res)
+            }).then(async res => {
+                const data = await res.json();
+                console.log("data", data)
             }).catch(err => console.log(err))
 
 
@@ -56,20 +56,19 @@ function Upload({ setIsUpload, setUploadFormOpen, Uploadtitle, UploadType }) {
     const handleUploadImage = async (e) => {
         e.preventDefault();
         setLoading(true)
-        console.log("image", image)
+
         if (title) {
             const formData = new FormData();
             formData.append('title', title)
             formData.append('description', description)
             formData.append('image', image);
 
-            await fetch('http://localhost:3000/api/image/upload', {
+            await fetch('http://localhost:3000/api/v1/image/upload', {
                 // mode: 'no-cors',
                 method: 'POST',
                 body: formData
-            }).then(res => {
-                console.log("res", res);
-                const data = res.json();
+            }).then(async res => {
+                const data = await res.json();
                 console.log("data", data)
             }).catch(err => console.log(err))
 

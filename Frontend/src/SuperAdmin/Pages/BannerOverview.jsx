@@ -1,54 +1,82 @@
 import React, { useEffect } from "react";
-import { useGlobalContext } from "../../context/global";
-import { useNavigate } from "react-router-dom";
-import { AiFillEye, AiFillEdit, AiOutlinePlus } from "react-icons/ai";
 import { GrSort } from "react-icons/gr";
 import { MdDelete } from "react-icons/md";
 import "../../Style/Dashboard.scss";
 import axios from "axios";
-import Upload from "../../Components/Upload";
-
+import { AiFillEye, AiFillEdit, AiOutlinePlus } from 'react-icons/ai'
 const sortList = ["Newest", "Oldest"];
-
-function VideosOverview() {
+function BannerOverview() {
   const [isDelete, setIsDelete] = React.useState(false);
   const [showSort, setShowSort] = React.useState(false);
   const [selectedSortValue, setSelectedSortValue] = React.useState("");
   const [data, setData] = React.useState([]);
+  const [filterData, setFilterData] = React.useState([]);
   const [search, setSearch] = React.useState("");
-  const { videos, getAllVideos } = useGlobalContext();
-  const [UploadFormOpen, setUploadFormOpen] = React.useState(false);
-  const [isUpload, setIsUpload] = React.useState(false);
-  const navigate = useNavigate();
 
-  useEffect(() => {
-    getAllVideos();
-    setTimeout(() => {
-      setData(videos);
-    }, 1000);
-    // eslint-disable-next-line
-  }, [isDelete, isUpload]);
 
-  const handleShowVideo = (id) => {
-    navigate(`/videos/${id}`);
+  const getTokenFromCookie = () => {
+    const name = "token=";
+    const decodedCookie = decodeURIComponent(document.cookie);
+    const ca = decodedCookie.split(";");
+ 
+    for (let i = 0; i < ca.length; i++) {
+      let c = ca[i].trim();
+      if (c.indexOf(name) === 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
   };
 
-  const handleUpdate = (item) => {
-    navigate(`/video/update/${item.id}`);
+  const getAllBanners = async () => {
+    try {
+      const config = {
+        headers: {
+          Authorization: `${getTokenFromCookie()}`,
+        },
+      };
+
+      const res = await axios.get(
+        "http://localhost:3000/api/v1/banners",
+        config
+      );
+
+      if (res.data.success) {
+        setData(res.data.banner);
+        setFilterData(res.data.banner);
+      } else {
+        console.log(res.data.message);
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
+
+ 
+
 
   const handleDelete = async (id) => {
-    console.log("delete", id);
     const confirm = window.confirm(
-      "Are you sure you want to delete this video?"
+      "Are you sure you want to delete this ?"
     );
 
     if (confirm) {
-      const { data } = await axios.delete(`/api/video/${id}`);
+      const config = {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `${getTokenFromCookie()}`,
+        },
+      };
+      const { data } = await axios.delete(`http://localhost:3000/api/v1/banner/${id}`,config);
+
       if (data.success) {
         setIsDelete(!isDelete);
       }
     }
+  };
+
+  const handleUpdate = (item) => {
+    navigate(`/banner/update/${item.id}`);
   };
 
   const handleSortOptionClick = (label) => {
@@ -56,15 +84,15 @@ function VideosOverview() {
     setShowSort(!showSort);
     switch (label) {
       case "Newest":
-        setData(
-          [...videos].sort(
+        setFilterData(
+          [...data].sort(
             (a, b) => new Date(b.createdat) - new Date(a.createdat)
           )
         );
         break;
       case "Oldest":
-        setData(
-          [...videos].sort(
+        setFilterData(
+          [...data].sort(
             (a, b) => new Date(a.createdat) - new Date(b.createdat)
           )
         );
@@ -75,29 +103,35 @@ function VideosOverview() {
   };
 
   const handleSearch = () => {
-    const filterData = videos.filter((item) =>
-      item.title.toLowerCase().includes(search.toLowerCase())
+    const filterData1 = data.filter((item) =>
+      item.pagename.toLowerCase().includes(search.toLowerCase())
     );
-    setData(filterData);
+    setSearch("");
+    setFilterData(filterData1);
   };
 
+  useEffect(() => {
+    getAllBanners();
+    // eslint-disable-next-line
+  }, [isDelete]);
   return (
-    <div style={{ position: "relative" }}>
+    <div>
       <div className="filter-membership-container">
         <div className="header-table">
-          <h1>All videos</h1>
+          <h1>All Banners</h1>
           <div className="add-btn" onClick={() => setUploadFormOpen(true)}>
-            <AiOutlinePlus size={25} style={{ cursor: "pointer" }} />
-            <h2>Add Video</h2>
+            <AiOutlinePlus size={25} style={{ cursor: 'pointer' }} />
+            <h2>Add Banner</h2>
           </div>
         </div>
         <div className="filter-membership-item">
           <div className="search-container">
             <input
               type="text"
-              placeholder="Search"
+              placeholder="Search By Page name"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
+              style={{fontSize: "1rem"}}
             />
             <button onClick={handleSearch}>Search</button>
           </div>
@@ -139,41 +173,41 @@ function VideosOverview() {
           <div className="grid-header">Page Name</div>
           <div className="grid-header">File Name</div>
           <div className="grid-header">Action</div>
-          {data?.length > 0 &&
-            data.map((video) => (
-              <React.Fragment key={video.id}>
-                <div className="grid-item" data-label="ID">
-                  {video.id}
+          {filterData?.length > 0 && filterData.map((banner) => (
+            <React.Fragment key={banner.id}>
+              <div className="grid-item" data-label="ID">
+                {banner.id}
+              </div>
+              <div className="grid-item" data-label="Page Name">
+                {banner.pagename}
+              </div>
+              <div className="grid-item" data-label="File Name">
+                {banner.filename}
+                <span className="tooltip">{banner.filename}</span>
+              </div>
+              <div className="grid-item" data-label="Action">
+                <div className="action-icons">
+                  <AiFillEye
+                    size={25}
+                    onClick={() => handleShowImage(banner.id)}
+                  />
+                  <AiFillEdit
+                    size={25}
+                    onClick={() => handleUpdate(banner.id)}
+                  />
+                  <MdDelete
+                    size={25}
+                    color="red"
+                    onClick={() => handleDelete(banner.id)}
+                  />
                 </div>
-                <div className="grid-item" data-label="Page Name">
-                  {video.title}
-                  <span className="tooltip">{video.title}</span>
-                </div>
-                <div className="grid-item" data-label="File Name">
-                  {video.description}
-                  <span className="tooltip">{video.description}</span>
-                </div>
-                <div className="grid-item" data-label="Action">
-                  <div className="action-icons">
-                    <AiFillEye size={25} onClick={() => handleShowVideo(video.id)}/>
-                    <AiFillEdit size={25} onClick={() => handleUpdate(video)} />
-                    <MdDelete size={25} onClick={() => handleDelete(video.id)} color="red"/>
-                  </div>
-                </div>
-              </React.Fragment>
-            ))}
+              </div>
+            </React.Fragment>
+          ))}
         </div>
       </div>
-      {UploadFormOpen && (
-        <Upload
-          setIsUpload={setIsUpload}
-          setUploadFormOpen={setUploadFormOpen}
-          Uploadtitle={"Video"}
-          UploadType={"video"}
-        />
-      )}
     </div>
   );
 }
 
-export default VideosOverview;
+export default BannerOverview;

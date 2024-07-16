@@ -1,5 +1,5 @@
 import React from "react";
-
+import axios from 'axios'
 const GlobalContext = React.createContext()
 
 //actions
@@ -54,15 +54,12 @@ export const GlobalProvider = ({children}) => {
     //get videos
     const getAllVideos = async () => {
         try {
-            const res = await fetch('/api/videos',{
-                method: 'GET',
+            const config = {
                 headers: {
                     'Content-Type': 'application/json',
-                    'Access-Control-Allow-Origin': '*'
                 }
-            });
-            const data = await res.json()
-            console.log(data)
+            }
+            const {data} = await axios.get('http://localhost:3000/api/v1/videos',config);
             dispatch({type: SET_VIDEOS, payload: data.videos})
         } catch (error) {
             console.log(error)
@@ -70,15 +67,13 @@ export const GlobalProvider = ({children}) => {
     }
     const getAllImages = async () => {
         try {
-            const res = await fetch('http://192.168.1.9:3000/api/images',{
-                method: 'GET',
+            const config = {
                 headers: {
-                    'Access-Control-Allow-Origin': '*',
                     'Content-Type': 'application/json',
                 }
-            });
-            const data = await res.json()
-            console.log(data)
+            }
+            const {data} = await axios.get('http://localhost:3000/api/v1/images',config);
+  
             dispatch({type: SET_IMAGES, payload: data.images})
         } catch (error) {
             console.log(error)

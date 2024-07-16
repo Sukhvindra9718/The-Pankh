@@ -1,6 +1,6 @@
 import React from "react";
 import { BiHelpCircle, BiSolidDashboard } from "react-icons/bi";
-import "../../Style/Dashboard.css";
+import "../../Style/Dashboard.scss";
 import { FaCaretDown, FaCaretLeft, FaVideo, FaImage } from "react-icons/fa6";
 import { GrGallery } from "react-icons/gr";
 import { MdContacts } from "react-icons/md";
@@ -121,6 +121,7 @@ function Sidebar({
           />
           <h4>Contact Query</h4>
         </div>
+      
         <div
           className={
             menuActive === 3
@@ -134,6 +135,20 @@ function Sidebar({
             size={30}
           />
           <h4>Banner</h4>
+        </div>
+        <div
+          className={
+            menuActive === 4
+              ? "sidebar-menu-item selected"
+              : "sidebar-menu-item"
+          }
+          onClick={() => setMenuActive(4)}
+        >
+          <MdContacts
+            fill={menuActive === 4 ? "#fff" : "#717171"}
+            size={30}
+          />
+          <h4>Key Contacts</h4>
         </div>
       </div>
 

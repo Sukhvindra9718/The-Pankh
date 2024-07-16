@@ -5,7 +5,7 @@ import Dashboard from "./SuperAdmin/AdminPanel/AdminPanel";
 import Layout from "./Layout/Layout";
 import Gallery from "./pages/Gallery";
 import ContactUs from "./pages/ContactUs";
-
+import Login from "./pages/Login";
 
 function App() {
   return (
@@ -18,6 +18,7 @@ function App() {
         <Route path="/videos" element={<Videos />} />
         <Route path="/videos/:id" element={<VideoPlayer />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </BrowserRouter>
   );

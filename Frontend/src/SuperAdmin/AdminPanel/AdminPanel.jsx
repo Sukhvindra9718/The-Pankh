@@ -1,7 +1,7 @@
 import React  from 'react'
 import Sidebar from './Sidebar'
 import Main from './Main'
-import '../../Style/Dashboard.css'
+import '../../Style/Dashboard.scss'
 
 
 

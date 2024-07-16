@@ -11,11 +11,14 @@ const registerUser = async (req, res) => {
       // Process user registration
       const { username, password,phonenumber,role } = req.body;
       const hashedPassword = await bcrypt.hash(password, 10);
+      const imagePath = req.file.path;
+      const filename = req.file.filename;
       const id  = uuid.v4();
-      const newUser = await pool.query('INSERT INTO users (id,username,password,phonenumber,role, profile_picture) VALUES ($1, $2, $3,$4,$5,$6) RETURNING *', [id,username, hashedPassword,phonenumber, role,req.file.path]);
+      const newUser = await pool.query('INSERT INTO users (id,username,password,phonenumber,role, profile_picture_name,profile_picture_path) VALUES ($1, $2, $3,$4,$5,$6,$7) RETURNING *', [id,username, hashedPassword,phonenumber, role, filename, imagePath]);
       
-      res.json(newUser.rows[0]);
+      res.status(201).json(newUser.rows[0]);
   } catch (error) {
+    console.error(error.message);
     res.status(500).send('Server Error');
   }
 };
@@ -50,7 +53,13 @@ const loginUser = async (req, res) => {
       { expiresIn: '1h' }, // Token expires in 1 hour
       (err, token) => {
         if (err) throw err;
-        res.json({ token });
+        res.cookie('token', token, {
+          httpOnly: true, // Accessible only by web server
+          secure: process.env.NODE_ENV === 'production', // HTTPS in production
+          maxAge: 3600000 // 1 hour in milliseconds
+        });
+        
+        res.json({ success: true, message: 'Logged in successfully',token });
       }
     );
   } catch (error) {

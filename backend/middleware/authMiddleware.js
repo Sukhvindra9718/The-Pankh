@@ -5,6 +5,7 @@ const config = require('../config/config.js');
 const authenticationMiddleware = (req, res, next) => {
   // Get token from header
   const token = req.header('Authorization');
+
   // Check if token doesn't exist
   if (!token) {
     return res.status(401).json({ msg: 'Authorization denied' });
@@ -25,6 +26,7 @@ const authenticationMiddleware = (req, res, next) => {
 const superAdminMiddleware = (req, res, next) => {
   // Get token from header
   const token = req.header('Authorization');
+
   // Check if token doesn't exist
   if (!token) {
     return res.status(401).json({ msg: 'Authorization denied' });
@@ -69,6 +71,7 @@ const adminMiddleware = (req, res, next) => {
 };
 
 const userMiddleware = (req, res, next) => {
+
   // Get token from header
   const token = req.header('Authorization');
   // Check if token doesn't exist
