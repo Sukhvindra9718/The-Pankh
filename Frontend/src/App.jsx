@@ -6,13 +6,19 @@ import Layout from "./Layout/Layout";
 import Gallery from "./pages/Gallery";
 import ContactUs from "./pages/ContactUs";
 import Login from "./pages/Login";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Causes from "./pages/Causes";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<Gallery />} />
+          <Route index element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/causes" element={<Causes />} />
+          <Route path="/gallery" element={<Gallery />} />
           <Route path="/contact" element={<ContactUs />} />
         </Route>
         <Route path="/videos" element={<Videos />} />
