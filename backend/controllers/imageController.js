@@ -148,6 +148,7 @@ exports.getAllImagesCount = async (req, res) => {
     const images = await pool.query("SELECT count(*) FROM images");
     res.status(200).json({
       success: true,
+      tableName:"Images",
       count: images.rows.length,
     });
   } catch (error) {

@@ -150,6 +150,7 @@ exports.getAllBannerCount = async (req, res) => {
     const banner = await pool.query("SELECT count(*) FROM banner");
     res.status(200).json({
       success: true,
+      tableName:"Banner",
       count: banner.rows.length,
     });
   } catch (error) {

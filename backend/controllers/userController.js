@@ -109,6 +109,7 @@ const getAllUserCount = async (req, res) => {
     const users = await pool.query("SELECT count(*) FROM users");
     res.status(200).json({
       success: true,
+      tableName: "Users",
       count: users.rows.length,
     });
   } catch (error) {

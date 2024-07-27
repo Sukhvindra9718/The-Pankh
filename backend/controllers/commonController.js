@@ -54,6 +54,7 @@ const getAllContactUsCount = async (req, res) => {
       const contactus = await pool.query("SELECT count(*) FROM contactus");
       res.status(200).json({
         success: true,
+        tableName : "Contact Us",
         count: contactus.rows.length,
       });
     } catch (error) {
@@ -129,6 +130,7 @@ const getAllkeyContactCount = async (req, res) => {
       const keycontact = await pool.query("SELECT count(*) FROM keycontact");
       res.status(200).json({
         success: true,
+        tableName : "Key Contacts",
         count: keycontact.rows.length,
       });
     } catch (error) {

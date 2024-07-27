@@ -11,7 +11,7 @@ router.get('/username', authMiddleware.authenticationMiddleware,authMiddleware.s
 router.put('/update', authMiddleware.authenticationMiddleware,authMiddleware.superAdminMiddleware,userController.updateUser);
 router.delete('/delete/:id', authMiddleware.authenticationMiddleware,authMiddleware.superAdminMiddleware,userController.deleteUser);
 router.get('/all', authMiddleware.authenticationMiddleware,authMiddleware.superAdminMiddleware,userController.getAllUsers);
-router.get('/user/count',authMiddleware.authenticationMiddleware,authMiddleware.superAdminMiddleware, userController.getAllUserCount)
+router.get('/getuser/count',authMiddleware.authenticationMiddleware,authMiddleware.superAdminMiddleware, userController.getAllUserCount)
 
 // Admin middleware
 router.get('/id', authMiddleware.authenticationMiddleware,authMiddleware.adminMiddleware,userController.getUserById);
@@ -19,7 +19,7 @@ router.get('/username', authMiddleware.authenticationMiddleware,authMiddleware.a
 router.put('/update', authMiddleware.authenticationMiddleware,authMiddleware.adminMiddleware,userController.updateUser);
 router.delete('/delete/:id', authMiddleware.authenticationMiddleware,authMiddleware.adminMiddleware,userController.deleteUser);
 router.get('/all',authMiddleware.authenticationMiddleware,authMiddleware.adminMiddleware,userController.getAllUsers);
-router.get('/user/count',authMiddleware.authenticationMiddleware,authMiddleware.adminMiddleware, userController.getAllUserCount)
+router.get('/getuser/count',authMiddleware.authenticationMiddleware,authMiddleware.adminMiddleware, userController.getAllUserCount)
 
 
 module.exports = router;

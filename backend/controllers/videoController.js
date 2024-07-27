@@ -82,6 +82,7 @@ exports.getAllVideosCount = async (req, res) => {
       const videos = await pool.query("SELECT count(*) FROM videos");
       res.status(200).json({
         success: true,
+        tableName: "Videos",
         count: videos.rows.length,
       });
     } catch (error) {

@@ -161,6 +161,7 @@ exports.getAllCarousalCount = async (req, res) => {
     const carousal = await pool.query("SELECT count(*) FROM carousal");
     res.status(200).json({
       success: true,
+      tableName:"Carousal",
       count: carousal.rows.length,
     });
   } catch (error) {

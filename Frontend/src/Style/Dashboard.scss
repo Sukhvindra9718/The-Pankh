@@ -754,3 +754,26 @@ th {
     }
   }
 }
+
+
+.Count-Container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 1.5rem;
+  padding: 1rem;
+  justify-content: start;
+}
+
+.Count-Card{
+    width: 20%;
+    height: 100px;
+    // box-shadow: 2px 2px 2px solid gray;
+    background-color: #ffffff;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
