@@ -104,7 +104,7 @@ const getAllUsers = async (req, res) => {
 };
 // Implement other user functions like updateUser, deleteUser
 
-exports.getAllUserCount = async (req, res) => {
+const getAllUserCount = async (req, res) => {
   try {
     const users = await pool.query("SELECT count(*) FROM users");
     res.status(200).json({
@@ -124,6 +124,7 @@ module.exports = {
   getUserByUsername,
   updateUser,
   deleteUser,
-  getAllUsers
+  getAllUsers,
+  getAllUserCount
   // Other functions...
 };
