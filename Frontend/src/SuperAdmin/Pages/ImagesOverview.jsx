@@ -1,12 +1,15 @@
 import React, { useEffect } from "react";
-import { useGlobalContext } from "../../context/global";
 import { useNavigate } from "react-router-dom";
-import { AiFillEye, AiFillEdit, AiOutlinePlus } from "react-icons/ai";
+import {
+  AiFillEye,
+  AiFillEdit,
+  AiOutlinePlus,
+  AiFillCloseCircle,
+} from "react-icons/ai";
 import { GrSort } from "react-icons/gr";
 import { MdDelete } from "react-icons/md";
 import "../../Style/Dashboard.scss";
 import axios from "axios";
-import Upload from "../../Components/Upload";
 
 const sortList = ["Newest", "Oldest"];
 function ImagesOverview() {
@@ -16,13 +19,17 @@ function ImagesOverview() {
   const [data, setData] = React.useState([]);
   const [search, setSearch] = React.useState("");
   const [images, setImages] = React.useState([]);
-  const [UploadFormOpen, setUploadFormOpen] = React.useState(false);
-  const [isUpload, setIsUpload] = React.useState(false);
+  const [uploadFormOpen, setUploadFormOpen] = React.useState(false);
+  const [file, setFile] = React.useState("");
+  const [showPreview, setShowPreview] = React.useState("");
+  const [title, setTitle] = React.useState("");
+  const [description, setDescription] = React.useState("");
+  const [isUpdate, setIsUpdate] = React.useState(false);
+  const [updateId, setUpdateId] = React.useState(null);
   const navigate = useNavigate();
 
-
-   // Get Token from Cookie
-   const getTokenFromCookie = () => {
+  // Get Token from Cookie
+  const getTokenFromCookie = () => {
     const name = "token=";
     const decodedCookie = decodeURIComponent(document.cookie);
     const ca = decodedCookie.split(";");
@@ -35,6 +42,46 @@ function ImagesOverview() {
     }
     return "";
   };
+
+  const handleDataChange = (e) => {
+    const reader = new FileReader();
+
+    reader.onload = () => {
+      if (reader.readyState === 2) {
+        setFile(reader.result);
+        setShowPreview(null);
+      }
+    };
+
+    reader.readAsDataURL(e.target.files[0]);
+  };
+
+  // Create Banner
+  const handleUpload = async () => {
+    const config = {
+      headers: {
+        Authorization: `${getTokenFromCookie()}`,
+      },
+    };
+
+    try {
+      const { data } = await axios.post(
+        "http://localhost:3000/api/v1/image/upload",
+        { title, description, file },
+        config
+      );
+
+      if (data.success) {
+        setUploadFormOpen(false);
+        setIsDelete(!isDelete);
+        setTitle("");
+        setDescription("");
+        setFile(null);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
   const getAllImages = async () => {
     const config = {
       headers: {
@@ -43,7 +90,10 @@ function ImagesOverview() {
       },
     };
     try {
-      const { data } = await axios.get("http://localhost:3000/api/v1/images",config);
+      const { data } = await axios.get(
+        "http://localhost:3000/api/v1/images",
+        config
+      );
       setImages(data.images);
       setData(data.images);
       console.log(data);
@@ -52,17 +102,62 @@ function ImagesOverview() {
     }
   };
 
+  // Update Carousal
+  const handleUpdate = async () => {
+    const config = {
+      headers: {
+        Authorization: `${getTokenFromCookie()}`,
+        "Content-Type": "application/json",
+      },
+    };
+
+    const Data = {
+      title,
+      description,
+      file: file ? file : undefined,
+    };
+    try {
+      const { data } = await axios.put(
+        `http://localhost:3000/api/v1/image/${updateId}`,
+        Data,
+        config
+      );
+
+      if (data.success) {
+        setUploadFormOpen(false);
+        setIsDelete(!isDelete);
+        setTitle("");
+        setDescription("")
+        setUpdateId("");
+        setFile(null);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  const handleShowPopup = (item) => {
+    setPageName(item.pagename);
+    setShowPreview(item.fileurl);
+    setUpdateId(item.id);
+    setIsUpdate(true);
+    setUploadFormOpen(true);
+  };
+  const handleClose = () => {
+    setTitle("");
+    setDescription("")
+    setShowPreview(null);
+    setUpdateId("");
+    setIsUpdate(false);
+    setFile(null);
+    setUploadFormOpen(false);
+  };
   useEffect(() => {
     getAllImages();
     // eslint-disable-next-line
-  }, [isDelete, isUpload]);
+  }, [isDelete]);
 
   const handleShowImage = (id) => {
     navigate(`/images/${id}`);
-  };
-
-  const handleUpdate = (item) => {
-    navigate(`/video/update/${item.id}`);
   };
 
   const handleDelete = async (id) => {
@@ -79,7 +174,8 @@ function ImagesOverview() {
       };
       try {
         const { data } = await axios.delete(
-          `http://localhost:3000/api/v1/image/${id}`,config
+          `http://localhost:3000/api/v1/image/${id}`,
+          config
         );
         if (data.success) {
           setIsDelete(!isDelete);
@@ -121,7 +217,7 @@ function ImagesOverview() {
   };
 
   return (
-    <div>
+    <div style={{ position: "relative" }}>
       <div className="filter-membership-container">
         <div className="header-table">
           <h1>All Images</h1>
@@ -198,7 +294,10 @@ function ImagesOverview() {
                       size={25}
                       onClick={() => handleShowImage(item.id)}
                     />
-                    <AiFillEdit size={25} onClick={() => handleUpdate(video)} />
+                    <AiFillEdit
+                      size={25}
+                      onClick={() => handleShowPopup(item)}
+                    />
                     <MdDelete
                       size={25}
                       onClick={() => handleDelete(item.id)}
@@ -210,13 +309,43 @@ function ImagesOverview() {
             ))}
         </div>
       </div>
-      {UploadFormOpen && (
-        <Upload
-          setIsUpload={setIsUpload}
-          setUploadFormOpen={setUploadFormOpen}
-          Uploadtitle={"Image"}
-          UploadType={"Image"}
-        />
+      {uploadFormOpen && (
+        <div className="upload-form-container">
+          <div className="upload-form">
+            <div className="close-btn" onClick={() => handleClose()}>
+              <AiFillCloseCircle size={30} />
+            </div>
+            <h1>Upload Image</h1>
+            <input
+              type="text"
+              placeholder="Title"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+            />
+            <input
+              type="text"
+              placeholder="Description"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+            />
+            <input
+              type="file"
+              id="banner"
+              name="banner"
+              accept="image/*"
+              onChange={handleDataChange}
+            />
+            <div className="preview-image">
+              {file && <img src={file} alt="preview" />}
+              {showPreview && <img src={showPreview} alt="preview" />}
+            </div>
+            {!isUpdate ? (
+              <button onClick={handleUpload}>Upload</button>
+            ) : (
+              <button onClick={handleUpdate}>Update</button>
+            )}
+          </div>
+        </div>
       )}
     </div>
   );
