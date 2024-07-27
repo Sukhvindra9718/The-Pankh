@@ -15,15 +15,45 @@ function ImagesOverview() {
   const [selectedSortValue, setSelectedSortValue] = React.useState("");
   const [data, setData] = React.useState([]);
   const [search, setSearch] = React.useState("");
-  const { images, getAllImages } = useGlobalContext();
+  const [images, setImages] = React.useState([]);
   const [UploadFormOpen, setUploadFormOpen] = React.useState(false);
   const [isUpload, setIsUpload] = React.useState(false);
   const navigate = useNavigate();
 
+
+   // Get Token from Cookie
+   const getTokenFromCookie = () => {
+    const name = "token=";
+    const decodedCookie = decodeURIComponent(document.cookie);
+    const ca = decodedCookie.split(";");
+
+    for (let i = 0; i < ca.length; i++) {
+      let c = ca[i].trim();
+      if (c.indexOf(name) === 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  };
+  const getAllImages = async () => {
+    const config = {
+      headers: {
+        Authorization: `${getTokenFromCookie()}`,
+        "Content-Type": "application/json",
+      },
+    };
+    try {
+      const { data } = await axios.get("http://localhost:3000/api/v1/images",config);
+      setImages(data.images);
+      setData(data.images);
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
     getAllImages();
-    console.log(images);
-    setData(images);
     // eslint-disable-next-line
   }, [isDelete, isUpload]);
 
@@ -36,15 +66,26 @@ function ImagesOverview() {
   };
 
   const handleDelete = async (id) => {
-    console.log("delete", id);
     const confirm = window.confirm(
       "Are you sure you want to delete this video?"
     );
 
     if (confirm) {
-      const { data } = await axios.delete(`/api/image/${id}`);
-      if (data.success) {
-        setIsDelete(!isDelete);
+      const config = {
+        headers: {
+          Authorization: `${getTokenFromCookie()}`,
+          "Content-Type": "application/json",
+        },
+      };
+      try {
+        const { data } = await axios.delete(
+          `http://localhost:3000/api/v1/image/${id}`,config
+        );
+        if (data.success) {
+          setIsDelete(!isDelete);
+        }
+      } catch (error) {
+        console.log(error);
       }
     }
   };
@@ -79,7 +120,6 @@ function ImagesOverview() {
     setData(filterData);
   };
 
- 
   return (
     <div>
       <div className="filter-membership-container">
@@ -132,13 +172,11 @@ function ImagesOverview() {
         </div>
       </div>
 
-
-
       <div className="banner-table-container">
         <div className="grid-container">
           <div className="grid-header">ID</div>
-          <div className="grid-header">Page Name</div>
-          <div className="grid-header">File Name</div>
+          <div className="grid-header">Title</div>
+          <div className="grid-header">Description</div>
           <div className="grid-header">Action</div>
           {data?.length > 0 &&
             data.map((item) => (
@@ -146,11 +184,11 @@ function ImagesOverview() {
                 <div className="grid-item" data-label="ID">
                   {item.id}
                 </div>
-                <div className="grid-item" data-label="Page Name">
+                <div className="grid-item" data-label="Title">
                   {item.title}
                   <span className="tooltip">{item.title}</span>
                 </div>
-                <div className="grid-item" data-label="File Name">
+                <div className="grid-item" data-label="Description">
                   {item.description}
                   <span className="tooltip">{item.description}</span>
                 </div>

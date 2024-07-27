@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import "../Style/Login.scss";
+import {useNavigate} from "react-router-dom";
 
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
+  const navigate = useNavigate();
+  
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -19,6 +21,7 @@ const Login = () => {
     const data = await response.json();
     if (data.success) {
       alert("Login successful");
+      navigate("/dashboard");
       setToken(data.token);
       // Perform any further actions such as redirecting the user
     } else {

@@ -1,18 +1,21 @@
 const pool = require('../db');
 const fs = require('fs');
 const uuid = require('uuid');
-
+const cloudinary = require('cloudinary');
 
 // Images CRUD
 exports.addImage = async (req, res) => {
     try {
-        console.log(req.body);
-        const { title, description } = req.body;
-        const imagePath = req.file.path;
-        const filename = req.file.filename;
+        const { title, description,image } = req.body;
         const id = uuid.v4();
-        console.log(imagePath);
-        await pool.query('INSERT INTO images (id,title,description,filename,imagepath) VALUES ($1, $2, $3,$4,$5) RETURNING *', [id, title, description, filename, imagePath]);
+        
+        const myCloud = await cloudinary.v2.uploader.upload(image, {
+            folder: "thepankh/galleryimages",
+            width: 1000,
+            height: 1000,
+            Crop: "fill",
+          });
+        await pool.query('INSERT INTO images (id,title,description,fileid,fileurl,createdat) VALUES ($1, $2, $3,$4,$5,$6) RETURNING *', [id, title, description, myCloud.public_id, myCloud.secure_url,new Date()]);
 
         res.status(200).json({
             success: true,
@@ -65,9 +68,12 @@ exports.deleteImage = async (req, res) => {
     try {
         const { id } = req.params;
         const image = await pool.query('SELECT * FROM images WHERE id = $1', [id]);
-        const imagePath = image.rows[0].videopath;
-        fs.unlinkSync(imagePath);
-        await pool.query('DELETE FROM images WHERE id = $1', [id]);
+        if(image){
+            const fileid = image.rows[0].fileid
+            await cloudinary.v2.uploader.destroy(fileid);
+            await pool.query('DELETE FROM images WHERE id = $1', [id]);
+        }
+        
         res.status(200).json({
             success: true,
             message: 'Image Deleted Succesfully'

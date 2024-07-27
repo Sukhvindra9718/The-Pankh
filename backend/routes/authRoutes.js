@@ -9,5 +9,5 @@ router.post('/register',imageUpload.single('image'), authController.registerUser
 router.post('/login', authController.loginUser);
 router.put('/update/password',authMiddleware.authenticationMiddleware, authController.updateUserPassword);
 router.put('/forgot/password',authMiddleware.authenticationMiddleware,authController.forgotPassword);
-
+router.post('/verify',authMiddleware.verifyToken);
 module.exports = router;

@@ -93,6 +93,21 @@ const deleteKeyContact = async (req, res) => {
     }
 }
 
+const updateKeyContact = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const { name, email,phone,organization,designation} = req.body;
+        const keyContact = await pool.query('SELECT * FROM keycontact WHERE id = $1', [id]);
+        if (keyContact.rows.length === 0) {
+            return res.status(404).json({success:false,userError:'Key Contact not found'});
+        }
+        await pool.query('UPDATE keycontact SET name = $1, email = $2, phone = $3, organization = $4, designation = $5 WHERE id = $6', [name, email,phone,organization,designation,id]);
+        res.status(200).json({success:true,msg:'Key Contact updated successfully'});
+    } catch (error) {
+        res.status(500).send({success:false,userError:'Server Error',error:error.message});
+    }
+}
+
 
 
 
@@ -108,5 +123,6 @@ module.exports = {
     addKeyContact,
     getAllKeyContact,
     getKeyContactById,
-    deleteKeyContact
+    deleteKeyContact,
+    updateKeyContact
 };

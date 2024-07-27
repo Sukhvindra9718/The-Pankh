@@ -17,6 +17,9 @@ module.exports = {
     JWT_EXPIRES_TIME : '7d',
     COOKIE_EXPIRE : 7,
     JWT_SECRET : '',
+    CLOUDINARY_NAME : "dk0o7tdks",
+    CLOUDINARY_API_KEY : "341976251712619",
+    CLOUDINARY_API_SECRET : "tBAn6Urb3oHKsxFAmgZZGG1j000"
   };
   
   
