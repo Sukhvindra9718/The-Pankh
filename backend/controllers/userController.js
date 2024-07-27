@@ -104,6 +104,21 @@ const getAllUsers = async (req, res) => {
 };
 // Implement other user functions like updateUser, deleteUser
 
+exports.getAllUserCount = async (req, res) => {
+  try {
+    const users = await pool.query("SELECT count(*) FROM users");
+    res.status(200).json({
+      success: true,
+      count: users.rows.length,
+    });
+  } catch (error) {
+    res.status(400).json({
+      success: false,
+      error: error.message,
+      userError: "Users fetch failed",
+    });
+  }
+};
 module.exports = {
   getUserById,
   getUserByUsername,

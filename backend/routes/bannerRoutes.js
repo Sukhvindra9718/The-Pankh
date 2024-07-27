@@ -1,4 +1,4 @@
-const {addBanner,getAllBanners,deleteBanner, getBannerByID, updateBanner } = require('../controllers/bannerController')
+const {addBanner,getAllBanners,deleteBanner, getBannerByID, updateBanner,getAllBannerCount } = require('../controllers/bannerController')
 const router = require('express').Router()
 const authMiddleware = require('../middleware/authMiddleware.js');
 
@@ -8,6 +8,7 @@ router.get('/banners',authMiddleware.authenticationMiddleware,authMiddleware.sup
 router.get('/banner/:id',authMiddleware.authenticationMiddleware,authMiddleware.superAdminMiddleware, getBannerByID)
 router.delete('/banner/:id',authMiddleware.authenticationMiddleware,authMiddleware.superAdminMiddleware, deleteBanner)
 router.put('/banner/:id',authMiddleware.authenticationMiddleware,authMiddleware.superAdminMiddleware, updateBanner)
+router.get('/banner/count',authMiddleware.authenticationMiddleware,authMiddleware.superAdminMiddleware, getAllBannerCount)
 
 // Admin middleware
 router.post('/banner/upload',authMiddleware.authenticationMiddleware,authMiddleware.adminMiddleware,addBanner)
@@ -15,6 +16,7 @@ router.get('/banners',authMiddleware.authenticationMiddleware,authMiddleware.adm
 router.get('/banner/:id',authMiddleware.authenticationMiddleware,authMiddleware.adminMiddleware, getBannerByID)
 router.delete('/banner/:id',authMiddleware.authenticationMiddleware,authMiddleware.adminMiddleware, deleteBanner)
 router.put('/banner/:id',authMiddleware.authenticationMiddleware,authMiddleware.adminMiddleware, updateBanner)
+router.get('/banner/count',authMiddleware.authenticationMiddleware,authMiddleware.adminMiddleware, getAllBannerCount)
 
 
 

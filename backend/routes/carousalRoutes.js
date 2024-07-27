@@ -1,4 +1,4 @@
-const {addCarousal,getAllCarousals,deleteCarousal, getCarousalByID, updateCarousal } = require('../controllers/carousalController')
+const {addCarousal,getAllCarousals,deleteCarousal, getCarousalByID, updateCarousal,getAllCarousalCount } = require('../controllers/carousalController')
 const router = require('express').Router()
 const authMiddleware = require('../middleware/authMiddleware.js');
 
@@ -8,6 +8,7 @@ router.get('/carousals',authMiddleware.authenticationMiddleware,authMiddleware.s
 router.get('/carousal/:id',authMiddleware.authenticationMiddleware,authMiddleware.superAdminMiddleware, getCarousalByID)
 router.delete('/carousal/:id', authMiddleware.authenticationMiddleware,authMiddleware.superAdminMiddleware,deleteCarousal)
 router.put('/carousal/:id',authMiddleware.authenticationMiddleware,authMiddleware.superAdminMiddleware,updateCarousal);
+router.get('/carousal/count',authMiddleware.authenticationMiddleware,authMiddleware.superAdminMiddleware, getAllCarousalCount)
 
 // Admin middleware
 router.post('/carousal/upload',authMiddleware.authenticationMiddleware,authMiddleware.adminMiddleware,addCarousal);
@@ -15,6 +16,8 @@ router.get('/carousals',authMiddleware.authenticationMiddleware,authMiddleware.a
 router.get('/carousal/:id',authMiddleware.authenticationMiddleware,authMiddleware.adminMiddleware, getCarousalByID)
 router.delete('/carousal/:id', authMiddleware.authenticationMiddleware,authMiddleware.adminMiddleware,deleteCarousal)
 router.put('/carousal/:id',authMiddleware.authenticationMiddleware,authMiddleware.adminMiddleware,updateCarousal);
+router.get('/carousal/count',authMiddleware.authenticationMiddleware,authMiddleware.adminMiddleware, getAllCarousalCount)
+
 
 
 module.exports = router

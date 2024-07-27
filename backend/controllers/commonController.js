@@ -49,7 +49,21 @@ const deleteContactUs = async (req, res) => {
     }
 }
 
-
+const getAllContactUsCount = async (req, res) => {
+    try {
+      const contactus = await pool.query("SELECT count(*) FROM contactus");
+      res.status(200).json({
+        success: true,
+        count: contactus.rows.length,
+      });
+    } catch (error) {
+      res.status(400).json({
+        success: false,
+        error: error.message,
+        userError: "Contactus fetch failed",
+      });
+    }
+  };
 // Key Contact Form
 
 const addKeyContact = async (req, res) => {
@@ -110,7 +124,21 @@ const updateKeyContact = async (req, res) => {
 
 
 
-
+const getAllkeyContactCount = async (req, res) => {
+    try {
+      const keycontact = await pool.query("SELECT count(*) FROM keycontact");
+      res.status(200).json({
+        success: true,
+        count: keycontact.rows.length,
+      });
+    } catch (error) {
+      res.status(400).json({
+        success: false,
+        error: error.message,
+        userError: "keycontact fetch failed",
+      });
+    }
+  };
 
 
 
@@ -121,8 +149,10 @@ module.exports = {
     getContactUsById,
     deleteContactUs,
     addKeyContact,
+    getAllContactUsCount,
     getAllKeyContact,
     getKeyContactById,
     deleteKeyContact,
-    updateKeyContact
+    updateKeyContact,
+    getAllkeyContactCount
 };

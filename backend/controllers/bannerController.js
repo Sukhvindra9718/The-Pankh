@@ -143,3 +143,20 @@ exports.updateBanner = async (req, res) => {
     });
   }
 };
+
+
+exports.getAllBannerCount = async (req, res) => {
+  try {
+    const banner = await pool.query("SELECT count(*) FROM banner");
+    res.status(200).json({
+      success: true,
+      count: banner.rows.length,
+    });
+  } catch (error) {
+    res.status(400).json({
+      success: false,
+      error: error.message,
+      userError: "Banner fetch failed",
+    });
+  }
+};

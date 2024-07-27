@@ -155,3 +155,19 @@ exports.updateCarousal = async (req, res) => {
     });
   }
 };
+
+exports.getAllCarousalCount = async (req, res) => {
+  try {
+    const carousal = await pool.query("SELECT count(*) FROM carousal");
+    res.status(200).json({
+      success: true,
+      count: carousal.rows.length,
+    });
+  } catch (error) {
+    res.status(400).json({
+      success: false,
+      error: error.message,
+      userError: "Carousal fetch failed",
+    });
+  }
+};

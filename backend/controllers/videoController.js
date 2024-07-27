@@ -75,3 +75,20 @@ exports.deleteVideo = async (req, res) => {
         })
     }
 }
+
+
+exports.getAllVideosCount = async (req, res) => {
+    try {
+      const videos = await pool.query("SELECT count(*) FROM videos");
+      res.status(200).json({
+        success: true,
+        count: videos.rows.length,
+      });
+    } catch (error) {
+      res.status(400).json({
+        success: false,
+        error: error.message,
+        userError: "Videos fetch failed",
+      });
+    }
+  };
