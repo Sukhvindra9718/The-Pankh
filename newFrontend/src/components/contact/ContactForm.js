@@ -29,7 +29,7 @@ function ContactForm() {
             const contactResponse = await fetch(`http://localhost:3000/api/common/contact/register`, {
                 method: "POST",
                 headers: {
-                    "conten-Type": "application/json"
+                    "Content-Type": "application/json"
                 },
                 body: JSON.stringify(contact),
             })
@@ -62,8 +62,8 @@ function ContactForm() {
                                                     <input
                                                         type="text"
                                                         placeholder="Your name"
-                                                        name="name"
-                                                        id="name"
+                                                        name="Name"
+                                                        id="Name"
                                                         autoComplete="off"
                                                         value={contact.Name}
                                                         onChange={handleInput}
@@ -76,8 +76,8 @@ function ContactForm() {
                                                     <input
                                                         type="email"
                                                         placeholder="Email address"
-                                                        name="email"
-                                                        id="email"
+                                                        name="Email"
+                                                        id="Email"
                                                         autoComplete="off"
                                                         value={contact.Email}
                                                         onChange={handleInput}
@@ -88,7 +88,7 @@ function ContactForm() {
                                             <div className="col-xl-6">
                                                 <div className="comment-form__input-box">
                                                     <input
-                                                        type="number"
+                                                        type="text"
                                                         placeholder="Phone number"
                                                         name="Phone"
                                                         id="Phone"
@@ -118,9 +118,9 @@ function ContactForm() {
                                             <div className="col-xl-12">
                                                 <div className="comment-form__input-box text-message-box">
                                                     <textarea
-                                                        name="message"
+                                                        name="Message"
                                                         placeholder="Write a comment"
-                                                        id="message"
+                                                        id="Message"
                                                         autoComplete="off"
                                                         value={contact.Message}
                                                         onChange={handleInput}
