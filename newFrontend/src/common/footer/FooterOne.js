@@ -176,7 +176,7 @@ export default class FooterOne extends React.Component {
                                             <div className="footer-widget-one__twitter-feed-single">
                                                 <p className="footer-widget-one__twitter-feed-text">Lorem ipsum is simply free text
                                                     dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor
-                                                    incididunt <a href="#">http://t.twitter.com</a></p>
+                                                    incididunt <a href="http://t.twitter.com">http://t.twitter.com</a></p>
                                                 <div className="footer-widget-one__twitter-feed-bottom">
                                                     <div className="footer-widget-one__twitter-feed-icon">
                                                         <span className="fab fa-twitter"></span>
@@ -191,7 +191,7 @@ export default class FooterOne extends React.Component {
                                             <div className="footer-widget-one__twitter-feed-single">
                                                 <p className="footer-widget-one__twitter-feed-text">Lorem ipsum is simply free text
                                                     dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor
-                                                    incididunt <a href="#">http://t.twitter.com</a></p>
+                                                    incididunt <a href="http://t.twitter.com">http://t.twitter.com</a></p>
                                                 <div className="footer-widget-one__twitter-feed-bottom">
                                                     <div className="footer-widget-one__twitter-feed-icon">
                                                         <span className="fab fa-twitter"></span>
@@ -206,7 +206,7 @@ export default class FooterOne extends React.Component {
                                             <div className="footer-widget-one__twitter-feed-single">
                                                 <p className="footer-widget-one__twitter-feed-text">Lorem ipsum is simply free text
                                                     dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor
-                                                    incididunt <a href="#">http://t.twitter.com</a></p>
+                                                    incididunt <a href="http://t.twitter.com">http://t.twitter.com</a></p>
                                                 <div className="footer-widget-one__twitter-feed-bottom">
                                                     <div className="footer-widget-one__twitter-feed-icon">
                                                         <span className="fab fa-twitter"></span>

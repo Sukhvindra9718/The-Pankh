@@ -52,7 +52,7 @@ function DashboardOverview() {
     };
 
     return () => getAllCounts();
-  },[])
+  },[urls])
 
   return (
     <div className='Count-Container'>
