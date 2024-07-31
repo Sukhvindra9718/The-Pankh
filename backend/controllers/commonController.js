@@ -8,11 +8,11 @@ const uuid = require('uuid');
 const registerContactUs = async (req, res) => {
     try {
         // File upload
-        const { Name, Email,Phone,Organization,Designation, Message } = req.body;
+        const { Name, Email,Phone,Subject, Message } = req.body;
         let id = uuid.v4();
 
         console.log(id,req.body);
-        await pool.query('INSERT INTO contactus (id,name,email,phone,organization,designation,message) VALUES ($1, $2, $3,$4,$5,$6,$7) RETURNING *', [id,Name, Email,Phone,Organization,Designation,Message]);
+        await pool.query('INSERT INTO contactus (id,name,email,phone,subject,message) VALUES ($1, $2, $3,$4,$5,$6) RETURNING *', [id,Name, Email,Phone,Subject,Message]);
         res.status(201).json({success:true,msg:'Thank you for contacting us. We will get back to you soon.'});
     } catch (error) {
         res.status(500).send({success:false,userError:'Server Error',error:error.message});
