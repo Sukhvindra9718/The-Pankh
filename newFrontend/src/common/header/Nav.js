@@ -8,37 +8,6 @@ const Nav = () => {
         <ul className="main-menu__list">
           <li className="dropdown current">
             <Link to={process.env.PUBLIC_URL + `#`}>Home</Link>
-            <ul>
-              <li>
-                <Link to={process.env.PUBLIC_URL + `/`}>Home One</Link>
-              </li>
-              <li>
-                <Link to={process.env.PUBLIC_URL + `/home-two`}>Home Two</Link>
-              </li>
-              <li>
-                <Link to={process.env.PUBLIC_URL + `/home-three`}>
-                  Home Three
-                </Link>
-              </li>
-              <li className="dropdown">
-                <Link to={process.env.PUBLIC_URL + `/`}>Header Styles</Link>
-                <ul>
-                  <li>
-                    <Link to={process.env.PUBLIC_URL + `/`}>Header One</Link>
-                  </li>
-                  <li>
-                    <Link to={process.env.PUBLIC_URL + `/home-two`}>
-                      Header Two
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to={process.env.PUBLIC_URL + `/home-three`}>
-                      Header Three
-                    </Link>
-                  </li>
-                </ul>
-              </li>
-            </ul>
           </li>
 
           <li className="dropdown">
