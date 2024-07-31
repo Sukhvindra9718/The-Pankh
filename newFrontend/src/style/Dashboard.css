@@ -335,6 +335,12 @@
   align-items: center;
   gap: 3rem;
   padding-left: 1rem;
+  h1{
+    font-size: 1.5rem;
+  }
+  h2{
+    font-size: 1.2rem;
+  }
 }
 
 .filter-membership-item {
@@ -680,13 +686,28 @@ th {
   top: 20%;
   left: 30%;
   width: 30vw;
-  height: 70vh;
+  /* height: 70vh; */
   border: 1px solid lightgray;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   border-radius: 1rem;
   background-color: #f5f5f5;
 }
-
+.upload-form-container-2 {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 60vw;
+  /* height: 70vh; */
+  border: 1px solid lightgray;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  background-color: #f5f5f5;
+}
+.inputContainer{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 0.5rem;
+}
 .upload-form {
   display: flex;
   flex-direction: column;
@@ -721,7 +742,7 @@ th {
   }
   button {
     width: 20%;
-    height: 30px;
+    height: 40px;
     border-radius: 5px;
     border: 1px solid #717171;
     background-color: var(--primary-color);

@@ -29,6 +29,7 @@ app.use('/api/v1',require('./routes/videoRoutes'));
 app.use('/api/v1',require('./routes/imagesRoutes'));
 app.use('/api/v1',require('./routes/bannerRoutes'));
 app.use('/api/v1',require('./routes/carousalRoutes'));
+app.use('/api/v1',require('./routes/volunteerRoutes'));
 
 
 cloudinary.config({
