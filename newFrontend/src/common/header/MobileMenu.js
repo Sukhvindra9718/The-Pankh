@@ -11,21 +11,6 @@ const menuData = [
         path: '/',
         iconClosed: <CgChevronLeft />,
         iconOpened: <CgChevronDown />,
-
-        subNav: [
-            {
-                title: 'Home One',
-                path: '/',
-            },
-            {
-                title: 'Home Two',
-                path: '/home-two',
-            },
-            {
-                title: 'Home Three',
-                path: '/home-three',
-            },
-        ],
     },
     {
         title: 'About',

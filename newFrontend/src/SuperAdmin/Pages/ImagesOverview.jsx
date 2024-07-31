@@ -8,7 +8,7 @@ import {
 } from "react-icons/ai";
 import { GrSort } from "react-icons/gr";
 import { MdDelete } from "react-icons/md";
-import "../../Style/Dashboard.scss";
+import "../../style/Dashboard.css";
 import axios from "axios";
 
 const sortList = ["Newest", "Oldest"];
@@ -136,7 +136,8 @@ function ImagesOverview() {
     }
   };
   const handleShowPopup = (item) => {
-    setPageName(item.pagename);
+    setTitle(item.title);
+    setDescription(item.description)
     setShowPreview(item.fileurl);
     setUpdateId(item.id);
     setIsUpdate(true);

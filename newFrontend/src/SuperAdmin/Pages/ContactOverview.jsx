@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { GrSort } from "react-icons/gr";
 import { MdDelete } from "react-icons/md";
-import "../../Style/Dashboard.scss";
+import "../../style/Dashboard.css";
 import axios from "axios";
 
 const sortList = ["Newest", "Oldest"];

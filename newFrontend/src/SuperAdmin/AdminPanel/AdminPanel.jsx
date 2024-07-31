@@ -1,7 +1,7 @@
 import React, {useEffect}  from 'react'
 import Sidebar from './Sidebar'
 import Main from './Main'
-import '../../Style/Dashboard.scss'
+import '../../style/Dashboard.css'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
