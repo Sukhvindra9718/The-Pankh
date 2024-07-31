@@ -24,7 +24,7 @@ import BlogSidebar from "./pages/BlogSidebar";
 import BlogDetails from "./pages/BlogDetails";
 import Contact from "./pages/Contact";
 import Error from "./pages/Error";
-import Dashboard from './'
+import Dashboard from './superAdmin/AdminPanel/AdminPanel'
 import ScrollToTopRoute from './components/scroll-to-top-route/ScrollToTopRoute';
 import Login from './pages/Login';
 
