@@ -1,6 +1,6 @@
 import React from "react";
 import { BiHelpCircle, BiSolidDashboard } from "react-icons/bi";
-import "../../Style/Dashboard.scss";
+import '../../style/Dashboard.css'
 import { FaCaretDown, FaCaretLeft, FaVideo, FaImage } from "react-icons/fa6";
 import { GrGallery } from "react-icons/gr";
 import { MdContacts } from "react-icons/md";
@@ -19,7 +19,7 @@ function Sidebar({
   return (
     <div>
       <div className="sidebar-logo">
-        <img className="sidebar-img" src="./Logo.jpeg" alt="Logo" />
+        <img className="sidebar-img" src="./assets/images/Logo.jpeg" alt="Logo" />
       </div>
 
       <div className="sidebar-menu">
