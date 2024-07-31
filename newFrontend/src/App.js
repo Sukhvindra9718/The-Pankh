@@ -6,8 +6,6 @@ import { FaAngleUp } from "react-icons/fa";
 
 //Pages
 import HomeDefault from "./pages/HomeDefault";
-import HomeTwo from "./pages/HomeTwo";
-import HomeThree from "./pages/HomeThree";
 import About from "./pages/About";
 import Team from "./pages/Team";
 import TeamDetails from "./pages/TeamDetails";
@@ -26,7 +24,9 @@ import BlogSidebar from "./pages/BlogSidebar";
 import BlogDetails from "./pages/BlogDetails";
 import Contact from "./pages/Contact";
 import Error from "./pages/Error";
+import Dashboard from './superAdmin/AdminPanel/AdminPanel'
 import ScrollToTopRoute from './components/scroll-to-top-route/ScrollToTopRoute';
+import Login from './pages/Login';
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -40,13 +40,12 @@ function App() {
       }).init();
     }, []
   );
+  console.log(`${process.env.PUBLIC_URL}/dashboard`)
   return (
     <Router>
       <ScrollToTopRoute />
         <Routes>
             <Route path={`${process.env.PUBLIC_URL}/`} exact element={<HomeDefault />} />
-            <Route path={`${process.env.PUBLIC_URL}/home-two`} exact element={<HomeTwo />} />
-            <Route path={`${process.env.PUBLIC_URL}/home-three`} exact element={<HomeThree />} />
             <Route path={`${process.env.PUBLIC_URL}/about`} exact element={<About />} />
             <Route path={`${process.env.PUBLIC_URL}/team`} exact element={<Team />} />
             <Route path={`${process.env.PUBLIC_URL}/team-details`} exact element={<TeamDetails />} />
@@ -64,6 +63,8 @@ function App() {
             <Route path={`${process.env.PUBLIC_URL}/blog-sidebar`} exact element={<BlogSidebar />} />
             <Route path={`${process.env.PUBLIC_URL}/blog-details`} exact element={<BlogDetails />} />
             <Route path={`${process.env.PUBLIC_URL}/contact`} exact element={<Contact />} />
+            <Route path={`${process.env.PUBLIC_URL}/dashboard`} exact element={<Dashboard/>} />
+            <Route path={`${process.env.PUBLIC_URL}/login`} exact element={<Login />} />
             <Route path={`${process.env.PUBLIC_URL}/*`} exact element={<Error />} />
         </Routes>
         <ScrollToTop className="scrollUp" smooth top="1500" component={<FaAngleUp />} />

@@ -1,10 +1,9 @@
 import React, { useEffect } from "react";
 import { GrSort } from "react-icons/gr";
 import { MdDelete } from "react-icons/md";
-import "../../Style/Dashboard.scss";
+import "../../style/Dashboard.css";
 import axios from "axios";
 import {
-  AiFillEye,
   AiFillEdit,
   AiOutlinePlus,
   AiFillCloseCircle,
@@ -330,10 +329,6 @@ function KeyContactsOverview() {
                 </div>
                 <div className="grid-item" data-label="Message">
                   <div className="action-icons">
-                    <AiFillEye
-                      size={25}
-                      onClick={() => handleShowImage(contact)}
-                    />
                     <AiFillEdit
                       size={25}
                       onClick={() => handleShowPopup(contact)}

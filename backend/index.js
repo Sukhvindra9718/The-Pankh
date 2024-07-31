@@ -18,7 +18,7 @@ readdirSync('./routes').map((route) => app.use('/api', require('./routes/' + rou
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
 // app.use(cors());
-app.use(cors({ origin: 'http://localhost:5173' }));
+app.use(cors({ origin: 'http://localhost:3001' }));
 app.use(express.json({ limit: '50mb' }));
 
 // Import Routes
@@ -50,11 +50,11 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, '../frontend/dist')));
+// app.use(express.static(path.join(__dirname, '../frontend/dist')));
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend/dist', 'index.html'));
-});
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, '../frontend/dist', 'index.html'));
+// });
 
 // Database Connection
 pool.connect((err, client, release) => {

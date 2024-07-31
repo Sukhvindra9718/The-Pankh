@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import "../../Style/Dashboard.scss"
+import "../../style/Dashboard.css"
 import axios from "axios";
 
 
@@ -54,7 +54,6 @@ function DashboardOverview() {
     return () => getAllCounts();
   },[])
 
-  console.log(rowCount)
   return (
     <div className='Count-Container'>
       {rowCount.length > 0 && rowCount.map((data,index)=>(

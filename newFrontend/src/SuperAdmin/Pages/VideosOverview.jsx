@@ -1,12 +1,11 @@
 import React, { useEffect } from "react";
-import { useGlobalContext } from "../../context/global";
 import { useNavigate } from "react-router-dom";
 import { AiFillEye, AiFillEdit, AiOutlinePlus } from "react-icons/ai";
 import { GrSort } from "react-icons/gr";
 import { MdDelete } from "react-icons/md";
-import "../../Style/Dashboard.scss";
+import "../../style/Dashboard.css";
 import axios from "axios";
-import Upload from "../../Components/Upload";
+// import Upload from "../../Components/Upload";
 
 const sortList = ["Newest", "Oldest"];
 
@@ -16,13 +15,13 @@ function VideosOverview() {
   const [selectedSortValue, setSelectedSortValue] = React.useState("");
   const [data, setData] = React.useState([]);
   const [search, setSearch] = React.useState("");
-  const { videos, getAllVideos } = useGlobalContext();
+  const [videos,setVideos] = React.useState([]);
   const [UploadFormOpen, setUploadFormOpen] = React.useState(false);
   const [isUpload, setIsUpload] = React.useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
-    getAllVideos();
+    // getAllVideos();
     setTimeout(() => {
       setData(videos);
     }, 1000);
@@ -164,14 +163,14 @@ function VideosOverview() {
             ))}
         </div>
       </div>
-      {UploadFormOpen && (
+      {/* {UploadFormOpen && (
         <Upload
           setIsUpload={setIsUpload}
           setUploadFormOpen={setUploadFormOpen}
           Uploadtitle={"Video"}
           UploadType={"video"}
         />
-      )}
+      )} */}
     </div>
   );
 }
