@@ -41,7 +41,7 @@ function App() {
     }).init();
   }, []);
 
-  console.log(`${process.env.PUBLIC_URL}/dashboard`);
+
   return (
     <Router>
       <ScrollToTopRoute />

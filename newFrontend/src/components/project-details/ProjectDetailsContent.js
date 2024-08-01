@@ -74,10 +74,10 @@ export default class ProjectDetailsContent extends React.Component {
                                             </div>
                                             <div className="right">
                                                 <div className="project-details__social">
-                                                    <a href="#"><i className="fab fa-twitter"></i></a>
-                                                    <a href="#"><i className="fab fa-facebook"></i></a>
-                                                    <a href="#"><i className="fab fa-pinterest-p"></i></a>
-                                                    <a href="#"><i className="fab fa-instagram"></i></a>
+                                                    <a href="http://t.twitter.com"><i className="fab fa-twitter"></i></a>
+                                                    <a href="http://facebook.com"><i className="fab fa-facebook"></i></a>
+                                                    <a href="http://pinterest.com"><i className="fab fa-pinterest-p"></i></a>
+                                                    <a href="http://instagram.com"><i className="fab fa-instagram"></i></a>
                                                 </div>
                                             </div>
                                         </li>
