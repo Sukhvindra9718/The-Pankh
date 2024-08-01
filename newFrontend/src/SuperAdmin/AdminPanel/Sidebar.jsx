@@ -1,12 +1,11 @@
 import React from "react";
 import { BiHelpCircle, BiSolidDashboard } from "react-icons/bi";
-import '../../style/Dashboard.css'
+import "../../style/Dashboard.css";
 import { FaCaretDown, FaCaretLeft, FaVideo, FaImage } from "react-icons/fa6";
 import { GrGallery } from "react-icons/gr";
 import { MdContacts } from "react-icons/md";
 import { GiKnightBanner } from "react-icons/gi";
 import { BiCarousel } from "react-icons/bi";
-
 
 function Sidebar({
   menuActive,
@@ -19,7 +18,11 @@ function Sidebar({
   return (
     <div>
       <div className="sidebar-logo">
-        <img className="sidebar-img" src="./assets/images/Logo.jpeg" alt="Logo" />
+        <img
+          className="sidebar-img"
+          src="./assets/images/Logo.jpeg"
+          alt="Logo"
+        />
       </div>
 
       <div className="sidebar-menu">
@@ -118,13 +121,10 @@ function Sidebar({
           }
           onClick={() => setMenuActive(2)}
         >
-          <MdContacts
-            fill={menuActive === 2 ? "#fff" : "#717171"}
-            size={30}
-          />
+          <MdContacts fill={menuActive === 2 ? "#fff" : "#717171"} size={30} />
           <h4>Contact Query</h4>
         </div>
-      
+
         <div
           className={
             menuActive === 3
@@ -133,7 +133,7 @@ function Sidebar({
           }
           onClick={() => setMenuActive(3)}
         >
-          <GiKnightBanner 
+          <GiKnightBanner
             fill={menuActive === 3 ? "#fff" : "#717171"}
             size={30}
           />
@@ -147,10 +147,7 @@ function Sidebar({
           }
           onClick={() => setMenuActive(4)}
         >
-          <MdContacts
-            fill={menuActive === 4 ? "#fff" : "#717171"}
-            size={30}
-          />
+          <MdContacts fill={menuActive === 4 ? "#fff" : "#717171"} size={30} />
           <h4>Key Contacts</h4>
         </div>
         <div
@@ -161,10 +158,7 @@ function Sidebar({
           }
           onClick={() => setMenuActive(5)}
         >
-          <BiCarousel
-            fill={menuActive === 5 ? "#fff" : "#717171"}
-            size={30}
-          />
+          <BiCarousel fill={menuActive === 5 ? "#fff" : "#717171"} size={30} />
           <h4>Carousal</h4>
         </div>
         <div
@@ -175,10 +169,18 @@ function Sidebar({
           }
           onClick={() => setMenuActive(6)}
         >
-          <BiCarousel
-            fill={menuActive === 6 ? "#fff" : "#717171"}
-            size={30}
-          />
+          <BiCarousel fill={menuActive === 6 ? "#fff" : "#717171"} size={30} />
+          <h4>Volunteer</h4>
+        </div>
+        <div
+          className={
+            menuActive === 7
+              ? "sidebar-menu-item selected"
+              : "sidebar-menu-item"
+          }
+          onClick={() => setMenuActive(7)}
+        >
+          <BiCarousel fill={menuActive === 7 ? "#fff" : "#717171"} size={30} />
           <h4>Volunteer</h4>
         </div>
       </div>
