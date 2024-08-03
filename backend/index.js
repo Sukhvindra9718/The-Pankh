@@ -31,6 +31,7 @@ app.use("/api/v1", require("./routes/imagesRoutes"));
 app.use("/api/v1", require("./routes/bannerRoutes"));
 app.use("/api/v1", require("./routes/carousalRoutes"));
 app.use("/api/v1", require("./routes/volunteerRoutes"));
+app.use("/api/v1", require("./routes/testimonialRoutes"));
 app.use("/api/v1", require("./routes/newsRoutes"));
 
 cloudinary.config({

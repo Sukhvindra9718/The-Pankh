@@ -195,6 +195,20 @@ function Sidebar({
             fill={menuActive === 7 ? "#fff" : "#717171"}
             size={30}
           />
+          <h4>News</h4>
+        </div>
+        <div
+          className={
+            menuActive === 8
+              ? "sidebar-menu-item selected"
+              : "sidebar-menu-item"
+          }
+          onClick={() => setMenuActive(8)}
+        >
+          <BiCarousel
+            fill={menuActive === 8 ? "#fff" : "#717171"}
+            size={30}
+          />
           <h4>Testimonial</h4>
         </div>
       </div>
