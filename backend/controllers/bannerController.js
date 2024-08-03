@@ -31,13 +31,11 @@ exports.addBanner = async (req, res) => {
       message: "Banner Uploaded Succesfully",
     });
   } catch (error) {
-    res
-      .status(500)
-      .send({
-        success: false,
-        userError: "Server Error",
-        error: error.message,
-      });
+    res.status(500).send({
+      success: false,
+      userError: "Server Error",
+      error: error.message,
+    });
   }
 };
 
@@ -144,13 +142,12 @@ exports.updateBanner = async (req, res) => {
   }
 };
 
-
 exports.getAllBannerCount = async (req, res) => {
   try {
     const banner = await pool.query("SELECT count(*) FROM banner");
     res.status(200).json({
       success: true,
-      tableName:"Banner",
+      tableName: "Banner",
       count: banner.rows.length,
     });
   } catch (error) {
