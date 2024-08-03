@@ -211,7 +211,6 @@ function TestimonialOverview() {
     const filterData1 = data.filter((item) =>
       item.name.toLowerCase().includes(search.toLowerCase())
     );
-    setSearch("");
     setFilterData(filterData1);
   };
 
@@ -285,7 +284,7 @@ function TestimonialOverview() {
                   {testimonial.id}
                 </div>
                 <div className="grid-item" data-label="Full Name">
-                  {testimonial.username}
+                  {testimonial.name}
                 </div>
                 <div className="grid-item" data-label="Role">
                   {testimonial.role}
@@ -315,7 +314,11 @@ function TestimonialOverview() {
             <div className="close-btn" onClick={() => handleClose()}>
               <AiFillCloseCircle size={30} />
             </div>
-            <h1>Create testimonial</h1>
+            {!isUpdate ? (
+              <h1>Create testimonial</h1>
+            ) : (
+              <h1>Update testimonial</h1>
+            )}
             <div className="inputContainer">
               <input
                 type="text"

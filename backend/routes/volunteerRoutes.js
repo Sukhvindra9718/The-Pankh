@@ -1,20 +1,20 @@
-const {createVolunteer,getAllVolunteers} = require('../controllers/volunteerController.js')
+const {createVolunteer,getAllVolunteers,getVolunteerByID,deleteVolunteer,updateVolunteer,getAllVolunteerCount} = require('../controllers/volunteerController.js')
 const router = require('express').Router()
 const authMiddleware = require('../middleware/authMiddleware.js');
 
 // Super admin middleware
 router.post('/volunteer/upload',authMiddleware.authenticationMiddleware,authMiddleware.superAdminMiddleware,createVolunteer)
-// router.get('/banner/:id',authMiddleware.authenticationMiddleware,authMiddleware.superAdminMiddleware, getBannerByID)
-// router.delete('/banner/:id',authMiddleware.authenticationMiddleware,authMiddleware.superAdminMiddleware, deleteBanner)
-// router.put('/banner/:id',authMiddleware.authenticationMiddleware,authMiddleware.superAdminMiddleware, updateBanner)
-// router.get('/getbanner/count',authMiddleware.authenticationMiddleware,authMiddleware.superAdminMiddleware, getAllBannerCount)
+router.get('/volunteer/:id',authMiddleware.authenticationMiddleware,authMiddleware.superAdminMiddleware, getVolunteerByID)
+router.delete('/volunteer/:id',authMiddleware.authenticationMiddleware,authMiddleware.superAdminMiddleware, deleteVolunteer)
+router.put('/volunteer/:id',authMiddleware.authenticationMiddleware,authMiddleware.superAdminMiddleware, updateVolunteer)
+router.get('/getvolunteer/count',authMiddleware.authenticationMiddleware,authMiddleware.superAdminMiddleware, getAllVolunteerCount)
 
 // Admin middleware
 router.post('/volunteer/upload',authMiddleware.authenticationMiddleware,authMiddleware.adminMiddleware,createVolunteer)
-// router.get('/banner/:id',authMiddleware.authenticationMiddleware,authMiddleware.adminMiddleware, getBannerByID)
-// router.delete('/banner/:id',authMiddleware.authenticationMiddleware,authMiddleware.adminMiddleware, deleteBanner)
-// router.put('/banner/:id',authMiddleware.authenticationMiddleware,authMiddleware.adminMiddleware, updateBanner)
-// router.get('/getbanner/count',authMiddleware.authenticationMiddleware,authMiddleware.adminMiddleware, getAllBannerCount)
+router.get('/volunteer/:id',authMiddleware.authenticationMiddleware,authMiddleware.adminMiddleware, getVolunteerByID)
+router.delete('/volunteer/:id',authMiddleware.authenticationMiddleware,authMiddleware.adminMiddleware, deleteVolunteer)
+router.put('/volunteer/:id',authMiddleware.authenticationMiddleware,authMiddleware.adminMiddleware, updateVolunteer)
+router.get('/getvolunteer/count',authMiddleware.authenticationMiddleware,authMiddleware.adminMiddleware, getAllVolunteerCount)
 
 
 router.get('/volunteers',getAllVolunteers)

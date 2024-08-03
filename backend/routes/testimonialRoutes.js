@@ -1,20 +1,20 @@
-const {createTestimonial,getAllTestimonial} = require('../controllers/testimonialController.js')
+const {createTestimonial,getAllTestimonial,updateTestimonial,deleteTestimonial,getTestimonialByID,getAllTestimonialCount} = require('../controllers/testimonialController.js')
 const router = require('express').Router()
 const authMiddleware = require('../middleware/authMiddleware.js');
 
 // Super admin middleware
 router.post('/testimonial/upload',authMiddleware.authenticationMiddleware,authMiddleware.superAdminMiddleware,createTestimonial)
-// router.get('/banner/:id',authMiddleware.authenticationMiddleware,authMiddleware.superAdminMiddleware, getBannerByID)
-// router.delete('/banner/:id',authMiddleware.authenticationMiddleware,authMiddleware.superAdminMiddleware, deleteBanner)
-// router.put('/banner/:id',authMiddleware.authenticationMiddleware,authMiddleware.superAdminMiddleware, updateBanner)
-// router.get('/getbanner/count',authMiddleware.authenticationMiddleware,authMiddleware.superAdminMiddleware, getAllBannerCount)
+router.get('/testimonial/:id',authMiddleware.authenticationMiddleware,authMiddleware.superAdminMiddleware, getTestimonialByID)
+router.delete('/testimonial/:id',authMiddleware.authenticationMiddleware,authMiddleware.superAdminMiddleware, deleteTestimonial)
+router.put('/testimonial/:id',authMiddleware.authenticationMiddleware,authMiddleware.superAdminMiddleware, updateTestimonial)
+router.get('/gettestimonial/count',authMiddleware.authenticationMiddleware,authMiddleware.superAdminMiddleware, getAllTestimonialCount)
 
 // Admin middleware
 router.post('/testimonial/upload',authMiddleware.authenticationMiddleware,authMiddleware.adminMiddleware,createTestimonial)
-// router.get('/banner/:id',authMiddleware.authenticationMiddleware,authMiddleware.adminMiddleware, getBannerByID)
-// router.delete('/banner/:id',authMiddleware.authenticationMiddleware,authMiddleware.adminMiddleware, deleteBanner)
-// router.put('/banner/:id',authMiddleware.authenticationMiddleware,authMiddleware.adminMiddleware, updateBanner)
-// router.get('/getbanner/count',authMiddleware.authenticationMiddleware,authMiddleware.adminMiddleware, getAllBannerCount)
+router.get('/testimonial/:id',authMiddleware.authenticationMiddleware,authMiddleware.adminMiddleware, getTestimonialByID)
+router.delete('/testimonial/:id',authMiddleware.authenticationMiddleware,authMiddleware.adminMiddleware, deleteTestimonial)
+router.put('/testimonial/:id',authMiddleware.authenticationMiddleware,authMiddleware.adminMiddleware, updateTestimonial)
+router.get('/gettestimonial/count',authMiddleware.authenticationMiddleware,authMiddleware.adminMiddleware, getAllTestimonialCount)
 
 
 router.get('/testimonials',getAllTestimonial)

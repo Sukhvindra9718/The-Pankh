@@ -126,7 +126,7 @@ function VolunteerOverview() {
     };
     try {
       const { data } = await axios.put(
-        `http://localhost:3000/api/v1/banner/${updateId}`,
+        `http://localhost:3000/api/v1/volunteer/${updateId}`,
         Data,
         config
       );
@@ -194,7 +194,7 @@ function VolunteerOverview() {
         },
       };
       const { data } = await axios.delete(
-        `http://localhost:3000/api/v1/banner/${id}`,
+        `http://localhost:3000/api/v1/volunteer/${id}`,
         config
       );
 
@@ -231,7 +231,6 @@ function VolunteerOverview() {
     const filterData1 = data.filter((item) =>
       item.username.toLowerCase().includes(search.toLowerCase())
     );
-    setSearch("");
     setFilterData(filterData1);
   };
 
@@ -335,7 +334,7 @@ function VolunteerOverview() {
             <div className="close-btn" onClick={() => handleClose()}>
               <AiFillCloseCircle size={30} />
             </div>
-            <h1>Create Volunteer</h1>
+            {!isUpdate ? (<h1>Create Volunteer</h1>) : (<h1>Update Volunteer</h1>)}
             <div className="inputContainer">
               <input
                 type="text"
