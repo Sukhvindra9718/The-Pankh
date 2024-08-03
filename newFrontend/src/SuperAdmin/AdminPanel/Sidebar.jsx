@@ -181,6 +181,20 @@ function Sidebar({
           />
           <h4>Volunteer</h4>
         </div>
+        <div
+          className={
+            menuActive === 7
+              ? "sidebar-menu-item selected"
+              : "sidebar-menu-item"
+          }
+          onClick={() => setMenuActive(7)}
+        >
+          <BiCarousel
+            fill={menuActive === 7 ? "#fff" : "#717171"}
+            size={30}
+          />
+          <h4>Testimonial</h4>
+        </div>
       </div>
 
       <div className="sidebar-footer">

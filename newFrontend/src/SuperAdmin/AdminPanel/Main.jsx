@@ -6,6 +6,7 @@ import BannerOverview from '../Pages/BannerOverview';
 import KeyContactsOverview from '../Pages/KeyContactsOverview';
 import CarousalOverview from '../Pages/CarousalOverview';
 import VolunteerOverview from '../Pages/VolunteerOverview';
+import TestimonialOverview from '../Pages/TestimonialOverview';
 
 
 function Main({ menuActive, submenuActive }) {
@@ -18,6 +19,7 @@ function Main({ menuActive, submenuActive }) {
       {menuActive === 4 && <KeyContactsOverview />}
       {menuActive === 5 && <CarousalOverview />}
       {menuActive === 6 && <VolunteerOverview />}
+      {menuActive === 7 && <TestimonialOverview />}
     </div>
 
   )
