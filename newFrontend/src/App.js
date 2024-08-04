@@ -8,19 +8,15 @@ import { FaAngleUp } from "react-icons/fa";
 import HomeDefault from "./pages/HomeDefault";
 import About from "./pages/About";
 import Team from "./pages/Team";
-import TeamDetails from "./pages/TeamDetails";
 import Projects from "./pages/Projects";
 import ProjectDetails from "./pages/ProjectDetails";
 import Testimonials from "./pages/Testimonials";
 import Gallery from "./pages/Gallery";
 import Donation from "./pages/Donation";
-import DonationList from "./pages/DonationList";
 import DonationDetails from "./pages/DonationDetails";
 import DonateNow from "./pages/DonateNow";
 import Events from "./pages/Events";
 import BlogVersionOne from "./pages/BlogVersionOne";
-import BlogVersionTwo from "./pages/BlogVersionTwo";
-import BlogSidebar from "./pages/BlogSidebar";
 import BlogDetails from "./pages/BlogDetails";
 import Contact from "./pages/Contact";
 import Whoweare from "./pages/whoweare";
@@ -62,11 +58,6 @@ function App() {
           element={<Team />}
         />
         <Route
-          path={`${process.env.PUBLIC_URL}/team-details`}
-          exact
-          element={<TeamDetails />}
-        />
-        <Route
           path={`${process.env.PUBLIC_URL}/projects`}
           exact
           element={<Projects />}
@@ -92,11 +83,6 @@ function App() {
           element={<Donation />}
         />
         <Route
-          path={`${process.env.PUBLIC_URL}/donation-list`}
-          exact
-          element={<DonationList />}
-        />
-        <Route
           path={`${process.env.PUBLIC_URL}/donation-details`}
           exact
           element={<DonationDetails />}
@@ -112,22 +98,12 @@ function App() {
           element={<Events />}
         />
         <Route
-          path={`${process.env.PUBLIC_URL}/blog-v-1`}
+          path={`${process.env.PUBLIC_URL}/blogs`}
           exact
           element={<BlogVersionOne />}
         />
         <Route
-          path={`${process.env.PUBLIC_URL}/blog-v-2`}
-          exact
-          element={<BlogVersionTwo />}
-        />
-        <Route
-          path={`${process.env.PUBLIC_URL}/blog-sidebar`}
-          exact
-          element={<BlogSidebar />}
-        />
-        <Route
-          path={`${process.env.PUBLIC_URL}/blog-details`}
+          path={`${process.env.PUBLIC_URL}/blog-details/:id`}
           exact
           element={<BlogDetails />}
         />
