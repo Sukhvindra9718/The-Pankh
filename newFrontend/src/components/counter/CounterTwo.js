@@ -65,7 +65,7 @@ export default class CounterTwo extends React.Component {
                                                         <div className="default-coundown">
                                                             <div className="box">
                                                                 <div className="countdown time-countdown-two"
-                                                                    data-countdown-time="2023/03/01">
+                                                                    data-countdown-time="2024/08/14">
                                                                 </div>
                                                             </div>
                                                         </div>

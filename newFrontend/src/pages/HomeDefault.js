@@ -11,7 +11,7 @@ import SkillOne from "../components/skills/SkillOne";
 import TeamOne from "../components/team/TeamOne";
 import VideoOne from '../components/video/VideoOne';
 import TestimonialOne from '../components/testimonial/TestimonialOne';
-// import BlogSectionThree from '../components/blog/BlogSectionThree';
+import BlogSectionThree from '../components/blog/BlogSectionThree';
 import FooterOne from '../common/footer/FooterOne';
 
 const HomeDefault = () => {
@@ -29,7 +29,7 @@ const HomeDefault = () => {
             <TeamOne />
             <VideoOne />
             <TestimonialOne />
-            {/* <BlogSectionThree /> */}
+            <BlogSectionThree />
             <FooterOne />
         </>
     )
