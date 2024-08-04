@@ -21,7 +21,7 @@ export default class HeaderOne extends React.Component {
                       </div>
                       <div className="text">
                         <p>
-                          <a href="tel:5204654544">+5204654544</a>
+                          <a href="tel:5204654544">0120-6055473</a>
                         </p>
                       </div>
                     </li>
@@ -31,7 +31,7 @@ export default class HeaderOne extends React.Component {
                       </div>
                       <div className="text">
                         <p>
-                          <a href="mailto:demo@example.com">demo@example.com</a>
+                          <a href="mailto:mail@thepankh.info">mail@thepankh.info</a>
                         </p>
                       </div>
                     </li>
@@ -40,7 +40,7 @@ export default class HeaderOne extends React.Component {
                         <span className="icon-place"></span>
                       </div>
                       <div className="text">
-                        <p>24/21, 2nd Rangpur, Sapla</p>
+                        <p>Head Office: PK-22, Ground Floor, Sec-122, Noida (UP)-201307</p>
                       </div>
                     </li>
                   </ul>
@@ -48,7 +48,7 @@ export default class HeaderOne extends React.Component {
                 <div className="main-header__top-right">
                   <ul className="list-unstyled main-header__top-right-content">
                     <li>
-                      <Link to={process.env.PUBLIC_URL + `/`}>Login</Link>
+                      <Link to={process.env.PUBLIC_URL + `/login`}>Login</Link>
                     </li>
                     <li>
                       <Link to={process.env.PUBLIC_URL + `/`}>Help You</Link>

@@ -7,7 +7,7 @@ const Nav = () => {
       <nav>
         <ul className="main-menu__list">
           <li className="dropdown current">
-            <Link to={process.env.PUBLIC_URL + `#`}>Home</Link>
+            <Link to={process.env.PUBLIC_URL + `/`}>Home</Link>
           </li>
 
           <li className="dropdown">
