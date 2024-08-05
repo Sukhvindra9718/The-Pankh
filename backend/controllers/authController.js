@@ -10,6 +10,7 @@ const registerUser = async (req, res) => {
   try {
       // Process user registration
       const { username, password,phonenumber,role } = req.body;
+  
       const hashedPassword = await bcrypt.hash(password, 10);
       const imagePath = req.file.path;
       const filename = req.file.filename;

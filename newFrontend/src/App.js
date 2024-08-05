@@ -43,91 +43,91 @@ function App() {
       <ScrollToTopRoute />
       <Routes>
         <Route
-          path={`${process.env.PUBLIC_URL}/`}
+          path={`/`}
           exact
           element={<HomeDefault />}
         />
         <Route
-          path={`${process.env.PUBLIC_URL}/about`}
+          path={`/about`}
           exact
           element={<About />}
         />
         <Route
-          path={`${process.env.PUBLIC_URL}/team`}
+          path={`/team`}
           exact
           element={<Team />}
         />
         <Route
-          path={`${process.env.PUBLIC_URL}/projects`}
+          path={`/projects`}
           exact
           element={<Projects />}
         />
         <Route
-          path={`${process.env.PUBLIC_URL}/project-details`}
+          path={`/project-details`}
           exact
           element={<ProjectDetails />}
         />
         <Route
-          path={`${process.env.PUBLIC_URL}/testimonials`}
+          path={`/testimonials`}
           exact
           element={<Testimonials />}
         />
         <Route
-          path={`${process.env.PUBLIC_URL}/gallery`}
+          path={`/gallery`}
           exact
           element={<Gallery />}
         />
         <Route
-          path={`${process.env.PUBLIC_URL}/donation`}
+          path={`/donation`}
           exact
           element={<Donation />}
         />
         <Route
-          path={`${process.env.PUBLIC_URL}/donation-details`}
+          path={`/donation-details`}
           exact
           element={<DonationDetails />}
         />
         <Route
-          path={`${process.env.PUBLIC_URL}/donate-now`}
+          path={`/donate-now`}
           exact
           element={<DonateNow />}
         />
         <Route
-          path={`${process.env.PUBLIC_URL}/Events`}
+          path={`/Events`}
           exact
           element={<Events />}
         />
         <Route
-          path={`${process.env.PUBLIC_URL}/blogs`}
+          path={`/blogs`}
           exact
           element={<BlogVersionOne />}
         />
         <Route
-          path={`${process.env.PUBLIC_URL}/blog-details/:id`}
+          path={`/blog-details/:id`}
           exact
           element={<BlogDetails />}
         />
         <Route
-          path={`${process.env.PUBLIC_URL}/contact`}
+          path={`/contact`}
           exact
           element={<Contact />}
         />
         <Route
-          path={`${process.env.PUBLIC_URL}/dashboard`}
+          path={`/dashboard`}
           exact
           element={<Dashboard />}
         />
         <Route
-          path={`${process.env.PUBLIC_URL}/login`}
+          path={`/login`}
           exact
           element={<Login />}
         />
         <Route
-          path={`${process.env.PUBLIC_URL}/whoweare`}
+          path={`/whoweare`}
           exact
           element={<Whoweare />}
         />
-        <Route path={`${process.env.PUBLIC_URL}/*`} exact element={<Error />} />
+        <Route path={`/*`} exact element={<Error />} />
       </Routes>
       <ScrollToTop
         className="scrollUp"
