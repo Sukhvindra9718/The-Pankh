@@ -1,4 +1,4 @@
-const { createNews, getAllNews } = require("../controllers/newsController.js");
+const { createNews, getAllNews, deleteNews, updateNews, getAllNewsCount } = require("../controllers/newsController.js");
 const router = require("express").Router();
 const authMiddleware = require("../middleware/authMiddleware.js");
 
@@ -21,4 +21,20 @@ router.post(
 
 router.get("/news", getAllNews);
 
+router.delete(
+  "/news/:id",
+  authMiddleware.authenticationMiddleware,
+  authMiddleware.superAdminMiddleware,
+  deleteNews
+);
+
+router.put(
+  "/news/:id",
+  authMiddleware.authenticationMiddleware,
+  authMiddleware.superAdminMiddleware,
+  updateNews
+);
+
+router.get("/countNews/count", authMiddleware.authenticationMiddleware,
+  authMiddleware.superAdminMiddleware, getAllNewsCount);
 module.exports = router;

@@ -16,10 +16,12 @@ function NewsOverview() {
   const [uploadFormOpen, setUploadFormOpen] = React.useState(false);
   const [file, setFile] = React.useState("");
   const [showPreview, setShowPreview] = React.useState("");
+
   const [news, setNews] = React.useState({
     title: "",
-    shortdesc: "",
-    longdesc: "",
+    shortdescription: "",
+    longdescription: "",
+    newsdatetime: "",
   });
   const [isUpdate, setIsUpdate] = React.useState(false);
   const [updateId, setUpdateId] = React.useState(null);
@@ -77,8 +79,8 @@ function NewsOverview() {
         setIsDelete(!isDelete);
         setNews({
           title: "",
-          shortdesc: "",
-          longdesc: "",
+          shortdescription: "",
+          longdescription: "",
         });
         setFile(null);
       }
@@ -88,13 +90,12 @@ function NewsOverview() {
   };
 
   // Read All news
-  const getAllVolunteers = async () => {
+  const getAllNews = async () => {
     try {
       const res = await axios.get("http://localhost:3000/api/v1/news");
-
       if (res.data.success) {
-        setData(res.data.volunteers);
-        setFilterData(res.data.volunteers);
+        setData(res.data.news);
+        setFilterData(res.data.news);
       } else {
         console.log(res.data.message);
       }
@@ -128,8 +129,8 @@ function NewsOverview() {
         setIsDelete(!isDelete);
         setNews({
           title: "",
-          shortdesc: "",
-          longdesc: "",
+          shortdescription: "",
+          longdescription: "",
         });
         setUpdateId("");
         setFile(null);
@@ -138,22 +139,26 @@ function NewsOverview() {
       console.log(error);
     }
   };
+
   const handleShowPopup = (item) => {
     setNews({
       title: item.title,
-      shortdesc: item.shortdesc,
-      longdesc: item.longdesc,
+      shortdescription: item.shortdescription,
+      longdescription: item.longdescription,
+      newsdatetime: item.newsdatetime,
     });
     setShowPreview(item.fileurl);
     setUpdateId(item.id);
     setIsUpdate(true);
     setUploadFormOpen(true);
   };
+
   const handleClose = () => {
     setNews({
       title: "",
-      shortdesc: "",
-      longdesc: "",
+      shortdescription: "",
+      longdescription: "",
+      newsdatetime: "",
     });
     setShowPreview(null);
     setUpdateId("");
@@ -173,10 +178,7 @@ function NewsOverview() {
           Authorization: `${getTokenFromCookie()}`,
         },
       };
-      const { data } = await axios.delete(
-        `http://localhost:3000/api/v1/news/${id}`,
-        config
-      );
+      const { data } = await axios.delete(`http://localhost:3000/api/v1/news/${id}`, config);
 
       if (data.success) {
         setIsDelete(!isDelete);
@@ -189,18 +191,10 @@ function NewsOverview() {
     setShowSort(!showSort);
     switch (label) {
       case "Newest":
-        setFilterData(
-          [...data].sort(
-            (a, b) => new Date(b.createdat) - new Date(a.createdat)
-          )
-        );
+        setFilterData([...data].sort((a, b) => new Date(b.createdat) - new Date(a.createdat)));
         break;
       case "Oldest":
-        setFilterData(
-          [...data].sort(
-            (a, b) => new Date(a.createdat) - new Date(b.createdat)
-          )
-        );
+        setFilterData([...data].sort((a, b) => new Date(a.createdat) - new Date(b.createdat)));
         break;
       default:
         break;
@@ -216,14 +210,14 @@ function NewsOverview() {
   };
 
   useEffect(() => {
-    getAllVolunteers();
+    getAllNews();
     // eslint-disable-next-line
   }, [isDelete]);
   return (
     <div style={{ position: "relative" }}>
       <div className="filter-membership-container">
         <div className="header-table">
-          <h1>All Volunteers</h1>
+          <h1>All news</h1>
           <div className="add-btn" onClick={() => setUploadFormOpen(true)}>
             <AiOutlinePlus size={25} style={{ cursor: "pointer" }} />
             <h2>Add news</h2>
@@ -254,9 +248,7 @@ function NewsOverview() {
                       sortList.map((item, index) => (
                         <div
                           className={
-                            selectedSortValue === item
-                              ? "dropdown-item selected"
-                              : "dropdown-item"
+                            selectedSortValue === item ? "dropdown-item selected" : "dropdown-item"
                           }
                           key={index}
                           onClick={() => handleSortOptionClick(item)}
@@ -276,7 +268,7 @@ function NewsOverview() {
         <div className="grid-container">
           <div className="grid-header">ID</div>
           <div className="grid-header">Title</div>
-          <div className="grid-header">Short Desc</div>
+          <div className="grid-header">Date and Time</div>
           <div className="grid-header">Action</div>
           {filterData?.length > 0 &&
             filterData.map((news) => (
@@ -288,20 +280,13 @@ function NewsOverview() {
                   {news.title}
                 </div>
                 <div className="grid-item" data-label="Short Desc">
-                  {news.shortdesc}
-                  <span className="tooltip">{news.shortdesc}</span>
+                  {news.newsdatetime}
+                  <span className="tooltip">{news.newsdatetime}</span>
                 </div>
                 <div className="grid-item" data-label="Action">
                   <div className="action-icons">
-                    <AiFillEdit
-                      size={25}
-                      onClick={() => handleShowPopup(news)}
-                    />
-                    <MdDelete
-                      size={25}
-                      color="red"
-                      onClick={() => handleDelete(news.id)}
-                    />
+                    <AiFillEdit size={25} onClick={() => handleShowPopup(news)} />
+                    <MdDelete size={25} color="red" onClick={() => handleDelete(news.id)} />
                   </div>
                 </div>
               </React.Fragment>
@@ -327,15 +312,22 @@ function NewsOverview() {
               <input
                 type="text"
                 placeholder="Short Desc"
-                name="shortdesc"
-                value={news.shortdesc}
+                name="shortdescription"
+                value={news.shortdescription}
                 onChange={handleDataChange}
               />
               <input
                 type="text"
                 placeholder="Long Desc"
-                name="longdesc"
-                value={news.longdesc}
+                name="longdescription"
+                value={news.longdescription}
+                onChange={handleDataChange}
+              />
+              <input
+                type="datetime-local"
+                placeholder="News date and time"
+                name="newsdatetime"
+                value={news.newsdatetime}
                 onChange={handleDataChange}
               />
               <input
