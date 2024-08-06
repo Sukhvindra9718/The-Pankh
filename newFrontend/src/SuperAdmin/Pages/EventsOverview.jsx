@@ -152,7 +152,7 @@ function EventsOverview() {
   const getAllEvents = async () => {
     try {
       const res = await axios.get("http://localhost:3000/api/v1/events");
-    console.log(res.data);
+      console.log(res.data);
       if (res.data.success) {
         setData(res.data.events);
         setFilterData(res.data.events);
