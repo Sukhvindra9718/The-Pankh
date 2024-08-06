@@ -8,19 +8,15 @@ import { FaAngleUp } from "react-icons/fa";
 import HomeDefault from "./pages/HomeDefault";
 import About from "./pages/About";
 import Team from "./pages/Team";
-import TeamDetails from "./pages/TeamDetails";
 import Projects from "./pages/Projects";
 import ProjectDetails from "./pages/ProjectDetails";
 import Testimonials from "./pages/Testimonials";
 import Gallery from "./pages/Gallery";
 import Donation from "./pages/Donation";
-import DonationList from "./pages/DonationList";
 import DonationDetails from "./pages/DonationDetails";
 import DonateNow from "./pages/DonateNow";
 import Events from "./pages/Events";
 import BlogVersionOne from "./pages/BlogVersionOne";
-import BlogVersionTwo from "./pages/BlogVersionTwo";
-import BlogSidebar from "./pages/BlogSidebar";
 import BlogDetails from "./pages/BlogDetails";
 import Contact from "./pages/Contact";
 import Whoweare from "./pages/whoweare";
@@ -47,111 +43,91 @@ function App() {
       <ScrollToTopRoute />
       <Routes>
         <Route
-          path={`${process.env.PUBLIC_URL}/`}
+          path={`/`}
           exact
           element={<HomeDefault />}
         />
         <Route
-          path={`${process.env.PUBLIC_URL}/about`}
+          path={`/about`}
           exact
           element={<About />}
         />
         <Route
-          path={`${process.env.PUBLIC_URL}/team`}
+          path={`/team`}
           exact
           element={<Team />}
         />
         <Route
-          path={`${process.env.PUBLIC_URL}/team-details`}
-          exact
-          element={<TeamDetails />}
-        />
-        <Route
-          path={`${process.env.PUBLIC_URL}/projects`}
+          path={`/projects`}
           exact
           element={<Projects />}
         />
         <Route
-          path={`${process.env.PUBLIC_URL}/project-details`}
+          path={`/project-details`}
           exact
           element={<ProjectDetails />}
         />
         <Route
-          path={`${process.env.PUBLIC_URL}/testimonials`}
+          path={`/testimonials`}
           exact
           element={<Testimonials />}
         />
         <Route
-          path={`${process.env.PUBLIC_URL}/gallery`}
+          path={`/gallery`}
           exact
           element={<Gallery />}
         />
         <Route
-          path={`${process.env.PUBLIC_URL}/donation`}
+          path={`/donation`}
           exact
           element={<Donation />}
         />
         <Route
-          path={`${process.env.PUBLIC_URL}/donation-list`}
-          exact
-          element={<DonationList />}
-        />
-        <Route
-          path={`${process.env.PUBLIC_URL}/donation-details`}
+          path={`/donation-details`}
           exact
           element={<DonationDetails />}
         />
         <Route
-          path={`${process.env.PUBLIC_URL}/donate-now`}
+          path={`/donate-now`}
           exact
           element={<DonateNow />}
         />
         <Route
-          path={`${process.env.PUBLIC_URL}/Events`}
+          path={`/Events`}
           exact
           element={<Events />}
         />
         <Route
-          path={`${process.env.PUBLIC_URL}/blog-v-1`}
+          path={`/blogs`}
           exact
           element={<BlogVersionOne />}
         />
         <Route
-          path={`${process.env.PUBLIC_URL}/blog-v-2`}
-          exact
-          element={<BlogVersionTwo />}
-        />
-        <Route
-          path={`${process.env.PUBLIC_URL}/blog-sidebar`}
-          exact
-          element={<BlogSidebar />}
-        />
-        <Route
-          path={`${process.env.PUBLIC_URL}/blog-details`}
+          path={`/blog-details/:id`}
           exact
           element={<BlogDetails />}
         />
         <Route
-          path={`${process.env.PUBLIC_URL}/contact`}
+          path={`/contact`}
           exact
           element={<Contact />}
         />
         <Route
-          path={`${process.env.PUBLIC_URL}/dashboard`}
+          path={`/dashboard`}
           exact
           element={<Dashboard />}
         />
         <Route
-          path={`${process.env.PUBLIC_URL}/login`}
+          path={`/login`}
           exact
           element={<Login />}
         />
         <Route
-          path={`${process.env.PUBLIC_URL}/whoweare`}
+          path={`/whoweare`}
           exact
           element={<Whoweare />}
         />
-        <Route path={`${process.env.PUBLIC_URL}/*`} exact element={<Error />} />
+        <Route path={`/*`} exact element={<Error />} />
       </Routes>
       <ScrollToTop
         className="scrollUp"

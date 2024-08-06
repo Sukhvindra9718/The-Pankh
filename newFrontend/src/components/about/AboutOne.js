@@ -95,7 +95,7 @@ export default class AboutOne extends React.Component {
                     </ul>
                     <div className="about-one__bottom-video-box">
                       <div className="about-one__btn-box">
-                        <a href="about.html" className="thm-btn about-one__btn">
+                        <a href="/about" className="thm-btn about-one__btn">
                           About More
                         </a>
                       </div>

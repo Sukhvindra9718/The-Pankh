@@ -13,9 +13,7 @@ const host = os.hostname();
 const pool = require("./db");
 const cloudinary = require("cloudinary");
 
-readdirSync("./routes").map((route) =>
-  app.use("/api", require("./routes/" + route))
-);
+readdirSync("./routes").map((route) => app.use("/api", require("./routes/" + route)));
 app.use("/public", express.static(path.join(__dirname, "public")));
 
 // app.use(cors());
@@ -31,7 +29,9 @@ app.use("/api/v1", require("./routes/imagesRoutes"));
 app.use("/api/v1", require("./routes/bannerRoutes"));
 app.use("/api/v1", require("./routes/carousalRoutes"));
 app.use("/api/v1", require("./routes/volunteerRoutes"));
+app.use("/api/v1", require("./routes/testimonialRoutes"));
 app.use("/api/v1", require("./routes/newsRoutes"));
+app.use("/api/v1", require("./routes/eventsRoutes"));
 
 cloudinary.config({
   cloud_name: config.CLOUDINARY_NAME,

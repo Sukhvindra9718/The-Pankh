@@ -22,9 +22,9 @@ export default class ContactInfo extends React.Component {
                 <div className="contact-info__single">
                   <h4 className="contact-info__title">Address</h4>
                   <p className="contact-info__text">
-                    88 Broklyn Golden Road Street. New York, United States of{" "}
+                    Head Office: PK-22, Ground Floor, Sec-122, Noida (UP)-201307{" "}
                     <br />
-                    America
+                    India
                   </p>
                 </div>
               </div>
@@ -34,13 +34,13 @@ export default class ContactInfo extends React.Component {
                   <h4 className="contact-info__title">Contact</h4>
                   <p className="contact-info__email-phone">
                     <a
-                      href="mailto:needhelp@company.com"
+                      href="mailto:mail@thepankh.info"
                       className="contact-info__email"
                     >
-                      needhelp@company.com
+                      mail@thepankh.info
                     </a>
-                    <a href="tel:13077760608" className="contact-info__phone">
-                      +1 (307) 776-0608
+                    <a href="tel:0120-6055473" className="contact-info__phone">
+                      0120-6055473
                     </a>
                   </p>
                 </div>

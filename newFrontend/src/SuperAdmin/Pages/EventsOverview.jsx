@@ -6,7 +6,7 @@ import axios from "axios";
 import { AiFillEdit, AiOutlinePlus, AiFillCloseCircle } from "react-icons/ai";
 const sortList = ["Newest", "Oldest"];
 
-function VolunteerOverview() {
+function EventsOverview() {
   const [isDelete, setIsDelete] = React.useState(false);
   const [showSort, setShowSort] = React.useState(false);
   const [selectedSortValue, setSelectedSortValue] = React.useState("");
@@ -16,14 +16,10 @@ function VolunteerOverview() {
   const [uploadFormOpen, setUploadFormOpen] = React.useState(false);
   const [file, setFile] = React.useState("");
   const [showPreview, setShowPreview] = React.useState("");
-  const [volunteer, setVolunteer] = React.useState({
-    username: "",
-    phonenumber: "",
-    role: "",
-    facebookurl: "",
-    twitterurl: "",
-    instagramurl: "",
-    linkedinurl: "",
+  const [events, setevents] = React.useState({
+    title: "",
+    shortdescription: "",
+    eventsdatetime: "",
   });
   const [isUpdate, setIsUpdate] = React.useState(false);
   const [updateId, setUpdateId] = React.useState(null);
@@ -45,7 +41,7 @@ function VolunteerOverview() {
 
   // Handle Image
   const handleDataChange = (e) => {
-    if (e.target.name === "volunteer") {
+    if (e.target.name === "events") {
       const reader = new FileReader();
 
       reader.onload = () => {
@@ -57,12 +53,13 @@ function VolunteerOverview() {
 
       reader.readAsDataURL(e.target.files[0]);
     } else {
-      setVolunteer({ ...volunteer, [e.target.name]: e.target.value });
+      setevents({ ...events, [e.target.name]: e.target.value });
     }
   };
 
-  // Create Volunteer
+  // Create events
   const handleUpload = async () => {
+    console.log(events);
     const config = {
       headers: {
         Authorization: `${getTokenFromCookie()}`,
@@ -71,22 +68,18 @@ function VolunteerOverview() {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:3000/api/v1/volunteer/upload",
-        { ...volunteer, file },
+        "http://localhost:3000/api/v1/events/upload",
+        { ...events, file },
         config
       );
 
       if (data.success) {
         setUploadFormOpen(false);
         setIsDelete(!isDelete);
-        setVolunteer({
-          username: "",
-          phonenumber: "",
-          role: "",
-          facebookurl: "",
-          twitterurl: "",
-          instagramurl: "",
-          linkedinurl: "",
+        setevents({
+          title: "",
+          shortdescription: "",
+          eventsdatetime: "",
         });
         setFile(null);
       }
@@ -95,23 +88,7 @@ function VolunteerOverview() {
     }
   };
 
-  // Read All Volunteer
-  const getAllVolunteers = async () => {
-    try {
-      const res = await axios.get("http://localhost:3000/api/v1/volunteers");
-
-      if (res.data.success) {
-        setData(res.data.volunteers);
-        setFilterData(res.data.volunteers);
-      } else {
-        console.log(res.data.message);
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  // Update Volunteer
+  // Update events
   const handleUpdate = async () => {
     const config = {
       headers: {
@@ -121,12 +98,12 @@ function VolunteerOverview() {
     };
 
     const Data = {
-      ...volunteer,
+      ...events,
       file: file ? file : undefined,
     };
     try {
       const { data } = await axios.put(
-        `http://localhost:3000/api/v1/volunteer/${updateId}`,
+        `http://localhost:3000/api/v1/events/${updateId}`,
         Data,
         config
       );
@@ -134,14 +111,10 @@ function VolunteerOverview() {
       if (data.success) {
         setUploadFormOpen(false);
         setIsDelete(!isDelete);
-        setVolunteer({
-          username: "",
-          phonenumber: "",
-          role: "",
-          facebookurl: "",
-          twitterurl: "",
-          instagramurl: "",
-          linkedinurl: "",
+        setevents({
+          title: "",
+          shortdescription: "",
+          longdesc: "",
         });
         setUpdateId("");
         setFile(null);
@@ -150,15 +123,12 @@ function VolunteerOverview() {
       console.log(error);
     }
   };
+
   const handleShowPopup = (item) => {
-    setVolunteer({
-      username: item.username,
-      phonenumber: item.phonenumber,
-      role: item.role,
-      facebookurl: item.facebookurl,
-      twitterurl: item.twitterurl,
-      instagramurl: item.instagramurl,
-      linkedinurl: item.linkedinurl,
+    setevents({
+      title: item.title,
+      shortdescription: item.shortdescription,
+      eventsdatetime: item.eventsdatetime,
     });
     setShowPreview(item.fileurl);
     setUpdateId(item.id);
@@ -166,14 +136,10 @@ function VolunteerOverview() {
     setUploadFormOpen(true);
   };
   const handleClose = () => {
-    setVolunteer({
-      username: "",
-      phonenumber: "",
-      role: "",
-      facebookurl: "",
-      twitterurl: "",
-      instagramurl: "",
-      linkedinurl: "",
+    setevents({
+      title: "",
+      shortdescription: "",
+      eventsdatetime: "",
     });
     setShowPreview(null);
     setUpdateId("");
@@ -182,7 +148,23 @@ function VolunteerOverview() {
     setUploadFormOpen(false);
   };
 
-  // Delete Volunteer
+  // Read All events
+  const getAllEvents = async () => {
+    try {
+      const res = await axios.get("http://localhost:3000/api/v1/events");
+    console.log(res.data);
+      if (res.data.success) {
+        setData(res.data.events);
+        setFilterData(res.data.events);
+      } else {
+        console.log(res.data.message);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  // Delete events
   const handleDelete = async (id) => {
     const confirm = window.confirm("Are you sure you want to delete this ?");
 
@@ -193,10 +175,7 @@ function VolunteerOverview() {
           Authorization: `${getTokenFromCookie()}`,
         },
       };
-      const { data } = await axios.delete(
-        `http://localhost:3000/api/v1/volunteer/${id}`,
-        config
-      );
+      const { data } = await axios.delete(`http://localhost:3000/api/v1/events/${id}`, config);
 
       if (data.success) {
         setIsDelete(!isDelete);
@@ -209,18 +188,10 @@ function VolunteerOverview() {
     setShowSort(!showSort);
     switch (label) {
       case "Newest":
-        setFilterData(
-          [...data].sort(
-            (a, b) => new Date(b.createdat) - new Date(a.createdat)
-          )
-        );
+        setFilterData([...data].sort((a, b) => new Date(b.createdat) - new Date(a.createdat)));
         break;
       case "Oldest":
-        setFilterData(
-          [...data].sort(
-            (a, b) => new Date(a.createdat) - new Date(b.createdat)
-          )
-        );
+        setFilterData([...data].sort((a, b) => new Date(a.createdat) - new Date(b.createdat)));
         break;
       default:
         break;
@@ -231,28 +202,30 @@ function VolunteerOverview() {
     const filterData1 = data.filter((item) =>
       item.username.toLowerCase().includes(search.toLowerCase())
     );
+    setSearch("");
     setFilterData(filterData1);
   };
 
   useEffect(() => {
-    getAllVolunteers();
+    getAllEvents();
     // eslint-disable-next-line
   }, [isDelete]);
+
   return (
     <div style={{ position: "relative" }}>
       <div className="filter-membership-container">
         <div className="header-table">
-          <h1>All Volunteers</h1>
+          <h1>All events</h1>
           <div className="add-btn" onClick={() => setUploadFormOpen(true)}>
             <AiOutlinePlus size={25} style={{ cursor: "pointer" }} />
-            <h2>Add Volunteer</h2>
+            <h2>Add events</h2>
           </div>
         </div>
         <div className="filter-membership-item">
           <div className="search-container">
             <input
               type="text"
-              placeholder="Search By Volunteer name"
+              placeholder="Search By events name"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               style={{ fontSize: "1rem" }}
@@ -273,9 +246,7 @@ function VolunteerOverview() {
                       sortList.map((item, index) => (
                         <div
                           className={
-                            selectedSortValue === item
-                              ? "dropdown-item selected"
-                              : "dropdown-item"
+                            selectedSortValue === item ? "dropdown-item selected" : "dropdown-item"
                           }
                           key={index}
                           onClick={() => handleSortOptionClick(item)}
@@ -294,33 +265,26 @@ function VolunteerOverview() {
       <div className="banner-table-container">
         <div className="grid-container">
           <div className="grid-header">ID</div>
-          <div className="grid-header">Full Name</div>
-          <div className="grid-header">Role</div>
+          <div className="grid-header">Title</div>
+          <div className="grid-header">Date and Time</div>
           <div className="grid-header">Action</div>
           {filterData?.length > 0 &&
-            filterData.map((volunteer) => (
-              <React.Fragment key={volunteer.id}>
+            filterData.map((events) => (
+              <React.Fragment key={events.id}>
                 <div className="grid-item" data-label="ID">
-                  {volunteer.id}
+                  {events.id}
                 </div>
-                <div className="grid-item" data-label="Full Name">
-                  {volunteer.username}
+                <div className="grid-item" data-label="Title">
+                  {events.title}
                 </div>
-                <div className="grid-item" data-label="Role">
-                  {volunteer.role}
-                  <span className="tooltip">{volunteer.role}</span>
+                <div className="grid-item" data-label="Short Desc">
+                  {events.eventsdatetime}
+                  <span className="tooltip">{events.eventsdatetime}</span>
                 </div>
                 <div className="grid-item" data-label="Action">
                   <div className="action-icons">
-                    <AiFillEdit
-                      size={25}
-                      onClick={() => handleShowPopup(volunteer)}
-                    />
-                    <MdDelete
-                      size={25}
-                      color="red"
-                      onClick={() => handleDelete(volunteer.id)}
-                    />
+                    <AiFillEdit size={25} onClick={() => handleShowPopup(events)} />
+                    <MdDelete size={25} color="red" onClick={() => handleDelete(events.id)} />
                   </div>
                 </div>
               </React.Fragment>
@@ -334,61 +298,33 @@ function VolunteerOverview() {
             <div className="close-btn" onClick={() => handleClose()}>
               <AiFillCloseCircle size={30} />
             </div>
-            {!isUpdate ? (<h1>Create Volunteer</h1>) : (<h1>Update Volunteer</h1>)}
+            <h1>Create events</h1>
             <div className="inputContainer">
               <input
                 type="text"
-                placeholder="Full name"
-                name="username"
-                value={volunteer.username}
+                placeholder="Title"
+                name="title"
+                value={events.title}
                 onChange={handleDataChange}
               />
               <input
                 type="text"
-                placeholder="Phone number"
-                name="phonenumber"
-                value={volunteer.phonenumber}
+                placeholder="Short Desc"
+                name="shortdescription"
+                value={events.shortdescription}
                 onChange={handleDataChange}
               />
               <input
-                type="text"
-                placeholder="Role"
-                name="role"
-                value={volunteer.role}
-                onChange={handleDataChange}
-              />
-              <input
-                type="text"
-                placeholder="Facebook Page URL"
-                name="facebookurl"
-                value={volunteer.facebookurl}
-                onChange={handleDataChange}
-              />
-              <input
-                type="text"
-                placeholder="Instagram Page URL"
-                name="instagramurl"
-                value={volunteer.instagramurl}
-                onChange={handleDataChange}
-              />
-              <input
-                type="text"
-                placeholder="Twitter Page URL"
-                name="twitterurl"
-                value={volunteer.twitterurl}
-                onChange={handleDataChange}
-              />
-              <input
-                type="text"
-                placeholder="LinkedIn Page URL"
-                name="linkedinurl"
-                value={volunteer.linkedinurl}
+                type="datetime-local"
+                placeholder="Event date and time"
+                name="eventsdatetime"
+                value={events.eventsdatetime}
                 onChange={handleDataChange}
               />
               <input
                 type="file"
-                id="volunteer"
-                name="volunteer"
+                id="events"
+                name="events"
                 accept="image/*"
                 onChange={handleDataChange}
               />
@@ -410,4 +346,4 @@ function VolunteerOverview() {
   );
 }
 
-export default VolunteerOverview;
+export default EventsOverview;

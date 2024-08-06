@@ -48,7 +48,7 @@ function Dashboard() {
   
   return (
     <div className="dashboard">
-      <div className='sidebar'>
+      <div className='dash_sidebar'>
         <Sidebar menuActive={menuActive} setMenuActive={setMenuActive} submenuActive={submenuActive} setSubmenuActive={setSubmenuActive}/>
       </div>
       <div className='dashboard-main'>

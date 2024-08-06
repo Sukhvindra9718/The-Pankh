@@ -68,13 +68,13 @@ export default class CounterOne extends React.Component {
                                 </div>
                             </div>
                         </div>
-                        <div className="row">
+                        {/* <div className="row">
                             <div className="col-xl-12">
                                 <div className="counter-one__btn-box text-center">
                                     <a href="about.html" className="thm-btn counter-one__btn">Read More</a>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </section>
             </>

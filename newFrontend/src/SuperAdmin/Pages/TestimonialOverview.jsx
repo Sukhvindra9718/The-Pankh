@@ -6,7 +6,7 @@ import axios from "axios";
 import { AiFillEdit, AiOutlinePlus, AiFillCloseCircle } from "react-icons/ai";
 const sortList = ["Newest", "Oldest"];
 
-function VolunteerOverview() {
+function TestimonialOverview() {
   const [isDelete, setIsDelete] = React.useState(false);
   const [showSort, setShowSort] = React.useState(false);
   const [selectedSortValue, setSelectedSortValue] = React.useState("");
@@ -16,14 +16,10 @@ function VolunteerOverview() {
   const [uploadFormOpen, setUploadFormOpen] = React.useState(false);
   const [file, setFile] = React.useState("");
   const [showPreview, setShowPreview] = React.useState("");
-  const [volunteer, setVolunteer] = React.useState({
-    username: "",
-    phonenumber: "",
+  const [testimonial, setTestimonial] = React.useState({
+    name: "",
+    comment: "",
     role: "",
-    facebookurl: "",
-    twitterurl: "",
-    instagramurl: "",
-    linkedinurl: "",
   });
   const [isUpdate, setIsUpdate] = React.useState(false);
   const [updateId, setUpdateId] = React.useState(null);
@@ -45,7 +41,7 @@ function VolunteerOverview() {
 
   // Handle Image
   const handleDataChange = (e) => {
-    if (e.target.name === "volunteer") {
+    if (e.target.name === "testimonial") {
       const reader = new FileReader();
 
       reader.onload = () => {
@@ -57,11 +53,11 @@ function VolunteerOverview() {
 
       reader.readAsDataURL(e.target.files[0]);
     } else {
-      setVolunteer({ ...volunteer, [e.target.name]: e.target.value });
+      setTestimonial({ ...testimonial, [e.target.name]: e.target.value });
     }
   };
 
-  // Create Volunteer
+  // Create testimonial
   const handleUpload = async () => {
     const config = {
       headers: {
@@ -71,22 +67,18 @@ function VolunteerOverview() {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:3000/api/v1/volunteer/upload",
-        { ...volunteer, file },
+        "http://localhost:3000/api/v1/testimonial/upload",
+        { ...testimonial, file },
         config
       );
 
       if (data.success) {
         setUploadFormOpen(false);
         setIsDelete(!isDelete);
-        setVolunteer({
-          username: "",
-          phonenumber: "",
+        setTestimonial({
+          name: "",
+          comment: "",
           role: "",
-          facebookurl: "",
-          twitterurl: "",
-          instagramurl: "",
-          linkedinurl: "",
         });
         setFile(null);
       }
@@ -95,14 +87,14 @@ function VolunteerOverview() {
     }
   };
 
-  // Read All Volunteer
-  const getAllVolunteers = async () => {
+  // Read All testimonial
+  const getAllTestimonials = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/v1/volunteers");
+      const res = await axios.get("http://localhost:3000/api/v1/testimonials");
 
       if (res.data.success) {
-        setData(res.data.volunteers);
-        setFilterData(res.data.volunteers);
+        setData(res.data.testimonial);
+        setFilterData(res.data.testimonial);
       } else {
         console.log(res.data.message);
       }
@@ -111,7 +103,7 @@ function VolunteerOverview() {
     }
   };
 
-  // Update Volunteer
+  // Update testimonial
   const handleUpdate = async () => {
     const config = {
       headers: {
@@ -121,12 +113,12 @@ function VolunteerOverview() {
     };
 
     const Data = {
-      ...volunteer,
+      ...testimonial,
       file: file ? file : undefined,
     };
     try {
       const { data } = await axios.put(
-        `http://localhost:3000/api/v1/volunteer/${updateId}`,
+        `http://localhost:3000/api/v1/testimonial/${updateId}`,
         Data,
         config
       );
@@ -134,14 +126,10 @@ function VolunteerOverview() {
       if (data.success) {
         setUploadFormOpen(false);
         setIsDelete(!isDelete);
-        setVolunteer({
-          username: "",
-          phonenumber: "",
+        setTestimonial({
+          name: "",
+          comment: "",
           role: "",
-          facebookurl: "",
-          twitterurl: "",
-          instagramurl: "",
-          linkedinurl: "",
         });
         setUpdateId("");
         setFile(null);
@@ -151,14 +139,10 @@ function VolunteerOverview() {
     }
   };
   const handleShowPopup = (item) => {
-    setVolunteer({
-      username: item.username,
-      phonenumber: item.phonenumber,
+    setTestimonial({
+      name: item.name,
+      comment: item.comment,
       role: item.role,
-      facebookurl: item.facebookurl,
-      twitterurl: item.twitterurl,
-      instagramurl: item.instagramurl,
-      linkedinurl: item.linkedinurl,
     });
     setShowPreview(item.fileurl);
     setUpdateId(item.id);
@@ -166,14 +150,10 @@ function VolunteerOverview() {
     setUploadFormOpen(true);
   };
   const handleClose = () => {
-    setVolunteer({
-      username: "",
-      phonenumber: "",
+    setTestimonial({
+      name: "",
+      comment: "",
       role: "",
-      facebookurl: "",
-      twitterurl: "",
-      instagramurl: "",
-      linkedinurl: "",
     });
     setShowPreview(null);
     setUpdateId("");
@@ -182,7 +162,7 @@ function VolunteerOverview() {
     setUploadFormOpen(false);
   };
 
-  // Delete Volunteer
+  // Delete testimonial
   const handleDelete = async (id) => {
     const confirm = window.confirm("Are you sure you want to delete this ?");
 
@@ -194,7 +174,7 @@ function VolunteerOverview() {
         },
       };
       const { data } = await axios.delete(
-        `http://localhost:3000/api/v1/volunteer/${id}`,
+        `http://localhost:3000/api/v1/testimonial/${id}`,
         config
       );
 
@@ -229,30 +209,30 @@ function VolunteerOverview() {
 
   const handleSearch = () => {
     const filterData1 = data.filter((item) =>
-      item.username.toLowerCase().includes(search.toLowerCase())
+      item.name.toLowerCase().includes(search.toLowerCase())
     );
     setFilterData(filterData1);
   };
 
   useEffect(() => {
-    getAllVolunteers();
+    getAllTestimonials();
     // eslint-disable-next-line
   }, [isDelete]);
   return (
     <div style={{ position: "relative" }}>
       <div className="filter-membership-container">
         <div className="header-table">
-          <h1>All Volunteers</h1>
+          <h1>All Testimonial</h1>
           <div className="add-btn" onClick={() => setUploadFormOpen(true)}>
             <AiOutlinePlus size={25} style={{ cursor: "pointer" }} />
-            <h2>Add Volunteer</h2>
+            <h2>Add testimonial</h2>
           </div>
         </div>
         <div className="filter-membership-item">
           <div className="search-container">
             <input
               type="text"
-              placeholder="Search By Volunteer name"
+              placeholder="Search By testimonial name"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               style={{ fontSize: "1rem" }}
@@ -298,28 +278,28 @@ function VolunteerOverview() {
           <div className="grid-header">Role</div>
           <div className="grid-header">Action</div>
           {filterData?.length > 0 &&
-            filterData.map((volunteer) => (
-              <React.Fragment key={volunteer.id}>
+            filterData.map((testimonial) => (
+              <React.Fragment key={testimonial.id}>
                 <div className="grid-item" data-label="ID">
-                  {volunteer.id}
+                  {testimonial.id}
                 </div>
                 <div className="grid-item" data-label="Full Name">
-                  {volunteer.username}
+                  {testimonial.name}
                 </div>
                 <div className="grid-item" data-label="Role">
-                  {volunteer.role}
-                  <span className="tooltip">{volunteer.role}</span>
+                  {testimonial.role}
+                  <span className="tooltip">{testimonial.role}</span>
                 </div>
                 <div className="grid-item" data-label="Action">
                   <div className="action-icons">
                     <AiFillEdit
                       size={25}
-                      onClick={() => handleShowPopup(volunteer)}
+                      onClick={() => handleShowPopup(testimonial)}
                     />
                     <MdDelete
                       size={25}
                       color="red"
-                      onClick={() => handleDelete(volunteer.id)}
+                      onClick={() => handleDelete(testimonial.id)}
                     />
                   </div>
                 </div>
@@ -334,65 +314,40 @@ function VolunteerOverview() {
             <div className="close-btn" onClick={() => handleClose()}>
               <AiFillCloseCircle size={30} />
             </div>
-            {!isUpdate ? (<h1>Create Volunteer</h1>) : (<h1>Update Volunteer</h1>)}
+            {!isUpdate ? (
+              <h1>Create testimonial</h1>
+            ) : (
+              <h1>Update testimonial</h1>
+            )}
             <div className="inputContainer">
               <input
                 type="text"
                 placeholder="Full name"
-                name="username"
-                value={volunteer.username}
-                onChange={handleDataChange}
-              />
-              <input
-                type="text"
-                placeholder="Phone number"
-                name="phonenumber"
-                value={volunteer.phonenumber}
+                name="name"
+                value={testimonial.name}
                 onChange={handleDataChange}
               />
               <input
                 type="text"
                 placeholder="Role"
                 name="role"
-                value={volunteer.role}
-                onChange={handleDataChange}
-              />
-              <input
-                type="text"
-                placeholder="Facebook Page URL"
-                name="facebookurl"
-                value={volunteer.facebookurl}
-                onChange={handleDataChange}
-              />
-              <input
-                type="text"
-                placeholder="Instagram Page URL"
-                name="instagramurl"
-                value={volunteer.instagramurl}
-                onChange={handleDataChange}
-              />
-              <input
-                type="text"
-                placeholder="Twitter Page URL"
-                name="twitterurl"
-                value={volunteer.twitterurl}
-                onChange={handleDataChange}
-              />
-              <input
-                type="text"
-                placeholder="LinkedIn Page URL"
-                name="linkedinurl"
-                value={volunteer.linkedinurl}
-                onChange={handleDataChange}
-              />
-              <input
-                type="file"
-                id="volunteer"
-                name="volunteer"
-                accept="image/*"
+                value={testimonial.role}
                 onChange={handleDataChange}
               />
             </div>
+            <textarea
+              placeholder="Comment"
+              name="comment"
+              value={testimonial.comment}
+              onChange={handleDataChange}
+            />
+            <input
+              type="file"
+              id="testimonial"
+              name="testimonial"
+              accept="image/*"
+              onChange={handleDataChange}
+            />
 
             <div className="preview-image">
               {file && <img src={file} alt="preview" />}
@@ -410,4 +365,4 @@ function VolunteerOverview() {
   );
 }
 
-export default VolunteerOverview;
+export default TestimonialOverview;

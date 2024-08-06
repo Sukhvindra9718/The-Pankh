@@ -19,6 +19,19 @@ const registerUser = async (req, res) => {
     );
 
     res.status(201).json(newUser.rows[0]);
+    // Process user registration
+    const { username, password, phonenumber, role } = req.body;
+
+    const hashedPassword = await bcrypt.hash(password, 10);
+    const imagePath = req.file.path;
+    const filename = req.file.filename;
+    const id = uuid.v4();
+    const newUser = await pool.query(
+      "INSERT INTO users (id,username,password,phonenumber,role, profile_picture_name,profile_picture_path) VALUES ($1, $2, $3,$4,$5,$6,$7) RETURNING *",
+      [id, username, hashedPassword, phonenumber, role, filename, imagePath]
+    );
+
+    res.status(201).json(newUser.rows[0]);
   } catch (error) {
     console.error(error.message);
     res.status(500).send("Server Error");

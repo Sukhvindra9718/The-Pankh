@@ -10,7 +10,7 @@ const BlogVersionOne = () => {
             <HeaderOne />
             <Breadcrumb 
                 heading="Blog Post"
-                currentPage="Blog V-2" 
+                currentPage="Blogs" 
             />
             <BlogOne />
             <FooterOne />

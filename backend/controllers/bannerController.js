@@ -41,14 +41,12 @@ exports.addBanner = async (req, res) => {
 
 exports.getAllBanners = async (req, res) => {
   try {
-    console.log("get all banners");
     const banners = await pool.query("SELECT * FROM banner");
     res.status(200).json({
       success: true,
       banner: banners.rows,
     });
   } catch (error) {
-    console.log(error);
     res.status(400).json({
       success: false,
       error: error.message,
