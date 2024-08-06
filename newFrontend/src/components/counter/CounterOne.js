@@ -20,7 +20,7 @@ export default class CounterOne extends React.Component {
         return (
             <>
                 <section className="counter-one">
-                    <div className="counter-one-bg jarallax" data-jarallax data-speed="0.2" data-imgPosition="50% 0%" style={{backgroundImage: 'url('+publicUrl+'assets/images/backgrounds/counter-one-bg.jpg)'}}></div>
+                    <div className="counter-one-bg jarallax" data-jarallax data-speed="0.2" data-imgposition="50% 0%" style={{backgroundImage: 'url('+publicUrl+'assets/images/backgrounds/counter-one-bg.jpg)'}}></div>
                     <div className="container">
                         <div className="section-title text-center">
                             <span className="section-title__tagline">Our Counter Now</span>
