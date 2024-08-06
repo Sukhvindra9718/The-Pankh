@@ -147,8 +147,8 @@ function FooterOne() {
                   <h3 className="footer-widget-one__title">Gallery</h3>
                   <ul className="footer-widget-one__gallery-list list-unstyled clearfix">
                     {images.length < 9 &&
-                      images.map((image) => (
-                        <li>
+                      images.map((image,index) => (
+                        <li key={index}>
                           <div className="footer-widget-one__gallery-img">
                             <img
                               src={image.fileurl}
