@@ -1,12 +1,19 @@
-import React, { useEffect, useState } from 'react'
-import "../../style/Dashboard.css"
+import React, { useEffect, useState } from "react";
+import "../../style/Dashboard.css";
 import axios from "axios";
 
-
 function DashboardOverview() {
-  const urls = ["user/getuser","common/getcontact","common/getkeycontact","v1/getbanner","v1/getcarousal","v1/getimage","v1/getvideo"]
-  const [rowCount,setRowCount] = useState([])
-
+  const urls = [
+    "user/getuser",
+    "common/getcontact",
+    "common/getkeycontact",
+    "v1/getbanner",
+    "v1/getcarousal",
+    "v1/getimage",
+    "v1/getvideo",
+    "v1/countNews",
+  ];
+  const [rowCount, setRowCount] = useState([]);
 
   const getTokenFromCookie = () => {
     const name = "token=";
@@ -21,7 +28,7 @@ function DashboardOverview() {
     }
     return "";
   };
-  useEffect(()=>{
+  useEffect(() => {
     const getAllCounts = async () => {
       try {
         const config = {
@@ -36,34 +43,33 @@ function DashboardOverview() {
             return res.data;
           })
         );
-
+        console.log(responses);
         // Extract relevant data from responses
         const arr = responses.map((data) => ({
           tableName: data.tableName,
           count: data.count,
         }));
-      
+        console.log(arr);
         setRowCount(arr);
-  
-
       } catch (error) {
         console.log(error);
       }
     };
 
     return () => getAllCounts();
-  },[urls])
+  }, []);
 
   return (
-    <div className='Count-Container'>
-      {rowCount.length > 0 && rowCount.map((data,index)=>(
-        <div key={index} className='Count-Card'>
-          <span>{data.tableName}</span>
-          <span>{data.count}</span>
-        </div>
-      ))}
+    <div className="Count-Container">
+      {rowCount.length > 0 &&
+        rowCount.map((data, index) => (
+          <div key={index} className="Count-Card">
+            <span>{data.tableName}</span>
+            <span>{data.count}</span>
+          </div>
+        ))}
     </div>
-  )
+  );
 }
 
-export default DashboardOverview
+export default DashboardOverview;
