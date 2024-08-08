@@ -149,7 +149,7 @@ exports.getAllFundDetailsCount = async (req, res) => {
     res.status(200).json({
       success: true,
       tableName: "fund",
-      count: fund.rows.length,
+      count: fund.rows[0].count,
     });
   } catch (error) {
     res.status(400).json({
