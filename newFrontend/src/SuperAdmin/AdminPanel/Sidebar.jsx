@@ -140,6 +140,13 @@ function Sidebar({ menuActive, setMenuActive, submenuActive, setSubmenuActive })
           <BiCarousel fill={menuActive === 9 ? "#fff" : "#717171"} size={30} />
           <h4>events</h4>
         </div>
+        <div
+          className={menuActive === 10 ? "sidebar-menu-item selected" : "sidebar-menu-item"}
+          onClick={() => setMenuActive(10)}
+        >
+          <BiCarousel fill={menuActive === 10 ? "#fff" : "#717171"} size={30} />
+          <h4>Projects</h4>
+        </div>
       </div>
 
       <div className="sidebar-footer">

@@ -9,6 +9,7 @@ import VolunteerOverview from "../Pages/VolunteerOverview";
 import NewsOverview from "../Pages/NewsOverview";
 import TestimonialOverview from "../Pages/TestimonialOverview";
 import EventsOverview from "../Pages/EventsOverview";
+import ProjectOverview from "../Pages/ProjectOverview";
 
 function Main({ menuActive, submenuActive }) {
   return (
@@ -23,6 +24,7 @@ function Main({ menuActive, submenuActive }) {
       {menuActive === 7 && <NewsOverview />}
       {menuActive === 8 && <TestimonialOverview />}
       {menuActive === 9 && <EventsOverview />}
+      {menuActive === 10 && <ProjectOverview />}
     </div>
   );
 }

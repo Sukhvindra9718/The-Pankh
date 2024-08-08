@@ -72,7 +72,30 @@ pool.connect((err, client, release) => {
     console.log("Database connected:", result.rows);
   });
 });
+// const createProjectTable = async () => {
+//   const createTableQuery = `
+//     CREATE TABLE IF NOT EXISTS projects (
+//       id VARCHAR(40) PRIMARY KEY NOT NULL,
+//       title VARCHAR NOT NULL,
+//       description VARCHAR NOT NULL,
+//       fileid VARCHAR NOT NULL,
+//       fileurl VARCHAR NOT NULL,
+//       createdat TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP
+//     );
+//   `;
 
+//   try {
+//     const client = await pool.connect();
+//     await client.query(createTableQuery);
+//     console.log("Table 'projects' created successfully");
+//   } catch (err) {
+//     console.error('Error creating table', err.stack);
+//   } finally {
+
+//   }
+// };
+
+// createProjectTable();
 pool.on("error", (err) => {
   console.error("Unexpected error on idle client", err);
   process.exit(-1);
