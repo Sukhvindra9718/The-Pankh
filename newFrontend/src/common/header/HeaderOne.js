@@ -31,7 +31,9 @@ export default class HeaderOne extends React.Component {
                       </div>
                       <div className="text">
                         <p>
-                          <a href="mailto:mail@thepankh.info">mail@thepankh.info</a>
+                          <a href="mailto:mail@thepankh.info">
+                            mail@thepankh.info
+                          </a>
                         </p>
                       </div>
                     </li>
@@ -40,7 +42,10 @@ export default class HeaderOne extends React.Component {
                         <span className="icon-place"></span>
                       </div>
                       <div className="text">
-                        <p>Head Office: PK-22, Ground Floor, Sec-122, Noida (UP)-201307</p>
+                        <p>
+                          Head Office: PK-22, Ground Floor, Sec-122, Noida
+                          (UP)-201307
+                        </p>
                       </div>
                     </li>
                   </ul>

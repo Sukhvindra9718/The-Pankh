@@ -11,19 +11,11 @@ exports.addBanner = async (req, res) => {
     const id = uuid.v4();
     const myCloud = await cloudinary.v2.uploader.upload(file, {
       folder: "thepankh/banner",
-      width: 1000,
-      height: 1000,
       Crop: "fill",
     });
     await pool.query(
       "INSERT INTO banner (id,pagename,fileid,fileurl,createdat) VALUES ($1, $2, $3,$4,$5) RETURNING *",
-      [
-        id,
-        pagename.toLowerCase(),
-        myCloud.public_id,
-        myCloud.secure_url,
-        created_at,
-      ]
+      [id, pagename, myCloud.public_id, myCloud.secure_url, created_at]
     );
 
     res.status(200).json({
@@ -55,10 +47,14 @@ exports.getAllBanners = async (req, res) => {
   }
 };
 
-exports.getBannerByID = async (req, res) => {
+exports.getBannerByName = async (req, res) => {
   try {
-    const { id } = req.params;
-    const banner = await pool.query("SELECT * FROM banner WHERE id = $1", [id]);
+    const { name } = req.params;
+
+    const banner = await pool.query(
+      "SELECT * FROM banner WHERE pagename = $1",
+      [name]
+    );
     if (banner.rows.length === 0) {
       return res.status(404).json({ success: false, msg: "Banner not found" });
     }
@@ -113,8 +109,6 @@ exports.updateBanner = async (req, res) => {
       await cloudinary.v2.uploader.destroy(fileid);
       const myCloud = await cloudinary.v2.uploader.upload(file, {
         folder: "thepankh/banner",
-        width: 1000,
-        height: 1000,
         Crop: "fill",
       });
       await pool.query(
