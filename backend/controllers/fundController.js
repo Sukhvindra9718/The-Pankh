@@ -11,8 +11,6 @@ exports.addfundDetails = async (req, res) => {
     const id = uuid.v4();
     const myCloud = await cloudinary.v2.uploader.upload(file, {
       folder: "thepankh/fund",
-      width: 1000,
-      height: 1000,
       Crop: "fill",
     });
     await pool.query(
@@ -117,8 +115,6 @@ exports.updateFundDetails = async (req, res) => {
       await cloudinary.v2.uploader.destroy(fileid);
       const myCloud = await cloudinary.v2.uploader.upload(file, {
         folder: "thepankh/fund",
-        width: 1000,
-        height: 1000,
         Crop: "fill",
       });
       await pool.query(
