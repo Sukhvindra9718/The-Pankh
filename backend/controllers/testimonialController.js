@@ -143,7 +143,7 @@ exports.getAllTestimonialCount = async (req, res) => {
     res.status(200).json({
       success: true,
       tableName: "Testimonial",
-      count: testimonial.rows.length,
+      count: testimonial.rows[0].count,
     });
   } catch (error) {
     res.status(400).json({
