@@ -55,8 +55,7 @@ function HeroOne() {
                   <div
                     className="image-layer"
                     style={{
-                      backgroundImage:
-                        `url(${item.fileurl})`,
+                      backgroundImage: `url(${item.fileurl})`,
                     }}
                   ></div>
                   <div className="main-slider-shape-1"></div>
@@ -108,7 +107,7 @@ function HeroOne() {
               ))
             ) : (
               <>
-              <SwiperSlide className="swiper-slide">
+                <SwiperSlide className="swiper-slide">
                   <div
                     className="image-layer"
                     style={{
