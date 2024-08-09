@@ -20,7 +20,8 @@ const About = () => {
             />
             <AboutOne />
             <CounterOne />
-            <ProjectOne />
+            <div style={{height:"100px"}}></div>
+            {/* <ProjectOne /> */}
             <SkillsOne />
             <TeamOne />
             <VideoOne />

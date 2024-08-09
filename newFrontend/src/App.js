@@ -73,7 +73,7 @@ function App() {
           element={<Testimonials />}
         />
         <Route
-          path={`/gallery`}
+          path={`/videos`}
           exact
           element={<Gallery />}
         />
@@ -121,6 +121,11 @@ function App() {
           path={`/login`}
           exact
           element={<Login />}
+        />
+        <Route
+          path={`/images`}
+          exact
+          element={<Gallery />}
         />
         <Route
           path={`/whoweare`}

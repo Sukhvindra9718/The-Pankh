@@ -69,6 +69,7 @@ function TeamOne() {
               <div
                 className="wow fadeInLeft owl-carousel owl-theme thm-owl__carousel testimonial-one__carousel"
                 data-wow-delay="100ms"
+                key={volunteers.length}
               >
                 {volunteers.map((volunteer, index) => (
                   <>
