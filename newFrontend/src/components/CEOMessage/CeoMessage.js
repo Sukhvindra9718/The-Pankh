@@ -6,6 +6,7 @@ function CeoMessage() {
       <div style={{ marginBottom: "1rem" }}>
         <h3> CEO's MESSAGE</h3>
       </div>
+
       <div>
         <p>
           With Immense pleasure, I would like to reflect into the miles of
