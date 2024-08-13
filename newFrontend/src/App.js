@@ -21,7 +21,7 @@ import BlogDetails from "./pages/BlogDetails";
 import Contact from "./pages/Contact";
 import Whoweare from "./pages/whoweare";
 import Error from "./pages/Error";
-import Dashboard from "./superAdmin/AdminPanel/AdminPanel";
+import Dashboard from "./SuperAdmin/AdminPanel/AdminPanel";
 import ScrollToTopRoute from "./components/scroll-to-top-route/ScrollToTopRoute";
 import Login from "./pages/Login";
 
