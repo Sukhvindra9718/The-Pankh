@@ -27,7 +27,10 @@ export default class WhoweareDetails extends React.Component {
           <div className="container">
             <div className="team-details__inner">
               <div className="row">
-                <div className="col-xl-6 col-lg-6">
+                <div
+                  className="col-xl-6 col-lg-6"
+                  style={{ marginTop: "4rem" }}
+                >
                   <div className="team-details__top-left">
                     <div className="team-details__top-img">
                       <img
@@ -56,7 +59,10 @@ export default class WhoweareDetails extends React.Component {
                         developing value chains. By enhancing human, social,
                         natural, physical, and financial capital.
                       </p>
-                      <p className="team-details__top-text-3">
+                      <p
+                        className="team-details__top-text-3"
+                        style={{ marginBottom: "4rem" }}
+                      >
                         PANKH strives to uplift marginalized population and
                         communities in need. Originally operating as a voluntary
                         organization and catering support to the communities of
