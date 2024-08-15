@@ -21,7 +21,7 @@ import BlogDetails from "./pages/BlogDetails";
 import Contact from "./pages/Contact";
 import Whoweare from "./pages/whoweare";
 import Error from "./pages/Error";
-import Dashboard from "./superAdmin/AdminPanel/AdminPanel";
+import Dashboard from "./SuperAdmin/AdminPanel/AdminPanel";
 import ScrollToTopRoute from "./components/scroll-to-top-route/ScrollToTopRoute";
 import Login from "./pages/Login";
 import ThePankhModel from "./pages/ThePankhModel";
@@ -61,6 +61,24 @@ function App() {
         <Route path={`/whoweare`} exact element={<Whoweare />} />
         <Route path={`/thepankhmodel`} exact element={<ThePankhModel />} />
 
+        <Route path={`/`} exact element={<HomeDefault />} />
+        <Route path={`/about`} exact element={<About />} />
+        <Route path={`/team`} exact element={<Team />} />
+        <Route path={`/projects`} exact element={<Projects />} />
+        <Route path={`/project-details`} exact element={<ProjectDetails />} />
+        <Route path={`/testimonials`} exact element={<Testimonials />} />
+        <Route path={`/videos`} exact element={<Gallery />} />
+        <Route path={`/donation`} exact element={<Donation />} />
+        <Route path={`/donation-details`} exact element={<DonationDetails />} />
+        <Route path={`/donate-now`} exact element={<DonateNow />} />
+        <Route path={`/Events`} exact element={<Events />} />
+        <Route path={`/blogs`} exact element={<BlogVersionOne />} />
+        <Route path={`/blog-details/:id`} exact element={<BlogDetails />} />
+        <Route path={`/contact`} exact element={<Contact />} />
+        <Route path={`/dashboard`} exact element={<Dashboard />} />
+        <Route path={`/login`} exact element={<Login />} />
+        <Route path={`/images`} exact element={<Gallery />} />
+        <Route path={`/whoweare`} exact element={<Whoweare />} />
         <Route path={`/*`} exact element={<Error />} />
       </Routes>
       <ScrollToTop

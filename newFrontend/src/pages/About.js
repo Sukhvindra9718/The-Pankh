@@ -2,7 +2,7 @@ import React from "react";
 import HeaderOne from "../common/header/HeaderOne";
 import Breadcrumb from "../common/breadcrumb/Breadcrumb";
 import AboutOne from "../components/about/AboutOne";
-import ProjectOne from "../components/project/ProjectOne";
+// import ProjectOne from '../components/project/ProjectOne';
 import SkillsOne from "../components/skills/SkillOne";
 import TeamOne from "../components/team/TeamOne";
 import VideoOne from "../components/video/VideoOne";
@@ -16,11 +16,10 @@ const About = () => {
     <>
       <HeaderOne />
       <Breadcrumb heading="About Us" currentPage="About" />
-      <WelcomNotes />
       <AboutOne />
-
       <CounterOne />
-      <ProjectOne />
+      <div style={{ height: "100px" }}></div>
+      {/* <ProjectOne /> */}
       <SkillsOne />
       <TeamOne />
       <VideoOne />
