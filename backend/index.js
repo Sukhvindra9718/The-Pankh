@@ -34,6 +34,8 @@ app.use("/api/v1", require("./routes/newsRoutes"));
 app.use("/api/v1", require("./routes/eventsRoutes"));
 app.use("/api/v1", require("./routes/fundDetailsRoutes"));
 app.use("/api/v1", require("./routes/projectRoutes"));
+app.use("/api/v1", require("./routes/donationRoutes.js"));
+app.use("/api/v1", require("./routes/bankdetailsRoutes.js"));
 
 cloudinary.config({
   cloud_name: config.CLOUDINARY_NAME,
