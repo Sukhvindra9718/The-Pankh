@@ -2,6 +2,7 @@ const pool = require("../db");
 const fs = require("fs");
 const uuid = require("uuid");
 const cloudinary = require("cloudinary");
+const { error } = require("console");
 
 // Projects CRUD
 exports.addProject = async (req, res) => {
@@ -48,8 +49,9 @@ exports.getAllProjects = async (req, res) => {
       success: true,
       projects: projects.rows,
     });
+
   } catch (error) {
-    res.status(400).json({
+    res.status(200).json({
       success: false,
       error: error.message,
       userError: "Projects fetch failed",

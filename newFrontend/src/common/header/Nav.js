@@ -18,6 +18,12 @@ const Nav = () => {
                   Who We are
                 </Link>
               </li>
+
+              <li>
+                <Link to={process.env.PUBLIC_URL + `/thepankhmodel`}>
+                  The Pankh Model
+                </Link>
+              </li>
             </ul>
           </li>
 
@@ -42,27 +48,16 @@ const Nav = () => {
             <Link to={process.env.PUBLIC_URL + `#`}>Gallery</Link>
             <ul>
               <li>
-                <Link to={process.env.PUBLIC_URL + `/images`}>
-                  Images
-                </Link>
+                <Link to={process.env.PUBLIC_URL + `/images`}>Images</Link>
               </li>
               <li>
                 <Link to={process.env.PUBLIC_URL + `/videos`}>Videos</Link>
               </li>
             </ul>
           </li>
-          <li className="dropdown">
-            <Link to={process.env.PUBLIC_URL + `#`}>Donation</Link>
-            <ul>
-              <li>
-                <Link to={process.env.PUBLIC_URL + `/donation`}>Donation</Link>
-              </li>
-              <li>
-                <Link to={process.env.PUBLIC_URL + `/donate-now`}>
-                  Donate Now
-                </Link>
-              </li>
-            </ul>
+
+          <li>
+            <Link to={process.env.PUBLIC_URL + `/donate-now`}>Donation</Link>
           </li>
           <li>
             <Link to={process.env.PUBLIC_URL + `/events`}>Events</Link>

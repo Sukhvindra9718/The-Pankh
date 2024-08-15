@@ -55,10 +55,10 @@ export default class HeaderOne extends React.Component {
                     <li>
                       <Link to={process.env.PUBLIC_URL + `/login`}>Login</Link>
                     </li>
-                    <li>
+                    {/* <li>
                       <Link to={process.env.PUBLIC_URL + `/`}>Help You</Link>
-                    </li>
-                    <SearchButton />
+                    </li> */}
+                    {/* <SearchButton /> */}
                   </ul>
                 </div>
               </div>

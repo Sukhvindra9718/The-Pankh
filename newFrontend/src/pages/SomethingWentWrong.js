@@ -4,18 +4,18 @@ import Breadcrumb from '../common/breadcrumb/Breadcrumb';
 import ErrorContent from '../components/error/ErrorContent';
 import FooterOne from '../common/footer/FooterOne';
 
-const Error = () => {
+const SomethingWentWrong = () => {
     return (
         <>
             <HeaderOne />
             <Breadcrumb 
-                heading="404 Error"
-                currentPage="404 Error" 
+                heading="Something Went Wrong"
+                currentPage="Something Went Wrong" 
             />
-            <ErrorContent msg={"Sorry This Page Not found take a look at our most popular"}/>
+            <ErrorContent msg={"Something Went Wrong, Please Try Again After Sometime"}/>
             <FooterOne />
         </>
     )
 }
 
-export default Error;
+export default SomethingWentWrong;

@@ -800,12 +800,12 @@ th {
 
 /* ****** icon causes *********** */
 
-.icon-causes {
-  /* position: absolute; */
+/* .icon-causes {
+  position: absolute;
   right: 5px;
   top: 5px;
   font-size: 1.5rem;
   cursor: pointer;
   transition: all 0.9s ease-in-out;
   fill: rgb(122, 84, 34);
-}
+} */

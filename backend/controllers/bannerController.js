@@ -56,7 +56,7 @@ exports.getBannerByName = async (req, res) => {
       [name]
     );
     if (banner.rows.length === 0) {
-      return res.status(404).json({ success: false, msg: "Banner not found" });
+      return res.status(200).json({ success: false, msg: "Banner not found" });
     }
     res.status(200).json({
       success: true,
@@ -77,7 +77,7 @@ exports.deleteBanner = async (req, res) => {
     const banner = await pool.query("SELECT * FROM banner WHERE id = $1", [id]);
 
     if (banner.rows.length === 0) {
-      return res.status(404).json({ success: false, msg: "Banner not found" });
+      return res.status(200).json({ success: false, msg: "Banner not found" });
     } else {
       const fileid = banner.rows[0].fileid;
       await cloudinary.v2.uploader.destroy(fileid);

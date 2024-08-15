@@ -59,16 +59,17 @@ function TestimonialOne() {
   }, []);
   return (
     <>
-      <section className="testimonial-one">
+      {testimonial.length > 0 ? (<section className="testimonial-one">
         <div className="container">
           <div className="row">
-            {testimonial.length > 0 && (
+            
               <div
                 className="wow fadeInLeft owl-carousel owl-theme thm-owl__carousel testimonial-one__carousel"
                 data-wow-delay="100ms"
+                
               >
-                {testimonial.map((item) => (
-                  <div className="testimonial-one__single">
+                {testimonial.map((item,index) => (
+                  <div className="testimonial-one__single" key={index}>
                     <div className="testimonial-one__img">
                       <img src={item.fileurl} alt="" />
                       <div className="testimonial-one__quote">
@@ -87,10 +88,12 @@ function TestimonialOne() {
                   </div>
                 ))}
               </div>
-            )}
+           
           </div>
         </div>
-      </section>
+      </section> ):(
+        <div className="container" style={{height:"100px"}}></div>
+      )}
     </>
   );
 }
