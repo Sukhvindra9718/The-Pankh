@@ -214,7 +214,7 @@ const MobileMenu = () => {
               <div className="logo-box">
                 <Link to={process.env.PUBLIC_URL + `/`} aria-label="logo image">
                   <img
-                    src={publicUrl + "assets/images/resources/footer-logo.png"}
+                    src={publicUrl + "assets/images/Logo.jpeg"}
                     width="155"
                     alt=""
                   />

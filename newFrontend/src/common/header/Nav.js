@@ -55,18 +55,9 @@ const Nav = () => {
               </li>
             </ul>
           </li>
-          <li className="dropdown">
-            <Link to={process.env.PUBLIC_URL + `#`}>Donation</Link>
-            <ul>
-              <li>
-                <Link to={process.env.PUBLIC_URL + `/donation`}>Donation</Link>
-              </li>
-              <li>
-                <Link to={process.env.PUBLIC_URL + `/donate-now`}>
-                  Donate Now
-                </Link>
-              </li>
-            </ul>
+
+          <li>
+            <Link to={process.env.PUBLIC_URL + `/donate-now`}>Donation</Link>
           </li>
           <li>
             <Link to={process.env.PUBLIC_URL + `/events`}>Events</Link>

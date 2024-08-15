@@ -1,4 +1,4 @@
-import React, {useState,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
@@ -147,16 +147,15 @@ function FooterOne() {
                   <h3 className="footer-widget-one__title">Gallery</h3>
                   <ul className="footer-widget-one__gallery-list list-unstyled clearfix">
                     {images.length < 9 &&
-                      images.map((image,index) => (
+                      images.map((image, index) => (
                         <li key={index}>
                           <div className="footer-widget-one__gallery-img">
-                            <img
-                              src={image.fileurl}
-                              
-                              alt=""
-                            />
+                            <img src={image.fileurl} alt="" />
                             <Link
-                              to={process.env.PUBLIC_URL + `/project-details/${image.id}`}
+                              to={
+                                process.env.PUBLIC_URL +
+                                `/project-details/${image.id}`
+                              }
                             >
                               <span className="fa fa-link"></span>
                             </Link>
@@ -203,76 +202,7 @@ function FooterOne() {
               <div
                 className="col-xl-3 col-lg-6 col-md-6 wow fadeInUp"
                 data-wow-delay="400ms"
-              >
-                <div className="footer-widget__column footer-widget-one__twitter-feed clearfix">
-                  <h3 className="footer-widget-one__title">Twitter Feed</h3>
-                  <div className="owl-carousel owl-theme thm-owl__carousel footer-widget-one__twitter-feed-content">
-                    <div className="footer-widget-one__twitter-feed-single">
-                      <p className="footer-widget-one__twitter-feed-text">
-                        Lorem ipsum is simply free text dolor sit amet,
-                        consectetur adipisicing elit sed do eiusmod tempor
-                        incididunt <a href="#">http://t.twitter.com</a>
-                      </p>
-                      <div className="footer-widget-one__twitter-feed-bottom">
-                        <div className="footer-widget-one__twitter-feed-icon">
-                          <span className="fab fa-twitter"></span>
-                        </div>
-                        <div className="footer-widget-one__twitter-feed-details">
-                          <h5 className="footer-widget-one__twitter-feed-name">
-                            John Smith
-                            <span>@unicktheme</span>
-                          </h5>
-                          <p className="footer-widget-one__twitter-feed-time">
-                            18 Hours Ago
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="footer-widget-one__twitter-feed-single">
-                      <p className="footer-widget-one__twitter-feed-text">
-                        Lorem ipsum is simply free text dolor sit amet,
-                        consectetur adipisicing elit sed do eiusmod tempor
-                        incididunt <a href="#">http://t.twitter.com</a>
-                      </p>
-                      <div className="footer-widget-one__twitter-feed-bottom">
-                        <div className="footer-widget-one__twitter-feed-icon">
-                          <span className="fab fa-twitter"></span>
-                        </div>
-                        <div className="footer-widget-one__twitter-feed-details">
-                          <h5 className="footer-widget-one__twitter-feed-name">
-                            Kavin Smith
-                            <span>@unicktheme</span>
-                          </h5>
-                          <p className="footer-widget-one__twitter-feed-time">
-                            18 Hours Ago
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="footer-widget-one__twitter-feed-single">
-                      <p className="footer-widget-one__twitter-feed-text">
-                        Lorem ipsum is simply free text dolor sit amet,
-                        consectetur adipisicing elit sed do eiusmod tempor
-                        incididunt <a href="#">http://t.twitter.com</a>
-                      </p>
-                      <div className="footer-widget-one__twitter-feed-bottom">
-                        <div className="footer-widget-one__twitter-feed-icon">
-                          <span className="fab fa-twitter"></span>
-                        </div>
-                        <div className="footer-widget-one__twitter-feed-details">
-                          <h5 className="footer-widget-one__twitter-feed-name">
-                            Sara Albart
-                            <span>@unicktheme</span>
-                          </h5>
-                          <p className="footer-widget-one__twitter-feed-time">
-                            18 Hours Ago
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              ></div>
             </div>
           </div>
         </div>
