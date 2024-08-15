@@ -52,7 +52,7 @@ exports.getTestimonialByID = async (req, res) => {
     const testimonial = await pool.query("SELECT * FROM testimonial WHERE id = $1", [id]);
     if (testimonial.rows.length === 0) {
       return res
-        .status(404)
+        .status(200)
         .json({ success: false, msg: "Testimonial not found" });
     }
     res.status(200).json({
@@ -75,7 +75,7 @@ exports.deleteTestimonial = async (req, res) => {
 
     if (testimonial.rows.length === 0) {
       return res
-        .status(404)
+        .status(200)
         .json({ success: false, msg: "Testimonial not found" });
     } else {
       const fileid = testimonial.rows[0].fileid;
@@ -102,7 +102,7 @@ exports.updateTestimonial = async (req, res) => {
     const testimonial = await pool.query("SELECT * FROM testimonial WHERE id = $1", [id]);
     if (testimonial.rows.length === 0) {
       return res
-        .status(404)
+        .status(200)
         .json({ success: false, msg: "Testimonial not found" });
     }
     if (file) {

@@ -20,7 +20,7 @@ const CausesFour = () => {
     }
   }, []);
 
-  let publicUrl = process.env.PUBLIC_URL + "/";
+
   let apiBaseUrl = "http://localhost:3000/api/v1";
   const [fund, setFund] = useState([]);
 
@@ -35,7 +35,7 @@ const CausesFour = () => {
           localeTime: fundDate.toLocaleTimeString(),
         };
       });
-      console.log(res.data.fund);
+
       setFund(fundsWithLocalDateAndTime);
     } catch (error) {
       console.log(error);
@@ -48,7 +48,7 @@ const CausesFour = () => {
 
   return (
     <>
-      <section className="causes-one">
+      {fund.length > 0 ? (<section className="causes-one">
         <div className="container">
           <div className="section-title text-center">
             <span className="section-title__tagline">Our Causes Events</span>
@@ -127,7 +127,9 @@ const CausesFour = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section>):(
+        <div className="container"></div>
+      )}
     </>
   );
 };

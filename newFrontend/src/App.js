@@ -30,6 +30,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
+import SomethingWentWrong from "./pages/SomethingWentWrong";
 
 function App() {
   useEffect(() => {
@@ -48,7 +49,8 @@ function App() {
         <Route path={`/projects`} exact element={<Projects />} />
         <Route path={`/project-details`} exact element={<ProjectDetails />} />
         <Route path={`/testimonials`} exact element={<Testimonials />} />
-        <Route path={`/gallery`} exact element={<Gallery />} />
+        <Route path={`/videos`} exact element={<Gallery />} />
+        <Route path={`/images`} exact element={<Gallery />} />
         <Route path={`/donation`} exact element={<Donation />} />
         <Route path={`/donation-details`} exact element={<DonationDetails />} />
         <Route path={`/donate-now`} exact element={<DonateNow />} />
@@ -60,8 +62,9 @@ function App() {
         <Route path={`/login`} exact element={<Login />} />
         <Route path={`/whoweare`} exact element={<Whoweare />} />
         <Route path={`/thepankhmodel`} exact element={<ThePankhModel />} />
-
-        <Route path={`/*`} exact element={<Error />} />
+        
+        <Route path={`/error`} exact element={<SomethingWentWrong />} />
+        <Route path={`*`} exact element={<Error />} />
       </Routes>
       <ScrollToTop
         className="scrollUp"

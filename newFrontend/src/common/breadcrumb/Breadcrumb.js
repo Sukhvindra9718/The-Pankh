@@ -21,7 +21,7 @@ function Breadcrumb(props) {
       if (res.data.success) {
         setBanner(res.data.banner);
       } else {
-        console.log(res.data.message);
+        console.log(res.data.msg);
       }
     } catch (error) {
       console.log(error);

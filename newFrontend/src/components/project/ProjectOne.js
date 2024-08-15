@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function ProjectOne() {
   const [projects, setProjects] = useState([]);
+  const navigate = useNavigate();
 
   // Get Token from Cookie
   const getTokenFromCookie = () => {
@@ -32,9 +33,13 @@ function ProjectOne() {
         "http://localhost:3000/api/v1/projects",
         config
       );
-      setProjects(data.projects);
+      if (data.success) {
+        setProjects(data.projects);
+      }else{
+        setProjects([])
+      }
     } catch (error) {
-      console.log(error);
+      navigate("/error");
     }
   };
 
@@ -44,7 +49,7 @@ function ProjectOne() {
 
   return (
     <>
-      {projects.length > 0 && (
+      {projects.length > 0 ? (
         <section className="project-one">
           <div className="container">
             <div className="section-title text-center">
@@ -152,6 +157,10 @@ function ProjectOne() {
             </div>
           </div>
         </section>
+      ) : (
+        <div className="container text-center">
+          <h1>No Project Found</h1>
+        </div>
       )}
     </>
   );
