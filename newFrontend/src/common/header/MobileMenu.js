@@ -15,6 +15,20 @@ const menuData = [
   {
     title: "About",
     path: "/about",
+    iconClosed: <CgChevronLeft />,
+    iconOpened: <CgChevronDown />,
+
+    subNav: [
+      {
+        title: "Who We Are",
+        path: "/whoweare",
+        cName: "sub-nav",
+      },
+      {
+        title: "The Pankh Model",
+        path: "/ThePankhModel",
+      },
+    ],
   },
 
   {
@@ -62,22 +76,7 @@ const menuData = [
   },
   {
     title: "Donation",
-    path: "#",
-
-    iconClosed: <CgChevronLeft />,
-    iconOpened: <CgChevronDown />,
-
-    subNav: [
-      {
-        title: "Donation",
-        path: "/donation",
-        cName: "sub-nav",
-      },
-      {
-        title: "Donate Now",
-        path: "/donate-now",
-      },
-    ],
+    path: "/donate-now",
   },
 
   {
