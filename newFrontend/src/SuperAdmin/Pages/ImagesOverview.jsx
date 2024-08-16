@@ -331,8 +331,8 @@ function ImagesOverview() {
             />
             <input
               type="file"
-              id="banner"
-              name="banner"
+              id="image"
+              name="image"
               accept="image/*"
               onChange={handleDataChange}
             />

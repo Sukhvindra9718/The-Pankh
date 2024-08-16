@@ -1,51 +1,188 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { AiFillEye, AiFillEdit, AiOutlinePlus } from "react-icons/ai";
+import {
+  AiFillEdit,
+  AiOutlinePlus,
+  AiFillCloseCircle,
+} from "react-icons/ai";
 import { GrSort } from "react-icons/gr";
 import { MdDelete } from "react-icons/md";
 import "../../style/Dashboard.css";
 import axios from "axios";
-// import Upload from "../../Components/Upload";
 
 const sortList = ["Newest", "Oldest"];
-
 function VideosOverview() {
   const [isDelete, setIsDelete] = React.useState(false);
   const [showSort, setShowSort] = React.useState(false);
   const [selectedSortValue, setSelectedSortValue] = React.useState("");
   const [data, setData] = React.useState([]);
   const [search, setSearch] = React.useState("");
-  const [videos,setVideos] = React.useState([]);
-  const [UploadFormOpen, setUploadFormOpen] = React.useState(false);
-  const [isUpload, setIsUpload] = React.useState(false);
+  const [videos, setVideos] = React.useState([]);
+  const [uploadFormOpen, setUploadFormOpen] = React.useState(false);
+  const [file, setFile] = React.useState("");
+  const [showPreview, setShowPreview] = React.useState("");
+  const [title, setTitle] = React.useState("");
+  const [description, setDescription] = React.useState("");
+  const [url,setUrl] = React.useState("");
+  const [isUpdate, setIsUpdate] = React.useState(false);
+  const [updateId, setUpdateId] = React.useState(null);
   const navigate = useNavigate();
 
+  // Get Token from Cookie
+  const getTokenFromCookie = () => {
+    const name = "token=";
+    const decodedCookie = decodeURIComponent(document.cookie);
+    const ca = decodedCookie.split(";");
+
+    for (let i = 0; i < ca.length; i++) {
+      let c = ca[i].trim();
+      if (c.indexOf(name) === 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  };
+
+  const handleDataChange = (e) => {
+    const reader = new FileReader();
+
+    reader.onload = () => {
+      if (reader.readyState === 2) {
+        setFile(reader.result);
+        setShowPreview(null);
+      }
+    };
+
+    reader.readAsDataURL(e.target.files[0]);
+  };
+  // Create Banner
+  const handleUpload = async () => {
+    const config = {
+      headers: {
+        Authorization: `${getTokenFromCookie()}`,
+      },
+    };
+
+    try {
+      const { data } = await axios.post(
+        "http://localhost:3000/api/v1/video/upload",
+        { title, description, url,file },
+        config
+      );
+
+      if (data.success) {
+        setUploadFormOpen(false);
+        setIsDelete(!isDelete);
+        setTitle("");
+        setDescription("");
+        setUrl("");
+        setFile(null);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  const getAllVideos = async () => {
+    const config = {
+      headers: {
+        Authorization: `${getTokenFromCookie()}`,
+        "Content-Type": "application/json",
+      },
+    };
+    try {
+      const { data } = await axios.get(
+        "http://localhost:3000/api/v1/videos",
+        config
+      );
+      setVideos(data.videos);
+      setData(data.videos);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  // Update Carousal
+  const handleUpdate = async () => {
+    const config = {
+      headers: {
+        Authorization: `${getTokenFromCookie()}`,
+        "Content-Type": "application/json",
+      },
+    };
+
+    const Data = {
+      title,
+      description,
+      url: url,
+      file: file ? file : undefined,
+    };
+    try {
+      const { data } = await axios.put(
+        `http://localhost:3000/api/v1/video/${updateId}`,
+        Data,
+        config
+      );
+
+      if (data.success) {
+        setUploadFormOpen(false);
+        setIsDelete(!isDelete);
+        setTitle("");
+        setDescription("")
+        setUpdateId("");
+        setIsUpdate(false);
+        setUrl("");
+        setFile(null);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  const handleShowPopup = (item) => {
+    setTitle(item.title);
+    setDescription(item.description)
+    setUrl(item.url);
+    setUpdateId(item.id);
+    setIsUpdate(true);
+    setUploadFormOpen(true);
+    setShowPreview(item.fileurl);
+  };
+  const handleClose = () => {
+    setTitle("");
+    setDescription("")
+    setUrl("");
+    setUpdateId("");
+    setIsUpdate(false);
+    setUploadFormOpen(false);
+    setFile(null)
+  };
   useEffect(() => {
-    // getAllVideos();
-    setTimeout(() => {
-      setData(videos);
-    }, 1000);
+    getAllVideos();
     // eslint-disable-next-line
-  }, [isDelete, isUpload]);
+  }, [isDelete]);
 
-  const handleShowVideo = (id) => {
-    navigate(`/videos/${id}`);
-  };
-
-  const handleUpdate = (item) => {
-    navigate(`/video/update/${item.id}`);
-  };
 
   const handleDelete = async (id) => {
-    console.log("delete", id);
     const confirm = window.confirm(
       "Are you sure you want to delete this video?"
     );
 
     if (confirm) {
-      const { data } = await axios.delete(`/api/video/${id}`);
-      if (data.success) {
-        setIsDelete(!isDelete);
+      const config = {
+        headers: {
+          Authorization: `${getTokenFromCookie()}`,
+          "Content-Type": "application/json",
+        },
+      };
+      try {
+        const { data } = await axios.delete(
+          `http://localhost:3000/api/v1/video/${id}`,
+          config
+        );
+        if (data.success) {
+          setIsDelete(!isDelete);
+        }
+      } catch (error) {
+        console.log(error);
       }
     }
   };
@@ -87,7 +224,7 @@ function VideosOverview() {
           <h1>All videos</h1>
           <div className="add-btn" onClick={() => setUploadFormOpen(true)}>
             <AiOutlinePlus size={25} style={{ cursor: "pointer" }} />
-            <h2>Add Video</h2>
+            <h2>Add Videos</h2>
           </div>
         </div>
         <div className="filter-membership-item">
@@ -135,42 +272,85 @@ function VideosOverview() {
       <div className="banner-table-container">
         <div className="grid-container">
           <div className="grid-header">ID</div>
-          <div className="grid-header">Page Name</div>
-          <div className="grid-header">File Name</div>
+          <div className="grid-header">Title</div>
+          <div className="grid-header">Description</div>
           <div className="grid-header">Action</div>
           {data?.length > 0 &&
-            data.map((video) => (
-              <React.Fragment key={video.id}>
+            data.map((item) => (
+              <React.Fragment key={item.id}>
                 <div className="grid-item" data-label="ID">
-                  {video.id}
+                  {item.id}
                 </div>
-                <div className="grid-item" data-label="Page Name">
-                  {video.title}
-                  <span className="tooltip">{video.title}</span>
+                <div className="grid-item" data-label="Title">
+                  {item.title}
+                  <span className="tooltip">{item.title}</span>
                 </div>
-                <div className="grid-item" data-label="File Name">
-                  {video.description}
-                  <span className="tooltip">{video.description}</span>
+                <div className="grid-item" data-label="Description">
+                  {item.description}
+                  <span className="tooltip">{item.description}</span>
                 </div>
                 <div className="grid-item" data-label="Action">
                   <div className="action-icons">
-                    <AiFillEye size={25} onClick={() => handleShowVideo(video.id)}/>
-                    <AiFillEdit size={25} onClick={() => handleUpdate(video)} />
-                    <MdDelete size={25} onClick={() => handleDelete(video.id)} color="red"/>
+                    <AiFillEdit
+                      size={25}
+                      onClick={() => handleShowPopup(item)}
+                    />
+                    <MdDelete
+                      size={25}
+                      onClick={() => handleDelete(item.id)}
+                      color="red"
+                    />
                   </div>
                 </div>
               </React.Fragment>
             ))}
         </div>
       </div>
-      {/* {UploadFormOpen && (
-        <Upload
-          setIsUpload={setIsUpload}
-          setUploadFormOpen={setUploadFormOpen}
-          Uploadtitle={"Video"}
-          UploadType={"video"}
-        />
-      )} */}
+      {uploadFormOpen && (
+        <div className="upload-form-container">
+          <div className="upload-form">
+            <div className="close-btn" onClick={() => handleClose()}>
+              <AiFillCloseCircle size={30} />
+            </div>
+            <h1>Upload Video</h1>
+            <input
+              type="text"
+              placeholder="Title"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+            />
+            <input
+              type="text"
+              placeholder="Description"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+            />
+            <input
+              type="file"
+              id="banner"
+              name="banner"
+              accept="image/*"
+              onChange={handleDataChange}
+            />
+            
+            <input
+              type="text"
+              placeholder="Youtube video link"
+              value={url}
+              onChange={(e) => setUrl(e.target.value)}
+            />
+            <div className="preview-image">
+              {file && <img src={file} alt="preview" />}
+              {showPreview && <img src={showPreview} alt="preview" />}
+            </div>
+            {!isUpdate ? (
+              <button onClick={handleUpload}>Upload</button>
+            ) : (
+              <button onClick={handleUpdate}>Update</button>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
