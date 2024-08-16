@@ -8,7 +8,6 @@ exports.addImage = async (req, res) => {
   try {
     const { title, description, file } = req.body;
     const id = uuid.v4();
-    console.log(req.body)
 
     const myCloud = await cloudinary.v2.uploader.upload(file, {
       folder: "thepankh/galleryimages",
