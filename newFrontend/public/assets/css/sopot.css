@@ -2802,6 +2802,7 @@ a.sc-hLBbgP {
     display: block;
     margin-bottom: 30px;
 }
+
 .project-one__single_main {
     padding-bottom: 30px;
     height: 100%;
@@ -2810,6 +2811,8 @@ a.sc-hLBbgP {
     position: relative;
     display: block;
     overflow: hidden;
+    width: 100%;
+    height: 100%;
 }
 .project-one__img_main {
     height: 100%;

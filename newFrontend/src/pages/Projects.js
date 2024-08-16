@@ -1,7 +1,7 @@
 import React from 'react';
 import HeaderOne from '../common/header/HeaderOne';
 import Breadcrumb from '../common/breadcrumb/Breadcrumb';
-import ProjectOne from '../components/project/ProjectOne';
+import ProjectTwo from '../components/project/ProjectTwo';
 import FooterOne from '../common/footer/FooterOne';
 
 const Projects = () => {
@@ -12,7 +12,7 @@ const Projects = () => {
                 heading="Our Projects"
                 currentPage="Projects" 
             />
-            <ProjectOne />
+            <ProjectTwo />
             <FooterOne />
         </>
     )

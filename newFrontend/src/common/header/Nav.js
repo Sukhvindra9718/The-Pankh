@@ -1,16 +1,18 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link,useLocation } from "react-router-dom";
 
 const Nav = () => {
+  const location = useLocation();
+ 
   return (
     <div className="main-menu text-center">
       <nav>
         <ul className="main-menu__list">
-          <li className="dropdown current">
+          <li className={`dropdown ${location.pathname =="/" ? "current" : ""}`}>
             <Link to={process.env.PUBLIC_URL + `/`}>Home</Link>
           </li>
 
-          <li className="dropdown">
+          <li className={`dropdown ${location.pathname =="/about" || location.pathname == "/whoweare" || location.pathname == "/thepankhmodel" ? "current" : ""}`}>
             <Link to={process.env.PUBLIC_URL + `/about`}>About</Link>
             <ul>
               <li>
@@ -27,8 +29,8 @@ const Nav = () => {
             </ul>
           </li>
 
-          <li className="dropdown">
-            <Link to={process.env.PUBLIC_URL + `#`}>Pages</Link>
+          <li className={`dropdown ${location.pathname == "/team" || location.pathname == "/projects" || location.pathname == "/testimonials" ? "current":''}`}>
+            <Link to={process.env.PUBLIC_URL + `#`} >Pages</Link>
             <ul>
               <li>
                 <Link to={process.env.PUBLIC_URL + `/team`}>Team</Link>
@@ -44,7 +46,7 @@ const Nav = () => {
               </li>
             </ul>
           </li>
-          <li className="dropdown">
+          <li className={`dropdown ${location.pathname =="/images" || location.pathname == "/videos" ? "current" : ""}`}>
             <Link to={process.env.PUBLIC_URL + `#`}>Gallery</Link>
             <ul>
               <li>
@@ -56,16 +58,16 @@ const Nav = () => {
             </ul>
           </li>
 
-          <li>
+          <li className={`${location.pathname =="/donate-now" ? "current" : ""}`}>
             <Link to={process.env.PUBLIC_URL + `/donate-now`}>Donation</Link>
           </li>
-          <li>
+          <li className={`${location.pathname =="/events" ? "current" : ""}`}>
             <Link to={process.env.PUBLIC_URL + `/events`}>Events</Link>
           </li>
-          <li className="dropdown">
+          <li className={`${location.pathname =="/blogs" ? "current" : ""}`}>
             <Link to={process.env.PUBLIC_URL + `/blogs`}>Blog</Link>
           </li>
-          <li>
+          <li className={`${location.pathname =="/contact" ? "current" : ""}`}>
             <Link to={process.env.PUBLIC_URL + `/contact`}>Contact</Link>
           </li>
         </ul>
