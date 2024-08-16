@@ -2492,6 +2492,11 @@ a.sc-hLBbgP {
     display: block;
     overflow: hidden;
     z-index: 1;
+    height: 15vw;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .causes-one__img:before {
@@ -2519,6 +2524,7 @@ a.sc-hLBbgP {
     transition-timing-function: ease-in-out;
     transition-duration: 0.7s;
     transition-property: all;
+    object-fit: scale-down;
 }
 
 .causes-one__single:hover .causes-one__img img {
