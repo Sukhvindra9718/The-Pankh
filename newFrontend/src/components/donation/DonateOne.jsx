@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import axios from "axios";
+import { toast } from "react-hot-toast";
 
 const DonateOne = () => {
   const [file, setFile] = React.useState("");
@@ -48,7 +49,7 @@ const DonateOne = () => {
       setDonations({ ...Donations, [e.target.name]: e.target.value });
     }
 
-    console.log(Donations.country)
+    console.log(Donations.country);
   };
 
   // Create Donations
@@ -79,9 +80,11 @@ const DonateOne = () => {
           remarks: "",
         });
         setFile(null);
+        toast.success("Donation successful!");
       }
     } catch (error) {
       console.log(error);
+      toast.error("Donation failed!");
     }
   };
 
