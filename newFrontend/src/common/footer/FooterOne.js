@@ -84,7 +84,7 @@ function FooterOne() {
     try {
       const res = await axios.get("http://localhost:3000/api/v1/twonews");
       if (res.data.success) {
-        console.log("Fetched news data:", res.data.news);  // Log the raw data
+        console.log("Fetched news data:", res.data.news); // Log the raw data
 
         const newslocaldatetime = res.data.news.map((news) => {
           const newsDate = new Date(news.newsdatetime);
@@ -96,7 +96,7 @@ function FooterOne() {
         });
 
         setNews(newslocaldatetime);
-        console.log("Updated news state:", newslocaldatetime);  // Log the updated state
+        console.log("Updated news state:", newslocaldatetime); // Log the updated state
       } else {
         console.log(res.data.message);
       }
@@ -117,7 +117,7 @@ function FooterOne() {
           <div className="container">
             <div className="row">
               <div
-                className="col-xl-3 col-lg-6 col-md-6 wow fadeInUp"
+                className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp"
                 data-wow-delay="100ms"
               >
                 <div className="footer-widget__column footer-widget-one__about">
@@ -174,7 +174,7 @@ function FooterOne() {
               </div>
 
               <div
-                className="col-xl-3 col-lg-6 col-md-6 wow fadeInUp"
+                className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp"
                 data-wow-delay="200ms"
               >
                 <div className="footer-widget__column footer-widget-one__gallery clearfix">
@@ -200,7 +200,7 @@ function FooterOne() {
                 </div>
               </div>
               <div
-                className="col-xl-3 col-lg-6 col-md-6 wow fadeInUp"
+                className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp"
                 data-wow-delay="300ms"
               >
                 <div className="footer-widget__column footer-widget-one__latest-works clearfix">
@@ -210,7 +210,11 @@ function FooterOne() {
                       <li key={index}>
                         <div className="footer-widget-one__latest-works-content">
                           <h4 className="footer-widget-one__latest-works-title">
-                            <a href={newsItem.link} target="_blank" rel="noopener noreferrer">
+                            <a
+                              href={newsItem.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
                               {newsItem.title}
                             </a>
                           </h4>
@@ -221,13 +225,8 @@ function FooterOne() {
                       </li>
                     ))}
                   </ul>
-
                 </div>
               </div>
-              <div
-                className="col-xl-3 col-lg-6 col-md-6 wow fadeInUp"
-                data-wow-delay="400ms"
-              ></div>
             </div>
           </div>
         </div>
