@@ -242,7 +242,7 @@ const DonateOne = () => {
                       >
                         <span class="section-title__tagline">IFSC Code</span>
                         <p class="about-one__text" style={{ color: "black" }}>
-                          {BankDetails.ifsccode}
+                          {BankDetails?.ifsccode}
                         </p>
                       </div>
                     </div>
@@ -253,7 +253,7 @@ const DonateOne = () => {
                       >
                         <span class="section-title__tagline">Account number</span>
                         <p class="about-one__text" style={{ color: "black" }}>
-                          {BankDetails.accountnumber}
+                          {BankDetails?.accountnumber}
                         </p>
                       </div>
                     </div>
@@ -264,7 +264,7 @@ const DonateOne = () => {
                       >
                         <span class="section-title__tagline">Bank Name</span>
                         <p class="about-one__text" style={{ color: "black" }}>
-                          {BankDetails.branchname}
+                          {BankDetails?.branchname}
                         </p>
                       </div>
                     </div>
@@ -275,7 +275,7 @@ const DonateOne = () => {
                       >
                         <span class="section-title__tagline">UPI ID</span>
                         <p class="about-one__text" style={{ color: "black" }}>
-                          {BankDetails.upiid}
+                          {BankDetails?.upiid}
                         </p>
                       </div>
                     </div>
