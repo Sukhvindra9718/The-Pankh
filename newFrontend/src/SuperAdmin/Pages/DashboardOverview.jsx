@@ -12,6 +12,8 @@ function DashboardOverview() {
     "v1/getimage",
     "v1/getvideo",
     "v1/countNews",
+    "v1/events",
+    "v1/Donations",
   ];
   const [rowCount, setRowCount] = useState([]);
 

@@ -152,8 +152,24 @@ function Sidebar({ menuActive, setMenuActive, submenuActive, setSubmenuActive })
           onClick={() => setMenuActive(11)}
         >
           <BiCarousel fill={menuActive === 11 ? "#fff" : "#717171"} size={30} />
-          <h4>Fund</h4>
+          <h4>Funds</h4>
         </div>
+
+        <div
+          className={menuActive === 12 ? "sidebar-menu-item selected" : "sidebar-menu-item"}
+          onClick={() => setMenuActive(12)}
+        >
+          <BiCarousel fill={menuActive === 12 ? "#fff" : "#717171"} size={30} />
+          <h4>Donations</h4>
+        </div>
+        <div
+          className={menuActive === 13 ? "sidebar-menu-item selected" : "sidebar-menu-item"}
+          onClick={() => setMenuActive(13)}
+        >
+          <BiCarousel fill={menuActive === 13 ? "#fff" : "#717171"} size={30} />
+          <h4>Bank Details</h4>
+        </div>
+
       </div>
 
       <div className="sidebar-footer">

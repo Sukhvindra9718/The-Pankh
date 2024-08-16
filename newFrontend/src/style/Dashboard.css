@@ -47,6 +47,7 @@
   gap: 1rem;
   padding: 1rem;
   align-items: flex-end;
+  overflow-y: scroll;
 }
 .sidebar-menu h4 {
   font-size: 1.5rem;

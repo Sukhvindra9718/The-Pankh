@@ -9033,7 +9033,8 @@ a.sc-hLBbgP {
 }
 
 .donate-now__personal-info-input input[type="text"],
-.donate-now__personal-info-input input[type="email"] {
+.donate-now__personal-info-input input[type="email"],
+.donate-now__personal-info-input input[type="number"] {
     height: 64px;
     width: 100%;
     border: none;
@@ -9863,3 +9864,18 @@ a.sc-hLBbgP {
 /*--------------------------------------------------------------
 # Two Section
 --------------------------------------------------------------*/
+
+
+.donate-now__enter-donation-input input[type="number"] {
+    height: 135px;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding-left: 30px;
+    padding-right: 160px;
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--sopot-gray);
+    font-family: var(--sopot-font);
+    background-color: rgba(var(--sopot-base-rgb), 0.1);
+}
