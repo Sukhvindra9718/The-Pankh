@@ -4,6 +4,7 @@ import { MdDelete } from "react-icons/md";
 import "../../style/Dashboard.css";
 import axios from "axios";
 import { AiFillEdit, AiOutlinePlus, AiFillCloseCircle } from "react-icons/ai";
+import { FaRegEye } from "react-icons/fa";
 const sortList = ["Newest", "Oldest"];
 
 function DonationsOverview() {
@@ -290,28 +291,42 @@ function DonationsOverview() {
       </div>
 
       <div className="banner-table-container">
-        <div className="grid-container">
-          <div className="grid-header">FullName</div>
-          <div className="grid-header">Amount</div>
-          <div className="grid-header">Date and Time</div>
-          <div className="grid-header">Action</div>
+        <div className="grid-container-dynamic">
+          <div className="grid-header-container">
+            <div className="grid-header">FullName</div>
+            <div className="grid-header">Amount</div>
+            <div className="grid-header">UTR Number</div>
+            <div className="grid-header">Screenshot</div>
+            <div className="grid-header">Date and Time</div>
+            <div className="grid-header">Action</div>
+          </div>
           {filterData?.length > 0 &&
             filterData.map((Donations) => (
               <React.Fragment key={Donations.id}>
-                <div className="grid-item" data-label="ID">
-                  {Donations.fullname}
-                </div>
-                <div className="grid-item" data-label="fullname">
-                  {Donations.amount}
-                </div>
-                <div className="grid-item" data-label="Short Desc">
-                  {Donations.donationdatetime}
-                  <span className="tooltip">{Donations.donationdatetime}</span>
-                </div>
-                <div className="grid-item" data-label="Action">
-                  <div className="action-icons">
-                    <AiFillEdit size={25} onClick={() => handleShowPopup(Donations)} />
-                    <MdDelete size={25} color="red" onClick={() => handleDelete(Donations.id)} />
+                <div className="grid-item-container">
+                  <div className="grid-item" data-label="ID">
+                    {Donations.fullname}
+                  </div>
+                  <div className="grid-item" data-label="fullname">
+                    {Donations.amount}
+                  </div>
+                  <div className="grid-item" data-label="fullname">
+                    {Donations.utrnumber}
+                  </div>
+                  <div className="grid-item" style={{textAlign: "center"}} data-label="fullname">
+                    <a href={Donations.fileurl}target="_blank" rel="noopener noreferrer">
+                      <FaRegEye />
+                    </a>
+                  </div>
+                  <div className="grid-item" data-label="Short Desc">
+                    {Donations.donationdatetime}
+                    <span className="tooltip">{Donations.donationdatetime}</span>
+                  </div>
+                  <div className="grid-item" data-label="Action">
+                    <div className="action-icons">
+                      <AiFillEdit size={25} onClick={() => handleShowPopup(Donations)} />
+                      <MdDelete size={25} color="red" onClick={() => handleDelete(Donations.id)} />
+                    </div>
                   </div>
                 </div>
               </React.Fragment>

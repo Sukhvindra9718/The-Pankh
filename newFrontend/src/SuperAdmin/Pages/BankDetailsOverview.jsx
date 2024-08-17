@@ -3,6 +3,7 @@ import { GrSort } from "react-icons/gr";
 import { MdDelete } from "react-icons/md";
 import "../../style/Dashboard.css";
 import axios from "axios";
+import { FaRegEye } from "react-icons/fa";
 import { AiFillEdit, AiOutlinePlus, AiFillCloseCircle } from "react-icons/ai";
 const sortList = ["Newest", "Oldest"];
 
@@ -223,12 +224,12 @@ function BankDetailsOverview() {
       <div className="filter-membership-container">
         <div className="header-table">
           <h1>All BankDetails</h1>
-          { filterData.length === 0 &&
+          {filterData.length === 0 && (
             <div className="add-btn" onClick={() => setUploadFormOpen(true)}>
               <AiOutlinePlus size={25} style={{ cursor: "pointer" }} />
               <h2>Add BankDetails</h2>
             </div>
-          }
+          )}
         </div>
         <div className="filter-membership-item">
           <div className="search-container">
@@ -272,28 +273,46 @@ function BankDetailsOverview() {
       </div>
 
       <div className="banner-table-container">
-        <div className="grid-container">
-          <div className="grid-header">UPI ID</div>
-          <div className="grid-header">IFSC code</div>
-          <div className="grid-header">Account Number</div>
-          <div className="grid-header">Action</div>
+        <div className="grid-container-dynamic">
+          <div className="grid-header-container">
+            <div className="grid-header">UPI ID</div>
+            <div className="grid-header">IFSC code</div>
+            <div className="grid-header">Account Number</div>
+            <div className="grid-header">Branch Name</div>
+            <div className="grid-header">QR code</div>
+            <div className="grid-header">Action</div>
+          </div>
           {filterData?.length > 0 &&
             filterData.map((BankDetails) => (
               <React.Fragment key={BankDetails.id}>
-                <div className="grid-item" data-label="ID">
-                  {BankDetails.upiid}
-                </div>
-                <div className="grid-item" data-label="ifsccode">
-                  {BankDetails.ifsccode}
-                </div>
-                <div className="grid-item" data-label="accountnumber">
-                  {BankDetails.accountnumber}
-                  <span className="tooltip">{BankDetails.accountnumber}</span>
-                </div>
-                <div className="grid-item" data-label="Action">
-                  <div className="action-icons">
-                    <AiFillEdit size={25} onClick={() => handleShowPopup(BankDetails)} />
-                    <MdDelete size={25} color="red" onClick={() => handleDelete(BankDetails.id)} />
+                <div className="grid-item-container">
+                  <div className="grid-item" data-label="ID">
+                    {BankDetails.upiid}
+                  </div>
+                  <div className="grid-item" data-label="ifsccode">
+                    {BankDetails.ifsccode}
+                  </div>
+                  <div className="grid-item" data-label="accountnumber">
+                    {BankDetails.accountnumber}
+                    <span className="tooltip">{BankDetails.accountnumber}</span>
+                  </div>
+                  <div className="grid-item" data-label="ifsccode">
+                    {BankDetails.branchname}
+                  </div>
+                  <div className="grid-item" style={{textAlign: "center"}} data-label="fullname">
+                    <a href={BankDetails.fileurl}target="_blank" rel="noopener noreferrer">
+                      <FaRegEye />
+                    </a>
+                  </div>
+                  <div className="grid-item" data-label="Action">
+                    <div className="action-icons">
+                      <AiFillEdit size={25} onClick={() => handleShowPopup(BankDetails)} />
+                      <MdDelete
+                        size={25}
+                        color="red"
+                        onClick={() => handleDelete(BankDetails.id)}
+                      />
+                    </div>
                   </div>
                 </div>
               </React.Fragment>
