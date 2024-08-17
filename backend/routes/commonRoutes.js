@@ -41,6 +41,13 @@ router.get('/getkeycontact/count',authMiddleware.authenticationMiddleware,authMi
 // Contact us
 router.post('/contact/register',commonController.registerContactUs);
 
+// Properties Access
+
+router.post('/PropertiesAccess/Add',authMiddleware.authenticationMiddleware,authMiddleware.adminMiddleware,commonController.addPropertiesAccess);
+router.get('/PropertiesAccess/all', authMiddleware.authenticationMiddleware,authMiddleware.adminMiddleware,commonController.getAllPropertiesAccess);
+router.get('/PropertiesAccess/:id', authMiddleware.authenticationMiddleware,authMiddleware.adminMiddleware,commonController.getPropertiesAccessById);
+router.delete('/PropertiesAccess/:id', authMiddleware.authenticationMiddleware,authMiddleware.adminMiddleware,commonController.deletePropertiesAccess);
+router.put('/PropertiesAccess/:id', authMiddleware.authenticationMiddleware,authMiddleware.adminMiddleware,commonController.UpdatePropertiesAccess);
 
 
 module.exports = router;

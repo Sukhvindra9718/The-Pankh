@@ -111,7 +111,7 @@ const deleteKeyContact = async (req, res) => {
 const updateKeyContact = async (req, res) => {
     try {
         const { id } = req.params;
-        const { name, email,phone,organization,designation} = req.body;
+        const { name, email, phone, organization, designation} = req.body;
         const keyContact = await pool.query('SELECT * FROM keycontact WHERE id = $1', [id]);
         if (keyContact.rows.length === 0) {
             return res.status(404).json({success:false,userError:'Key Contact not found'});
@@ -142,8 +142,60 @@ const getAllkeyContactCount = async (req, res) => {
     }
   };
 
+const addPropertiesAccess = async(req,res)=>{
+    try {
+        const {id, Property,isEnabled} = req.body;
+        const addAccess = await pool.query('INSERT INTO propertiesAccess (id,Property,isEnabled) VALUES ($1, $2, $3) RETURNING *', [id,Property,isEnabled]);
+        res.status(201).json({success:true,msg:'Property access added successfully'});
+    } catch (error) {
+        res.status(500).json({success:false,msg:"Internal server error"})        
+    }
+}
 
+const UpdatePropertiesAccess = async(req,res)=>{
+    try {
+        const id  = req.params;
+        const {Property,isEnabled} = req.body;
+        const propertyAccess = await pool.query('SELECT * FROM propertiesAccess WHERE id = $1', [id])
+        if(propertyAccess.rows.length===0){
+            res.status(404).json({success:false,msg:"Properties access not found"})
+        }
+        await pool.query('UPDATE propertiesAccess SET Property = $1, isEnabled = $2 WHERE id = $3', [Property, isEnabled, id]);
+        res.status(200).json({success:true,msg:'Properties access updated successfully'});
+    } catch (error) {
+        res.status(500).json({success:false,msg:"Internal server error"})        
+    }
+}
 
+const getAllPropertiesAccess = async(req,res)=>{
+    try {
+        const allPropertiesAccess = await pool.query('SELECT * FROM propertiesAccess');
+        res.status(200).json({success:true,PropertiesAccess:allPropertiesAccess.rows})
+    } catch (error) {
+
+        res.status(500).json({success:false,msg:"Internal server error",error:error.message})
+    }
+}
+
+const getPropertiesAccessById = async(req,res)=>{
+    try {
+        const id  = req.params;
+        const PropertyAccessByID = await pool.query('SELECT * FROM propertiesAccess WHERE id = $1',[id]);
+        res.status(200).json({success:true,PropertiesAccess:PropertyAccessByID.rows})
+    } catch (error) {
+        res.status(500).json({success:false,msg:"Internal Server Error",error:error.message})
+        }
+
+}
+const deletePropertiesAccess = async (req, res) => {
+    try {
+        const { id } = req.params;
+        await pool.query('DELETE FROM propertiesAccess WHERE id = $1', [id]);
+        res.status(200).json({success:true,msg:'Properties Access deleted successfully'});
+    } catch (error) {
+        res.status(500).send({success:false,userError:'Server Error',error:error.message});
+    }
+}
 
 module.exports = {
     registerContactUs,
@@ -156,5 +208,10 @@ module.exports = {
     getKeyContactById,
     deleteKeyContact,
     updateKeyContact,
-    getAllkeyContactCount
+    getAllkeyContactCount,
+    addPropertiesAccess,
+    UpdatePropertiesAccess,
+    getAllPropertiesAccess,
+    getPropertiesAccessById,
+    deletePropertiesAccess
 };
