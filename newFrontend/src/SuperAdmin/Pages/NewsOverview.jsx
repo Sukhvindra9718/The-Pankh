@@ -210,7 +210,7 @@ function NewsOverview() {
 
   const handleSearch = () => {
     const filterData1 = data.filter((item) =>
-      item.username.toLowerCase().includes(search.toLowerCase())
+      item.title.toLowerCase().includes(search.toLowerCase())
     );
     setSearch("");
     setFilterData(filterData1);
@@ -234,7 +234,7 @@ function NewsOverview() {
           <div className="search-container">
             <input
               type="text"
-              placeholder="Search By news name"
+              placeholder="Search By title"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               style={{ fontSize: "1rem" }}
@@ -286,7 +286,7 @@ function NewsOverview() {
                 <div className="grid-item" data-label="Title">
                   {news.title}
                 </div>
-                <div className="grid-item" data-label="Short Desc">
+                <div className="grid-item" data-label="Date & Time">
                   {news.newsdatetime}
                   <span className="tooltip">{news.newsdatetime}</span>
                 </div>

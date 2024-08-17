@@ -232,7 +232,7 @@ function TestimonialOverview() {
           <div className="search-container">
             <input
               type="text"
-              placeholder="Search By testimonial name"
+              placeholder="Search By name"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               style={{ fontSize: "1rem" }}

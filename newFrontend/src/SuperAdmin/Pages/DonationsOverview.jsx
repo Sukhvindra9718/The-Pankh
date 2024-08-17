@@ -228,7 +228,7 @@ function DonationsOverview() {
 
   const handleSearch = () => {
     const filterData1 = data.filter((item) =>
-      item.username.toLowerCase().includes(search.toLowerCase())
+      item.fullname.toLowerCase().includes(search.toLowerCase())
     );
     setSearch("");
     setFilterData(filterData1);
@@ -253,7 +253,7 @@ function DonationsOverview() {
           <div className="search-container">
             <input
               type="text"
-              placeholder="Search By Donations name"
+              placeholder="Search By name"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               style={{ fontSize: "1rem" }}
@@ -307,18 +307,18 @@ function DonationsOverview() {
                   <div className="grid-item" data-label="ID">
                     {Donations.fullname}
                   </div>
-                  <div className="grid-item" data-label="fullname">
+                  <div className="grid-item" data-label="Amount">
                     {Donations.amount}
                   </div>
-                  <div className="grid-item" data-label="fullname">
+                  <div className="grid-item" data-label="UTR Number">
                     {Donations.utrnumber}
                   </div>
-                  <div className="grid-item" style={{textAlign: "center"}} data-label="fullname">
+                  <div className="grid-item" style={{textAlign: "center"}} data-label="Screenshot">
                     <a href={Donations.fileurl}target="_blank" rel="noopener noreferrer">
                       <FaRegEye />
                     </a>
                   </div>
-                  <div className="grid-item" data-label="Short Desc">
+                  <div className="grid-item" data-label="Donation Date Time">
                     {Donations.donationdatetime}
                     <span className="tooltip">{Donations.donationdatetime}</span>
                   </div>

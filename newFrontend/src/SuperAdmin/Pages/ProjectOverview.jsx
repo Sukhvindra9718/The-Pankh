@@ -160,7 +160,7 @@ function ProjectOverview() {
 
   const handleDelete = async (id) => {
     const confirm = window.confirm(
-      "Are you sure you want to delete this video?"
+      "Are you sure you want to delete this project?"
     );
 
     if (confirm) {
@@ -218,17 +218,17 @@ function ProjectOverview() {
     <div style={{ position: "relative" }}>
       <div className="filter-membership-container">
         <div className="header-table">
-          <h1>All Images</h1>
+          <h1>All Projects</h1>
           <div className="add-btn" onClick={() => setUploadFormOpen(true)}>
             <AiOutlinePlus size={25} style={{ cursor: "pointer" }} />
-            <h2>Add Image</h2>
+            <h2>Add Project</h2>
           </div>
         </div>
         <div className="filter-membership-item">
           <div className="search-container">
             <input
               type="text"
-              placeholder="Search"
+              placeholder="Search by title"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
             />
@@ -309,7 +309,7 @@ function ProjectOverview() {
             <div className="close-btn" onClick={() => handleClose()}>
               <AiFillCloseCircle size={30} />
             </div>
-            <h1>Upload Image</h1>
+            <h1>Upload Project</h1>
             <input
               type="text"
               placeholder="Title"
@@ -324,8 +324,8 @@ function ProjectOverview() {
             />
             <input
               type="file"
-              id="banner"
-              name="banner"
+              id="project"
+              name="project"
               accept="image/*"
               onChange={handleDataChange}
             />

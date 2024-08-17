@@ -45,13 +45,13 @@ function DashboardOverview() {
             return res.data;
           })
         );
-        console.log(responses);
+      
         // Extract relevant data from responses
         const arr = responses.map((data) => ({
           tableName: data.tableName,
           count: data.count,
         }));
-        console.log(arr);
+
         setRowCount(arr);
       } catch (error) {
         console.log(error);

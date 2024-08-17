@@ -231,7 +231,7 @@ function ImagesOverview() {
           <div className="search-container">
             <input
               type="text"
-              placeholder="Search"
+              placeholder="Search by title"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
             />

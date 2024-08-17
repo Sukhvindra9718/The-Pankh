@@ -208,7 +208,7 @@ function CarousalOverview() {
   // Search
   const handleSearch = () => {
     const filterData1 = data.filter((item) =>
-      item.pagename.toLowerCase().includes(search.toLowerCase())
+      item.title.toLowerCase().includes(search.toLowerCase())
     );
     setSearch("");
     setFilterData(filterData1);
@@ -233,7 +233,7 @@ function CarousalOverview() {
           <div className="search-container">
             <input
               type="text"
-              placeholder="Search By Page name"
+              placeholder="Search By Title"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               style={{ fontSize: "1rem" }}

@@ -203,7 +203,7 @@ function FundOverview() {
 
   const handleSearch = () => {
     const filterData1 = data.filter((item) =>
-      item.username.toLowerCase().includes(search.toLowerCase())
+      item.title.toLowerCase().includes(search.toLowerCase())
     );
     setSearch("");
     setFilterData(filterData1);
@@ -228,7 +228,7 @@ function FundOverview() {
           <div className="search-container">
             <input
               type="text"
-              placeholder="Search By fund name"
+              placeholder="Search By title"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               style={{ fontSize: "1rem" }}

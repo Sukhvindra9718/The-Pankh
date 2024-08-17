@@ -204,7 +204,7 @@ function EventsOverview() {
 
   const handleSearch = () => {
     const filterData1 = data.filter((item) =>
-      item.username.toLowerCase().includes(search.toLowerCase())
+      item.title.toLowerCase().includes(search.toLowerCase())
     );
     setSearch("");
     setFilterData(filterData1);
@@ -229,7 +229,7 @@ function EventsOverview() {
           <div className="search-container">
             <input
               type="text"
-              placeholder="Search By events name"
+              placeholder="Search By title"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               style={{ fontSize: "1rem" }}
@@ -281,7 +281,7 @@ function EventsOverview() {
                 <div className="grid-item" data-label="Title">
                   {events.title}
                 </div>
-                <div className="grid-item" data-label="Short Desc">
+                <div className="grid-item" data-label="Events Date And Time">
                   {events.eventsdatetime}
                   <span className="tooltip">{events.eventsdatetime}</span>
                 </div>

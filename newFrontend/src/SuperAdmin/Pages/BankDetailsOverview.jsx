@@ -208,7 +208,7 @@ function BankDetailsOverview() {
 
   const handleSearch = () => {
     const filterData1 = data.filter((item) =>
-      item.username.toLowerCase().includes(search.toLowerCase())
+      item.upiid.toLowerCase().includes(search.toLowerCase())
     );
     setSearch("");
     setFilterData(filterData1);
@@ -235,7 +235,7 @@ function BankDetailsOverview() {
           <div className="search-container">
             <input
               type="text"
-              placeholder="Search By BankDetails name"
+              placeholder="Search By UPI ID"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               style={{ fontSize: "1rem" }}
@@ -326,7 +326,7 @@ function BankDetailsOverview() {
             <div className="close-btn" onClick={() => handleClose()}>
               <AiFillCloseCircle size={30} />
             </div>
-            <h1>Create Donation</h1>
+            <h1>Create Bank Details</h1>
             <div className="inputContainer">
               <input
                 type="text"
