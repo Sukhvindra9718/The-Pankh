@@ -31,7 +31,7 @@ const RecentEvents = () => {
   return (
     <>
       <section className="recent-event" style={{ minHeight: "100px" }}>
-        {events && events.length >= 0 ? (
+        {events && events.length > 0 ? (
           <div className="container">
             <div className="section-title text-center">
               <span className="section-title__tagline">Our Recent events</span>
