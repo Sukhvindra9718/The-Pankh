@@ -51,7 +51,7 @@ const CausesFour = () => {
       {fund.length > 0 ? (<section className="causes-one">
         <div className="container">
           <div className="section-title text-center">
-            <span className="section-title__tagline">Our Causes Events</span>
+            <span className="section-title__tagline">Our Funds</span>
             <h2 className="section-title__title">
               We Popular To Provide <br /> Of Experience.
             </h2>
@@ -104,7 +104,7 @@ const CausesFour = () => {
                     <div className="causes-one__bottom">
                       <ul className="list-unstyled causes-one__list">
                         <li>
-                          <div className="icon">
+                          <div className="icon" style={{inset: 0}}>
                             <span className="icon-calendar"></span>
                           </div>
                           <div className="text">
@@ -112,7 +112,7 @@ const CausesFour = () => {
                           </div>
                         </li>
                         <li>
-                          <div className="icon">
+                          <div className="icon" style={{inset: 0}}>
                             <span className="icon-back-in-time"></span>
                           </div>
                           <div className="text">

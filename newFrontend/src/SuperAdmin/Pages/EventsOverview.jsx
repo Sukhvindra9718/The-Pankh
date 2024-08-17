@@ -20,6 +20,7 @@ function EventsOverview() {
     title: "",
     shortdescription: "",
     eventsdatetime: "",
+    link: "",
   });
   const [isUpdate, setIsUpdate] = React.useState(false);
   const [updateId, setUpdateId] = React.useState(null);
@@ -80,6 +81,7 @@ function EventsOverview() {
           title: "",
           shortdescription: "",
           eventsdatetime: "",
+          link: "",
         });
         setFile(null);
       }
@@ -115,6 +117,7 @@ function EventsOverview() {
           title: "",
           shortdescription: "",
           longdesc: "",
+          link: "",
         });
         setUpdateId("");
         setFile(null);
@@ -129,6 +132,7 @@ function EventsOverview() {
       title: item.title,
       shortdescription: item.shortdescription,
       eventsdatetime: item.eventsdatetime,
+      link: item.link,
     });
     setShowPreview(item.fileurl);
     setUpdateId(item.id);
@@ -312,6 +316,13 @@ function EventsOverview() {
                 placeholder="Short Desc"
                 name="shortdescription"
                 value={events.shortdescription}
+                onChange={handleDataChange}
+              />
+              <input
+                type="text"
+                placeholder="Link"
+                name="link"
+                value={events.link}
                 onChange={handleDataChange}
               />
               <input

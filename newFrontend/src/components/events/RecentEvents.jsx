@@ -45,12 +45,9 @@ const RecentEvents = () => {
                   <div className="recent-event__img">
                     <img src={event.fileurl} alt="" />
                     <div className="recent-event__btn-box">
-                      <Link
-                        to={process.env.PUBLIC_URL + `/events`}
-                        className="thm-btn recent-event__btn"
-                      >
+                      <a href={event.link} target="_blank" className="thm-btn recent-event__btn">
                         Read More
-                      </Link>
+                      </a>
                     </div>
                   </div>
                   <div className="recent-event__content">

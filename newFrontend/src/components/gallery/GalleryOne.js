@@ -67,10 +67,10 @@ export default class GalleryOne extends React.Component {
                                     <div className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay={`${100 * (index + 1)}ms`} key={image.id}>
                                         <div className="gallery-page__single">
                                             <div className="gallery-page__img">
-                                                <img src={image.fileurl || `${publicUrl}assets/images/gallery/default.jpg`} alt={image.title || "Gallery Image"} />
+                                                <img src={image.fileurl || `${publicUrl}assets/images/gallery/default.jpg`}  alt={image.title || "Gallery Image"} />
                                                 <div className="gallery-page__icon">
-                                                    <a className="img-popup" href={image.fileurl || `${publicUrl}assets/images/gallery/default.jpg`}>
-                                                        <span className="icon-plus"></span>
+                                                    <a className="img-popup" href={image.fileurl || `${publicUrl}assets/images/gallery/default.jpg`} target="_blank">
+                                                    <i class="fas fa-eye"></i>
                                                     </a>
                                                 </div>
                                             </div>
@@ -78,46 +78,9 @@ export default class GalleryOne extends React.Component {
                                     </div>
                                 ))
                             ) : (
-                                // Default gallery items if no images are fetched
-                                <>
-                                    <div className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
-                                        <div className="gallery-page__single">
-                                            <div className="gallery-page__img">
-                                                <img src={`${publicUrl}assets/images/gallery/gallery-page-1.jpg`} alt="" />
-                                                <div className="gallery-page__icon">
-                                                    <a className="img-popup" href={`${publicUrl}assets/images/gallery/gallery-page-1.jpg`}>
-                                                        <span className="icon-plus"></span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
-                                        <div className="gallery-page__single">
-                                            <div className="gallery-page__img">
-                                                <img src={`${publicUrl}assets/images/gallery/gallery-page-2.jpg`} alt="" />
-                                                <div className="gallery-page__icon">
-                                                    <a className="img-popup" href={`${publicUrl}assets/images/gallery/gallery-page-2.jpg`}>
-                                                        <span className="icon-plus"></span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
-                                        <div className="gallery-page__single">
-                                            <div className="gallery-page__img">
-                                                <img src={`${publicUrl}assets/images/gallery/gallery-page-3.jpg`} alt="" />
-                                                <div className="gallery-page__icon">
-                                                    <a className="img-popup" href="assets/images/gallery/gallery-page-3.jpg">
-                                                        <span className="icon-plus"></span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    {/* Add more default gallery items as needed */}
-                                </>
+                                <div className="col-12">
+                                    <p className="text-center">No images found!</p>
+                                </div>
                             )}
                         </div>
                     </div>

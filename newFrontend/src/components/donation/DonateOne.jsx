@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import axios from "axios";
+import { toast } from "react-hot-toast";
 
 const DonateOne = () => {
   const [file, setFile] = React.useState("");
@@ -48,7 +49,7 @@ const DonateOne = () => {
       setDonations({ ...Donations, [e.target.name]: e.target.value });
     }
 
-    console.log(Donations.country)
+    console.log(Donations.country);
   };
 
   // Create Donations
@@ -79,9 +80,11 @@ const DonateOne = () => {
           remarks: "",
         });
         setFile(null);
+        toast.success("Donation successful!");
       }
     } catch (error) {
       console.log(error);
+      toast.error("Donation failed!");
     }
   };
 
@@ -242,7 +245,7 @@ const DonateOne = () => {
                       >
                         <span class="section-title__tagline">IFSC Code</span>
                         <p class="about-one__text" style={{ color: "black" }}>
-                          {BankDetails.ifsccode}
+                          {BankDetails?.ifsccode}
                         </p>
                       </div>
                     </div>
@@ -253,7 +256,7 @@ const DonateOne = () => {
                       >
                         <span class="section-title__tagline">Account number</span>
                         <p class="about-one__text" style={{ color: "black" }}>
-                          {BankDetails.accountnumber}
+                          {BankDetails?.accountnumber}
                         </p>
                       </div>
                     </div>
@@ -264,7 +267,7 @@ const DonateOne = () => {
                       >
                         <span class="section-title__tagline">Bank Name</span>
                         <p class="about-one__text" style={{ color: "black" }}>
-                          {BankDetails.branchname}
+                          {BankDetails?.branchname}
                         </p>
                       </div>
                     </div>
@@ -275,7 +278,7 @@ const DonateOne = () => {
                       >
                         <span class="section-title__tagline">UPI ID</span>
                         <p class="about-one__text" style={{ color: "black" }}>
-                          {BankDetails.upiid}
+                          {BankDetails?.upiid}
                         </p>
                       </div>
                     </div>

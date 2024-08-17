@@ -14,7 +14,6 @@ export default class GalleryTwo extends React.Component {
 
     const $ = window.$;
 
-
     $(document).ready(function () {
       $(".video-popup").magnificPopup({
         type: "iframe",
@@ -72,16 +71,19 @@ export default class GalleryTwo extends React.Component {
                           src={video.fileurl}
                           alt={video.title || "Thumbnail"}
                         />
-                        <div className="gallery-page__icon about-one__video-link" style={{marginLeft:0}}>
+                        <div
+                          className="gallery-page__icon about-one__video-link"
+                          style={{ marginLeft: 0 }}
+                        >
                           <a
                             href={video.url}
-                            data-video-url={video.url} 
+                            data-video-url={video.url}
                             className="video-popup"
                           >
-                             <div className="about-one__video-icon">
-                            <span className="fa fa-play"></span>
-                            <i className="ripple"></i>
-                          </div>
+                            <div className="about-one__video-icon">
+                              <span className="fa fa-play"></span>
+                              <i className="ripple"></i>
+                            </div>
                           </a>
                         </div>
                       </div>
@@ -89,73 +91,9 @@ export default class GalleryTwo extends React.Component {
                   </div>
                 ))
               ) : (
-                // Default gallery items if no images are fetched
-                <>
-                  <div
-                    className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp"
-                    data-wow-delay="100ms"
-                  >
-                    <div className="gallery-page__single">
-                      <div className="gallery-page__img">
-                        <img
-                          src={`${publicUrl}assets/images/gallery/gallery-page-1.jpg`}
-                          alt=""
-                        />
-                        <div className="gallery-page__icon">
-                          <a
-                            className="img-popup"
-                            href={`${publicUrl}assets/images/gallery/gallery-page-1.jpg`}
-                          >
-                            <span className="icon-plus"></span>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp"
-                    data-wow-delay="200ms"
-                  >
-                    <div className="gallery-page__single">
-                      <div className="gallery-page__img">
-                        <img
-                          src={`${publicUrl}assets/images/gallery/gallery-page-2.jpg`}
-                          alt=""
-                        />
-                        <div className="gallery-page__icon">
-                          <a
-                            href="https://www.youtube.com/watch?v=Get7rqXYrbQ"
-                            className="video-popup"
-                          >
-                            <span className="icon-plus"></span>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp"
-                    data-wow-delay="300ms"
-                  >
-                    <div className="gallery-page__single">
-                      <div className="gallery-page__img">
-                        <img
-                          src={`${publicUrl}assets/images/gallery/gallery-page-3.jpg`}
-                          alt=""
-                        />
-                        <div className="gallery-page__icon">
-                          <a
-                            className="img-popup"
-                            href="assets/images/gallery/gallery-page-3.jpg"
-                          >
-                            <span className="icon-plus"></span>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  {/* Add more default gallery items as needed */}
-                </>
+                <div className="col-12">
+                  <p className="text-center">No images found!</p>
+                </div>
               )}
             </div>
           </div>

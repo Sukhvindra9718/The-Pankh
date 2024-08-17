@@ -38,6 +38,7 @@ function FooterOne() {
       console.log(error);
     }
   };
+
   useEffect(() => {
     getAllImages();
     return () => {
@@ -76,6 +77,39 @@ function FooterOne() {
       }, 2000);
     };
   }, []);
+
+  const [news, setNews] = React.useState([]);
+
+  const getTwoNews = async () => {
+    try {
+      const res = await axios.get("http://localhost:3000/api/v1/twonews");
+      if (res.data.success) {
+        console.log("Fetched news data:", res.data.news); // Log the raw data
+
+        const newslocaldatetime = res.data.news.map((news) => {
+          const newsDate = new Date(news.newsdatetime);
+          return {
+            ...news,
+            localeDate: newsDate.toLocaleDateString(),
+            localeTime: newsDate.toLocaleTimeString(),
+          };
+        });
+
+        setNews(newslocaldatetime);
+        console.log("Updated news state:", newslocaldatetime); // Log the updated state
+      } else {
+        console.log(res.data.message);
+      }
+    } catch (error) {
+      console.log("Error fetching news:", error);
+    }
+  };
+
+  useEffect(() => {
+    getTwoNews();
+    // eslint-disable-next-line
+  }, []);
+
   return (
     <>
       <footer className="site-footer-one">
@@ -83,7 +117,7 @@ function FooterOne() {
           <div className="container">
             <div className="row">
               <div
-                className="col-xl-3 col-lg-6 col-md-6 wow fadeInUp"
+                className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp"
                 data-wow-delay="100ms"
               >
                 <div className="footer-widget__column footer-widget-one__about">
@@ -140,7 +174,7 @@ function FooterOne() {
               </div>
 
               <div
-                className="col-xl-3 col-lg-6 col-md-6 wow fadeInUp"
+                className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp"
                 data-wow-delay="200ms"
               >
                 <div className="footer-widget__column footer-widget-one__gallery clearfix">
@@ -166,43 +200,33 @@ function FooterOne() {
                 </div>
               </div>
               <div
-                className="col-xl-3 col-lg-6 col-md-6 wow fadeInUp"
+                className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp"
                 data-wow-delay="300ms"
               >
                 <div className="footer-widget__column footer-widget-one__latest-works clearfix">
                   <h3 className="footer-widget-one__title">Latest News</h3>
-                  <ul className="footer-widget-one__latest-works-list list-unstyled clearfix">
-                    <li>
-                      <div className="footer-widget-one__latest-works-content">
-                        <h4 className="footer-widget-one__latest-works-title">
-                          <Link to={process.env.PUBLIC_URL + `/blog-details`}>
-                            Change your Life Through Education
-                          </Link>
-                        </h4>
-                        <p className="footer-widget-one__latest-works-date">
-                          July 29, 20222
-                        </p>
-                      </div>
-                    </li>
-                    <li>
-                      <div className="footer-widget-one__latest-works-content">
-                        <h4 className="footer-widget-one__latest-works-title">
-                          <Link to={process.env.PUBLIC_URL + `/blog-details`}>
-                            Donate your woolens this winter
-                          </Link>
-                        </h4>
-                        <p className="footer-widget-one__latest-works-date">
-                          July 29, 20222
-                        </p>
-                      </div>
-                    </li>
+                  <ul>
+                    {news.map((newsItem, index) => (
+                      <li key={index}>
+                        <div className="footer-widget-one__latest-works-content">
+                          <h4 className="footer-widget-one__latest-works-title">
+                            <a
+                              href={newsItem.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              {newsItem.title}
+                            </a>
+                          </h4>
+                          <p className="footer-widget-one__latest-works-date">
+                            {newsItem.localeDate}, {newsItem.localeTime}
+                          </p>
+                        </div>
+                      </li>
+                    ))}
                   </ul>
                 </div>
               </div>
-              <div
-                className="col-xl-3 col-lg-6 col-md-6 wow fadeInUp"
-                data-wow-delay="400ms"
-              ></div>
             </div>
           </div>
         </div>

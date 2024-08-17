@@ -22,6 +22,7 @@ function NewsOverview() {
     shortdescription: "",
     longdescription: "",
     newsdatetime: "",
+    link: "",
   });
   const [isUpdate, setIsUpdate] = React.useState(false);
   const [updateId, setUpdateId] = React.useState(null);
@@ -81,6 +82,8 @@ function NewsOverview() {
           title: "",
           shortdescription: "",
           longdescription: "",
+          newsdatetime: "",
+          link: "",
         });
         setFile(null);
       }
@@ -131,6 +134,8 @@ function NewsOverview() {
           title: "",
           shortdescription: "",
           longdescription: "",
+          newsdatetime: "",
+          link: "",
         });
         setUpdateId("");
         setFile(null);
@@ -146,6 +151,7 @@ function NewsOverview() {
       shortdescription: item.shortdescription,
       longdescription: item.longdescription,
       newsdatetime: item.newsdatetime,
+      link: item.link,
     });
     setShowPreview(item.fileurl);
     setUpdateId(item.id);
@@ -159,6 +165,7 @@ function NewsOverview() {
       shortdescription: "",
       longdescription: "",
       newsdatetime: "",
+      link: "",
     });
     setShowPreview(null);
     setUpdateId("");
@@ -314,6 +321,13 @@ function NewsOverview() {
                 placeholder="Short Desc"
                 name="shortdescription"
                 value={news.shortdescription}
+                onChange={handleDataChange}
+              />
+              <input
+                type="text"
+                placeholder="Link"
+                name="link"
+                value={news.link}
                 onChange={handleDataChange}
               />
               <input

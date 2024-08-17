@@ -1,16 +1,45 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { Component } from "react";
 import axios from "axios";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
-function TestimonialOne() {
-  const [testimonial, setTestimonial] = useState([]);
+const responsive = {
+  superLargeDesktop: {
+    breakpoint: { max: 4000, min: 3000 },
+    items: 5,
+  },
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 3,
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 2,
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1,
+  },
+};
 
-  const getAllTestimonials = async () => {
+class TestimonialOne extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      testimonial: [],
+    };
+  }
+
+  componentDidMount() {
+    this.getAllTestimonials();
+  }
+
+  getAllTestimonials = async () => {
     try {
       const res = await axios.get("http://localhost:3000/api/v1/testimonials");
 
       if (res.data.success) {
-        setTestimonial(res.data.testimonial);
+        this.setState({ testimonial: res.data.testimonial });
       } else {
         console.log(res.data.message);
       }
@@ -19,85 +48,67 @@ function TestimonialOne() {
     }
   };
 
-  useEffect(() => {
-    getAllTestimonials();
-    return () => {
-      setTimeout(() => {
-        const $ = window.$;
+  render() {
+    const { testimonial } = this.state;
 
-        if ($(".testimonial-one__carousel").length) {
-          $(".testimonial-one__carousel").owlCarousel({
-            loop: true,
-            autoplay: true,
-            margin: 30,
-            nav: false,
-            dots: false,
-            smartSpeed: 500,
-            autoplayTimeout: 3000,
-            navText: [
-              '<span class="fa fa-angle-left"></span>',
-              '<span class="fa fa-angle-right"></span>',
-            ],
-            responsive: {
-              0: {
-                items: 1,
-              },
-              768: {
-                items: 2,
-              },
-              991: {
-                items: 3,
-              },
-              1200: {
-                items: 3,
-              },
-            },
-          });
-        }
-      }, 2000);
-    };
-  }, []);
-  return (
-    <>
-      {testimonial.length > 0 ? (<section className="testimonial-one">
-        <div className="container">
-          <div className="row">
-            
-              <div
-                className="wow fadeInLeft owl-carousel owl-theme thm-owl__carousel testimonial-one__carousel"
-                data-wow-delay="100ms"
-                
-              >
-                {testimonial.map((item,index) => (
-                  <div className="testimonial-one__single" key={index}>
-                    <div className="testimonial-one__img">
-                      <img src={item.fileurl} alt="" />
-                      <div className="testimonial-one__quote">
-                        <span className="fas fa-quote-left"></span>
+    return (
+      <>
+        {testimonial.length > 0 ? (
+          <section className="testimonial-one" style={{zIndex:10}}>
+            <div className="container">
+              <div className="row">
+                <Carousel
+                  swipeable={false}
+                  draggable={false}
+                  showDots={true}
+                  responsive={responsive}
+                  ssr={true} // means to render carousel on server-side.
+                  infinite={true}
+                  autoPlay={this.props.deviceType !== "mobile" ? true : false}
+                  autoPlaySpeed={3000}
+                  keyBoardControl={true}
+                  customTransition="all .5"
+                  transitionDuration={500}
+                  containerClass="carousel-container"
+                  removeArrowOnDeviceType={[
+                    "tablet",
+                    "mobile",
+                    "desktop",
+                    "superLargeDesktop",
+                  ]}
+                  deviceType={this.props.deviceType}
+                  dotListClass="custom-dot-list-style"
+                  itemClass="carousel-item-padding-40-px"
+                >
+                  {testimonial.map((item, index) => (
+                    <div className="testimonial-one__single" key={index} style={{marginRight:"1.5rem",marginBottom:"1.5rem"}}>
+                      <div className="testimonial-one__img">
+                        <img src={item.fileurl} alt="" />
+                        <div className="testimonial-one__quote">
+                          <span className="fas fa-quote-left"></span>
+                        </div>
+                      </div>
+                      <p className="testimonial-one__text">{item.comment}</p>
+                      <div className="testimonial-one__client-info">
+                        <h4 className="testimonial-one__client-name">
+                          {item.name}
+                        </h4>
+                        <span className="testimonial-one__client-title">
+                          {item.role}
+                        </span>
                       </div>
                     </div>
-                    <p className="testimonial-one__text">{item.comment}</p>
-                    <div className="testimonial-one__client-info">
-                      <h4 className="testimonial-one__client-name">
-                        {item.name}
-                      </h4>
-                      <span className="testimonial-one__client-title">
-                        {item.role}
-                      </span>
-                    </div>
-                  </div>
-                ))}
+                  ))}
+                </Carousel>
               </div>
-           
-          </div>
-        </div>
-      </section> ):(
-        <div className="container" style={{height:"100px"}}></div>
-      )}
-    </>
-  );
+            </div>
+          </section>
+        ) : (
+          <div className="container" style={{ height: "100px" }}></div>
+        )}
+      </>
+    );
+  }
 }
 
 export default TestimonialOne;
-
-
