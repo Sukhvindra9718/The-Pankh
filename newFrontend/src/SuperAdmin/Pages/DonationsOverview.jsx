@@ -5,6 +5,7 @@ import "../../style/Dashboard.css";
 import axios from "axios";
 import { AiFillEdit, AiOutlinePlus, AiFillCloseCircle } from "react-icons/ai";
 import { FaRegEye } from "react-icons/fa";
+import Loader from "../../common/Loader";
 const sortList = ["Newest", "Oldest"];
 
 function DonationsOverview() {
@@ -30,6 +31,7 @@ function DonationsOverview() {
   });
   const [isUpdate, setIsUpdate] = React.useState(false);
   const [updateId, setUpdateId] = React.useState(null);
+  const [loading, setLoading] = React.useState(false);
 
   // Get Token from Cookie
   const getTokenFromCookie = () => {
@@ -72,7 +74,11 @@ function DonationsOverview() {
         Authorization: `${getTokenFromCookie()}`,
       },
     };
-
+    if(Donations.fullname === "" || Donations.email === "" || Donations.phonenumber === "" || Donations.country === "" || Donations.amount === "" || Donations.utrnumber === "" || file == ""){
+      alert("Please fill all the fields");
+      return;
+    }
+    setLoading(true);
     try {
       const { data } = await axios.post(
         "http://localhost:3000/api/v1/Donation/upload",
@@ -96,8 +102,10 @@ function DonationsOverview() {
         });
         setFile(null);
       }
+      setLoading(false);
     } catch (error) {
       console.log(error);
+      setLoading(false);
     }
   };
 
@@ -109,11 +117,15 @@ function DonationsOverview() {
         "Content-Type": "application/json",
       },
     };
-
+    if(Donations.fullname === "" || Donations.email === "" || Donations.phonenumber === "" || Donations.country === "" || Donations.amount === "" || Donations.utrnumber === "" || file == ""){
+      alert("Please fill all the fields");
+      return;
+    }
     const Data = {
       ...Donations,
       file: file ? file : undefined,
     };
+    setLoading(true);
     try {
       const { data } = await axios.put(
         `http://localhost:3000/api/v1/Donation/${updateId}`,
@@ -137,8 +149,10 @@ function DonationsOverview() {
         setUpdateId("");
         setFile(null);
       }
+      setLoading(false);
     } catch (error) {
       console.log(error);
+      setLoading(false);
     }
   };
 
@@ -334,8 +348,8 @@ function DonationsOverview() {
         </div>
       </div>
 
-      {uploadFormOpen && (
-        <div className="upload-form-container-2">
+      {loading ? (<Loader/>): (
+        uploadFormOpen && <div className="upload-form-container-2">
           <div className="upload-form">
             <div className="close-btn" onClick={() => handleClose()}>
               <AiFillCloseCircle size={30} />

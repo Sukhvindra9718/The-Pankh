@@ -4,6 +4,7 @@ import { MdDelete } from "react-icons/md";
 import "../../style/Dashboard.css";
 import axios from "axios";
 import { AiFillEdit, AiOutlinePlus, AiFillCloseCircle } from "react-icons/ai";
+import Loader from "../../common/Loader";
 const sortList = ["Newest", "Oldest"];
 
 function FundOverview() {
@@ -24,6 +25,7 @@ function FundOverview() {
   });
   const [isUpdate, setIsUpdate] = React.useState(false);
   const [updateId, setUpdateId] = React.useState(null);
+  const [loading, setLoading] = React.useState(false);
 
   // Get Token from Cookie
   const getTokenFromCookie = () => {
@@ -60,13 +62,17 @@ function FundOverview() {
 
   // Create fund
   const handleUpload = async () => {
-    console.log(fund);
+
     const config = {
       headers: {
         Authorization: `${getTokenFromCookie()}`,
       },
     };
-
+    if (!fund.title || !fund.description || !fund.goalprice || !file || !fund.raisedprice) {
+      alert("Please fill all the fields");
+      return;
+    }
+    setLoading(true);
     try {
       const { data } = await axios.post(
         "http://localhost:3000/api/v1/fundDetails/upload",
@@ -85,8 +91,10 @@ function FundOverview() {
         });
         setFile(null);
       }
+      setLoading(false);
     } catch (error) {
       console.log(error);
+      setLoading(false);
     }
   };
 
@@ -98,11 +106,15 @@ function FundOverview() {
         "Content-Type": "application/json",
       },
     };
-
+    if (!fund.title || !fund.description || !fund.goalprice || !file || !fund.raisedprice) {
+      alert("Please fill all the fields");
+      return;
+    }
     const Data = {
       ...fund,
       file: file ? file : undefined,
     };
+    setLoading(true);
     try {
       const { data } = await axios.put(
         `http://localhost:3000/api/v1/fundDetails/${updateId}`,
@@ -121,8 +133,10 @@ function FundOverview() {
         setUpdateId("");
         setFile(null);
       }
+      setLoading(false);
     } catch (error) {
       console.log(error);
+      setLoading(false);
     }
   };
 
@@ -295,8 +309,8 @@ function FundOverview() {
         </div>
       </div>
 
-      {uploadFormOpen && (
-        <div className="upload-form-container-2">
+      {loading ? (<Loader/>):(
+        uploadFormOpen && <div className="upload-form-container-2">
           <div className="upload-form">
             <div className="close-btn" onClick={() => handleClose()}>
               <AiFillCloseCircle size={30} />

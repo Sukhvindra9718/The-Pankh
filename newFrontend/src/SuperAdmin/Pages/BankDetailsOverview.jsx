@@ -5,6 +5,7 @@ import "../../style/Dashboard.css";
 import axios from "axios";
 import { FaRegEye } from "react-icons/fa";
 import { AiFillEdit, AiOutlinePlus, AiFillCloseCircle } from "react-icons/ai";
+import Loader from "../../common/Loader"
 const sortList = ["Newest", "Oldest"];
 
 function BankDetailsOverview() {
@@ -26,7 +27,7 @@ function BankDetailsOverview() {
   });
   const [isUpdate, setIsUpdate] = React.useState(false);
   const [updateId, setUpdateId] = React.useState(null);
-
+  const [loading, setLoading] = React.useState(false);
   // Get Token from Cookie
   const getTokenFromCookie = () => {
     const name = "token=";
@@ -62,12 +63,16 @@ function BankDetailsOverview() {
 
   // Create BankDetails
   const handleUpload = async () => {
-    console.log(BankDetails);
+    
     const config = {
       headers: {
         Authorization: `${getTokenFromCookie()}`,
       },
     };
+    if(BankDetails.accountnumber == "" || BankDetails.branchname == "" || BankDetails.ifsccode == "" || BankDetails.upiid == "" || file == ""){
+      return alert("Please fill all the fields")
+    }
+    setLoading(true);
     try {
       const { data } = await axios.post(
         "http://localhost:3000/api/v1/BankDetails/upload",
@@ -87,8 +92,10 @@ function BankDetailsOverview() {
         });
         setFile(null);
       }
+      setLoading(false);
     } catch (error) {
       console.log(error);
+      setLoading(false);
     }
   };
 
@@ -100,11 +107,14 @@ function BankDetailsOverview() {
         "Content-Type": "application/json",
       },
     };
-
+    if(BankDetails.accountnumber == "" || BankDetails.branchname == "" || BankDetails.ifsccode == "" || BankDetails.upiid == "" || file == ""){
+      return alert("Please fill all the fields")
+    }
     const Data = {
       ...BankDetails,
       file: file ? file : undefined,
     };
+    setLoading(true);
     try {
       const { data } = await axios.put(
         `http://localhost:3000/api/v1/BankDetails/${updateId}`,
@@ -124,8 +134,10 @@ function BankDetailsOverview() {
         setUpdateId("");
         setFile(null);
       }
+      setLoading(false);
     } catch (error) {
       console.log(error);
+      setLoading(false);
     }
   };
 
@@ -320,8 +332,8 @@ function BankDetailsOverview() {
         </div>
       </div>
 
-      {uploadFormOpen && (
-        <div className="upload-form-container-2">
+      {loading ? (<Loader/>): (
+        uploadFormOpen && <div className="upload-form-container-2">
           <div className="upload-form">
             <div className="close-btn" onClick={() => handleClose()}>
               <AiFillCloseCircle size={30} />

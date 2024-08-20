@@ -8,6 +8,7 @@ import {
   AiOutlinePlus,
   AiFillCloseCircle,
 } from "react-icons/ai";
+import Loader from "../../common/Loader";
 const sortList = ["Newest", "Oldest"];
 
 function CarousalOverview() {
@@ -24,6 +25,7 @@ function CarousalOverview() {
   const [showPreview, setShowPreview] = React.useState(null);
   const [isUpdate, setIsUpdate] = React.useState(false);
   const [id, setId] = React.useState("");
+  const [loading, setLoading] = React.useState(false);
 
   // Get Token from Cookie
   const getTokenFromCookie = () => {
@@ -63,7 +65,10 @@ function CarousalOverview() {
         Authorization: `${getTokenFromCookie()}`,
       },
     };
-
+    if(title == "" || description == "" || file == ""){
+      return alert("Please fill all the fields");
+    }
+    setLoading(true);
     try {
       const { data } = await axios.post(
         "http://localhost:3000/api/v1/carousal/upload",
@@ -78,8 +83,10 @@ function CarousalOverview() {
         setDescription("");
         setFile(null);
       }
+      setLoading(false);
     } catch (error) {
       console.log(error);
+      setLoading(false);
     }
   };
 
@@ -116,12 +123,15 @@ function CarousalOverview() {
         'Content-Type': 'application/json'
       },
     };
-
+    if(title == "" || description == "" || file == ""){
+      return alert("Please fill all the fields");
+    }
     const Data = {
       title,
       description,
       file : file ? file : undefined
     }
+    setLoading(true);
     try {
       const { data } = await axios.put(
         `http://localhost:3000/api/v1/carousal/${id}`,
@@ -137,8 +147,10 @@ function CarousalOverview() {
         setId("");
         setFile(null);
       }
+      setLoading(false);
     } catch (error) {
       console.log(error);
+      setLoading(false);
     }
   };
   const handleShowPopup = (item) => {
@@ -309,8 +321,8 @@ function CarousalOverview() {
         </div>
       </div>
 
-      {uploadFormOpen && (
-        <div className="upload-form-container">
+      {loading ? (<Loader/>): (
+        uploadFormOpen && <div className="upload-form-container">
           <div className="upload-form">
             <div className="close-btn" onClick={() => handleClose()}>
               <AiFillCloseCircle size={30} />

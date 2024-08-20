@@ -4,6 +4,7 @@ import { MdDelete } from "react-icons/md";
 import "../../style/Dashboard.css";
 import axios from "axios";
 import { AiFillEdit, AiOutlinePlus, AiFillCloseCircle } from "react-icons/ai";
+import Loader from "../../common/Loader";
 const sortList = ["Newest", "Oldest"];
 
 function VolunteerOverview() {
@@ -27,6 +28,7 @@ function VolunteerOverview() {
   });
   const [isUpdate, setIsUpdate] = React.useState(false);
   const [updateId, setUpdateId] = React.useState(null);
+  const [loading,setLoading] = React.useState(false)
 
   // Get Token from Cookie
   const getTokenFromCookie = () => {
@@ -68,7 +70,10 @@ function VolunteerOverview() {
         Authorization: `${getTokenFromCookie()}`,
       },
     };
-
+    if(volunteer.username == "" || volunteer.phonenumber == "" || volunteer.role == "" || file == ""){
+      return alert("Username, Phonenumber, Role & Image cannot be empty")
+    }
+    setLoading(true)
     try {
       const { data } = await axios.post(
         "http://localhost:3000/api/v1/volunteer/upload",
@@ -90,8 +95,10 @@ function VolunteerOverview() {
         });
         setFile(null);
       }
+      setLoading(false)
     } catch (error) {
       console.log(error);
+      setLoading(false)
     }
   };
 
@@ -119,7 +126,10 @@ function VolunteerOverview() {
         "Content-Type": "application/json",
       },
     };
-
+    if(volunteer.username == "" || volunteer.phonenumber == "" || volunteer.role == "" || file == ""){
+      return alert("Username, Phonenumber, Role & Image cannot be empty")
+    }
+    setLoading(true)
     const Data = {
       ...volunteer,
       file: file ? file : undefined,
@@ -146,8 +156,10 @@ function VolunteerOverview() {
         setUpdateId("");
         setFile(null);
       }
+      setLoading(false)
     } catch (error) {
       console.log(error);
+      setLoading(false)
     }
   };
   const handleShowPopup = (item) => {
@@ -328,8 +340,8 @@ function VolunteerOverview() {
         </div>
       </div>
 
-      {uploadFormOpen && (
-        <div className="upload-form-container-2">
+      {loading ? (<Loader/>):(
+        uploadFormOpen && <div className="upload-form-container-2">
           <div className="upload-form">
             <div className="close-btn" onClick={() => handleClose()}>
               <AiFillCloseCircle size={30} />

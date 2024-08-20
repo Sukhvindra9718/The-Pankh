@@ -3,6 +3,9 @@ import { GrSort } from "react-icons/gr";
 import { MdDelete } from "react-icons/md";
 import "../../style/Dashboard.css";
 import axios from "axios";
+import Loader from "../../common/Loader";
+
+
 import {
   AiFillEdit,
   AiOutlinePlus,
@@ -22,6 +25,7 @@ function BannerOverview() {
   const [pagename, setPageName] = React.useState("");
   const [isUpdate, setIsUpdate] = React.useState(false);
   const [updateId, setUpdateId] = React.useState(null);
+  const [loading, setLoading] = React.useState(false);
 
   // Get Token from Cookie
   const getTokenFromCookie = () => {
@@ -61,7 +65,10 @@ function BannerOverview() {
         Authorization: `${getTokenFromCookie()}`,
       },
     };
-
+    if(pagename = "" || file == ""){
+      return alert("Please fill all the fields")
+    }
+    setLoading(true);
     try {
       const { data } = await axios.post(
         "http://localhost:3000/api/v1/banner/upload",
@@ -75,8 +82,10 @@ function BannerOverview() {
         setPageName("");
         setFile(null);
       }
+      setLoading(false);
     } catch (error) {
       console.log(error);
+      setLoading(false);
     }
   };
 
@@ -113,7 +122,10 @@ function BannerOverview() {
         "Content-Type": "application/json",
       },
     };
-
+    if(pagename = "" || file == ""){
+      return alert("Please fill all the fields")
+    }
+    setLoading(true);
     const Data = {
       pagename,
       file: file ? file : undefined,
@@ -132,8 +144,10 @@ function BannerOverview() {
         setUpdateId("");
         setFile(null);
       }
+      setLoading(false);
     } catch (error) {
       console.log(error);
+      setLoading(false);
     }
   };
   const handleShowPopup = (item) => {
@@ -299,8 +313,8 @@ function BannerOverview() {
         </div>
       </div>
 
-      {uploadFormOpen && (
-        <div className="upload-form-container">
+      {loading ? (<Loader/>): (
+        uploadFormOpen && <div className="upload-form-container">
           <div className="upload-form">
             <div className="close-btn" onClick={() => handleClose()}>
               <AiFillCloseCircle size={30} />

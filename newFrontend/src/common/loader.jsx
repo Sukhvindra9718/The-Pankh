@@ -2,7 +2,7 @@ import React from "react";
 import "../style/loader.css";
 
 
-function loader() {
+function Loader() {
   return (
     <div className="loader-container">
       <div className="spinner"></div>
@@ -10,4 +10,4 @@ function loader() {
   );
 }
 
-export default loader;
+export default Loader;

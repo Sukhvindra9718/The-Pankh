@@ -4,9 +4,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    position: fixed;
+    position: absolute;
     background: rgba(0, 0, 0, 0.834);
-    z-index: 1;
+    z-index: 10;
+    top: 0;
 }
 
 .spinner {

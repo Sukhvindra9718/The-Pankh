@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import {
   AiFillEdit,
   AiOutlinePlus,
@@ -9,6 +8,7 @@ import { GrSort } from "react-icons/gr";
 import { MdDelete } from "react-icons/md";
 import "../../style/Dashboard.css";
 import axios from "axios";
+import Loader from "../../common/Loader";
 
 const sortList = ["Newest", "Oldest"];
 function VideosOverview() {
@@ -26,7 +26,7 @@ function VideosOverview() {
   const [url,setUrl] = React.useState("");
   const [isUpdate, setIsUpdate] = React.useState(false);
   const [updateId, setUpdateId] = React.useState(null);
-  const navigate = useNavigate();
+  const [loading,setLoading] = React.useState(false)
 
   // Get Token from Cookie
   const getTokenFromCookie = () => {
@@ -62,7 +62,10 @@ function VideosOverview() {
         Authorization: `${getTokenFromCookie()}`,
       },
     };
-
+    if(title == "" || description == "" || url == ""|| file == ""){
+      return alert('Please fill all the fields');
+    }
+    setLoading(true)
     try {
       const { data } = await axios.post(
         "http://localhost:3000/api/v1/video/upload",
@@ -78,8 +81,10 @@ function VideosOverview() {
         setUrl("");
         setFile(null);
       }
+      setLoading(false)
     } catch (error) {
       console.log(error);
+      setLoading(false)
     }
   };
   const getAllVideos = async () => {
@@ -109,7 +114,10 @@ function VideosOverview() {
         "Content-Type": "application/json",
       },
     };
-
+    if(title == "" || description == "" || url == ""|| file == ""){
+      return alert('Please fill all the fields');
+    }
+    setLoading(true)
     const Data = {
       title,
       description,
@@ -133,8 +141,10 @@ function VideosOverview() {
         setUrl("");
         setFile(null);
       }
+      setLoading(false)
     } catch (error) {
       console.log(error);
+      setLoading(false)
     }
   };
   const handleShowPopup = (item) => {
@@ -306,8 +316,8 @@ function VideosOverview() {
             ))}
         </div>
       </div>
-      {uploadFormOpen && (
-        <div className="upload-form-container">
+      {loading ? (<Loader/>) :(
+        uploadFormOpen &&<div className="upload-form-container">
           <div className="upload-form">
             <div className="close-btn" onClick={() => handleClose()}>
               <AiFillCloseCircle size={30} />

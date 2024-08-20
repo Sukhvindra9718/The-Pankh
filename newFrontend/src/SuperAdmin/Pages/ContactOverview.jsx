@@ -109,7 +109,7 @@ function ContactOverview() {
     setSearch("");
     setFilterData(filterData1);
   };
-console.log(data)
+
   return (
     <div>
       <div className="filter-membership-container">

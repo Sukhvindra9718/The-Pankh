@@ -4,6 +4,7 @@ import { MdDelete } from "react-icons/md";
 import "../../style/Dashboard.css";
 import axios from "axios";
 import { AiFillEdit, AiOutlinePlus, AiFillCloseCircle } from "react-icons/ai";
+import Loader from "../../common/Loader";
 const sortList = ["Newest", "Oldest"];
 
 function NewsOverview() {
@@ -16,7 +17,7 @@ function NewsOverview() {
   const [uploadFormOpen, setUploadFormOpen] = React.useState(false);
   const [file, setFile] = React.useState("");
   const [showPreview, setShowPreview] = React.useState("");
-
+  const [loading,setLoading] = React.useState(false)
   const [news, setNews] = React.useState({
     title: "",
     shortdescription: "",
@@ -67,7 +68,10 @@ function NewsOverview() {
         Authorization: `${getTokenFromCookie()}`,
       },
     };
-
+    if(news.title == "" || news.shortdescription == "" || news.longdescription == "" || news.newsdatetime =="" || news.link == ""){
+      return alert("Please fill all the fields")
+    }
+    setLoading(true)
     try {
       const { data } = await axios.post(
         "http://localhost:3000/api/v1/news/upload",
@@ -87,8 +91,10 @@ function NewsOverview() {
         });
         setFile(null);
       }
+      setLoading(false)
     } catch (error) {
       console.log(error);
+      setLoading(false)
     }
   };
 
@@ -115,7 +121,10 @@ function NewsOverview() {
         "Content-Type": "application/json",
       },
     };
-
+    if(news.title == "" || news.shortdescription == "" || news.longdescription == "" || news.newsdatetime =="" || news.link == ""){
+      return alert("Please fill all the fields")
+    }
+    setLoading(true)
     const Data = {
       ...news,
       file: file ? file : undefined,
@@ -140,8 +149,10 @@ function NewsOverview() {
         setUpdateId("");
         setFile(null);
       }
+      setLoading(false)
     } catch (error) {
       console.log(error);
+      setLoading(false)
     }
   };
 
@@ -301,8 +312,8 @@ function NewsOverview() {
         </div>
       </div>
 
-      {uploadFormOpen && (
-        <div className="upload-form-container-2">
+      {loading ? (<Loader/>): (
+        uploadFormOpen && <div className="upload-form-container-2">
           <div className="upload-form">
             <div className="close-btn" onClick={() => handleClose()}>
               <AiFillCloseCircle size={30} />

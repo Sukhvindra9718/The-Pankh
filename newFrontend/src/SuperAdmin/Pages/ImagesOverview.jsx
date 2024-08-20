@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import {
-  AiFillEye,
   AiFillEdit,
   AiOutlinePlus,
   AiFillCloseCircle,
@@ -10,6 +9,7 @@ import { GrSort } from "react-icons/gr";
 import { MdDelete } from "react-icons/md";
 import "../../style/Dashboard.css";
 import axios from "axios";
+import Loader from "../../common/Loader";
 
 const sortList = ["Newest", "Oldest"];
 function ImagesOverview() {
@@ -26,6 +26,7 @@ function ImagesOverview() {
   const [description, setDescription] = React.useState("");
   const [isUpdate, setIsUpdate] = React.useState(false);
   const [updateId, setUpdateId] = React.useState(null);
+  const [loading,setLoading] = React.useState(false)
   const navigate = useNavigate();
 
   // Get Token from Cookie
@@ -63,7 +64,11 @@ function ImagesOverview() {
         Authorization: `${getTokenFromCookie()}`,
       },
     };
-
+    if (!title || !description || !file) {
+      alert("Please fill all the fields");
+      return;
+    }
+    setLoading(true)
     try {
       const { data } = await axios.post(
         "http://localhost:3000/api/v1/image/upload",
@@ -78,8 +83,10 @@ function ImagesOverview() {
         setDescription("");
         setFile(null);
       }
+      setLoading(false)
     } catch (error) {
       console.log(error);
+      setLoading(false)
     }
   };
   const getAllImages = async () => {
@@ -110,7 +117,11 @@ function ImagesOverview() {
         "Content-Type": "application/json",
       },
     };
-
+    if (!title || !description || !file) {
+      alert("Please fill all the fields");
+      return;
+    }
+    setLoading(true)
     const Data = {
       title,
       description,
@@ -131,8 +142,10 @@ function ImagesOverview() {
         setUpdateId("");
         setFile(null);
       }
+      setLoading(false)
     } catch (error) {
       console.log(error);
+      setLoading(false)
     }
   };
   const handleShowPopup = (item) => {
@@ -157,9 +170,6 @@ function ImagesOverview() {
     // eslint-disable-next-line
   }, [isDelete]);
 
-  const handleShowImage = (id) => {
-    navigate(`/images/${id}`);
-  };
 
   const handleDelete = async (id) => {
     const confirm = window.confirm(
@@ -291,10 +301,6 @@ function ImagesOverview() {
                 </div>
                 <div className="grid-item" data-label="Action">
                   <div className="action-icons">
-                    <AiFillEye
-                      size={25}
-                      onClick={() => handleShowImage(item.id)}
-                    />
                     <AiFillEdit
                       size={25}
                       onClick={() => handleShowPopup(item)}
@@ -310,8 +316,8 @@ function ImagesOverview() {
             ))}
         </div>
       </div>
-      {uploadFormOpen && (
-        <div className="upload-form-container">
+      {loading ? (<Loader/>) : (
+        uploadFormOpen &&<div className="upload-form-container">
           <div className="upload-form">
             <div className="close-btn" onClick={() => handleClose()}>
               <AiFillCloseCircle size={30} />
