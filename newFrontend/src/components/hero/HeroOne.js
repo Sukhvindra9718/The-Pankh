@@ -159,15 +159,7 @@ function HeroOne() {
                   <div className="main-slider-shape-2"></div>
                   <div className="main-slider-shape-3 zoominout"></div>
                   <div className="main-slider-shape-4 zoominout-2"></div>
-                  <div className="main-slider-shape-5">
-                    <img
-                      src={
-                        publicUrl +
-                        "assets/images/shapes/main-slider-shape-5.png"
-                      }
-                      alt=""
-                    />
-                  </div>
+                 
                   <div className="container">
                     <div className="row">
                       <div className="col-xl-7">
@@ -217,15 +209,7 @@ function HeroOne() {
                   <div className="main-slider-shape-2"></div>
                   <div className="main-slider-shape-3 zoominout"></div>
                   <div className="main-slider-shape-4 zoominout-2"></div>
-                  <div className="main-slider-shape-5">
-                    <img
-                      src={
-                        publicUrl +
-                        "assets/images/shapes/main-slider-shape-5.png"
-                      }
-                      alt=""
-                    />
-                  </div>
+                  
                   <div className="container">
                     <div className="row">
                       <div className="col-xl-7">

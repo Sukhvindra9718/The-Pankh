@@ -5,8 +5,8 @@ import "../../style/Dashboard.css";
 import axios from "axios";
 import { AiFillEdit, AiOutlinePlus, AiFillCloseCircle } from "react-icons/ai";
 import Loader from "../../common/Loader";
-const sortList = ["Newest", "Oldest"];
 import { toast } from "react-hot-toast";
+const sortList = ["Newest", "Oldest"];
 function EventsOverview() {
   const [isDelete, setIsDelete] = React.useState(false);
   const [showSort, setShowSort] = React.useState(false);
