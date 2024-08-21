@@ -9,6 +9,7 @@ import {
   AiFillCloseCircle,
 } from "react-icons/ai";
 import Loader from "../../common/Loader";
+import { toast } from "react-hot-toast";
 const sortList = ["Newest", "Oldest"];
 
 function CarousalOverview() {
@@ -66,7 +67,7 @@ function CarousalOverview() {
       },
     };
     if(title == "" || description == "" || file == ""){
-      return alert("Please fill all the fields");
+      return toast.error("Please fill all the fields");
     }
     setLoading(true);
     try {
@@ -124,7 +125,7 @@ function CarousalOverview() {
       },
     };
     if(title == "" || description == "" || file == ""){
-      return alert("Please fill all the fields");
+      return toast.error("Please fill all the fields");
     }
     const Data = {
       title,

@@ -9,7 +9,7 @@ import { MdDelete } from "react-icons/md";
 import "../../style/Dashboard.css";
 import axios from "axios";
 import Loader from "../../common/Loader";
-
+import { toast } from "react-hot-toast";
 const sortList = ["Newest", "Oldest"];
 function VideosOverview() {
   const [isDelete, setIsDelete] = React.useState(false);
@@ -63,7 +63,7 @@ function VideosOverview() {
       },
     };
     if(title == "" || description == "" || url == ""|| file == ""){
-      return alert('Please fill all the fields');
+      return toast.error('Please fill all the fields');
     }
     setLoading(true)
     try {
@@ -115,7 +115,7 @@ function VideosOverview() {
       },
     };
     if(title == "" || description == "" || url == ""|| file == ""){
-      return alert('Please fill all the fields');
+      return toast.error('Please fill all the fields');
     }
     setLoading(true)
     const Data = {

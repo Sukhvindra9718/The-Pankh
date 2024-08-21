@@ -10,7 +10,7 @@ import { MdDelete } from "react-icons/md";
 import "../../style/Dashboard.css";
 import axios from "axios";
 import Loader from "../../common/Loader";
-
+import { toast } from "react-hot-toast";
 const sortList = ["Newest", "Oldest"];
 function ProjectOverview() {
   const [isDelete, setIsDelete] = React.useState(false);
@@ -64,7 +64,7 @@ function ProjectOverview() {
       },
     };
     if(title == "" || description == "" || file == ""){
-      return alert("Please fill all the fields")
+      return toast.error("Please fill all the fields")
     }
     setLoading(true)
     try {
@@ -116,7 +116,7 @@ function ProjectOverview() {
       },
     };
     if(title == "" || description == "" || file == ""){
-      return alert("Please fill all the fields")
+      return toast.error("Please fill all the fields")
     }
     setLoading(true)
     const Data = {

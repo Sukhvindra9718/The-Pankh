@@ -10,7 +10,7 @@ import { MdDelete } from "react-icons/md";
 import "../../style/Dashboard.css";
 import axios from "axios";
 import Loader from "../../common/Loader";
-
+import { toast } from "react-hot-toast";
 const sortList = ["Newest", "Oldest"];
 function ImagesOverview() {
   const [isDelete, setIsDelete] = React.useState(false);
@@ -27,7 +27,7 @@ function ImagesOverview() {
   const [isUpdate, setIsUpdate] = React.useState(false);
   const [updateId, setUpdateId] = React.useState(null);
   const [loading,setLoading] = React.useState(false)
-  const navigate = useNavigate();
+  
 
   // Get Token from Cookie
   const getTokenFromCookie = () => {
@@ -65,7 +65,7 @@ function ImagesOverview() {
       },
     };
     if (!title || !description || !file) {
-      alert("Please fill all the fields");
+      toast.error("Please fill all the fields");
       return;
     }
     setLoading(true)
@@ -118,7 +118,7 @@ function ImagesOverview() {
       },
     };
     if (!title || !description || !file) {
-      alert("Please fill all the fields");
+      toast.error("Please fill all the fields");
       return;
     }
     setLoading(true)

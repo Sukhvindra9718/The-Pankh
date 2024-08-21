@@ -9,7 +9,7 @@ import {
   AiFillCloseCircle,
 } from "react-icons/ai";
 import Loader from "../../common/Loader";
-
+import { toast } from "react-hot-toast";
 const sortList = ["Newest", "Oldest"];
 
 function KeyContactsOverview() {
@@ -66,7 +66,7 @@ function KeyContactsOverview() {
       keycontact.organization === "" ||
       keycontact.designation === ""
     ) {
-      alert("Please Fill All Fields");
+      toast.error("Please Fill All Fields");
       return;
     }
     setLoading(true)
@@ -142,7 +142,7 @@ function KeyContactsOverview() {
       keycontact.organization === "" ||
       keycontact.designation === ""
     ) {
-      alert("Please Fill All Fields");
+      toast.error("Please Fill All Fields");
       return;
     }
     setLoading(true)

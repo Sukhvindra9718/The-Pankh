@@ -6,7 +6,7 @@ import axios from "axios";
 import { AiFillEdit, AiOutlinePlus, AiFillCloseCircle } from "react-icons/ai";
 import Loader from "../../common/Loader";
 const sortList = ["Newest", "Oldest"];
-
+import { toast } from "react-hot-toast";
 function TestimonialOverview() {
   const [isDelete, setIsDelete] = React.useState(false);
   const [showSort, setShowSort] = React.useState(false);
@@ -67,7 +67,7 @@ function TestimonialOverview() {
       },
     };
     if(testimonial.name == "" || testimonial.comment == "" || testimonial.role == ""){
-      return alert("Please fill all the fields");
+      return toast.error("Please fill all the fields");
     }
     setLoading(true)
     try {
@@ -119,7 +119,7 @@ function TestimonialOverview() {
       },
     };
     if(testimonial.name == "" || testimonial.comment == "" || testimonial.role == ""){
-      return alert("Please fill all the fields");
+      return toast.error("Please fill all the fields");
     }
     setLoading(true)
     const Data = {

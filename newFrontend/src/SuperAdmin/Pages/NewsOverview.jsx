@@ -6,7 +6,7 @@ import axios from "axios";
 import { AiFillEdit, AiOutlinePlus, AiFillCloseCircle } from "react-icons/ai";
 import Loader from "../../common/Loader";
 const sortList = ["Newest", "Oldest"];
-
+import { toast } from "react-hot-toast";
 function NewsOverview() {
   const [isDelete, setIsDelete] = React.useState(false);
   const [showSort, setShowSort] = React.useState(false);
@@ -69,7 +69,7 @@ function NewsOverview() {
       },
     };
     if(news.title == "" || news.shortdescription == "" || news.longdescription == "" || news.newsdatetime =="" || news.link == ""){
-      return alert("Please fill all the fields")
+      return toast.error("Please fill all the fields")
     }
     setLoading(true)
     try {
@@ -122,7 +122,7 @@ function NewsOverview() {
       },
     };
     if(news.title == "" || news.shortdescription == "" || news.longdescription == "" || news.newsdatetime =="" || news.link == ""){
-      return alert("Please fill all the fields")
+      return toast.error("Please fill all the fields")
     }
     setLoading(true)
     const Data = {

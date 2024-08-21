@@ -6,6 +6,7 @@ import axios from "axios";
 import { AiFillEdit, AiOutlinePlus, AiFillCloseCircle } from "react-icons/ai";
 import { FaRegEye } from "react-icons/fa";
 import Loader from "../../common/Loader";
+import { toast } from "react-hot-toast";
 const sortList = ["Newest", "Oldest"];
 
 function DonationsOverview() {
@@ -75,7 +76,7 @@ function DonationsOverview() {
       },
     };
     if(Donations.fullname === "" || Donations.email === "" || Donations.phonenumber === "" || Donations.country === "" || Donations.amount === "" || Donations.utrnumber === "" || file == ""){
-      alert("Please fill all the fields");
+      toast.error("Please fill all the fields");
       return;
     }
     setLoading(true);
@@ -118,7 +119,7 @@ function DonationsOverview() {
       },
     };
     if(Donations.fullname === "" || Donations.email === "" || Donations.phonenumber === "" || Donations.country === "" || Donations.amount === "" || Donations.utrnumber === "" || file == ""){
-      alert("Please fill all the fields");
+      toast.error("Please fill all the fields");
       return;
     }
     const Data = {

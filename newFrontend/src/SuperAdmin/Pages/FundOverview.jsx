@@ -6,7 +6,7 @@ import axios from "axios";
 import { AiFillEdit, AiOutlinePlus, AiFillCloseCircle } from "react-icons/ai";
 import Loader from "../../common/Loader";
 const sortList = ["Newest", "Oldest"];
-
+import { toast } from "react-hot-toast";
 function FundOverview() {
   const [isDelete, setIsDelete] = React.useState(false);
   const [showSort, setShowSort] = React.useState(false);
@@ -69,7 +69,7 @@ function FundOverview() {
       },
     };
     if (!fund.title || !fund.description || !fund.goalprice || !file || !fund.raisedprice) {
-      alert("Please fill all the fields");
+      toast.error("Please fill all the fields");
       return;
     }
     setLoading(true);
@@ -107,7 +107,7 @@ function FundOverview() {
       },
     };
     if (!fund.title || !fund.description || !fund.goalprice || !file || !fund.raisedprice) {
-      alert("Please fill all the fields");
+      toast.error("Please fill all the fields");
       return;
     }
     const Data = {

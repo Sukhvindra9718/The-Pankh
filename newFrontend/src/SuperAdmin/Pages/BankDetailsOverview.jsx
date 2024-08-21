@@ -6,6 +6,7 @@ import axios from "axios";
 import { FaRegEye } from "react-icons/fa";
 import { AiFillEdit, AiOutlinePlus, AiFillCloseCircle } from "react-icons/ai";
 import Loader from "../../common/Loader"
+import { toast } from "react-hot-toast";
 const sortList = ["Newest", "Oldest"];
 
 function BankDetailsOverview() {
@@ -70,7 +71,7 @@ function BankDetailsOverview() {
       },
     };
     if(BankDetails.accountnumber == "" || BankDetails.branchname == "" || BankDetails.ifsccode == "" || BankDetails.upiid == "" || file == ""){
-      return alert("Please fill all the fields")
+      return toast.error("Please fill all the fields")
     }
     setLoading(true);
     try {
@@ -108,7 +109,7 @@ function BankDetailsOverview() {
       },
     };
     if(BankDetails.accountnumber == "" || BankDetails.branchname == "" || BankDetails.ifsccode == "" || BankDetails.upiid == "" || file == ""){
-      return alert("Please fill all the fields")
+      return toast.error("Please fill all the fields")
     }
     const Data = {
       ...BankDetails,

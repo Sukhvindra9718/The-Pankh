@@ -6,7 +6,7 @@ import axios from "axios";
 import { AiFillEdit, AiOutlinePlus, AiFillCloseCircle } from "react-icons/ai";
 import Loader from "../../common/Loader";
 const sortList = ["Newest", "Oldest"];
-
+import { toast } from "react-hot-toast";
 function VolunteerOverview() {
   const [isDelete, setIsDelete] = React.useState(false);
   const [showSort, setShowSort] = React.useState(false);
@@ -71,7 +71,7 @@ function VolunteerOverview() {
       },
     };
     if(volunteer.username == "" || volunteer.phonenumber == "" || volunteer.role == "" || file == ""){
-      return alert("Username, Phonenumber, Role & Image cannot be empty")
+      return toast.error("Username, Phonenumber, Role & Image cannot be empty")
     }
     setLoading(true)
     try {
@@ -127,7 +127,7 @@ function VolunteerOverview() {
       },
     };
     if(volunteer.username == "" || volunteer.phonenumber == "" || volunteer.role == "" || file == ""){
-      return alert("Username, Phonenumber, Role & Image cannot be empty")
+      return toast.error("Username, Phonenumber, Role & Image cannot be empty")
     }
     setLoading(true)
     const Data = {
