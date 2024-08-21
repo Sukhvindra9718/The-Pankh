@@ -8,7 +8,8 @@ import {
   AiOutlinePlus,
   AiFillCloseCircle,
 } from "react-icons/ai";
-
+import Loader from "../../common/Loader";
+import { toast } from "react-hot-toast";
 const sortList = ["Newest", "Oldest"];
 
 function KeyContactsOverview() {
@@ -21,6 +22,7 @@ function KeyContactsOverview() {
   const [uploadFormOpen, setUploadFormOpen] = React.useState(false);
   const [isUpdate, setIsUpdate] = React.useState(false);
   const [id, setId] = React.useState("");
+  const [loading,setLoading] = React.useState(false)
   const [keycontact, setKeycontact] = React.useState({
     name: "",
     email: "",
@@ -57,7 +59,17 @@ function KeyContactsOverview() {
         "Content-Type": "application/json",
       },
     };
-
+    if (
+      keycontact.name === "" ||
+      keycontact.email === "" ||
+      keycontact.phone === "" ||
+      keycontact.organization === "" ||
+      keycontact.designation === ""
+    ) {
+      toast.error("Please Fill All Fields");
+      return;
+    }
+    setLoading(true)
     const Data = {
       name: keycontact.name,
       email: keycontact.email,
@@ -84,8 +96,10 @@ function KeyContactsOverview() {
           designation: "",
         });
       }
+      setLoading(false)
     } catch (error) {
       console.log(error);
+      setLoading(false)
     }
   };
   // Get All Key Contacts
@@ -121,7 +135,17 @@ function KeyContactsOverview() {
         "Content-Type": "application/json",
       },
     };
-
+    if (
+      keycontact.name === "" ||
+      keycontact.email === "" ||
+      keycontact.phone === "" ||
+      keycontact.organization === "" ||
+      keycontact.designation === ""
+    ) {
+      toast.error("Please Fill All Fields");
+      return;
+    }
+    setLoading(true)
     const Data = {
       name: keycontact.name,
       email: keycontact.email,
@@ -148,8 +172,10 @@ function KeyContactsOverview() {
           designation: "",
         });
       }
+      setLoading(false)
     } catch (error) {
       console.log(error);
+      setLoading(false)
     }
   };
   const handleShowPopup = (item) => {
@@ -345,8 +371,8 @@ function KeyContactsOverview() {
         </div>
       </div>
 
-      {uploadFormOpen && (
-        <div className="upload-form-container">
+      {loading ? (<Loader/>): (
+        uploadFormOpen && <div className="upload-form-container">
           <div className="upload-form">
             <div className="close-btn" onClick={() => handleClose()}>
               <AiFillCloseCircle size={30} />

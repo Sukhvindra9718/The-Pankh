@@ -72,7 +72,7 @@ function ContactOverview() {
         },
       };
       const { data } = await axios.delete(`http://localhost:3000/api/common/contact/delete/${id}`,config);
-      console.log(data);
+    
       if (data.success) {
         setIsDelete(!isDelete);
       }
@@ -158,72 +158,16 @@ function ContactOverview() {
           </div>
         </div>
       </div>
-      {/* 
-      <div className="table-container">
-        <div className="header">
-          <div className="header-item">
-            <h2>Id</h2>
-          </div>
-          <div className="header-item">
-            <h2>Name</h2>
-          </div>
-          <div className="header-item">
-            <h2>Phone</h2>
-          </div>
-          <div className="header-item">
-            <h2>Email</h2>
-          </div>
-          <div className="header-item">
-            <h2>Action</h2>
-          </div>
-        </div>
-        <div className="table-body">
-          {filterData?.length > 0 &&
-            data.map((item, index) => (
-              <div key={index}>
-                <div className="table-row">
-                  <div className="body-item">
-                    <h2>{item.id}</h2>
-                  </div>
-                  <div className="body-item">
-                    <h2>{item.name}</h2>
-                  </div>
-                  <div className="body-item">
-                    <h2>{item.phone}</h2>
-                  </div>
-                  <div className="body-item">
-                    <h2>{item.email}</h2>
-                  </div>
-                  <div className="body-item">
-                    <div className="actions">
-                      <AiFillEye
-                        size={25}
-                        onClick={() => handleShowImage(item.id)}
-                      />
-                      <AiFillEdit
-                        size={25}
-                        onClick={() => handleUpdate(item)}
-                      />
-                      <MdDelete
-                        size={25}
-                        onClick={() => handleDelete(item.id)}
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-        </div>
-      </div> */}
+     
       <div className="table-container">
         <div className="grid-container">
           <div className="grid-header">ID</div>
           <div className="grid-header">Name</div>
           <div className="grid-header">Email</div>
           <div className="grid-header">Phone</div>
-          <div className="grid-header">Organization</div>
-          <div className="grid-header">Designation</div>
+          <div className="grid-header">Subject</div>
           <div className="grid-header">Message</div>
+          <div className="grid-header">Created at</div>
           <div className="grid-header">Action</div>
           {filterData.map((contact) => (
             <React.Fragment key={contact.id}>
@@ -243,17 +187,17 @@ function ContactOverview() {
                 {contact.phone}
                 <span className="tooltip">{contact.phone}</span>
               </div>
-              <div className="grid-item" data-label="Organization">
-                {contact.organization}
-                <span className="tooltip">{contact.organization}</span>
-              </div>
-              <div className="grid-item" data-label="Designation">
-                {contact.designation}
-                <span className="tooltip">{contact.designation}</span>
+              <div className="grid-item" data-label="Subject">
+                {contact.subject}
+                <span className="tooltip">{contact.subject}</span>
               </div>
               <div className="grid-item" data-label="Message">
                 {contact.message}
                 <span className="tooltip">{contact.message}</span>
+              </div>
+              <div className="grid-item" data-label="Created At">
+                {contact.createdat}
+                <span className="tooltip">{contact.createdat}</span>
               </div>
               <div className="grid-item" data-label="Message">
                 <div className="action-icons">

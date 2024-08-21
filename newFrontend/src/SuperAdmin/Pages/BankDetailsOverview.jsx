@@ -3,7 +3,10 @@ import { GrSort } from "react-icons/gr";
 import { MdDelete } from "react-icons/md";
 import "../../style/Dashboard.css";
 import axios from "axios";
+import { FaRegEye } from "react-icons/fa";
 import { AiFillEdit, AiOutlinePlus, AiFillCloseCircle } from "react-icons/ai";
+import Loader from "../../common/Loader"
+import { toast } from "react-hot-toast";
 const sortList = ["Newest", "Oldest"];
 
 function BankDetailsOverview() {
@@ -25,7 +28,7 @@ function BankDetailsOverview() {
   });
   const [isUpdate, setIsUpdate] = React.useState(false);
   const [updateId, setUpdateId] = React.useState(null);
-
+  const [loading, setLoading] = React.useState(false);
   // Get Token from Cookie
   const getTokenFromCookie = () => {
     const name = "token=";
@@ -61,12 +64,16 @@ function BankDetailsOverview() {
 
   // Create BankDetails
   const handleUpload = async () => {
-    console.log(BankDetails);
+    
     const config = {
       headers: {
         Authorization: `${getTokenFromCookie()}`,
       },
     };
+    if(BankDetails.accountnumber == "" || BankDetails.branchname == "" || BankDetails.ifsccode == "" || BankDetails.upiid == "" || file == ""){
+      return toast.error("Please fill all the fields")
+    }
+    setLoading(true);
     try {
       const { data } = await axios.post(
         "http://localhost:3000/api/v1/BankDetails/upload",
@@ -86,8 +93,10 @@ function BankDetailsOverview() {
         });
         setFile(null);
       }
+      setLoading(false);
     } catch (error) {
       console.log(error);
+      setLoading(false);
     }
   };
 
@@ -99,11 +108,14 @@ function BankDetailsOverview() {
         "Content-Type": "application/json",
       },
     };
-
+    if(BankDetails.accountnumber == "" || BankDetails.branchname == "" || BankDetails.ifsccode == "" || BankDetails.upiid == "" || file == ""){
+      return toast.error("Please fill all the fields")
+    }
     const Data = {
       ...BankDetails,
       file: file ? file : undefined,
     };
+    setLoading(true);
     try {
       const { data } = await axios.put(
         `http://localhost:3000/api/v1/BankDetails/${updateId}`,
@@ -123,8 +135,10 @@ function BankDetailsOverview() {
         setUpdateId("");
         setFile(null);
       }
+      setLoading(false);
     } catch (error) {
       console.log(error);
+      setLoading(false);
     }
   };
 
@@ -207,7 +221,7 @@ function BankDetailsOverview() {
 
   const handleSearch = () => {
     const filterData1 = data.filter((item) =>
-      item.username.toLowerCase().includes(search.toLowerCase())
+      item.upiid.toLowerCase().includes(search.toLowerCase())
     );
     setSearch("");
     setFilterData(filterData1);
@@ -223,18 +237,18 @@ function BankDetailsOverview() {
       <div className="filter-membership-container">
         <div className="header-table">
           <h1>All BankDetails</h1>
-          { filterData.length === 0 &&
+          {filterData.length === 0 && (
             <div className="add-btn" onClick={() => setUploadFormOpen(true)}>
               <AiOutlinePlus size={25} style={{ cursor: "pointer" }} />
               <h2>Add BankDetails</h2>
             </div>
-          }
+          )}
         </div>
         <div className="filter-membership-item">
           <div className="search-container">
             <input
               type="text"
-              placeholder="Search By BankDetails name"
+              placeholder="Search By UPI ID"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               style={{ fontSize: "1rem" }}
@@ -272,28 +286,46 @@ function BankDetailsOverview() {
       </div>
 
       <div className="banner-table-container">
-        <div className="grid-container">
-          <div className="grid-header">UPI ID</div>
-          <div className="grid-header">IFSC code</div>
-          <div className="grid-header">Account Number</div>
-          <div className="grid-header">Action</div>
+        <div className="grid-container-dynamic">
+          <div className="grid-header-container">
+            <div className="grid-header">UPI ID</div>
+            <div className="grid-header">IFSC code</div>
+            <div className="grid-header">Account Number</div>
+            <div className="grid-header">Branch Name</div>
+            <div className="grid-header">QR code</div>
+            <div className="grid-header">Action</div>
+          </div>
           {filterData?.length > 0 &&
             filterData.map((BankDetails) => (
               <React.Fragment key={BankDetails.id}>
-                <div className="grid-item" data-label="ID">
-                  {BankDetails.upiid}
-                </div>
-                <div className="grid-item" data-label="ifsccode">
-                  {BankDetails.ifsccode}
-                </div>
-                <div className="grid-item" data-label="accountnumber">
-                  {BankDetails.accountnumber}
-                  <span className="tooltip">{BankDetails.accountnumber}</span>
-                </div>
-                <div className="grid-item" data-label="Action">
-                  <div className="action-icons">
-                    <AiFillEdit size={25} onClick={() => handleShowPopup(BankDetails)} />
-                    <MdDelete size={25} color="red" onClick={() => handleDelete(BankDetails.id)} />
+                <div className="grid-item-container">
+                  <div className="grid-item" data-label="ID">
+                    {BankDetails.upiid}
+                  </div>
+                  <div className="grid-item" data-label="ifsccode">
+                    {BankDetails.ifsccode}
+                  </div>
+                  <div className="grid-item" data-label="accountnumber">
+                    {BankDetails.accountnumber}
+                    <span className="tooltip">{BankDetails.accountnumber}</span>
+                  </div>
+                  <div className="grid-item" data-label="ifsccode">
+                    {BankDetails.branchname}
+                  </div>
+                  <div className="grid-item" style={{textAlign: "center"}} data-label="fullname">
+                    <a href={BankDetails.fileurl}target="_blank" rel="noopener noreferrer">
+                      <FaRegEye />
+                    </a>
+                  </div>
+                  <div className="grid-item" data-label="Action">
+                    <div className="action-icons">
+                      <AiFillEdit size={25} onClick={() => handleShowPopup(BankDetails)} />
+                      <MdDelete
+                        size={25}
+                        color="red"
+                        onClick={() => handleDelete(BankDetails.id)}
+                      />
+                    </div>
                   </div>
                 </div>
               </React.Fragment>
@@ -301,13 +333,13 @@ function BankDetailsOverview() {
         </div>
       </div>
 
-      {uploadFormOpen && (
-        <div className="upload-form-container-2">
+      {loading ? (<Loader/>): (
+        uploadFormOpen && <div className="upload-form-container-2">
           <div className="upload-form">
             <div className="close-btn" onClick={() => handleClose()}>
               <AiFillCloseCircle size={30} />
             </div>
-            <h1>Create Donation</h1>
+            <h1>Create Bank Details</h1>
             <div className="inputContainer">
               <input
                 type="text"

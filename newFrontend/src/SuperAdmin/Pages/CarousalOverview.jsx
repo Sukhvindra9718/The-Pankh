@@ -8,6 +8,8 @@ import {
   AiOutlinePlus,
   AiFillCloseCircle,
 } from "react-icons/ai";
+import Loader from "../../common/Loader";
+import { toast } from "react-hot-toast";
 const sortList = ["Newest", "Oldest"];
 
 function CarousalOverview() {
@@ -24,6 +26,7 @@ function CarousalOverview() {
   const [showPreview, setShowPreview] = React.useState(null);
   const [isUpdate, setIsUpdate] = React.useState(false);
   const [id, setId] = React.useState("");
+  const [loading, setLoading] = React.useState(false);
 
   // Get Token from Cookie
   const getTokenFromCookie = () => {
@@ -63,7 +66,10 @@ function CarousalOverview() {
         Authorization: `${getTokenFromCookie()}`,
       },
     };
-
+    if(title == "" || description == "" || file == ""){
+      return toast.error("Please fill all the fields");
+    }
+    setLoading(true);
     try {
       const { data } = await axios.post(
         "http://localhost:3000/api/v1/carousal/upload",
@@ -78,8 +84,10 @@ function CarousalOverview() {
         setDescription("");
         setFile(null);
       }
+      setLoading(false);
     } catch (error) {
       console.log(error);
+      setLoading(false);
     }
   };
 
@@ -116,12 +124,15 @@ function CarousalOverview() {
         'Content-Type': 'application/json'
       },
     };
-
+    if(title == "" || description == "" || file == ""){
+      return toast.error("Please fill all the fields");
+    }
     const Data = {
       title,
       description,
       file : file ? file : undefined
     }
+    setLoading(true);
     try {
       const { data } = await axios.put(
         `http://localhost:3000/api/v1/carousal/${id}`,
@@ -137,8 +148,10 @@ function CarousalOverview() {
         setId("");
         setFile(null);
       }
+      setLoading(false);
     } catch (error) {
       console.log(error);
+      setLoading(false);
     }
   };
   const handleShowPopup = (item) => {
@@ -208,7 +221,7 @@ function CarousalOverview() {
   // Search
   const handleSearch = () => {
     const filterData1 = data.filter((item) =>
-      item.pagename.toLowerCase().includes(search.toLowerCase())
+      item.title.toLowerCase().includes(search.toLowerCase())
     );
     setSearch("");
     setFilterData(filterData1);
@@ -233,7 +246,7 @@ function CarousalOverview() {
           <div className="search-container">
             <input
               type="text"
-              placeholder="Search By Page name"
+              placeholder="Search By Title"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               style={{ fontSize: "1rem" }}
@@ -309,8 +322,8 @@ function CarousalOverview() {
         </div>
       </div>
 
-      {uploadFormOpen && (
-        <div className="upload-form-container">
+      {loading ? (<Loader/>): (
+        uploadFormOpen && <div className="upload-form-container">
           <div className="upload-form">
             <div className="close-btn" onClick={() => handleClose()}>
               <AiFillCloseCircle size={30} />

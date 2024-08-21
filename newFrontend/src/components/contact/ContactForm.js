@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { toast } from "react-hot-toast";
 function ContactForm() {
     let publicUrl = process.env.PUBLIC_URL + '/'
     const defaultContact =
@@ -25,6 +25,10 @@ function ContactForm() {
 
     const handleContactSubmit = async (e) => {
         e.preventDefault();
+        if (!contact.Name || !contact.Email || !contact.Phone || !contact.Subject || !contact.Message) {
+            toast.error("Please fill all the fields");
+            return;
+        }
         try {
             const contactResponse = await fetch(`http://localhost:3000/api/common/contact/register`, {
                 method: "POST",
@@ -39,7 +43,7 @@ function ContactForm() {
             }
         } catch (error) {
             console.log(error);
-
+            toast.error("Something went wrong");
         }
     }
     return (

@@ -4,8 +4,9 @@ import { MdDelete } from "react-icons/md";
 import "../../style/Dashboard.css";
 import axios from "axios";
 import { AiFillEdit, AiOutlinePlus, AiFillCloseCircle } from "react-icons/ai";
+import Loader from "../../common/Loader";
 const sortList = ["Newest", "Oldest"];
-
+import { toast } from "react-hot-toast";
 function TestimonialOverview() {
   const [isDelete, setIsDelete] = React.useState(false);
   const [showSort, setShowSort] = React.useState(false);
@@ -23,6 +24,7 @@ function TestimonialOverview() {
   });
   const [isUpdate, setIsUpdate] = React.useState(false);
   const [updateId, setUpdateId] = React.useState(null);
+  const [loading,setLoading] = React.useState(false)
 
   // Get Token from Cookie
   const getTokenFromCookie = () => {
@@ -64,7 +66,10 @@ function TestimonialOverview() {
         Authorization: `${getTokenFromCookie()}`,
       },
     };
-
+    if(testimonial.name == "" || testimonial.comment == "" || testimonial.role == ""){
+      return toast.error("Please fill all the fields");
+    }
+    setLoading(true)
     try {
       const { data } = await axios.post(
         "http://localhost:3000/api/v1/testimonial/upload",
@@ -82,8 +87,10 @@ function TestimonialOverview() {
         });
         setFile(null);
       }
+      setLoading(false)
     } catch (error) {
       console.log(error);
+      setLoading(false)
     }
   };
 
@@ -111,7 +118,10 @@ function TestimonialOverview() {
         "Content-Type": "application/json",
       },
     };
-
+    if(testimonial.name == "" || testimonial.comment == "" || testimonial.role == ""){
+      return toast.error("Please fill all the fields");
+    }
+    setLoading(true)
     const Data = {
       ...testimonial,
       file: file ? file : undefined,
@@ -134,8 +144,10 @@ function TestimonialOverview() {
         setUpdateId("");
         setFile(null);
       }
+      setLoading(false)
     } catch (error) {
       console.log(error);
+      setLoading(false)
     }
   };
   const handleShowPopup = (item) => {
@@ -232,7 +244,7 @@ function TestimonialOverview() {
           <div className="search-container">
             <input
               type="text"
-              placeholder="Search By testimonial name"
+              placeholder="Search By name"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               style={{ fontSize: "1rem" }}
@@ -308,8 +320,8 @@ function TestimonialOverview() {
         </div>
       </div>
 
-      {uploadFormOpen && (
-        <div className="upload-form-container-2">
+      {loading ? (<Loader/>):(
+        uploadFormOpen && <div className="upload-form-container-2">
           <div className="upload-form">
             <div className="close-btn" onClick={() => handleClose()}>
               <AiFillCloseCircle size={30} />

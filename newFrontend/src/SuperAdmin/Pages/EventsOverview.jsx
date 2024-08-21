@@ -4,8 +4,9 @@ import { MdDelete } from "react-icons/md";
 import "../../style/Dashboard.css";
 import axios from "axios";
 import { AiFillEdit, AiOutlinePlus, AiFillCloseCircle } from "react-icons/ai";
+import Loader from "../../common/Loader";
 const sortList = ["Newest", "Oldest"];
-
+import { toast } from "react-hot-toast";
 function EventsOverview() {
   const [isDelete, setIsDelete] = React.useState(false);
   const [showSort, setShowSort] = React.useState(false);
@@ -24,7 +25,7 @@ function EventsOverview() {
   });
   const [isUpdate, setIsUpdate] = React.useState(false);
   const [updateId, setUpdateId] = React.useState(null);
-
+  const [loading, setLoading] = React.useState(false);
   // Get Token from Cookie
   const getTokenFromCookie = () => {
     const name = "token=";
@@ -60,13 +61,16 @@ function EventsOverview() {
 
   // Create events
   const handleUpload = async () => {
-    console.log(events);
     const config = {
       headers: {
         Authorization: `${getTokenFromCookie()}`,
       },
     };
-
+    if(!events.title || !events.shortdescription || !events.eventsdatetime || !file){
+      toast.error("Please fill all fields");
+      return;
+    }
+    setLoading(true);
     try {
       const { data } = await axios.post(
         "http://localhost:3000/api/v1/events/upload",
@@ -85,8 +89,10 @@ function EventsOverview() {
         });
         setFile(null);
       }
+      setLoading(false);
     } catch (error) {
       console.log(error);
+      setLoading(false);
     }
   };
 
@@ -98,11 +104,15 @@ function EventsOverview() {
         "Content-Type": "application/json",
       },
     };
-
+    if(!events.title || !events.shortdescription || !events.eventsdatetime || !file){
+      toast.error("Please fill all fields");
+      return;
+    }
     const Data = {
       ...events,
       file: file ? file : undefined,
     };
+    setLoading(true);
     try {
       const { data } = await axios.put(
         `http://localhost:3000/api/v1/events/${updateId}`,
@@ -122,8 +132,10 @@ function EventsOverview() {
         setUpdateId("");
         setFile(null);
       }
+      setLoading(false);
     } catch (error) {
       console.log(error);
+      setLoading(false);
     }
   };
 
@@ -204,7 +216,7 @@ function EventsOverview() {
 
   const handleSearch = () => {
     const filterData1 = data.filter((item) =>
-      item.username.toLowerCase().includes(search.toLowerCase())
+      item.title.toLowerCase().includes(search.toLowerCase())
     );
     setSearch("");
     setFilterData(filterData1);
@@ -229,7 +241,7 @@ function EventsOverview() {
           <div className="search-container">
             <input
               type="text"
-              placeholder="Search By events name"
+              placeholder="Search By title"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               style={{ fontSize: "1rem" }}
@@ -281,7 +293,7 @@ function EventsOverview() {
                 <div className="grid-item" data-label="Title">
                   {events.title}
                 </div>
-                <div className="grid-item" data-label="Short Desc">
+                <div className="grid-item" data-label="Events Date And Time">
                   {events.eventsdatetime}
                   <span className="tooltip">{events.eventsdatetime}</span>
                 </div>
@@ -296,8 +308,8 @@ function EventsOverview() {
         </div>
       </div>
 
-      {uploadFormOpen && (
-        <div className="upload-form-container-2">
+      {loading ? (<Loader/>) :(
+        uploadFormOpen && <div className="upload-form-container-2">
           <div className="upload-form">
             <div className="close-btn" onClick={() => handleClose()}>
               <AiFillCloseCircle size={30} />

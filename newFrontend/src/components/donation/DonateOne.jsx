@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import axios from "axios";
 import { toast } from "react-hot-toast";
@@ -59,7 +58,15 @@ const DonateOne = () => {
         Authorization: `${getTokenFromCookie()}`,
       },
     };
-    console.log(Donations);
+    if (!Donations.amount || !Donations.fullname || !Donations.email || !Donations.phonenumber || !Donations.country || !Donations.remarks) {
+      toast.error("Please fill all the fields!");
+      return;
+    }
+    if(!Donations.utrnumber && !file) {
+      toast.error("Please upload payment screenshot or enter UTR number!");
+      return;
+    }
+
     try {
       const { data } = await axios.post(
         "http://localhost:3000/api/v1/Donation/upload",

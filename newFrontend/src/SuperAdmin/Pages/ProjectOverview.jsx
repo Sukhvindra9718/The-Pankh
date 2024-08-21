@@ -9,7 +9,8 @@ import { GrSort } from "react-icons/gr";
 import { MdDelete } from "react-icons/md";
 import "../../style/Dashboard.css";
 import axios from "axios";
-
+import Loader from "../../common/Loader";
+import { toast } from "react-hot-toast";
 const sortList = ["Newest", "Oldest"];
 function ProjectOverview() {
   const [isDelete, setIsDelete] = React.useState(false);
@@ -25,7 +26,7 @@ function ProjectOverview() {
   const [description, setDescription] = React.useState("");
   const [isUpdate, setIsUpdate] = React.useState(false);
   const [updateId, setUpdateId] = React.useState(null);
-
+  const [loading,setLoading] = React.useState(false)
 
   // Get Token from Cookie
   const getTokenFromCookie = () => {
@@ -62,7 +63,10 @@ function ProjectOverview() {
         Authorization: `${getTokenFromCookie()}`,
       },
     };
-
+    if(title == "" || description == "" || file == ""){
+      return toast.error("Please fill all the fields")
+    }
+    setLoading(true)
     try {
       const { data } = await axios.post(
         "http://localhost:3000/api/v1/project/upload",
@@ -77,8 +81,10 @@ function ProjectOverview() {
         setDescription("");
         setFile(null);
       }
+      setLoading(false)
     } catch (error) {
       console.log(error);
+      setLoading(false)
     }
   };
   const getAllProjects = async () => {
@@ -109,7 +115,10 @@ function ProjectOverview() {
         "Content-Type": "application/json",
       },
     };
-
+    if(title == "" || description == "" || file == ""){
+      return toast.error("Please fill all the fields")
+    }
+    setLoading(true)
     const Data = {
       title,
       description,
@@ -130,8 +139,10 @@ function ProjectOverview() {
         setUpdateId("");
         setFile(null);
       }
+      setLoading(false)
     } catch (error) {
       console.log(error);
+      setLoading(false)
     }
   };
   const handleShowPopup = (item) => {
@@ -160,7 +171,7 @@ function ProjectOverview() {
 
   const handleDelete = async (id) => {
     const confirm = window.confirm(
-      "Are you sure you want to delete this video?"
+      "Are you sure you want to delete this project?"
     );
 
     if (confirm) {
@@ -218,17 +229,17 @@ function ProjectOverview() {
     <div style={{ position: "relative" }}>
       <div className="filter-membership-container">
         <div className="header-table">
-          <h1>All Images</h1>
+          <h1>All Projects</h1>
           <div className="add-btn" onClick={() => setUploadFormOpen(true)}>
             <AiOutlinePlus size={25} style={{ cursor: "pointer" }} />
-            <h2>Add Image</h2>
+            <h2>Add Project</h2>
           </div>
         </div>
         <div className="filter-membership-item">
           <div className="search-container">
             <input
               type="text"
-              placeholder="Search"
+              placeholder="Search by title"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
             />
@@ -303,13 +314,13 @@ function ProjectOverview() {
             ))}
         </div>
       </div>
-      {uploadFormOpen && (
-        <div className="upload-form-container">
+      {loading ? (<Loader/>): (
+        uploadFormOpen && <div className="upload-form-container">
           <div className="upload-form">
             <div className="close-btn" onClick={() => handleClose()}>
               <AiFillCloseCircle size={30} />
             </div>
-            <h1>Upload Image</h1>
+            <h1>Upload Project</h1>
             <input
               type="text"
               placeholder="Title"
@@ -324,8 +335,8 @@ function ProjectOverview() {
             />
             <input
               type="file"
-              id="banner"
-              name="banner"
+              id="project"
+              name="project"
               accept="image/*"
               onChange={handleDataChange}
             />
