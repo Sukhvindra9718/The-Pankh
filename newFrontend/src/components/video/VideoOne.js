@@ -29,7 +29,7 @@ export default class VideoOne extends React.Component {
                         <div className="container">
                             <div className="video-one__inner">
                                 <div className="video-one__video-link">
-                                    <a href="https://www.youtube.com/watch?v=Get7rqXYrbQ" className="video-popup">
+                                    <a href="https://www.youtube.com/watch?v=ekTu-hysORQ" className="video-popup">
                                         <div className="video-one__video-icon">
                                             <span className="fa fa-play"></span>
                                             <i className="ripple"></i>

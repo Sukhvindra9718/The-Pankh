@@ -101,7 +101,7 @@ export default class AboutOne extends React.Component {
                       </div>
                       <div className="about-one__video-link">
                         <a
-                          href="https://www.youtube.com/watch?v=Get7rqXYrbQ"
+                          href="https://www.youtube.com/watch?v=ekTu-hysORQ"
                           className="video-popup"
                         >
                           <div className="about-one__video-icon">
