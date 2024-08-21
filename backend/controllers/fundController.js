@@ -1,8 +1,29 @@
 const pool = require("../db");
-const fs = require("fs");
 const uuid = require("uuid");
 const cloudinary = require("cloudinary");
 
+const createFundTable = async () => {
+  const createTableQuery = `
+    CREATE TABLE IF NOT EXISTS fund (
+      id UUID PRIMARY KEY NOT NULL,
+      title VARCHAR NOT NULL,
+      raisedprice INT NOT NULL,
+      goalprice INT NOT NULL,
+      description TEXT NOT NULL,
+      fileid VARCHAR NOT NULL,
+      fileurl VARCHAR NOT NULL,
+      createdat TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP
+    );
+  `;
+  try {
+    const client = await pool.connect();
+    await client.query(createTableQuery);
+    console.log("Table 'fund' created successfully");
+  } catch (err) {
+    console.error("Error creating table", err.stack);
+  } finally {
+  }
+};
 // Images CRUD
 exports.addfundDetails = async (req, res) => {
   try {
@@ -15,7 +36,7 @@ exports.addfundDetails = async (req, res) => {
       Crop: "fill",
     });
     await pool.query(
-      "INSERT INTO fund (id,title, raisedprice, goalprice, description, createdat, fileUrl, fileId) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *",
+      "INSERT INTO fund (id,title, raisedprice, goalprice, description, createdat, fileurl, fileid) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *",
       [
         id,
         title,
@@ -25,7 +46,6 @@ exports.addfundDetails = async (req, res) => {
         created_at,
         myCloud.secure_url,
         myCloud.public_id,
-        
       ]
     );
 
@@ -43,6 +63,7 @@ exports.addfundDetails = async (req, res) => {
 };
 
 exports.getAllfundDetails = async (req, res) => {
+  createFundTable();
   try {
     const funds = await pool.query("SELECT * FROM fund");
     res.status(200).json({

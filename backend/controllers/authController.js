@@ -8,14 +8,16 @@ const uuid = require("uuid");
 const registerUser = async (req, res) => {
   try {
     // Process user registration
-    const { username, password, phonenumber, role } = req.body;
+    const { username, password, phonenumber, role ,file} = req.body;
     const hashedPassword = await bcrypt.hash(password, 10);
-    const imagePath = "";
-    const filename = "";
+    const myCloud = await cloudinary.v2.uploader.upload(file, {
+      folder: "thepankh/volunteer",
+      Crop: "fill",
+    });
     const id = uuid.v4();
     const newUser = await pool.query(
-      "INSERT INTO users (id,username,password,phonenumber,role, profile_picture_name,profile_picture_path) VALUES ($1, $2, $3,$4,$5,$6,$7) RETURNING *",
-      [id, username, hashedPassword, phonenumber, role, filename, imagePath]
+      "INSERT INTO users (id,username,password,phonenumber,role, fileid,fileurl,createdat) VALUES ($1, $2, $3,$4,$5,$6,$7,$8) RETURNING *",
+      [id, username, hashedPassword, phonenumber, role, myCloud.public_id,myCloud.secure_url,new Date()]
     );
 
     res.status(201).json(newUser.rows[0]);
