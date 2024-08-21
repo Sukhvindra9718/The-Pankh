@@ -64,9 +64,9 @@ const Nav = () => {
           <li className={`${location.pathname =="/events" ? "current" : ""}`}>
             <Link to={process.env.PUBLIC_URL + `/events`}>Events</Link>
           </li>
-          <li className={`${location.pathname =="/blogs" ? "current" : ""}`}>
+          {/* <li className={`${location.pathname =="/blogs" ? "current" : ""}`}>
             <Link to={process.env.PUBLIC_URL + `/blogs`}>Blog</Link>
-          </li>
+          </li> */}
           <li className={`${location.pathname =="/contact" ? "current" : ""}`}>
             <Link to={process.env.PUBLIC_URL + `/contact`}>Contact</Link>
           </li>

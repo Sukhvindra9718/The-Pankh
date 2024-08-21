@@ -79,10 +79,10 @@ const menuData = [
     path: "/donate-now",
   },
 
-  {
-    title: "Blog",
-    path: "/blogs",
-  },
+  // {
+  //   title: "Blog",
+  //   path: "/blogs",
+  // },
 
   {
     title: "Contact",

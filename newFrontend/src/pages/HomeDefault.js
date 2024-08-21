@@ -31,7 +31,7 @@ const HomeDefault = () => {
       <TeamOne />
       <VideoOne />
       <TestimonialOne />
-      <BlogSectionThree />
+      {/* <BlogSectionThree /> */}
       <FooterOne />
     </>
   );
