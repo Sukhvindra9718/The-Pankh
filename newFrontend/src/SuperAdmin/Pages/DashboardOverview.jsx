@@ -5,14 +5,18 @@ import axios from "axios";
 function DashboardOverview() {
   const urls = [
     "user/getuser",
-    "common/getcontact",
-    "common/getkeycontact",
-    "v1/getbanner",
-    "v1/getcarousal",
     "v1/getimage",
     "v1/getvideo",
+    "v1/getbanner",
+    "common/getkeycontact",
+    "common/getcontact",
+    "v1/getcarousal",
+    "/getvolunteer",
     "v1/countNews",
+    "v1/gettestimonial",
     "v1/events",
+    "v1/countProjects",
+    "v1/fundDetails",
     "v1/Donations",
   ];
   const [rowCount, setRowCount] = useState([]);
