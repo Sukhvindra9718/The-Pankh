@@ -172,7 +172,6 @@ exports.updateNews = async (req, res) => {
 exports.getAllNewsCount = async (req, res) => {
   try {
     const news = await pool.query("SELECT count(*) FROM news");
-    console.log(news.rows);
     res.status(200).json({
       success: true,
       tableName: "news",

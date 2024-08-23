@@ -27,8 +27,8 @@ const createFundTable = async () => {
 // Images CRUD
 exports.addfundDetails = async (req, res) => {
   try {
-    const { title,description,raisedprice,goalprice, file } = req.body;
-    console.log(title,description,raisedprice,goalprice,)
+    const { title, description, raisedprice, goalprice, file } = req.body;
+    console.log(title, description, raisedprice, goalprice,)
     const created_at = new Date();
     const id = uuid.v4();
     const myCloud = await cloudinary.v2.uploader.upload(file, {
@@ -127,7 +127,7 @@ exports.deleteFundDetails = async (req, res) => {
 exports.updateFundDetails = async (req, res) => {
   try {
     const { id } = req.params;
-    const { title,description,raisedprice,goalprice, file } = req.body;
+    const { title, description, raisedprice, goalprice, file } = req.body;
     const fund = await pool.query("SELECT * FROM fund WHERE id = $1", [id]);
     if (fund.rows.length === 0) {
       return res.status(404).json({ success: false, msg: "Fund Details not found" });

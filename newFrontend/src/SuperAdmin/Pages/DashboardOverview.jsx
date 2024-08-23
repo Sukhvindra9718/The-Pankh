@@ -11,7 +11,7 @@ function DashboardOverview() {
     "common/getkeycontact",
     "common/getcontact",
     "v1/getcarousal",
-    "/getvolunteer",
+    "V1/getvolunteer",
     "v1/countNews",
     "v1/gettestimonial",
     "v1/events",
