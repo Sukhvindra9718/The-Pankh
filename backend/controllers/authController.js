@@ -4,6 +4,7 @@ const pool = require("../db");
 const jwt = require("jsonwebtoken");
 const config = require("../config/config");
 const uuid = require("uuid");
+const cloudinary = require("cloudinary");
 
 const registerUser = async (req, res) => {
   try {
@@ -11,7 +12,8 @@ const registerUser = async (req, res) => {
     const { username, password, phonenumber, role ,file} = req.body;
     const hashedPassword = await bcrypt.hash(password, 10);
     const myCloud = await cloudinary.v2.uploader.upload(file, {
-      folder: "thepankh/volunteer",
+      folder: "thepankh/users",
+      transformation: [{ width: 500, height: 500, crop: "limit" }],
       Crop: "fill",
     });
     const id = uuid.v4();
@@ -20,10 +22,10 @@ const registerUser = async (req, res) => {
       [id, username, hashedPassword, phonenumber, role, myCloud.public_id,myCloud.secure_url,new Date()]
     );
 
-    res.status(201).json(newUser.rows[0]);
+    res.status(201).json({success:true,user:newUser.rows[0]});
   } catch (error) {
     console.error(error.message);
-    res.status(500).send("Server Error");
+    res.status(500).json({success:false,message:"Server Error"});
   }
 };
 

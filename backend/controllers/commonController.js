@@ -361,13 +361,13 @@ const getAllTableRowCount = async (req, res) => {
   try {
     // I want to get the count of all the rows of every table in my database in the format {tableName: 'tableName', count: count}
     let data = [];
-    const propertiesAccess = await pool.query(
-      "SELECT count(*) FROM propertiesAccess"
-    );
-    data.push({
-      tableName: "Properties Access",
-      count: propertiesAccess.rows[0].count,
-    });
+    // const propertiesAccess = await pool.query(
+    //   "SELECT count(*) FROM propertiesAccess"
+    // );
+    // data.push({
+    //   tableName: "Properties Access",
+    //   count: propertiesAccess.rows[0].count,
+    // });
     const keycontact = await pool.query("SELECT count(*) FROM keycontact");
     data.push({ tableName: "Key Contacts", count: keycontact.rows[0].count });
     const contactus = await pool.query("SELECT count(*) FROM contactus");

@@ -22,7 +22,7 @@ app.use(express.json({ limit: "50mb" }));
 
 // Import Routes
 app.use("/api/auth", require("./routes/authRoutes"));
-app.use("/api/user", require("./routes/userRoutes"));
+app.use("/api/v1", require("./routes/userRoutes"));
 app.use("/api/common", require("./routes/commonRoutes"));
 app.use("/api/v1", require("./routes/videoRoutes"));
 app.use("/api/v1", require("./routes/imagesRoutes"));
@@ -91,6 +91,29 @@ const createPropertiesAccessTable = async () => {
   } finally {
   }
 };
+const createUsersTable = async () => {
+  const createTableQuery = `
+    CREATE TABLE IF NOT EXISTS users (
+      id UUID PRIMARY KEY,
+      username VARCHAR(40) UNIQUE NOT NULL,
+      password VARCHAR NOT NULL,
+      phonenumber VARCHAR NOT NULL,
+      role VARCHAR NOT NULL,
+      fileid VARCHAR NOT NULL,
+      fileurl VARCHAR NOT NULL,
+      createdat TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP
+    );
+  `;
+  try {
+    const client = await pool.connect();
+    await client.query(createTableQuery);
+    console.log("Table 'users' created successfully");
+  } catch (err) {
+    console.error("Error creating table", err.stack);
+  } finally {
+  }
+};
+createUsersTable();
 createPropertiesAccessTable();
 pool.on("error", (err) => {
   console.error("Unexpected error on idle client", err);

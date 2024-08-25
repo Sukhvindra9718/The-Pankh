@@ -169,6 +169,13 @@ function Sidebar({ menuActive, setMenuActive, submenuActive, setSubmenuActive })
           <BiCarousel fill={menuActive === 13 ? "#fff" : "#717171"} size={25} />
           <h4>Bank Details</h4>
         </div>
+        <div
+          className={menuActive === 14 ? "sidebar-menu-item selected" : "sidebar-menu-item"}
+          onClick={() => setMenuActive(14)}
+        >
+          <BiCarousel fill={menuActive === 14 ? "#fff" : "#717171"} size={25} />
+          <h4>User Management</h4>
+        </div>
 
       </div>
 

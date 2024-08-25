@@ -13,6 +13,7 @@ import ProjectOverview from "../Pages/ProjectOverview";
 import FundOverview from "../Pages/FundOverview";
 import DonationsOverview from "../Pages/DonationsOverview";
 import BankDetailsOverview from "../Pages/BankDetailsOverview";
+import UserOverview from "../Pages/UserOverview";
 
 function Main({ menuActive, submenuActive }) {
   return (
@@ -31,6 +32,7 @@ function Main({ menuActive, submenuActive }) {
       {menuActive === 11 && <FundOverview />}
       {menuActive === 12 && <DonationsOverview />}
       {menuActive === 13 && <BankDetailsOverview />}
+      {menuActive === 14 && <UserOverview />}
     </div>
   );
 }
