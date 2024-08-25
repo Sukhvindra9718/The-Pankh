@@ -177,6 +177,7 @@ exports.updateDonation = async (req, res) => {
 exports.getAllDonationCount = async (req, res) => {
     try {
         const Donation = await pool.query("SELECT count(*) FROM donations");
+        console.log(Donation.rows[0].count);
         res.status(200).json({
             success: true,
             tableName: "Donations",

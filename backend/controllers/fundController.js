@@ -81,6 +81,7 @@ exports.getAllfundDetails = async (req, res) => {
 
 exports.getFundDetailByID = async (req, res) => {
   try {
+    console.log(req.params);
     const { id } = req.params;
     const fund = await pool.query("SELECT * FROM fund WHERE id = $1", [id]);
     if (fund.rows.length === 0) {
@@ -168,6 +169,7 @@ exports.updateFundDetails = async (req, res) => {
 exports.getAllFundDetailsCount = async (req, res) => {
   try {
     const fund = await pool.query("SELECT count(*) FROM fund");
+    console.log(fund.rows[0].count);
     res.status(200).json({
       success: true,
       tableName: "fund",

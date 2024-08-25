@@ -74,7 +74,24 @@ pool.connect((err, client, release) => {
     console.log("Database connected:", result.rows);
   });
 });
-
+const createPropertiesAccessTable = async () => {
+  const createTableQuery = `
+  CREATE TABLE IF NOT EXISTS propertiesaccess (
+    id UUID PRIMARY KEY NOT NULL,
+    Property VARCHAR NOT NULL,
+    isEnabled BOOLEAN NOT NULL
+  );
+`;
+  try {
+      const client = await pool.connect();
+      await client.query(createTableQuery);
+      // console.log("Table 'propertiesAccess' created successfully");
+  } catch (err) {
+      console.error("Error creating table", err.stack);
+  } finally {
+  }
+};
+createPropertiesAccessTable();
 pool.on("error", (err) => {
   console.error("Unexpected error on idle client", err);
   process.exit(-1);

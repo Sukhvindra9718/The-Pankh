@@ -3,22 +3,6 @@ import "../../style/Dashboard.css";
 import axios from "axios";
 
 function DashboardOverview() {
-  const urls = [
-    "user/getuser",
-    "v1/getimage",
-    "v1/getvideo",
-    "v1/getbanner",
-    "common/getkeycontact",
-    "common/getcontact",
-    "v1/getcarousal",
-    "V1/getvolunteer",
-    "v1/countNews",
-    "v1/gettestimonial",
-    "v1/events",
-    "v1/countProjects",
-    "v1/fundDetails",
-    "v1/Donations",
-  ];
   const [rowCount, setRowCount] = useState([]);
 
   const getTokenFromCookie = () => {
@@ -42,21 +26,16 @@ function DashboardOverview() {
             Authorization: `${getTokenFromCookie()}`,
           },
         };
-        // Use Promise.all to wait for all API calls
-        const responses = await Promise.all(
-          urls.map(async (url) => {
-            const res = await axios.get(`http://localhost:3000/api/${url}/count`, config);
-            return res.data;
-          })
-        );
-      
-        // Extract relevant data from responses
-        const arr = responses.map((data) => ({
-          tableName: data.tableName,
-          count: data.count,
-        }));
 
-        setRowCount(arr);
+        const {data} = await axios.get(
+          `http://localhost:3000/api/common/getTableRow/count`,
+          config
+        );
+
+        if(data.success){
+          setRowCount(data.result);
+        }
+
       } catch (error) {
         console.log(error);
       }
@@ -69,7 +48,7 @@ function DashboardOverview() {
     <div className="Count-Container">
       {rowCount.length > 0 &&
         rowCount.map((data, index) => (
-          <div key={index} className="Count-Card">
+          <div key={index} className="Count-Card" style={{cursor:"pointer"}}>
             <span>{data.tableName}</span>
             <span>{data.count}</span>
           </div>

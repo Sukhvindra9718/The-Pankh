@@ -159,13 +159,13 @@ exports.updateBankDetails = async (req, res) => {
     }
 };
 
-exports.getAllDonationCount = async (req, res) => {
+exports.getAllBankDetailsCount = async (req, res) => {
     try {
-        const BankDetails = await pool.query("SELECT count(*) FROM donations");
+        const BankDetails = await pool.query("SELECT count(*) FROM bankdetails");
         res.status(200).json({
             success: true,
-            tableName: "Donations",
-            count: Donation.rows[0].count,
+            tableName: "BankDetails",
+            count: BankDetails.rows[0].count,
         });
     } catch (error) {
         res.status(400).json({
