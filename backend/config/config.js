@@ -1,15 +1,14 @@
 // config.js
 module.exports = {
   database: {
-    user: "postgres",
-    host: "localhost",
-    database: "thepankh",
-    password: "12345678",
-    port: 5432,
+    user: 'u325002328_root',
+    host: 'srv1494.hstgr.io',
+    database: 'u325002328_thepankh',
+    password: 'SrjaSky@@9643@@thepankh',
   },
   jwtSecret: "thisissecretconversationroomdontinterfere",
-  PORT: 3000,
-  NODE_ENV: "DEVELOPMENT",
+  PORT: 3001,
+  NODE_ENV: "production",
   SMTP_HOST: "smtp.gmail.com",
   SMTP_PORT: 465,
   SMTP_PASSWORD: "wruyxvzfmnmsjsnl",
@@ -17,7 +16,7 @@ module.exports = {
   JWT_EXPIRES_TIME: "7d",
   COOKIE_EXPIRE: 7,
   JWT_SECRET: "",
-  CLOUDINARY_NAME: "dhk1toauk",
-  CLOUDINARY_API_KEY: "525566174743874",
-  CLOUDINARY_API_SECRET: "k2Vr_v-OQRe6o4f2WXt0e-ywJsA",
+  CLOUDINARY_NAME: "dk0o7tdks",
+  CLOUDINARY_API_KEY: "341976251712619",
+  CLOUDINARY_API_SECRET: "tBAn6Urb3oHKsxFAmgZZGG1j000",
 };

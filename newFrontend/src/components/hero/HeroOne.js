@@ -103,11 +103,7 @@ function HeroOne() {
                   <div
                     className="image-layer"
                     style={{
-                      backgroundImage:
-                        "url(" +
-                        publicUrl +
-                        "assets/images/backgrounds/main-slider-1-1.jpg)",
-                    }}
+                      backgroundImage:"url(https://res.cloudinary.com/dk0o7tdks/image/upload/v1724784017/thepankh/carousal/dia4mioscz2ihswgcl0o.jpg)"}}
                   ></div>
                   <div className="main-slider-shape-1"></div>
                   <div className="main-slider-shape-2"></div>
@@ -131,7 +127,10 @@ function HeroOne() {
                           </Link>
                           <div className="main-slider-arrow">
                             <img
-                              src={"https://res.cloudinary.com/dk0o7tdks/image/upload/v1724784017/thepankh/carousal/dia4mioscz2ihswgcl0o.jpg"}
+                              src={
+                                publicUrl +
+                                "assets/images/shapes/main-slider-shape-1.png"
+                              }
                               className="float-bob-x"
                               alt=""
                             />
@@ -146,9 +145,7 @@ function HeroOne() {
                     className="image-layer"
                     style={{
                       backgroundImage:
-                        "url(" +
-                        publicUrl +
-                        "assets/images/backgrounds/main-slider-1-2.jpg)",
+                        "url(https://res.cloudinary.com/dk0o7tdks/image/upload/v1724784017/thepankh/carousal/dia4mioscz2ihswgcl0o.jpg)",
                     }}
                   ></div>
                   <div className="main-slider-shape-1"></div>
@@ -177,7 +174,10 @@ function HeroOne() {
                           </Link>
                           <div className="main-slider-arrow">
                             <img
-                              src={"https://res.cloudinary.com/dk0o7tdks/image/upload/v1724784017/thepankh/carousal/dia4mioscz2ihswgcl0o.jpg"}
+                              src={
+                                publicUrl +
+                                "assets/images/shapes/main-slider-shape-1.png"
+                              }
                               className="float-bob-x"
                               alt=""
                             />
@@ -193,9 +193,7 @@ function HeroOne() {
                     className="image-layer"
                     style={{
                       backgroundImage:
-                        "url(" +
-                        publicUrl +
-                        "assets/images/backgrounds/main-slider-1-3.jpg)",
+                        "url(https://res.cloudinary.com/dk0o7tdks/image/upload/v1724784060/thepankh/carousal/enriwek9hzfvnb4rqzep.jpg)",
                     }}
                   ></div>
                   <div className="main-slider-shape-1"></div>
@@ -223,7 +221,10 @@ function HeroOne() {
                           </Link>
                           <div className="main-slider-arrow">
                             <img
-                              src={"https://res.cloudinary.com/dk0o7tdks/image/upload/v1724784060/thepankh/carousal/enriwek9hzfvnb4rqzep.jpg"}
+                              src={
+                                publicUrl +
+                                "assets/images/shapes/main-slider-shape-1.png"
+                              }
                               className="float-bob-x"
                               alt=""
                             />
