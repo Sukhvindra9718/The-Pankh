@@ -30,9 +30,10 @@ function FooterOne() {
     };
     try {
       const { data } = await axios.get(
-        "http://localhost:3000/api/v1/images",
+        "http://165.227.97.26:3001/api/v1/images",
         config
       );
+      console.log(data)
       setImages(data.images);
     } catch (error) {
       console.log(error);
@@ -82,7 +83,7 @@ function FooterOne() {
 
   const getTwoNews = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/v1/twonews");
+      const res = await axios.get("http://165.227.97.26:3001/api/v1/twonews");
       if (res.data.success) {
         console.log("Fetched news data:", res.data.news); // Log the raw data
 
@@ -180,9 +181,9 @@ function FooterOne() {
                 <div className="footer-widget__column footer-widget-one__gallery clearfix">
                   <h3 className="footer-widget-one__title">Gallery</h3>
                   <ul className="footer-widget-one__gallery-list list-unstyled clearfix">
-                    {images.length < 9 &&
+                    {
                       images.map((image, index) => (
-                        <li key={index}>
+                        index < 20 && <li key={index}>
                           <div className="footer-widget-one__gallery-img">
                             <img src={image.fileurl} alt="" />
                             <Link
@@ -207,7 +208,7 @@ function FooterOne() {
                   <h3 className="footer-widget-one__title">Latest News</h3>
                   <ul>
                     {news.map((newsItem, index) => (
-                      <li key={index}>
+                      index < 6 && <li key={index}>
                         <div className="footer-widget-one__latest-works-content">
                           <h4 className="footer-widget-one__latest-works-title">
                             <a

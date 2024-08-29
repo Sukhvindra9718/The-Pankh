@@ -76,7 +76,7 @@ function VolunteerOverview() {
     setLoading(true)
     try {
       const { data } = await axios.post(
-        "http://localhost:3000/api/v1/volunteer/upload",
+        "http://165.227.97.26:3001/api/v1/volunteer/upload",
         { ...volunteer, file },
         config
       );
@@ -105,7 +105,7 @@ function VolunteerOverview() {
   // Read All Volunteer
   const getAllVolunteers = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/v1/volunteers");
+      const res = await axios.get("http://165.227.97.26:3001/api/v1/volunteers");
 
       if (res.data.success) {
         setData(res.data.volunteers);
@@ -136,7 +136,7 @@ function VolunteerOverview() {
     };
     try {
       const { data } = await axios.put(
-        `http://localhost:3000/api/v1/volunteer/${updateId}`,
+        `http://165.227.97.26:3001/api/v1/volunteer/${updateId}`,
         Data,
         config
       );
@@ -206,7 +206,7 @@ function VolunteerOverview() {
         },
       };
       const { data } = await axios.delete(
-        `http://localhost:3000/api/v1/volunteer/${id}`,
+        `http://165.227.97.26:3001/api/v1/volunteer/${id}`,
         config
       );
 

@@ -22,7 +22,7 @@ function ContactUs() {
 
     try {
       const ContactResponse = await fetch(
-        `http://localhost:3000/api/common/contact/register`,
+        `http://165.227.97.26:3001/api/common/contact/register`,
         {
           method: "POST",
           headers: {

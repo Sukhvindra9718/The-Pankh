@@ -8,7 +8,7 @@ const TestimonialFour = () => {
   const navigate = useNavigate();
   const getAllTestimonials = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/v1/testimonials");
+      const res = await axios.get("http://165.227.97.26:3001/api/v1/testimonials");
 
       if (res.data.success) {
         setTestimonial(res.data.testimonial);

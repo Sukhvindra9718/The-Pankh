@@ -66,7 +66,7 @@ function ImagesOverview() {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:3000/api/v1/image/upload",
+        "http://165.227.97.26:3001/api/v1/image/upload",
         { title, description, file },
         config
       );
@@ -91,7 +91,7 @@ function ImagesOverview() {
     };
     try {
       const { data } = await axios.get(
-        "http://localhost:3000/api/v1/images",
+        "http://165.227.97.26:3001/api/v1/images",
         config
       );
       setImages(data.images);
@@ -118,7 +118,7 @@ function ImagesOverview() {
     };
     try {
       const { data } = await axios.put(
-        `http://localhost:3000/api/v1/image/${updateId}`,
+        `http://165.227.97.26:3001/api/v1/image/${updateId}`,
         Data,
         config
       );
@@ -174,7 +174,7 @@ function ImagesOverview() {
       };
       try {
         const { data } = await axios.delete(
-          `http://localhost:3000/api/v1/image/${id}`,
+          `http://165.227.97.26:3001/api/v1/image/${id}`,
           config
         );
         if (data.success) {

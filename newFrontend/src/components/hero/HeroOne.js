@@ -7,10 +7,13 @@ import axios from "axios";
 function HeroOne() {
   const [sliderData, setSliderData] = useState([]);
   let publicUrl = process.env.PUBLIC_URL + "/";
-  const getAllVolunteers = async () => {
-    try {
-      const res = await axios.get("http://localhost:3000/api/v1/carousals");
 
+
+  const getAllCarousals = async () => {
+    try {
+      const res = await axios.get("http://165.227.97.26:3001/api/v1/carousals");
+
+      console.log(res.data);
       if (res.data.success) {
         setSliderData(res.data.carousal);
       } else {
@@ -22,7 +25,7 @@ function HeroOne() {
   };
 
   useEffect(() => {
-    getAllVolunteers();
+    getAllCarousals();
     return () => {};
   }, []);
 
@@ -67,18 +70,16 @@ function HeroOne() {
                       <div className="col-xl-7">
                         <div className="main-slider__content">
                           <h2>
-                            Give the <span>Poor</span> Help <br /> for Families.
+                            {item.title}
                           </h2>
                           <p>
-                            There are many variations of passages of Lorem Ipsum
-                            Fasts by <br /> injected humour, or randomised words
-                            which...{" "}
+                            {item.description}
                           </p>
                           <Link
                             to={process.env.PUBLIC_URL + `/about`}
                             className="thm-btn main-slider__btn"
                           >
-                            Leran More
+                            Learn More
                           </Link>
                           <div className="main-slider-arrow">
                             <img
@@ -117,25 +118,20 @@ function HeroOne() {
                       <div className="col-xl-7">
                         <div className="main-slider__content">
                           <h2>
-                            Give the <span>Poor</span> Help <br /> for Families.
+                           Lets Chenge The World With Humanity.
                           </h2>
                           <p>
-                            There are many variations of passages of Lorem Ipsum
-                            Fasts by <br /> injected humour, or randomised words
-                            which...{" "}
+                           There are many variations of passages of Lorem Ipsum Fasts by injected humour, or randomised words which...  Leran More  There are many variations of passages of Lorem Ipsum Fasts by injected humour, or randomised words which...  Leran More  There are many variations of passages of Lorem Ipsum Fasts by injected humour, or randomised words which..
                           </p>
                           <Link
                             to={process.env.PUBLIC_URL + `/about`}
                             className="thm-btn main-slider__btn"
                           >
-                            Leran More
+                            Learn More
                           </Link>
                           <div className="main-slider-arrow">
                             <img
-                              src={
-                                publicUrl +
-                                "assets/images/shapes/main-slider-shape-1.png"
-                              }
+                              src={"https://res.cloudinary.com/dk0o7tdks/image/upload/v1724784017/thepankh/carousal/dia4mioscz2ihswgcl0o.jpg"}
                               className="float-bob-x"
                               alt=""
                             />
@@ -177,14 +173,11 @@ function HeroOne() {
                             to={process.env.PUBLIC_URL + `/about`}
                             className="thm-btn main-slider__btn"
                           >
-                            Leran More
+                            Learn More
                           </Link>
                           <div className="main-slider-arrow">
                             <img
-                              src={
-                                publicUrl +
-                                "assets/images/shapes/main-slider-shape-1.png"
-                              }
+                              src={"https://res.cloudinary.com/dk0o7tdks/image/upload/v1724784017/thepankh/carousal/dia4mioscz2ihswgcl0o.jpg"}
                               className="float-bob-x"
                               alt=""
                             />
@@ -230,10 +223,7 @@ function HeroOne() {
                           </Link>
                           <div className="main-slider-arrow">
                             <img
-                              src={
-                                publicUrl +
-                                "assets/images/shapes/main-slider-shape-1.png"
-                              }
+                              src={"https://res.cloudinary.com/dk0o7tdks/image/upload/v1724784060/thepankh/carousal/enriwek9hzfvnb4rqzep.jpg"}
                               className="float-bob-x"
                               alt=""
                             />

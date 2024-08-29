@@ -38,7 +38,7 @@ class TeamOne extends Component {
 
   getAllVolunteers = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/v1/volunteers");
+      const res = await axios.get("http://165.227.97.26:3001/api/v1/volunteers");
 
       if (res.data.success) {
         this.setState({ volunteers: res.data.volunteers }); // Update state with fetched volunteers
@@ -55,7 +55,7 @@ class TeamOne extends Component {
 
     return (
       <>
-        <section className="team-one">
+        {volunteers.length > 0 ? <section className="team-one">
           <div className="container">
             <div className="section-title text-center">
               <span className="section-title__tagline">Expert Team</span>
@@ -110,7 +110,9 @@ class TeamOne extends Component {
               ))}
             </Carousel>
           </div>
-        </section>
+        </section>:<div className="container" style={{height:"100px"}}>
+            <h1></h1>
+          </div>}
       </>
     );
   }

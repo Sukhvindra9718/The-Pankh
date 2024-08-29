@@ -75,7 +75,7 @@ function FundOverview() {
     setLoading(true);
     try {
       const { data } = await axios.post(
-        "http://localhost:3000/api/v1/fundDetails/upload",
+        "http://165.227.97.26:3001/api/v1/fundDetails/upload",
         { ...fund, file },
         config
       );
@@ -117,7 +117,7 @@ function FundOverview() {
     setLoading(true);
     try {
       const { data } = await axios.put(
-        `http://localhost:3000/api/v1/fundDetails/${updateId}`,
+        `http://165.227.97.26:3001/api/v1/fundDetails/${updateId}`,
         Data,
         config
       );
@@ -168,7 +168,7 @@ function FundOverview() {
   // Read All fund
   const getAllfund = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/v1/fundDetails");
+      const res = await axios.get("http://165.227.97.26:3001/api/v1/fundDetails");
       console.log(res.data);
       if (res.data.success) {
         setData(res.data.fund);
@@ -192,7 +192,7 @@ function FundOverview() {
           Authorization: `${getTokenFromCookie()}`,
         },
       };
-      const { data } = await axios.delete(`http://localhost:3000/api/v1/fundDetails/${id}`, config);
+      const { data } = await axios.delete(`http://165.227.97.26:3001/api/v1/fundDetails/${id}`, config);
 
       if (data.success) {
         setIsDelete(!isDelete);

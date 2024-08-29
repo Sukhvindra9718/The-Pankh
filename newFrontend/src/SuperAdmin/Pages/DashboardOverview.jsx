@@ -28,7 +28,7 @@ function DashboardOverview() {
         };
 
         const {data} = await axios.get(
-          `http://localhost:3000/api/common/getTableRow/count`,
+          `http://165.227.97.26:3001/api/common/getTableRow/count`,
           config
         );
 

@@ -10,7 +10,7 @@ const Login = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const response = await fetch("http://localhost:3000/api/auth/login", {
+    const response = await fetch("http://165.227.97.26:3001/api/auth/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

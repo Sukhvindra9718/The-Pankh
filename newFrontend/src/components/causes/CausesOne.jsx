@@ -22,7 +22,7 @@ const CausesOne = () => {
 
   let publicUrl = process.env.PUBLIC_URL + "/";
 
-  let apiBaseUrl = "http://localhost:3000/api/v1";
+  let apiBaseUrl = "http://165.227.97.26:3001/api/v1";
   const [fund, setFund] = useState([]);
 
   const getAllFunds = async () => {
