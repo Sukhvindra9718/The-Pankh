@@ -39,7 +39,7 @@ function ProjectOne() {
         setProjects([])
       }
     } catch (error) {
-      navigate("/error");
+      // navigate("/error");
     }
   };
 
