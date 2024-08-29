@@ -80,7 +80,7 @@ function UserOverview() {
     setLoading(true);
     try {
       const { data } = await axios.post(
-        "http://165.227.97.26:3001/api/auth/register",
+        "http://165.227.97.26/api/auth/register",
         { ...user, file },
         config
       );
@@ -112,7 +112,7 @@ function UserOverview() {
         },
       };
       const res = await axios.get(
-        "http://165.227.97.26:3001/api/v1/getallusers",
+        "http://165.227.97.26/api/v1/getallusers",
         config
       );
 
@@ -150,7 +150,7 @@ function UserOverview() {
     };
     try {
       const { data } = await axios.put(
-        `http://165.227.97.26:3001/api/v1/user/update/${updateId}`,
+        `http://165.227.97.26/api/v1/user/update/${updateId}`,
         Data,
         config
       );
@@ -209,7 +209,7 @@ function UserOverview() {
         },
       };
       const { data } = await axios.delete(
-        `http://165.227.97.26:3001/api/user/delete/${id}`,
+        `http://165.227.97.26/api/user/delete/${id}`,
         config
       );
 

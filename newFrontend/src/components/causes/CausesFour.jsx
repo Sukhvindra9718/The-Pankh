@@ -21,7 +21,7 @@ const CausesFour = () => {
   }, []);
 
 
-  let apiBaseUrl = "http://165.227.97.26:3001/api/v1";
+  let apiBaseUrl = "http://165.227.97.26/api/v1";
   const [fund, setFund] = useState([]);
 
   const getAllFunds = async () => {

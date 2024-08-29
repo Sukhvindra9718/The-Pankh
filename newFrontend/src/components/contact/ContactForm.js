@@ -30,7 +30,7 @@ function ContactForm() {
             return;
         }
         try {
-            const contactResponse = await fetch(`http://165.227.97.26:3001/api/common/contact/register`, {
+            const contactResponse = await fetch(`http://165.227.97.26/api/common/contact/register`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

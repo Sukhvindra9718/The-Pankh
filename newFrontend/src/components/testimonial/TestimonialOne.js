@@ -36,7 +36,7 @@ class TestimonialOne extends Component {
 
   getAllTestimonials = async () => {
     try {
-      const res = await axios.get("http://165.227.97.26:3001/api/v1/testimonials");
+      const res = await axios.get("http://165.227.97.26/api/v1/testimonials");
 
       if (res.data.success) {
         this.setState({ testimonial: res.data.testimonial });

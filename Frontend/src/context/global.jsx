@@ -19,7 +19,7 @@ const reducer = (state, action) => {
                     ...action.payload.map((video) => {
                         return{
                             ...video,
-                            videoUrl: `http://165.227.97.26:3001/public/videos/${video.filename}`
+                            videoUrl: `http://165.227.97.26/public/videos/${video.filename}`
                         }
                     })
                 ]
@@ -32,7 +32,7 @@ const reducer = (state, action) => {
                     ...action.payload.map((image) => {
                         return{
                             ...image,
-                            imageUrl: `http://165.227.97.26:3001/public/images/${image.filename}`
+                            imageUrl: `http://165.227.97.26/public/images/${image.filename}`
                         }
                     })
                 ]
@@ -59,7 +59,7 @@ export const GlobalProvider = ({children}) => {
                     'Content-Type': 'application/json',
                 }
             }
-            const {data} = await axios.get('http://165.227.97.26:3001/api/v1/videos',config);
+            const {data} = await axios.get('http://165.227.97.26/api/v1/videos',config);
             dispatch({type: SET_VIDEOS, payload: data.videos})
         } catch (error) {
             console.log(error)
@@ -72,7 +72,7 @@ export const GlobalProvider = ({children}) => {
                     'Content-Type': 'application/json',
                 }
             }
-            const {data} = await axios.get('http://165.227.97.26:3001/api/v1/images',config);
+            const {data} = await axios.get('http://165.227.97.26/api/v1/images',config);
   
             dispatch({type: SET_IMAGES, payload: data.images})
         } catch (error) {

@@ -72,7 +72,7 @@ function CarousalOverview() {
     setLoading(true);
     try {
       const { data } = await axios.post(
-        "http://165.227.97.26:3001/api/v1/carousal/upload",
+        "http://165.227.97.26/api/v1/carousal/upload",
         { title, description, file },
         config
       );
@@ -101,7 +101,7 @@ function CarousalOverview() {
       };
 
       const res = await axios.get(
-        "http://165.227.97.26:3001/api/v1/carousals",
+        "http://165.227.97.26/api/v1/carousals",
         config
       );
 
@@ -135,7 +135,7 @@ function CarousalOverview() {
     setLoading(true);
     try {
       const { data } = await axios.put(
-        `http://165.227.97.26:3001/api/v1/carousal/${id}`,
+        `http://165.227.97.26/api/v1/carousal/${id}`,
         Data,
         config
       );
@@ -184,7 +184,7 @@ function CarousalOverview() {
         },
       };
       const { data } = await axios.delete(
-        `http://165.227.97.26:3001/api/v1/carousal/${id}`,
+        `http://165.227.97.26/api/v1/carousal/${id}`,
         config
       );
 

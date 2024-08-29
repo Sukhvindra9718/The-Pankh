@@ -69,7 +69,7 @@ function KeyContactsOverview() {
 
     try {
       const { data } = await axios.post(
-        "http://165.227.97.26:3001/api/common//keycontact/register",
+        "http://165.227.97.26/api/common//keycontact/register",
         Data,
         config
       );
@@ -100,7 +100,7 @@ function KeyContactsOverview() {
       };
 
       const res = await axios.get(
-        "http://165.227.97.26:3001/api/common//keycontact/all",
+        "http://165.227.97.26/api/common//keycontact/all",
         config
       );
       if (res.data.success) {
@@ -132,7 +132,7 @@ function KeyContactsOverview() {
     };
     try {
       const { data } = await axios.put(
-        `http://165.227.97.26:3001/api/common/keycontact/${id}`,
+        `http://165.227.97.26/api/common/keycontact/${id}`,
         Data,
         config
       );
@@ -191,7 +191,7 @@ function KeyContactsOverview() {
         },
       };
       const { data } = await axios.delete(
-        `http://165.227.97.26:3001/api/common/keycontact/${id}`,
+        `http://165.227.97.26/api/common/keycontact/${id}`,
         config
       );
       console.log(data);

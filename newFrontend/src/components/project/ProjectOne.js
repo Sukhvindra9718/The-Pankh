@@ -30,7 +30,7 @@ function ProjectOne() {
     };
     try {
       const { data } = await axios.get(
-        "http://165.227.97.26:3001/api/v1/projects",
+        "http://165.227.97.26/api/v1/projects",
         config
       );
       if (data.success) {

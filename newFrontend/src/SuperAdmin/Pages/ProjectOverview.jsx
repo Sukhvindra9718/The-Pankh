@@ -69,7 +69,7 @@ function ProjectOverview() {
     setLoading(true)
     try {
       const { data } = await axios.post(
-        "http://165.227.97.26:3001/api/v1/project/upload",
+        "http://165.227.97.26/api/v1/project/upload",
         { title, description, file },
         config
       );
@@ -96,7 +96,7 @@ function ProjectOverview() {
     };
     try {
       const { data } = await axios.get(
-        "http://165.227.97.26:3001/api/v1/projects",
+        "http://165.227.97.26/api/v1/projects",
         config
       );
       setImages(data.projects);
@@ -126,7 +126,7 @@ function ProjectOverview() {
     };
     try {
       const { data } = await axios.put(
-        `http://165.227.97.26:3001/api/v1/project/${updateId}`,
+        `http://165.227.97.26/api/v1/project/${updateId}`,
         Data,
         config
       );
@@ -183,7 +183,7 @@ function ProjectOverview() {
       };
       try {
         const { data } = await axios.delete(
-          `http://165.227.97.26:3001/api/v1/project/${id}`,
+          `http://165.227.97.26/api/v1/project/${id}`,
           config
         );
         if (data.success) {

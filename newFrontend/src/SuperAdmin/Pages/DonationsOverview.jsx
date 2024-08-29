@@ -82,7 +82,7 @@ function DonationsOverview() {
     setLoading(true);
     try {
       const { data } = await axios.post(
-        "http://165.227.97.26:3001/api/v1/Donation/upload",
+        "http://165.227.97.26/api/v1/Donation/upload",
         { ...Donations, file },
         config
       );
@@ -129,7 +129,7 @@ function DonationsOverview() {
     setLoading(true);
     try {
       const { data } = await axios.put(
-        `http://165.227.97.26:3001/api/v1/Donation/${updateId}`,
+        `http://165.227.97.26/api/v1/Donation/${updateId}`,
         Data,
         config
       );
@@ -194,7 +194,7 @@ function DonationsOverview() {
   // Read All Donations
   const getAllDonations = async () => {
     try {
-      const res = await axios.get("http://165.227.97.26:3001/api/v1/Donations");
+      const res = await axios.get("http://165.227.97.26/api/v1/Donations");
       console.log(res.data);
       if (res.data.success) {
         setData(res.data.Donations);
@@ -218,7 +218,7 @@ function DonationsOverview() {
           Authorization: `${getTokenFromCookie()}`,
         },
       };
-      const { data } = await axios.delete(`http://165.227.97.26:3001/api/v1/Donation/${id}`, config);
+      const { data } = await axios.delete(`http://165.227.97.26/api/v1/Donation/${id}`, config);
 
       if (data.success) {
         setIsDelete(!isDelete);

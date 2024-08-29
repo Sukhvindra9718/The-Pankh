@@ -33,5 +33,5 @@
     "eslint-plugin-react-refresh": "^0.4.7",
     "vite": "^5.3.1"
   },
-  "proxy": "http://165.227.97.26:3001"
+  "proxy": "http://165.227.97.26"
 }

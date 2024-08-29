@@ -38,7 +38,7 @@ function ContactOverview() {
       };
 
       const res = await axios.get(
-        "http://165.227.97.26:3001/api/common/contact/all",
+        "http://165.227.97.26/api/common/contact/all",
         config
       );
       if (res.data.success) {
@@ -71,7 +71,7 @@ function ContactOverview() {
           Authorization: `${getTokenFromCookie()}`,
         },
       };
-      const { data } = await axios.delete(`http://165.227.97.26:3001/api/common/contact/delete/${id}`,config);
+      const { data } = await axios.delete(`http://165.227.97.26/api/common/contact/delete/${id}`,config);
     
       if (data.success) {
         setIsDelete(!isDelete);

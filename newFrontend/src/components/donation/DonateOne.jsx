@@ -69,7 +69,7 @@ const DonateOne = () => {
 
     try {
       const { data } = await axios.post(
-        "http://165.227.97.26:3001/api/v1/Donation/upload",
+        "http://165.227.97.26/api/v1/Donation/upload",
         { ...Donations, file },
         config
       );
@@ -106,7 +106,7 @@ const DonateOne = () => {
   // Read All BankDetails
   const getAllBankDetails = async () => {
     try {
-      const res = await axios.get("http://165.227.97.26:3001/api/v1/BankDetails");
+      const res = await axios.get("http://165.227.97.26/api/v1/BankDetails");
       if (res.data.success) {
         setBankDetails(res.data.BankDetails[0]);
         console.log(res.data.BankDetails[0]);

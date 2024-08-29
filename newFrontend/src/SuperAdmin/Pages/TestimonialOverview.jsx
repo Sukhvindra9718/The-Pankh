@@ -72,7 +72,7 @@ function TestimonialOverview() {
     setLoading(true)
     try {
       const { data } = await axios.post(
-        "http://165.227.97.26:3001/api/v1/testimonial/upload",
+        "http://165.227.97.26/api/v1/testimonial/upload",
         { ...testimonial, file },
         config
       );
@@ -97,7 +97,7 @@ function TestimonialOverview() {
   // Read All testimonial
   const getAllTestimonials = async () => {
     try {
-      const res = await axios.get("http://165.227.97.26:3001/api/v1/testimonials");
+      const res = await axios.get("http://165.227.97.26/api/v1/testimonials");
 
       if (res.data.success) {
         setData(res.data.testimonial);
@@ -128,7 +128,7 @@ function TestimonialOverview() {
     };
     try {
       const { data } = await axios.put(
-        `http://165.227.97.26:3001/api/v1/testimonial/${updateId}`,
+        `http://165.227.97.26/api/v1/testimonial/${updateId}`,
         Data,
         config
       );
@@ -186,7 +186,7 @@ function TestimonialOverview() {
         },
       };
       const { data } = await axios.delete(
-        `http://165.227.97.26:3001/api/v1/testimonial/${id}`,
+        `http://165.227.97.26/api/v1/testimonial/${id}`,
         config
       );
 
