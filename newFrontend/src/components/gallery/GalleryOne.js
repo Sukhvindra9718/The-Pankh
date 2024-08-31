@@ -41,7 +41,7 @@ export default class GalleryOne extends React.Component {
 
     getAllImages = async () => {
         try {
-            const res = await axios.get("http://165.227.97.26/api/v1/images");
+            const res = await axios.get("https://thepankh.info/api/v1/images");
 
             if (res.data.success) {
                 this.setState({ images: res.data.images }); // Update state with the fetched images
