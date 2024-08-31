@@ -28,7 +28,7 @@ function DashboardOverview() {
         };
 
         const {data} = await axios.get(
-          `http://165.227.97.26/api/common/getTableRow/count`,
+          `https://thepankh.info/api/common/getTableRow/count`,
           config
         );
 

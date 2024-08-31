@@ -22,7 +22,7 @@ const CausesOne = () => {
 
   let publicUrl = process.env.PUBLIC_URL + "/";
 
-  let apiBaseUrl = "http://165.227.97.26/api/v1";
+  let apiBaseUrl = "https://thepankh.info/api/v1";
   const [fund, setFund] = useState([]);
 
   const getAllFunds = async () => {

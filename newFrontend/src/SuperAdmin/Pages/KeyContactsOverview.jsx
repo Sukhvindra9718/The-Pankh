@@ -80,7 +80,7 @@ function KeyContactsOverview() {
 
     try {
       const { data } = await axios.post(
-        "http://165.227.97.26/api/common//keycontact/register",
+        "https://thepankh.info/api/common//keycontact/register",
         Data,
         config
       );
@@ -113,7 +113,7 @@ function KeyContactsOverview() {
       };
 
       const res = await axios.get(
-        "http://165.227.97.26/api/common//keycontact/all",
+        "https://thepankh.info/api/common//keycontact/all",
         config
       );
       if (res.data.success) {
@@ -155,7 +155,7 @@ function KeyContactsOverview() {
     };
     try {
       const { data } = await axios.put(
-        `http://165.227.97.26/api/common/keycontact/${id}`,
+        `https://thepankh.info/api/common/keycontact/${id}`,
         Data,
         config
       );
@@ -216,7 +216,7 @@ function KeyContactsOverview() {
         },
       };
       const { data } = await axios.delete(
-        `http://165.227.97.26/api/common/keycontact/${id}`,
+        `https://thepankh.info/api/common/keycontact/${id}`,
         config
       );
       console.log(data);
