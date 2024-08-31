@@ -71,7 +71,7 @@ export default class HeaderOne extends React.Component {
                   <div className="main-menu-wrapper__logo">
                     <Link to={process.env.PUBLIC_URL + `/`}>
                       <img
-                        src={publicUrl + "assets/images/logo/PANKHLogo1.png"}
+                        src={publicUrl + "images/logo/PANKHLogo1.png"}
                         alt=""
                         style={{ height: "48px" }}
                       />

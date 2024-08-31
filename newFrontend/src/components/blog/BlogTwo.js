@@ -17,7 +17,7 @@ export default class BlogTwo extends React.Component {
                                 {/* Blog One single */}
                                 <div className="blog-one__single">
                                     <div className="blog-one__img">
-                                        <img src={publicUrl+"assets/images/blog/blog-1-1.jpg"} alt="" />
+                                        <img src={publicUrl+"images/blog/blog-1-1.jpg"} alt="" />
                                         <Link to={process.env.PUBLIC_URL + `/blog-details`}>
                                             <span className="blog-one__plus"></span>
                                         </Link>
@@ -42,7 +42,7 @@ export default class BlogTwo extends React.Component {
                                 {/* Blog One single */}
                                 <div className="blog-one__single">
                                     <div className="blog-one__img">
-                                        <img src={publicUrl+"assets/images/blog/blog-1-2.jpg"} alt="" />
+                                        <img src={publicUrl+"images/blog/blog-1-2.jpg"} alt="" />
                                         <Link to={process.env.PUBLIC_URL + `/blog-details`}>
                                             <span className="blog-one__plus"></span>
                                         </Link>
@@ -67,7 +67,7 @@ export default class BlogTwo extends React.Component {
                                 {/* Blog One single */}
                                 <div className="blog-one__single">
                                     <div className="blog-one__img">
-                                        <img src={publicUrl+"assets/images/blog/blog-1-3.jpg"} alt="" />
+                                        <img src={publicUrl+"images/blog/blog-1-3.jpg"} alt="" />
                                         <Link to={process.env.PUBLIC_URL + `/blog-details`}>
                                             <span className="blog-one__plus"></span>
                                         </Link>
@@ -91,7 +91,7 @@ export default class BlogTwo extends React.Component {
                                 {/* Blog One single */}
                                 <div className="blog-one__single">
                                     <div className="blog-one__img">
-                                        <img src={publicUrl+"assets/images/blog/blog-1-4.jpg"} alt="" />
+                                        <img src={publicUrl+"images/blog/blog-1-4.jpg"} alt="" />
                                         <Link to={process.env.PUBLIC_URL + `/blog-details`}>
                                             <span className="blog-one__plus"></span>
                                         </Link>
@@ -115,7 +115,7 @@ export default class BlogTwo extends React.Component {
                                 {/* Blog One single */}
                                 <div className="blog-one__single">
                                     <div className="blog-one__img">
-                                        <img src={publicUrl+"assets/images/blog/blog-1-5.jpg"} alt="" />
+                                        <img src={publicUrl+"images/blog/blog-1-5.jpg"} alt="" />
                                         <Link to={process.env.PUBLIC_URL + `/blog-details`}>
                                             <span className="blog-one__plus"></span>
                                         </Link>
@@ -139,7 +139,7 @@ export default class BlogTwo extends React.Component {
                                 {/* Blog One single */}
                                 <div className="blog-one__single">
                                     <div className="blog-one__img">
-                                        <img src={publicUrl+"assets/images/blog/blog-1-6.jpg"} alt="" />
+                                        <img src={publicUrl+"images/blog/blog-1-6.jpg"} alt="" />
                                         <Link to={process.env.PUBLIC_URL + `/blog-details`}>
                                             <span className="blog-one__plus"></span>
                                         </Link>

@@ -30,12 +30,12 @@ export default class HeroTwo extends React.Component {
 
                             {/* Start Swiper Slide Single */}
                             <SwiperSlide className="swiper-slide">
-                                <div className="image-layer" style={{backgroundImage: 'url('+publicUrl+'assets/images/backgrounds/main-slider-1-2.jpg)'}}></div>
+                                <div className="image-layer" style={{backgroundImage: 'url('+publicUrl+'images/backgrounds/main-slider-1-2.jpg)'}}></div>
                                 <div className="main-slider-two__map">
-                                    <img src={publicUrl+"assets/images/shapes/main-slider-two-map-1.png"} alt="" />
+                                    <img src={publicUrl+"images/shapes/main-slider-two-map-1.png"} alt="" />
                                 </div>
                                 <div className="main-slider-two__img">
-                                    <img src={publicUrl+"assets/images/resources/main-slider-img-1.jpg"} alt="" />
+                                    <img src={publicUrl+"images/resources/main-slider-img-1.jpg"} alt="" />
                                 </div>
                                 <div className="container">
                                     <div className="row">
@@ -54,12 +54,12 @@ export default class HeroTwo extends React.Component {
 
                             {/* Start Swiper Slide Single */}
                             <SwiperSlide className="swiper-slide">
-                                <div className="image-layer" style={{backgroundImage: 'url('+publicUrl+'assets/images/backgrounds/main-slider-1-1.jpg)'}}></div>
+                                <div className="image-layer" style={{backgroundImage: 'url('+publicUrl+'images/backgrounds/main-slider-1-1.jpg)'}}></div>
                                 <div className="main-slider-two__map">
-                                    <img src={publicUrl+"assets/images/shapes/main-slider-two-map-1.png"} alt="" />
+                                    <img src={publicUrl+"images/shapes/main-slider-two-map-1.png"} alt="" />
                                 </div>
                                 <div className="main-slider-two__img">
-                                    <img src={publicUrl+"assets/images/resources/main-slider-img-2.jpg"} alt="" />
+                                    <img src={publicUrl+"images/resources/main-slider-img-2.jpg"} alt="" />
                                 </div>
                                 <div className="container">
                                     <div className="row">
@@ -77,12 +77,12 @@ export default class HeroTwo extends React.Component {
                             {/* End Swiper Slide Single */}
                             {/* Start Swiper Slide Single */}
                             <SwiperSlide className="swiper-slide">
-                                <div className="image-layer" style={{backgroundImage: 'url('+publicUrl+'assets/images/backgrounds/main-slider-1-3.jpg)'}}></div>
+                                <div className="image-layer" style={{backgroundImage: 'url('+publicUrl+'images/backgrounds/main-slider-1-3.jpg)'}}></div>
                                 <div className="main-slider-two__map">
-                                    <img src={publicUrl+"assets/images/shapes/main-slider-two-map-1.png"} alt="" />
+                                    <img src={publicUrl+"images/shapes/main-slider-two-map-1.png"} alt="" />
                                 </div>
                                 <div className="main-slider-two__img">
-                                    <img src={publicUrl+"assets/images/resources/main-slider-img-3.jpg"} alt="" />
+                                    <img src={publicUrl+"images/resources/main-slider-img-3.jpg"} alt="" />
                                 </div>
                                 <div className="container">
                                     <div className="row">

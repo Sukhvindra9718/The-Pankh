@@ -101,7 +101,7 @@ export default class DonationDetailsContent extends React.Component {
                                 <div className="donation-details__left">
                                     <div className="donation-details__top">
                                         <div className="donation-details__top-img">
-                                            <img src={publicUrl+"assets/images/resources/donation-details-img-1.jpg"} alt="" />
+                                            <img src={publicUrl+"images/resources/donation-details-img-1.jpg"} alt="" />
                                             <div className="donation-details__category">
                                                 <span>Food</span>
                                             </div>
@@ -136,12 +136,12 @@ export default class DonationDetailsContent extends React.Component {
                                             <div className="row">
                                                 <div className="col-xl-6">
                                                     <div className="donation-details__content-img-single">
-                                                        <img src={publicUrl+"assets/images/resources/donation-details-content-img-1.jpg"} alt="" />
+                                                        <img src={publicUrl+"images/resources/donation-details-content-img-1.jpg"} alt="" />
                                                     </div>
                                                 </div>
                                                 <div className="col-xl-6">
                                                     <div className="donation-details__content-img-single">
-                                                        <img src={publicUrl+"assets/images/resources/donation-details-content-img-2.jpg"} alt="" />
+                                                        <img src={publicUrl+"images/resources/donation-details-content-img-2.jpg"} alt="" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -193,7 +193,7 @@ export default class DonationDetailsContent extends React.Component {
                                         <h3 className="comment-one__title">2 Comments</h3>
                                         <div className="comment-one__single">
                                             <div className="comment-one__image">
-                                                <img src={publicUrl+"assets/images/blog/comment-1-1.jpg"} alt="" />
+                                                <img src={publicUrl+"images/blog/comment-1-1.jpg"} alt="" />
                                             </div>
                                             <div className="comment-one__content">
                                                 <h3>Kevin Martin</h3>
@@ -206,7 +206,7 @@ export default class DonationDetailsContent extends React.Component {
                                         </div>
                                         <div className="comment-one__single">
                                             <div className="comment-one__image">
-                                                <img src={publicUrl+"assets/images/blog/comment-1-2.jpg"} alt="" />
+                                                <img src={publicUrl+"images/blog/comment-1-2.jpg"} alt="" />
                                             </div>
                                             <div className="comment-one__content">
                                                 <h3>Jessica Brown</h3>

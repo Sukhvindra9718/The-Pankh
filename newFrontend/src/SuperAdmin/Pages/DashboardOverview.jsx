@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "../../style/Dashboard.css";
 import axios from "axios";
+import Loader from "../../common/Loader";
 
 function DashboardOverview() {
   const [rowCount, setRowCount] = useState([]);
-
+  const [Loading, setLoading] = useState(false);
   const getTokenFromCookie = () => {
     const name = "token=";
     const decodedCookie = decodeURIComponent(document.cookie);
@@ -18,33 +19,36 @@ function DashboardOverview() {
     }
     return "";
   };
-  useEffect(() => {
-    const getAllCounts = async () => {
-      try {
-        const config = {
-          headers: {
-            Authorization: `${getTokenFromCookie()}`,
-          },
-        };
 
-        const {data} = await axios.get(
-          `https://thepankh.info/api/common/getTableRow/count`,
-          config
-        );
+  const getAllCounts = async () => {
+    setLoading(true);
+    try {
+      const config = {
+        headers: {
+          Authorization: `${getTokenFromCookie()}`,
+        },
+      };
 
-        if(data.success){
-          setRowCount(data.result);
-        }
+      const {data} = await axios.get(
+        `https://thepankh.info/api/common/getTableRow/count`,
+        config
+      );
 
-      } catch (error) {
-        console.log(error);
+      if(data.success){
+        setRowCount(data.result);
       }
-    };
+      setLoading(false);
+    } catch (error) {
+      console.log(error);
+      setLoading(false);
+    }
+  };
 
-    return () => getAllCounts();
+  useEffect(() => {
+    getAllCounts();
   }, []);
 
-  return (
+  return Loading ? (<Loader/>):(
     <div className="Count-Container">
       {rowCount.length > 0 &&
         rowCount.map((data, index) => (

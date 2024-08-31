@@ -1,10 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
-// import Logo from "/assets/image.png";
-// import Loader from "/assets/Loader.png";
 
 const Navbar = () => {
-  const [isLoading, setIsLoading] = useState(false);
 
   return (
     <header className="header-area header-default sticky-header">
@@ -13,8 +10,8 @@ const Navbar = () => {
           <div className="col-5 col-sm-3 col-md-3 col-lg-2 pr-0">
             <div className="header-logo-area">
               <NavLink to="/">
-                <img className="logo-main" src="assets/image.png" alt="Logo" />
-                <img className="logo-light" src="assets/image.png" alt="Logo" />
+                <img className="logo-main" src="image.png" alt="Logo" />
+                <img className="logo-light" src="image.png" alt="Logo" />
               </NavLink>
             </div>
           </div>
@@ -81,7 +78,7 @@ const Navbar = () => {
                   Donation
                   <img
                     className="icon icon-img"
-                    src="assets/img/icons/arrow-line-right2.png"
+                    src="img/icons/arrow-line-right2.png"
                     alt="Icon"
                   />
                 </NavLink>

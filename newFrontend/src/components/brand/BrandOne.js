@@ -47,72 +47,72 @@ export default class BrandOne extends React.Component {
                             className="thm-swiper__slider swiper-container">
                             <div className="swiper-wrapper">
                                 <SwiperSlide className="swiper-slide">
-                                    <Link to={process.env.PUBLIC_URL + `/`}><img src={publicUrl+"assets/images/brand/brand-1-1.png"} alt="" /></Link>
+                                    <Link to={process.env.PUBLIC_URL + `/`}><img src={publicUrl+"images/brand/brand-1-1.png"} alt="" /></Link>
                                     <div className="brand-one__overly">
-                                        <Link to={process.env.PUBLIC_URL + `/`}><img src={publicUrl+"assets/images/brand/overly-brand-1-1.png"} alt="" /></Link>
+                                        <Link to={process.env.PUBLIC_URL + `/`}><img src={publicUrl+"images/brand/overly-brand-1-1.png"} alt="" /></Link>
                                     </div>
                                 </SwiperSlide>
                                 {/* swiper-slide */}
                                 <SwiperSlide className="swiper-slide">
-                                    <Link to={process.env.PUBLIC_URL + `/`}><img src={publicUrl+"assets/images/brand/brand-1-2.png"} alt="" /></Link>
+                                    <Link to={process.env.PUBLIC_URL + `/`}><img src={publicUrl+"images/brand/brand-1-2.png"} alt="" /></Link>
                                     <div className="brand-one__overly">
-                                        <Link to={process.env.PUBLIC_URL + `/`}><img src={publicUrl+"assets/images/brand/overly-brand-1-2.png"} alt="" /></Link>
+                                        <Link to={process.env.PUBLIC_URL + `/`}><img src={publicUrl+"images/brand/overly-brand-1-2.png"} alt="" /></Link>
                                     </div>
                                 </SwiperSlide>
                                 {/* swiper-slide */}
                                 <SwiperSlide className="swiper-slide">
-                                    <Link to={process.env.PUBLIC_URL + `/`}><img src={publicUrl+"assets/images/brand/brand-1-3.png"} alt="" /></Link>
+                                    <Link to={process.env.PUBLIC_URL + `/`}><img src={publicUrl+"images/brand/brand-1-3.png"} alt="" /></Link>
                                     <div className="brand-one__overly">
-                                        <Link to={process.env.PUBLIC_URL + `/`}><img src={publicUrl+"assets/images/brand/overly-brand-1-3.png"} alt="" /></Link>
+                                        <Link to={process.env.PUBLIC_URL + `/`}><img src={publicUrl+"images/brand/overly-brand-1-3.png"} alt="" /></Link>
                                     </div>
                                 </SwiperSlide>
                                 {/* swiper-slide */}
                                 <SwiperSlide className="swiper-slide">
-                                    <Link to={process.env.PUBLIC_URL + `/`}><img src={publicUrl+"assets/images/brand/brand-1-4.png"} alt="" /></Link>
+                                    <Link to={process.env.PUBLIC_URL + `/`}><img src={publicUrl+"images/brand/brand-1-4.png"} alt="" /></Link>
                                     <div className="brand-one__overly">
-                                        <Link to={process.env.PUBLIC_URL + `/`}><img src={publicUrl+"assets/images/brand/overly-brand-1-4.png"} alt="" /></Link>
+                                        <Link to={process.env.PUBLIC_URL + `/`}><img src={publicUrl+"images/brand/overly-brand-1-4.png"} alt="" /></Link>
                                     </div>
                                 </SwiperSlide>
                                 {/* swiper-slide */}
                                 <SwiperSlide className="swiper-slide">
-                                    <Link to={process.env.PUBLIC_URL + `/`}><img src={publicUrl+"assets/images/brand/brand-1-5.png"} alt="" /></Link>
+                                    <Link to={process.env.PUBLIC_URL + `/`}><img src={publicUrl+"images/brand/brand-1-5.png"} alt="" /></Link>
                                     <div className="brand-one__overly">
-                                        <Link to={process.env.PUBLIC_URL + `/`}><img src={publicUrl+"assets/images/brand/overly-brand-1-5.png"} alt="" /></Link>
+                                        <Link to={process.env.PUBLIC_URL + `/`}><img src={publicUrl+"images/brand/overly-brand-1-5.png"} alt="" /></Link>
                                     </div>
                                 </SwiperSlide>
                                 {/* swiper-slide */}
                                 <SwiperSlide className="swiper-slide">
-                                    <Link to={process.env.PUBLIC_URL + `/`}><img src={publicUrl+"assets/images/brand/brand-1-1.png"} alt="" /></Link>
+                                    <Link to={process.env.PUBLIC_URL + `/`}><img src={publicUrl+"images/brand/brand-1-1.png"} alt="" /></Link>
                                     <div className="brand-one__overly">
-                                        <Link to={process.env.PUBLIC_URL + `/`}><img src={publicUrl+"assets/images/brand/overly-brand-1-1.png"} alt="" /></Link>
+                                        <Link to={process.env.PUBLIC_URL + `/`}><img src={publicUrl+"images/brand/overly-brand-1-1.png"} alt="" /></Link>
                                     </div>
                                 </SwiperSlide>
                                 {/* swiper-slide */}
                                 <SwiperSlide className="swiper-slide">
-                                    <Link to={process.env.PUBLIC_URL + `/`}><img src={publicUrl+"assets/images/brand/brand-1-2.png"} alt="" /></Link>
+                                    <Link to={process.env.PUBLIC_URL + `/`}><img src={publicUrl+"images/brand/brand-1-2.png"} alt="" /></Link>
                                     <div className="brand-one__overly">
-                                        <Link to={process.env.PUBLIC_URL + `/`}><img src={publicUrl+"assets/images/brand/overly-brand-1-2.png"} alt="" /></Link>
+                                        <Link to={process.env.PUBLIC_URL + `/`}><img src={publicUrl+"images/brand/overly-brand-1-2.png"} alt="" /></Link>
                                     </div>
                                 </SwiperSlide>
                                 {/* swiper-slide */}
                                 <SwiperSlide className="swiper-slide">
-                                    <Link to={process.env.PUBLIC_URL + `/`}><img src={publicUrl+"assets/images/brand/brand-1-3.png"} alt="" /></Link>
+                                    <Link to={process.env.PUBLIC_URL + `/`}><img src={publicUrl+"images/brand/brand-1-3.png"} alt="" /></Link>
                                     <div className="brand-one__overly">
-                                        <Link to={process.env.PUBLIC_URL + `/`}><img src={publicUrl+"assets/images/brand/overly-brand-1-3.png"} alt="" /></Link>
+                                        <Link to={process.env.PUBLIC_URL + `/`}><img src={publicUrl+"images/brand/overly-brand-1-3.png"} alt="" /></Link>
                                     </div>
                                 </SwiperSlide>
                                 {/* swiper-slide */}
                                 <SwiperSlide className="swiper-slide">
-                                    <Link to={process.env.PUBLIC_URL + `/`}><img src={publicUrl+"assets/images/brand/brand-1-4.png"} alt="" /></Link>
+                                    <Link to={process.env.PUBLIC_URL + `/`}><img src={publicUrl+"images/brand/brand-1-4.png"} alt="" /></Link>
                                     <div className="brand-one__overly">
-                                        <Link to={process.env.PUBLIC_URL + `/`}><img src={publicUrl+"assets/images/brand/overly-brand-1-4.png"} alt="" /></Link>
+                                        <Link to={process.env.PUBLIC_URL + `/`}><img src={publicUrl+"images/brand/overly-brand-1-4.png"} alt="" /></Link>
                                     </div>
                                 </SwiperSlide>
                                 {/* swiper-slide */}
                                 <SwiperSlide className="swiper-slide">
-                                    <Link to={process.env.PUBLIC_URL + `/`}><img src={publicUrl+"assets/images/brand/brand-1-5.png"} alt="" /></Link>
+                                    <Link to={process.env.PUBLIC_URL + `/`}><img src={publicUrl+"images/brand/brand-1-5.png"} alt="" /></Link>
                                     <div className="brand-one__overly">
-                                        <Link to={process.env.PUBLIC_URL + `/`}><img src={publicUrl+"assets/images/brand/overly-brand-1-5.png"} alt="" /></Link>
+                                        <Link to={process.env.PUBLIC_URL + `/`}><img src={publicUrl+"images/brand/overly-brand-1-5.png"} alt="" /></Link>
                                     </div>
                                 </SwiperSlide>
                                 {/* swiper-slide */}

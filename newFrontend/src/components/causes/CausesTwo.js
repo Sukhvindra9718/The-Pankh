@@ -72,10 +72,10 @@ export default class CausesTwo extends React.Component {
                 <section className="help-the-causes">
                     <div className="help-the-causes__wrapper">
                         <div className="help-the-causes__left">
-                            <div className="help-the-causes__left-bg" style={{backgroundImage: 'url('+publicUrl+'assets/images/backgrounds/help-the-causes-left-bg.jpg)'}}></div>
+                            <div className="help-the-causes__left-bg" style={{backgroundImage: 'url('+publicUrl+'images/backgrounds/help-the-causes-left-bg.jpg)'}}></div>
                         </div>
                         <div className="help-the-causes__right">
-                            <div className="help-the-causes__content-bg" style={{backgroundImage: 'url('+publicUrl+'assets/images/backgrounds/help-the-causes-content-bg.jpg)'}}></div>
+                            <div className="help-the-causes__content-bg" style={{backgroundImage: 'url('+publicUrl+'images/backgrounds/help-the-causes-content-bg.jpg)'}}></div>
                             <div className="help-the-causes__content-box">
                                 <div className="section-title text-left">
                                     <span className="section-title__tagline">I Each drop creates sea</span>

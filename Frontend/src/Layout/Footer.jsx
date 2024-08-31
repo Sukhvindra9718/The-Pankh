@@ -10,7 +10,7 @@ const Footer = () => {
               <div className="widget-item">
                 <div className="about-widget">
                   <a className="footer-logo" href="/">
-                    <img src="assets/image.png" alt="Logo" />
+                    <img src="image.png" alt="Logo" />
                   </a>
                   <p>
                     Lorem Ipsum is simply dummy text of the industry orem Ipsum
@@ -31,7 +31,7 @@ const Footer = () => {
                     <div className="col">
                       <div className="gallery-item">
                         <img
-                          src="assets/img/photos/gallery1.jpg"
+                          src="img/photos/gallery1.jpg"
                           alt="Givest-HasTech"
                         />
                         <a className="icon" href="#/">
@@ -42,7 +42,7 @@ const Footer = () => {
                     <div className="col">
                       <div className="gallery-item">
                         <img
-                          src="assets/img/photos/gallery2.jpg"
+                          src="img/photos/gallery2.jpg"
                           alt="Givest-HasTech"
                         />
                         <a className="icon" href="#/">
@@ -53,7 +53,7 @@ const Footer = () => {
                     <div className="col">
                       <div className="gallery-item">
                         <img
-                          src="assets/img/photos/gallery3.jpg"
+                          src="img/photos/gallery3.jpg"
                           alt="Givest-HasTech"
                         />
                         <a className="icon" href="#/">
@@ -64,7 +64,7 @@ const Footer = () => {
                     <div className="col">
                       <div className="gallery-item">
                         <img
-                          src="assets/img/photos/gallery4.jpg"
+                          src="img/photos/gallery4.jpg"
                           alt="Givest-HasTech"
                         />
                         <a className="icon" href="#/">
@@ -75,7 +75,7 @@ const Footer = () => {
                     <div className="col">
                       <div className="gallery-item">
                         <img
-                          src="assets/img/photos/gallery5.jpg"
+                          src="img/photos/gallery5.jpg"
                           alt="Givest-HasTech"
                         />
                         <a className="icon" href="#/">
@@ -86,7 +86,7 @@ const Footer = () => {
                     <div className="col">
                       <div className="gallery-item">
                         <img
-                          src="assets/img/photos/gallery6.jpg"
+                          src="img/photos/gallery6.jpg"
                           alt="Givest-HasTech"
                         />
                         <a className="icon" href="#/">
@@ -155,7 +155,7 @@ const Footer = () => {
         </div>
         {/*== Scroll Top Button ==*/}
         <div className="scroll-to-top">
-          <img src="assets/img/icons/arrow-up-line.png" alt="Icon-Image" />
+          <img src="img/icons/arrow-up-line.png" alt="Icon-Image" />
         </div>
       </div>
       <div className="footer-bottom">
@@ -174,7 +174,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="shape-layer">
-        <img src="assets/img/shape/footer-line.png" alt="Image-Givest" />
+        <img src="img/shape/footer-line.png" alt="Image-Givest" />
       </div>
     </footer>
   );

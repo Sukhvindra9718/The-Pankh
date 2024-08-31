@@ -407,7 +407,7 @@ export default class RecentEventsTwo extends React.Component {
                             <div className="col-xl-4 col-lg-5">
                                 <div className="up-comming-event-two__right">
                                     <div className="up-comming-event-two__img">
-                                        <img src={publicUrl+"assets/images/resources/up-comming-event-two-img.jpg"} alt="" />
+                                        <img src={publicUrl+"images/resources/up-comming-event-two-img.jpg"} alt="" />
                                     </div>
                                 </div>
                             </div>

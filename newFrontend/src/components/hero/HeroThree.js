@@ -30,9 +30,9 @@ export default class HeroThree extends React.Component {
 
                             {/* Start Swiper Slide Single */}
                             <SwiperSlide className="swiper-slide">
-                                <div className="image-layer" style={{backgroundImage: 'url('+publicUrl+'assets/images/backgrounds/main-slider-1-1.jpg)'}}></div>
+                                <div className="image-layer" style={{backgroundImage: 'url('+publicUrl+'images/backgrounds/main-slider-1-1.jpg)'}}></div>
                                 <div className="main-slider__three-map">
-                                    <img src={publicUrl+"assets/images/shapes/main-slider-three-map.png"} alt="" />
+                                    <img src={publicUrl+"images/shapes/main-slider-three-map.png"} alt="" />
                                 </div>
                                 <div className="container">
                                     <div className="row">
@@ -51,9 +51,9 @@ export default class HeroThree extends React.Component {
 
                             {/* Start Swiper Slide Single */}
                             <SwiperSlide className="swiper-slide">
-                                <div className="image-layer" style={{backgroundImage: 'url('+publicUrl+'assets/images/backgrounds/main-slider-1-2.jpg)'}}></div>
+                                <div className="image-layer" style={{backgroundImage: 'url('+publicUrl+'images/backgrounds/main-slider-1-2.jpg)'}}></div>
                                 <div className="main-slider__three-map">
-                                    <img src={publicUrl+"assets/images/shapes/main-slider-three-map.png"} alt="" />
+                                    <img src={publicUrl+"images/shapes/main-slider-three-map.png"} alt="" />
                                 </div>
                                 <div className="container">
                                     <div className="row">
@@ -72,9 +72,9 @@ export default class HeroThree extends React.Component {
 
                             {/* Start Swiper Slide Single */}
                             <SwiperSlide className="swiper-slide">
-                                <div className="image-layer" style={{backgroundImage: 'url('+publicUrl+'assets/images/backgrounds/main-slider-1-3.jpg)'}}></div>
+                                <div className="image-layer" style={{backgroundImage: 'url('+publicUrl+'images/backgrounds/main-slider-1-3.jpg)'}}></div>
                                 <div className="main-slider__three-map">
-                                    <img src={publicUrl+"assets/images/shapes/main-slider-three-map.png"} alt="" />
+                                    <img src={publicUrl+"images/shapes/main-slider-three-map.png"} alt="" />
                                 </div>
                                 <div className="container">
                                     <div className="row">

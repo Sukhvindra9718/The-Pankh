@@ -125,7 +125,7 @@ function FooterOne() {
                   <div className="footer-widget-one__about-logo">
                     <Link to={process.env.PUBLIC_URL + `/`}>
                       <img
-                        src={publicUrl + "assets/images/logo/PANKHLogo2.png"}
+                        src={publicUrl + "images/logo/PANKHLogo2.png"}
                         alt=""
                         style={{ height: "48px" }}
                       />
@@ -297,7 +297,7 @@ export default FooterOne;
 //                     <div className="footer-widget-one__about-logo">
 //                       <Link to={process.env.PUBLIC_URL + `/`}>
 //                         <img
-//                           src={publicUrl + "assets/images/logo/PANKHLogo2.png"}
+//                           src={publicUrl + "images/logo/PANKHLogo2.png"}
 //                           alt=""
 //                           style={{ height: "48px" }}
 //                         />
@@ -355,7 +355,7 @@ export default FooterOne;
 //                           <img
 //                             src={
 //                               publicUrl +
-//                               "assets/images/resources/footer-widget-one-gallery-1.jpg"
+//                               "images/resources/footer-widget-one-gallery-1.jpg"
 //                             }
 //                             alt=""
 //                           />
@@ -371,7 +371,7 @@ export default FooterOne;
 //                           <img
 //                             src={
 //                               publicUrl +
-//                               "assets/images/resources/footer-widget-one-gallery-2.jpg"
+//                               "images/resources/footer-widget-one-gallery-2.jpg"
 //                             }
 //                             alt=""
 //                           />
@@ -387,7 +387,7 @@ export default FooterOne;
 //                           <img
 //                             src={
 //                               publicUrl +
-//                               "assets/images/resources/footer-widget-one-gallery-3.jpg"
+//                               "images/resources/footer-widget-one-gallery-3.jpg"
 //                             }
 //                             alt=""
 //                           />
@@ -403,7 +403,7 @@ export default FooterOne;
 //                           <img
 //                             src={
 //                               publicUrl +
-//                               "assets/images/resources/footer-widget-one-gallery-4.jpg"
+//                               "images/resources/footer-widget-one-gallery-4.jpg"
 //                             }
 //                             alt=""
 //                           />
@@ -419,7 +419,7 @@ export default FooterOne;
 //                           <img
 //                             src={
 //                               publicUrl +
-//                               "assets/images/resources/footer-widget-one-gallery-5.jpg"
+//                               "images/resources/footer-widget-one-gallery-5.jpg"
 //                             }
 //                             alt=""
 //                           />
@@ -435,7 +435,7 @@ export default FooterOne;
 //                           <img
 //                             src={
 //                               publicUrl +
-//                               "assets/images/resources/footer-widget-one-gallery-6.jpg"
+//                               "images/resources/footer-widget-one-gallery-6.jpg"
 //                             }
 //                             alt=""
 //                           />
@@ -451,7 +451,7 @@ export default FooterOne;
 //                           <img
 //                             src={
 //                               publicUrl +
-//                               "assets/images/resources/footer-widget-one-gallery-7.jpg"
+//                               "images/resources/footer-widget-one-gallery-7.jpg"
 //                             }
 //                             alt=""
 //                           />
@@ -467,7 +467,7 @@ export default FooterOne;
 //                           <img
 //                             src={
 //                               publicUrl +
-//                               "assets/images/resources/footer-widget-one-gallery-8.jpg"
+//                               "images/resources/footer-widget-one-gallery-8.jpg"
 //                             }
 //                             alt=""
 //                           />
@@ -483,7 +483,7 @@ export default FooterOne;
 //                           <img
 //                             src={
 //                               publicUrl +
-//                               "assets/images/resources/footer-widget-one-gallery-9.jpg"
+//                               "images/resources/footer-widget-one-gallery-9.jpg"
 //                             }
 //                             alt=""
 //                           />

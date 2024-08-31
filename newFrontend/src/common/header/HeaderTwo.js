@@ -16,7 +16,7 @@ export default class HeaderTwo extends React.Component {
                   <div className="main-menu-wrapper__logo">
                     <Link to={process.env.PUBLIC_URL + `/`}>
                       <img
-                        src={publicUrl + "assets/images/resources/logo-2.png"}
+                        src={publicUrl + "images/resources/logo-2.png"}
                         alt=""
                       />
                     </Link>

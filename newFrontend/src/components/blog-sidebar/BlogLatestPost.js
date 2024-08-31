@@ -11,7 +11,7 @@ export default class BlogLatestPost extends React.Component {
                     <ul className="sidebar__post-list list-unstyled">
                         <li>
                             <div className="sidebar__post-image">
-                                <img src={publicUrl+"assets/images/blog/lp-1-1.jpg"} alt="" />
+                                <img src={publicUrl+"images/blog/lp-1-1.jpg"} alt="" />
                             </div>
                             <div className="sidebar__post-content">
                                 <h3>
@@ -22,7 +22,7 @@ export default class BlogLatestPost extends React.Component {
                         </li>
                         <li>
                             <div className="sidebar__post-image">
-                                <img src={publicUrl+"assets/images/blog/lp-1-2.jpg"} alt="" />
+                                <img src={publicUrl+"images/blog/lp-1-2.jpg"} alt="" />
                             </div>
                             <div className="sidebar__post-content">
                                 <h3>
@@ -33,7 +33,7 @@ export default class BlogLatestPost extends React.Component {
                         </li>
                         <li>
                             <div className="sidebar__post-image">
-                                <img src={publicUrl+"assets/images/blog/lp-1-3.jpg"} alt="" />
+                                <img src={publicUrl+"images/blog/lp-1-3.jpg"} alt="" />
                             </div>
                             <div className="sidebar__post-content">
                                 <h3>

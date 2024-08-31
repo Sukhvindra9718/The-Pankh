@@ -18,7 +18,7 @@ const RecentEventsOne = () => {
               {/* Recent Event Single */}
               <div className="recent-event__single">
                 <div className="recent-event__img">
-                  <img src={publicUrl + "assets/images/resources/recent-event-1-1.jpg"} alt="" />
+                  <img src={publicUrl + "images/resources/recent-event-1-1.jpg"} alt="" />
                   <div className="recent-event__btn-box">
                     <Link
                       to={process.env.PUBLIC_URL + `/events`}

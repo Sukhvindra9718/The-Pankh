@@ -85,7 +85,7 @@ function HeroOne() {
                             <img
                               src={
                                 publicUrl +
-                                "assets/images/shapes/main-slider-shape-1.png"
+                                "images/shapes/main-slider-shape-1.png"
                               }
                               className="float-bob-x"
                               alt=""
@@ -129,7 +129,7 @@ function HeroOne() {
                             <img
                               src={
                                 publicUrl +
-                                "assets/images/shapes/main-slider-shape-1.png"
+                                "images/shapes/main-slider-shape-1.png"
                               }
                               className="float-bob-x"
                               alt=""
@@ -176,7 +176,7 @@ function HeroOne() {
                             <img
                               src={
                                 publicUrl +
-                                "assets/images/shapes/main-slider-shape-1.png"
+                                "images/shapes/main-slider-shape-1.png"
                               }
                               className="float-bob-x"
                               alt=""
@@ -223,7 +223,7 @@ function HeroOne() {
                             <img
                               src={
                                 publicUrl +
-                                "assets/images/shapes/main-slider-shape-1.png"
+                                "images/shapes/main-slider-shape-1.png"
                               }
                               className="float-bob-x"
                               alt=""

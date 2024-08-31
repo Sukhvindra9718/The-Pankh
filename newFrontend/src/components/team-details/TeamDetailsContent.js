@@ -32,7 +32,7 @@ export default class TeamDetailsContent extends React.Component {
                                 <div className="col-xl-6 col-lg-6">
                                     <div className="team-details__top-left">
                                         <div className="team-details__top-img">
-                                            <img src={publicUrl+"assets/images/team/team-details-img-1.jpg"} alt="" />
+                                            <img src={publicUrl+"images/team/team-details-img-1.jpg"} alt="" />
                                         </div>
                                     </div>
                                 </div>
@@ -73,12 +73,12 @@ export default class TeamDetailsContent extends React.Component {
                                         <div className="row">
                                             <div className="col-xl-6 col-lg-6 col-md-6">
                                                 <div className="join-team__img-single">
-                                                    <img src={publicUrl+"assets/images/team/join-team-img-1.jpg"} alt="" />
+                                                    <img src={publicUrl+"images/team/join-team-img-1.jpg"} alt="" />
                                                 </div>
                                             </div>
                                             <div className="col-xl-6 col-lg-6 col-md-6">
                                                 <div className="join-team__img-single">
-                                                    <img src={publicUrl+"assets/images/team/join-team-img-2.jpg"} alt="" />
+                                                    <img src={publicUrl+"images/team/join-team-img-2.jpg"} alt="" />
                                                 </div>
                                             </div>
                                         </div>

@@ -49,7 +49,7 @@ function ContactForm() {
     return (
         <>
             <section className="contact-page">
-                <div className="contact-page-bg" style={{ backgroundImage: 'url(' + publicUrl + 'assets/images/backgrounds/contact-page-bg.jpg)' }}></div>
+                <div className="contact-page-bg" style={{ backgroundImage: 'url(' + publicUrl + 'images/backgrounds/contact-page-bg.jpg)' }}></div>
                 <div className="container">
                     <div className="row">
                         <div className="col-xl-6 col-lg-6">
@@ -143,9 +143,9 @@ function ContactForm() {
                         <div className="col-xl-6 col-lg-6">
                             <div className="contact-page__right">
                                 <div className="contact-page__img">
-                                    <img src={publicUrl + "assets/images/resources/contact-page-img-1.jpg"} alt="" />
+                                    <img src={publicUrl + "images/resources/contact-page-img-1.jpg"} alt="" />
                                     <div className="contact-page__img-shape">
-                                        <img src={publicUrl + "assets/images/shapes/contact-page-img-shape.png"} alt="" />
+                                        <img src={publicUrl + "images/shapes/contact-page-img-shape.png"} alt="" />
                                     </div>
                                 </div>
                             </div>

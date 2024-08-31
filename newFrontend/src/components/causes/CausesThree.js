@@ -35,7 +35,7 @@ export default class CausesThree extends React.Component {
                                 {/* Causes One Single */}
                                 <div className="causes-one__single">
                                     <div className="causes-one__img">
-                                        <img src={publicUrl+"assets/images/resources/causes-1-1.jpg"} alt="" />
+                                        <img src={publicUrl+"images/resources/causes-1-1.jpg"} alt="" />
                                     </div>
                                     <div className="causes-one__content-box">
                                         <div className="causes-one__donate-btn-box">
@@ -89,7 +89,7 @@ export default class CausesThree extends React.Component {
                                 {/* Causes One Single */}
                                 <div className="causes-one__single">
                                     <div className="causes-one__img">
-                                        <img src={publicUrl+"assets/images/resources/causes-1-2.jpg"} alt="" />
+                                        <img src={publicUrl+"images/resources/causes-1-2.jpg"} alt="" />
                                     </div>
                                     <div className="causes-one__content-box">
                                         <div className="causes-one__donate-btn-box">
@@ -143,7 +143,7 @@ export default class CausesThree extends React.Component {
                                 {/* Causes One Single */}
                                 <div className="causes-one__single">
                                     <div className="causes-one__img">
-                                        <img src={publicUrl+"assets/images/resources/causes-1-3.jpg"} alt="" />
+                                        <img src={publicUrl+"images/resources/causes-1-3.jpg"} alt="" />
                                     </div>
                                     <div className="causes-one__content-box">
                                         <div className="causes-one__donate-btn-box">

@@ -69,7 +69,7 @@ export default class ThePankhModelDetails extends React.Component {
                     <div className="team-details__top-img">
                       <img
                         src={
-                          publicUrl + "assets/images/whoweare/thepankhmodel.png"
+                          publicUrl + "images/whoweare/thepankhmodel.png"
                         }
                         alt=""
                       />

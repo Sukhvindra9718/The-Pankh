@@ -10,7 +10,7 @@ import TestimonialOne from "../components/testimonial/TestimonialOne";
 // import BlogOne from '../components/blog/BlogOne';
 import FooterOne from "../common/footer/FooterOne";
 import CounterOne from "../components/counter/CounterOne";
-import WelcomNotes from "../components/about/WelcomeNotes";
+// import WelcomNotes from "../components/about/WelcomeNotes";
 const About = () => {
   return (
     <>

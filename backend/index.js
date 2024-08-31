@@ -55,14 +55,12 @@ process.on("uncaughtException", (err) => {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'build')));
-app.use(express.static(path.join(__dirname, 'build/assets')));
-app.use(express.static(path.join(__dirname, 'build/static')));
+app.use(express.static(path.join(__dirname, '../newFrontend/build')));
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+  res.sendFile(path.join(__dirname, '../newFrontend/build', 'index.html'));
 });
-console.log(path.join(__dirname, 'build', 'index.html'))
+console.log(path.join(__dirname, '../newFrontend/build', 'index.html'))
 
 
 

@@ -21,7 +21,7 @@ export default class BlogThree extends React.Component {
                                         {/* Blog Sidebar Single Start */}
                                         <div className="blog-sidebar__single">
                                             <div className="blog-sidebar__img">
-                                                <img src={publicUrl+"assets/images/blog/blog-sidebar-img-1.jpg"} alt="" />
+                                                <img src={publicUrl+"images/blog/blog-sidebar-img-1.jpg"} alt="" />
                                                 <Link to={process.env.PUBLIC_URL + `/blog-details`}>
                                                     <span className="blog-one__plus"></span>
                                                 </Link>
@@ -47,7 +47,7 @@ export default class BlogThree extends React.Component {
                                         {/* Blog Sidebar Single Start */}
                                         <div className="blog-sidebar__single">
                                             <div className="blog-sidebar__img">
-                                                <img src={publicUrl+"assets/images/blog/blog-sidebar-img-2.jpg"} alt="" />
+                                                <img src={publicUrl+"images/blog/blog-sidebar-img-2.jpg"} alt="" />
                                                 <Link to={process.env.PUBLIC_URL + `/blog-details`}>
                                                     <span className="blog-one__plus"></span>
                                                 </Link>
@@ -73,7 +73,7 @@ export default class BlogThree extends React.Component {
                                         {/* Blog Sidebar Single Start */}
                                         <div className="blog-sidebar__single">
                                             <div className="blog-sidebar__img">
-                                                <img src={publicUrl+"assets/images/blog/blog-sidebar-img-3.jpg"} alt="" />
+                                                <img src={publicUrl+"images/blog/blog-sidebar-img-3.jpg"} alt="" />
                                                 <Link to={process.env.PUBLIC_URL + `/blog-details`}>
                                                     <span className="blog-one__plus"></span>
                                                 </Link>
@@ -99,7 +99,7 @@ export default class BlogThree extends React.Component {
                                         {/* Blog Sidebar Single Start */}
                                         <div className="blog-sidebar__single">
                                             <div className="blog-sidebar__img">
-                                                <img src={publicUrl+"assets/images/blog/blog-sidebar-img-4.jpg"} alt="" />
+                                                <img src={publicUrl+"images/blog/blog-sidebar-img-4.jpg"} alt="" />
                                                 <Link to={process.env.PUBLIC_URL + `/blog-details`}>
                                                     <span className="blog-one__plus"></span>
                                                 </Link>
@@ -125,7 +125,7 @@ export default class BlogThree extends React.Component {
                                         {/* Blog Sidebar Single Start */}
                                         <div className="blog-sidebar__single">
                                             <div className="blog-sidebar__img">
-                                                <img src={publicUrl+"assets/images/blog/blog-sidebar-img-5.jpg"} alt="" />
+                                                <img src={publicUrl+"images/blog/blog-sidebar-img-5.jpg"} alt="" />
                                                 <Link to={process.env.PUBLIC_URL + `/blog-details`}>
                                                     <span className="blog-one__plus"></span>
                                                 </Link>

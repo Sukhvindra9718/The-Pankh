@@ -17,7 +17,7 @@ export default class BlogOne extends React.Component {
                                 {/* Blog Three Single */}
                                 <div className="blog-three__single">
                                     <div className="blog-three__img">
-                                        <img src={publicUrl+"assets/images/blog/blog-1-1.jpg"} alt="" />
+                                        <img src={publicUrl+"images/blog/blog-1-1.jpg"} alt="" />
                                     </div>
                                     <div className="blog-three__content">
                                         <ul className="list-unstyled blog-three__meta">
@@ -30,7 +30,7 @@ export default class BlogOne extends React.Component {
                                                 survival</Link></h3>
                                         <div className="blog-three__person">
                                             <div className="blog-three__person-img">
-                                                <img src={publicUrl+"assets/images/blog/blog-3-person-img-1.jpg"} alt="" />
+                                                <img src={publicUrl+"images/blog/blog-3-person-img-1.jpg"} alt="" />
                                             </div>
                                             <div className="blog-three__person-name">
                                                 <p><span>By</span> Kevin Martin</p>
@@ -43,7 +43,7 @@ export default class BlogOne extends React.Component {
                                 {/* Blog Three Single */}
                                 <div className="blog-three__single">
                                     <div className="blog-three__img">
-                                        <img src={publicUrl+"assets/images/blog/blog-1-2.jpg"} alt="" />
+                                        <img src={publicUrl+"images/blog/blog-1-2.jpg"} alt="" />
                                     </div>
                                     <div className="blog-three__content">
                                         <ul className="list-unstyled blog-three__meta">
@@ -56,7 +56,7 @@ export default class BlogOne extends React.Component {
                                                 writing and Blog.</Link></h3>
                                         <div className="blog-three__person">
                                             <div className="blog-three__person-img">
-                                                <img src={publicUrl+"assets/images/blog/blog-3-person-img-2.jpg"} alt="" />
+                                                <img src={publicUrl+"images/blog/blog-3-person-img-2.jpg"} alt="" />
                                             </div>
                                             <div className="blog-three__person-name">
                                                 <p><span>By</span> Jessica Brown</p>
@@ -69,7 +69,7 @@ export default class BlogOne extends React.Component {
                                 {/* Blog Three Single */}
                                 <div className="blog-three__single">
                                     <div className="blog-three__img">
-                                        <img src={publicUrl+"assets/images/blog/blog-1-3.jpg"} alt="" />
+                                        <img src={publicUrl+"images/blog/blog-1-3.jpg"} alt="" />
                                     </div>
                                     <div className="blog-three__content">
                                         <ul className="list-unstyled blog-three__meta">
@@ -82,7 +82,7 @@ export default class BlogOne extends React.Component {
                                                 provide</Link></h3>
                                         <div className="blog-three__person">
                                             <div className="blog-three__person-img">
-                                                <img src={publicUrl+"assets/images/blog/blog-3-person-img-3.jpg"} alt="" />
+                                                <img src={publicUrl+"images/blog/blog-3-person-img-3.jpg"} alt="" />
                                             </div>
                                             <div className="blog-three__person-name">
                                                 <p><span>By</span> Kevin Coper</p>
@@ -95,7 +95,7 @@ export default class BlogOne extends React.Component {
                                 {/* Blog Three Single */}
                                 <div className="blog-three__single">
                                     <div className="blog-three__img">
-                                        <img src={publicUrl+"assets/images/blog/blog-1-4.jpg"} alt="" />
+                                        <img src={publicUrl+"images/blog/blog-1-4.jpg"} alt="" />
                                     </div>
                                     <div className="blog-three__content">
                                         <ul className="list-unstyled blog-three__meta">
@@ -108,7 +108,7 @@ export default class BlogOne extends React.Component {
                                                 fruit</Link></h3>
                                         <div className="blog-three__person">
                                             <div className="blog-three__person-img">
-                                                <img src={publicUrl+"assets/images/blog/blog-3-person-img-3.jpg"} alt="" />
+                                                <img src={publicUrl+"images/blog/blog-3-person-img-3.jpg"} alt="" />
                                             </div>
                                             <div className="blog-three__person-name">
                                                 <p><span>By</span> Kevin Coper</p>
@@ -121,7 +121,7 @@ export default class BlogOne extends React.Component {
                                 {/* Blog Three Single */}
                                 <div className="blog-three__single">
                                     <div className="blog-three__img">
-                                        <img src={publicUrl+"assets/images/blog/blog-1-5.jpg"} alt="" />
+                                        <img src={publicUrl+"images/blog/blog-1-5.jpg"} alt="" />
                                     </div>
                                     <div className="blog-three__content">
                                         <ul className="list-unstyled blog-three__meta">
@@ -134,7 +134,7 @@ export default class BlogOne extends React.Component {
                                                 problem</Link></h3>
                                         <div className="blog-three__person">
                                             <div className="blog-three__person-img">
-                                                <img src={publicUrl+"assets/images/blog/blog-3-person-img-2.jpg"} alt="" />
+                                                <img src={publicUrl+"images/blog/blog-3-person-img-2.jpg"} alt="" />
                                             </div>
                                             <div className="blog-three__person-name">
                                                 <p><span>By</span> Jessica Brown</p>
@@ -147,7 +147,7 @@ export default class BlogOne extends React.Component {
                                 {/* Blog Three Single */}
                                 <div className="blog-three__single">
                                     <div className="blog-three__img">
-                                        <img src={publicUrl+"assets/images/blog/blog-1-6.jpg"} alt="" />
+                                        <img src={publicUrl+"images/blog/blog-1-6.jpg"} alt="" />
                                     </div>
                                     <div className="blog-three__content">
                                         <ul className="list-unstyled blog-three__meta">
@@ -160,7 +160,7 @@ export default class BlogOne extends React.Component {
                                                 change</Link></h3>
                                         <div className="blog-three__person">
                                             <div className="blog-three__person-img">
-                                                <img src={publicUrl+"assets/images/blog/blog-3-person-img-1.jpg"} alt="" />
+                                                <img src={publicUrl+"images/blog/blog-3-person-img-1.jpg"} alt="" />
                                             </div>
                                             <div className="blog-three__person-name">
                                                 <p><span>By</span> Kevin Martin</p>

@@ -49,7 +49,7 @@ export default class TestimonialTwo extends React.Component {
                                     {/* Testimonial Two single */}
                                     <div className="testimonial-two__single">
                                         <div className="testimonial-two__img">
-                                            <img src={publicUrl+"assets/images/testimonial/testimonial-2-1.jpg"} alt="" />
+                                            <img src={publicUrl+"images/testimonial/testimonial-2-1.jpg"} alt="" />
                                             <div className="testimonial-two__quote">
                                                 <span className="icon-quote"></span>
                                             </div>
@@ -73,7 +73,7 @@ export default class TestimonialTwo extends React.Component {
                                     {/* Testimonial Two single */}
                                     <div className="testimonial-two__single">
                                         <div className="testimonial-two__img">
-                                            <img src={publicUrl+"assets/images/testimonial/testimonial-2-2.jpg"} alt="" />
+                                            <img src={publicUrl+"images/testimonial/testimonial-2-2.jpg"} alt="" />
                                             <div className="testimonial-two__quote">
                                                 <span className="icon-quote"></span>
                                             </div>
@@ -97,7 +97,7 @@ export default class TestimonialTwo extends React.Component {
                                     {/* Testimonial Two single */}
                                     <div className="testimonial-two__single">
                                         <div className="testimonial-two__img">
-                                            <img src={publicUrl+"assets/images/testimonial/testimonial-2-3.jpg"} alt="" />
+                                            <img src={publicUrl+"images/testimonial/testimonial-2-3.jpg"} alt="" />
                                             <div className="testimonial-two__quote">
                                                 <span className="icon-quote"></span>
                                             </div>

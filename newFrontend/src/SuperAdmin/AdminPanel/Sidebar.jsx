@@ -13,7 +13,7 @@ function Sidebar({ menuActive, setMenuActive, submenuActive, setSubmenuActive })
   return (
     <div>
       <div className="sidebar-logo">
-        <img className="sidebar-img" src="./assets/images/Logo.jpeg" alt="Logo" />
+        <img className="sidebar-img" src="./images/Logo.jpeg" alt="Logo" />
       </div>
 
       <div className="sidebar-menu">

@@ -17,7 +17,7 @@ export default class FeatureOne extends React.Component {
                                 {/* Feature Two Single */}
                                 <div className="feature-two__single">
                                     <div className="feature-two__img">
-                                        <img src={publicUrl+"assets/images/resources/feature-2-1.jpg"} alt="" />
+                                        <img src={publicUrl+"images/resources/feature-2-1.jpg"} alt="" />
                                     </div>
                                     <div className="feature-two__content">
                                         <div className="feature-two__top">
@@ -34,7 +34,7 @@ export default class FeatureOne extends React.Component {
                                 {/* Feature Two Single */}
                                 <div className="feature-two__single">
                                     <div className="feature-two__img">
-                                        <img src={publicUrl+"assets/images/resources/feature-2-2.jpg"} alt="" />
+                                        <img src={publicUrl+"images/resources/feature-2-2.jpg"} alt="" />
                                     </div>
                                     <div className="feature-two__content">
                                         <div className="feature-two__top">
@@ -51,7 +51,7 @@ export default class FeatureOne extends React.Component {
                                 {/* Feature Two Single */}
                                 <div className="feature-two__single">
                                     <div className="feature-two__img">
-                                        <img src={publicUrl+"assets/images/resources/feature-2-3.jpg"} alt="" />
+                                        <img src={publicUrl+"images/resources/feature-2-3.jpg"} alt="" />
                                     </div>
                                     <div className="feature-two__content">
                                         <div className="feature-two__top">

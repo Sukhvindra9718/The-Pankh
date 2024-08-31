@@ -17,7 +17,7 @@ function About() {
         <main className="main-content site-wrapper-reveal">
           <section
             className="page-title-area"
-            data-bg-img="assets/img/photos/bg-page-title.jpg"
+            data-bg-img="img/photos/bg-page-title.jpg"
           >
             <div className="container">
               <div className="row">
@@ -50,7 +50,7 @@ function About() {
               <div className="row">
                 <div className="col-lg-4">
                   <div className="thumb thumb-style">
-                    <img src="assets/img/about/3.jpg" alt="Image-Givest" />
+                    <img src="img/about/3.jpg" alt="Image-Givest" />
                   </div>
                 </div>
                 <div className="col-lg-8">
@@ -75,7 +75,7 @@ function About() {
                           <h3 className="title">Mission</h3>
                           <img
                             className="img-line-shape"
-                            src="assets/img/shape/line-s1.png"
+                            src="img/shape/line-s1.png"
                             alt="Image-Givest"
                           />
                           <p>
@@ -92,7 +92,7 @@ function About() {
                           </p>
                           <img
                             className="bg-line-shape"
-                            src="assets/img/shape/line5.png"
+                            src="img/shape/line5.png"
                             alt="Image-Givest"
                           />
                         </div>
@@ -105,7 +105,7 @@ function About() {
                           <h3 className="title">Vission</h3>
                           <img
                             className="img-line-shape"
-                            src="assets/img/shape/line-s1.png"
+                            src="img/shape/line-s1.png"
                             alt="Image-Givest"
                           />
                           <p>
@@ -122,7 +122,7 @@ function About() {
                           </p>
                           <img
                             className="bg-line-shape"
-                            src="assets/img/shape/line5.png"
+                            src="img/shape/line5.png"
                             alt="Image-Givest"
                           />
                         </div>
@@ -145,7 +145,7 @@ function About() {
                       Volunteer Team of Givest.
                       <img
                         className="img-shape"
-                        src="assets/img/shape/3.png"
+                        src="img/shape/3.png"
                         alt="Image-Givest"
                       />
                     </h2>
@@ -163,7 +163,7 @@ function About() {
                         Join Now
                         <img
                           className="icon icon-img"
-                          src="assets/img/icons/arrow-line-right2.png"
+                          src="img/icons/arrow-line-right2.png"
                           alt="Icon"
                         />
                       </a>
@@ -176,7 +176,7 @@ function About() {
                       <div className="swiper-wrapper team-slider">
                         <div className="swiper-slide team-member">
                           <div className="thumb">
-                            <img src="assets/img/team/1.jpg" alt="Image" />
+                            <img src="img/team/1.jpg" alt="Image" />
                             <div className="social-icons">
                               <a href="#">
                                 <i className="icofont-facebook"></i>
@@ -200,7 +200,7 @@ function About() {
                         </div>
                         <div className="swiper-slide team-member">
                           <div className="thumb">
-                            <img src="assets/img/team/2.jpg" alt="Image" />
+                            <img src="img/team/2.jpg" alt="Image" />
                             <div className="social-icons">
                               <a href="#">
                                 <i className="icofont-facebook"></i>
@@ -224,7 +224,7 @@ function About() {
                         </div>
                         <div className="swiper-slide team-member">
                           <div className="thumb">
-                            <img src="assets/img/team/3.jpg" alt="Image" />
+                            <img src="img/team/3.jpg" alt="Image" />
                             <div className="social-icons">
                               <a href="#">
                                 <i className="icofont-facebook"></i>
@@ -261,12 +261,12 @@ function About() {
                     <div className="icon-box">
                       <img
                         className="icon"
-                        src="assets/img/icons/f1.png"
+                        src="img/icons/f1.png"
                         alt="Image-Givest"
                       />
                       <img
                         className="shape-img"
-                        src="assets/img/shape/4.png"
+                        src="img/shape/4.png"
                         alt="Image-Givest"
                       />
                     </div>
@@ -278,7 +278,7 @@ function About() {
                       </div>
                       <img
                         className="line-shape"
-                        src="assets/img/shape/funfact-line1.png"
+                        src="img/shape/funfact-line1.png"
                         alt="Image-Givest"
                       />
                       <p className="title">// Poor People</p>
@@ -290,12 +290,12 @@ function About() {
                     <div className="icon-box">
                       <img
                         className="icon"
-                        src="assets/img/icons/f2.png"
+                        src="img/icons/f2.png"
                         alt="Image-Givest"
                       />
                       <img
                         className="shape-img"
-                        src="assets/img/shape/4.png"
+                        src="img/shape/4.png"
                         alt="Image-Givest"
                       />
                     </div>
@@ -307,7 +307,7 @@ function About() {
                       </div>
                       <img
                         className="line-shape"
-                        src="assets/img/shape/funfact-line1.png"
+                        src="img/shape/funfact-line1.png"
                         alt="Image-Givest"
                       />
                       <p className="title">// Fund raised</p>
@@ -319,12 +319,12 @@ function About() {
                     <div className="icon-box">
                       <img
                         className="icon"
-                        src="assets/img/icons/f3.png"
+                        src="img/icons/f3.png"
                         alt="Image-Givest"
                       />
                       <img
                         className="shape-img"
-                        src="assets/img/shape/4.png"
+                        src="img/shape/4.png"
                         alt="Image-Givest"
                       />
                     </div>
@@ -336,7 +336,7 @@ function About() {
                       </div>
                       <img
                         className="line-shape"
-                        src="assets/img/shape/funfact-line1.png"
+                        src="img/shape/funfact-line1.png"
                         alt="Image-Givest"
                       />
                       <p className="title">// Active Member</p>
@@ -352,7 +352,7 @@ function About() {
                 <div className="col-md-12 col-lg-4 col-xl-5">
                   <div
                     className="title-wrp"
-                    data-bg-img="assets/img/testimonial/bg-testi1.jpg"
+                    data-bg-img="img/testimonial/bg-testi1.jpg"
                   >
                     <div className="section-title">
                       <h5 className="subtitle line-white-color text-white mb-7">
@@ -362,7 +362,7 @@ function About() {
                         What People Say About Us.
                         <img
                           className="img-shape"
-                          src="assets/img/shape/3.png"
+                          src="img/shape/3.png"
                           alt="Image-Givest"
                         />
                       </h2>
@@ -378,7 +378,7 @@ function About() {
                             <div className="client-thumb-wrp">
                               <div className="client-thumb">
                                 <img
-                                  src="assets/img/testimonial/1.png"
+                                  src="img/testimonial/1.png"
                                   alt="Image-Givest"
                                 />
                               </div>
@@ -396,7 +396,7 @@ function About() {
                             <div className="client-info">
                               <img
                                 className="shape-line-img"
-                                src="assets/img/shape/line-t1.png"
+                                src="img/shape/line-t1.png"
                                 alt="Image-Givest"
                               />
                               <h4 className="name">Harvey Harrington</h4>
@@ -407,7 +407,7 @@ function About() {
                             <div className="client-thumb-wrp">
                               <div className="client-thumb">
                                 <img
-                                  src="assets/img/testimonial/2.png"
+                                  src="img/testimonial/2.png"
                                   alt="Image-Givest"
                                 />
                               </div>
@@ -424,7 +424,7 @@ function About() {
                             <div className="client-info">
                               <img
                                 className="shape-line-img"
-                                src="assets/img/shape/line-t1.png"
+                                src="img/shape/line-t1.png"
                                 alt="Image-Givest"
                               />
                               <h4 className="name">Julia Steve</h4>
@@ -436,14 +436,14 @@ function About() {
                           <div className="swiper-button-prev">
                             <img
                               className="icon-img"
-                              src="assets/img/icons/test-arrow-left.png"
+                              src="img/icons/test-arrow-left.png"
                               alt="Image-Icon"
                             />
                           </div>
                           <div className="swiper-button-next">
                             <img
                               className="icon-img"
-                              src="assets/img/icons/test-arrow-right.png"
+                              src="img/icons/test-arrow-right.png"
                               alt="Image-Icon"
                             />
                           </div>
@@ -464,7 +464,7 @@ function About() {
                       Our Current Sponsors.
                       <img
                         className="img-shape"
-                        src="assets/img/shape/3.png"
+                        src="img/shape/3.png"
                         alt="Image-Givest"
                       />
                     </h2>
@@ -476,7 +476,7 @@ function About() {
                       <div className="col">
                         <div className="brand-logo-item">
                           <img
-                            src="assets/img/brand-logo/1.png"
+                            src="img/brand-logo/1.png"
                             alt="Image-Givest"
                           />
                         </div>
@@ -484,7 +484,7 @@ function About() {
                       <div className="col">
                         <div className="brand-logo-item">
                           <img
-                            src="assets/img/brand-logo/2.png"
+                            src="img/brand-logo/2.png"
                             alt="Image-Givest"
                           />
                         </div>
@@ -492,7 +492,7 @@ function About() {
                       <div className="col">
                         <div className="brand-logo-item">
                           <img
-                            src="assets/img/brand-logo/3.png"
+                            src="img/brand-logo/3.png"
                             alt="Image-Givest"
                           />
                         </div>
@@ -500,7 +500,7 @@ function About() {
                       <div className="col">
                         <div className="brand-logo-item">
                           <img
-                            src="assets/img/brand-logo/4.png"
+                            src="img/brand-logo/4.png"
                             alt="Image-Givest"
                           />
                         </div>
@@ -508,7 +508,7 @@ function About() {
                       <div className="col">
                         <div className="brand-logo-item">
                           <img
-                            src="assets/img/brand-logo/5.png"
+                            src="img/brand-logo/5.png"
                             alt="Image-Givest"
                           />
                         </div>
@@ -516,7 +516,7 @@ function About() {
                       <div className="col">
                         <div className="brand-logo-item">
                           <img
-                            src="assets/img/brand-logo/6.png"
+                            src="img/brand-logo/6.png"
                             alt="Image-Givest"
                           />
                         </div>
@@ -524,7 +524,7 @@ function About() {
                       <div className="col">
                         <div className="brand-logo-item">
                           <img
-                            src="assets/img/brand-logo/7.png"
+                            src="img/brand-logo/7.png"
                             alt="Image-Givest"
                           />
                         </div>
@@ -532,7 +532,7 @@ function About() {
                       <div className="col">
                         <div className="brand-logo-item">
                           <img
-                            src="assets/img/brand-logo/8.png"
+                            src="img/brand-logo/8.png"
                             alt="Image-Givest"
                           />
                         </div>
@@ -540,7 +540,7 @@ function About() {
                       <div className="col">
                         <div className="brand-logo-item">
                           <img
-                            src="assets/img/brand-logo/9.png"
+                            src="img/brand-logo/9.png"
                             alt="Image-Givest"
                           />
                         </div>
@@ -548,7 +548,7 @@ function About() {
                       <div className="col">
                         <div className="brand-logo-item">
                           <img
-                            src="assets/img/brand-logo/10.png"
+                            src="img/brand-logo/10.png"
                             alt="Image-Givest"
                           />
                         </div>

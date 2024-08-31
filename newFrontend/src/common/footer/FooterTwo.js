@@ -20,7 +20,7 @@ export default class FooterTwo extends React.Component {
                         <img
                           src={
                             publicUrl +
-                            "assets/images/resources/footer-logo.png"
+                            "images/resources/footer-logo.png"
                           }
                           alt=""
                         />

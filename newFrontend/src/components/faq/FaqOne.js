@@ -40,7 +40,7 @@ export default class FaqOne extends React.Component {
         return (
             <>
                 <section className="faq-one">
-                    <div className="faq-one-bg" style={{backgroundImage: 'url('+publicUrl+'assets/images/backgrounds/faq-one-bg.jpg)'}}></div>
+                    <div className="faq-one-bg" style={{backgroundImage: 'url('+publicUrl+'images/backgrounds/faq-one-bg.jpg)'}}></div>
                     <div className="container">
                         <div className="row">
                             <div className="col-xl-6 col-lg-7">
@@ -107,7 +107,7 @@ export default class FaqOne extends React.Component {
                                 <div className="faq-one__right">
                                     <div className="faq-one__img wow slideInRight" data-wow-delay="100ms"
                                         data-wow-duration="2500ms">
-                                        <img src={publicUrl+"assets/images/resources/faq-1-1.png"} alt="" />
+                                        <img src={publicUrl+"images/resources/faq-1-1.png"} alt="" />
                                     </div>
                                 </div>
                             </div>

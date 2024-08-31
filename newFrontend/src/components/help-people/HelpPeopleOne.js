@@ -7,7 +7,7 @@ export default class HelpPeopleOne extends React.Component {
         return (
             <>
                 <section className="help-people">
-                    <div className="help-people-bg" style={{backgroundImage: 'url('+publicUrl+'assets/images/backgrounds/help-people-bg.jpg)'}}></div>
+                    <div className="help-people-bg" style={{backgroundImage: 'url('+publicUrl+'images/backgrounds/help-people-bg.jpg)'}}></div>
                     <div className="container">
                         <div className="help-people__inner wow fadeInUp" data-wow-delay="300ms">
                             <div className="help-people__sub-title-box">

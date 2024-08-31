@@ -10,7 +10,7 @@ export default class RecentDonation extends React.Component {
                     <ul className="list-unstyled donation-details__recent-donation-list">
                         <li>
                             <div className="donation-details__recent-donation-img">
-                                <img src={publicUrl+"assets/images/resources/donation-details-recent-donation-img-1.jpg"} alt="" />
+                                <img src={publicUrl+"images/resources/donation-details-recent-donation-img-1.jpg"} alt="" />
                             </div>
                             <div className="donation-details__recent-donation-content">
                                 <h4 className="donation-details__recent-donation-amount">$40</h4>
@@ -20,7 +20,7 @@ export default class RecentDonation extends React.Component {
                         </li>
                         <li>
                             <div className="donation-details__recent-donation-img">
-                                <img src={publicUrl+"assets/images/resources/donation-details-recent-donation-img-2.jpg"} alt="" />
+                                <img src={publicUrl+"images/resources/donation-details-recent-donation-img-2.jpg"} alt="" />
                             </div>
                             <div className="donation-details__recent-donation-content">
                                 <h4 className="donation-details__recent-donation-amount">$55</h4>
@@ -31,7 +31,7 @@ export default class RecentDonation extends React.Component {
                         </li>
                         <li>
                             <div className="donation-details__recent-donation-img">
-                                <img src={publicUrl+"assets/images/resources/donation-details-recent-donation-img-3.jpg"} alt="" />
+                                <img src={publicUrl+"images/resources/donation-details-recent-donation-img-3.jpg"} alt="" />
                             </div>
                             <div className="donation-details__recent-donation-content">
                                 <h4 className="donation-details__recent-donation-amount">$44</h4>
@@ -41,7 +41,7 @@ export default class RecentDonation extends React.Component {
                         </li>
                         <li>
                             <div className="donation-details__recent-donation-img">
-                                <img src={publicUrl+"assets/images/resources/donation-details-recent-donation-img-4.jpg"} alt="" />
+                                <img src={publicUrl+"images/resources/donation-details-recent-donation-img-4.jpg"} alt="" />
                             </div>
                             <div className="donation-details__recent-donation-content">
                                 <h4 className="donation-details__recent-donation-amount">$90</h4>

@@ -12,7 +12,7 @@ export default class ErrorContent extends React.Component {
                             <div className="col-xl-12">
                                 <div className="error-page__inner">
                                     <div className="error-page__img zoom-fade">
-                                        <img src={publicUrl+"assets/images/shapes/error-page-shape.png"} alt="" />
+                                        <img src={publicUrl+"images/shapes/error-page-shape.png"} alt="" />
                                     </div>
                                     <p className="error-page__text">{this.props.msg}</p>
                                     <div className="error-page__btn-box">

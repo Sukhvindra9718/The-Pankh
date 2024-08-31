@@ -17,7 +17,7 @@ export default class BlogSectionThree extends React.Component {
                                 {/* Blog Three Single */}
                                 <div className="blog-three__single">
                                     <div className="blog-three__img">
-                                        <img src={publicUrl+"assets/images/blog/blog-1-1.jpg"} alt="" />
+                                        <img src={publicUrl+"images/blog/blog-1-1.jpg"} alt="" />
                                     </div>
                                     <div className="blog-three__content">
                                         <ul className="list-unstyled blog-three__meta">
@@ -27,7 +27,7 @@ export default class BlogSectionThree extends React.Component {
                                         <h3 className="blog-three__title"><Link to={process.env.PUBLIC_URL + `/blog-details`}>Bring to the table win-win survival</Link></h3>
                                         <div className="blog-three__person">
                                             <div className="blog-three__person-img">
-                                                <img src={publicUrl+"assets/images/blog/blog-3-person-img-1.jpg"} alt="" />
+                                                <img src={publicUrl+"images/blog/blog-3-person-img-1.jpg"} alt="" />
                                             </div>
                                             <div className="blog-three__person-name">
                                                 <p><span>By</span> Kevin Martin</p>
@@ -40,7 +40,7 @@ export default class BlogSectionThree extends React.Component {
                                 {/* Blog Three Single */}
                                 <div className="blog-three__single">
                                     <div className="blog-three__img">
-                                        <img src={publicUrl+"assets/images/blog/blog-1-2.jpg"} alt="" />
+                                        <img src={publicUrl+"images/blog/blog-1-2.jpg"} alt="" />
                                     </div>
                                     <div className="blog-three__content">
                                         <ul className="list-unstyled blog-three__meta">
@@ -53,7 +53,7 @@ export default class BlogSectionThree extends React.Component {
                                                 writing and Blog.</Link></h3>
                                         <div className="blog-three__person">
                                             <div className="blog-three__person-img">
-                                                <img src={publicUrl+"assets/images/blog/blog-3-person-img-2.jpg"} alt="" />
+                                                <img src={publicUrl+"images/blog/blog-3-person-img-2.jpg"} alt="" />
                                             </div>
                                             <div className="blog-three__person-name">
                                                 <p><span>By</span> Jessica Brown</p>
@@ -66,7 +66,7 @@ export default class BlogSectionThree extends React.Component {
                                 {/* Blog Three Single */}
                                 <div className="blog-three__single">
                                     <div className="blog-three__img">
-                                        <img src={publicUrl+"assets/images/blog/blog-1-3.jpg"} alt="" />
+                                        <img src={publicUrl+"images/blog/blog-1-3.jpg"} alt="" />
                                     </div>
                                     <div className="blog-three__content">
                                         <ul className="list-unstyled blog-three__meta">
@@ -79,7 +79,7 @@ export default class BlogSectionThree extends React.Component {
                                                 provide</Link></h3>
                                         <div className="blog-three__person">
                                             <div className="blog-three__person-img">
-                                                <img src={publicUrl+"assets/images/blog/blog-3-person-img-3.jpg"} alt="" />
+                                                <img src={publicUrl+"images/blog/blog-3-person-img-3.jpg"} alt="" />
                                             </div>
                                             <div className="blog-three__person-name">
                                                 <p><span>By</span> Kevin Coper</p>

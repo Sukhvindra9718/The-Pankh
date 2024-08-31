@@ -34,7 +34,7 @@ export default class WhoweareDetails extends React.Component {
                   <div className="team-details__top-left">
                     <div className="team-details__top-img">
                       <img
-                        src={publicUrl + "assets/images/whoweare/whoweare.jpg"}
+                        src={publicUrl + "images/whoweare/whoweare.jpg"}
                         alt=""
                       />
                     </div>

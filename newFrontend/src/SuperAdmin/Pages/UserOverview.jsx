@@ -314,40 +314,38 @@ function UserOverview() {
             <div className="grid-header">Phonenumber</div>
             <div className="grid-header">Role</div>
             <div className="grid-header">Action</div>
-            </div>
-            <div className="grid-item-container">
-            {filterData?.length > 0 &&
-              filterData.map((user) => (
-                <React.Fragment key={user.id}>
-                  <div className="grid-item" data-label="ID">
-                    {user.id}
-                  </div>
-                  <div className="grid-item" data-label="Username">
-                    {user.username}
-                  </div>
-                  <div className="grid-item" data-label="phonenumber">
-                    {user.phonenumber}
-                  </div>
-                  <div className="grid-item" data-label="Role">
-                    {user.role}
-                    <span className="tooltip">{user.role}</span>
-                  </div>
-                  <div className="grid-item" data-label="Action">
-                    <div className="action-icons">
-                      <AiFillEdit
-                        size={25}
-                        onClick={() => handleShowPopup(user)}
-                      />
-                      <MdDelete
-                        size={25}
-                        color="red"
-                        onClick={() => handleDelete(user.id)}
-                      />
-                    </div>
-                  </div>
-                </React.Fragment>
-              ))}
           </div>
+          {filterData?.length > 0 &&
+            filterData.map((user) => (
+              <div className="grid-item-container" key={user.id}>
+                <div className="grid-item" data-label="ID">
+                  {user.id}
+                </div>
+                <div className="grid-item" data-label="Username">
+                  {user.username}
+                </div>
+                <div className="grid-item" data-label="phonenumber">
+                  {user.phonenumber}
+                </div>
+                <div className="grid-item" data-label="Role">
+                  {user.role}
+                  <span className="tooltip">{user.role}</span>
+                </div>
+                <div className="grid-item" data-label="Action">
+                  <div className="action-icons">
+                    <AiFillEdit
+                      size={25}
+                      onClick={() => handleShowPopup(user)}
+                    />
+                    <MdDelete
+                      size={25}
+                      color="red"
+                      onClick={() => handleDelete(user.id)}
+                    />
+                  </div>
+                </div>
+              </div>
+            ))}
         </div>
       </div>
 

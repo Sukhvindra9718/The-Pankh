@@ -6,7 +6,7 @@ export default class HelpPeopleTwo extends React.Component {
         return (
             <>
                 <section className="help-one">
-                    <div className="help-one-bg jarallax" data-jarallax data-speed="0.2" data-imgposition="50% 0%" style={{backgroundImage: 'url('+publicUrl+'assets/images/backgrounds/help-one-bg.jpg)'}}></div>
+                    <div className="help-one-bg jarallax" data-jarallax data-speed="0.2" data-imgposition="50% 0%" style={{backgroundImage: 'url('+publicUrl+'images/backgrounds/help-one-bg.jpg)'}}></div>
                     <div className="container">
                         <h3 className="help-one__title">How You Can Help Us?</h3>
                         <div className="row">

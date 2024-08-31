@@ -34,7 +34,7 @@ function Home() {
                         >
                           <div className="subtitle-content">
                             <img
-                              src="assets/img/icons/1.png"
+                              src="img/icons/1.png"
                               alt="Givest-HasTech"
                             />
                             <h6>Change The World.</h6>
@@ -53,7 +53,7 @@ function Home() {
                               All Causes
                               <img
                                 className="icon icon-img"
-                                src="assets/img/icons/arrow-line-right2.png"
+                                src="img/icons/arrow-line-right2.png"
                                 alt="Icon"
                               />
                             </a>
@@ -64,7 +64,7 @@ function Home() {
                               Donate Now
                               <img
                                 className="icon icon-img"
-                                src="assets/img/icons/arrow-right-line-dark.png"
+                                src="img/icons/arrow-right-line-dark.png"
                                 alt="Icon"
                               />
                             </a>
@@ -77,21 +77,21 @@ function Home() {
                             <span className="scene-layer" data-depth="0.20">
                               <img
                                 className=""
-                                src="assets/img/slider/1.jpg"
+                                src="img/slider/1.jpg"
                                 alt="Image-Givest"
                               />
                             </span>
                             <div className="shape-circle scene">
                               <span className="scene-layer" data-depth="0.10">
                                 <img
-                                  src="assets/img/shape/circle1.png"
+                                  src="img/shape/circle1.png"
                                   alt="Image-Givest"
                                 />
                               </span>
                               <span className="scene-layer" data-depth="0.40">
                                 <img
                                   className="circle-img"
-                                  src="assets/img/shape/2.png"
+                                  src="img/shape/2.png"
                                   alt="Image-Givest"
                                 />
                               </span>
@@ -100,7 +100,7 @@ function Home() {
                           <div className="shape-style1 scene">
                             <span className="scene-layer" data-depth="0.30">
                               <img
-                                src="assets/img/shape/1.png"
+                                src="img/shape/1.png"
                                 alt="Image-Givest"
                               />
                             </span>
@@ -119,7 +119,7 @@ function Home() {
                               <div className="raised-amount">$865M</div>
                               <img
                                 className="line-shape-img"
-                                src="assets/img/shape/line-s2.png"
+                                src="img/shape/line-s2.png"
                                 alt="Image-Givest"
                               />
                               <h5 className="donate-title">Total Raised</h5>
@@ -133,28 +133,28 @@ function Home() {
                     <div className="shape-style1">
                       <img
                         className="shape-img1"
-                        src="assets/img/shape/map1.png"
+                        src="img/shape/map1.png"
                         alt="Image-Givest"
                       />
                     </div>
                     <div className="shape-style2">
                       <img
                         className="shape-img2"
-                        src="assets/img/shape/map2.png"
+                        src="img/shape/map2.png"
                         alt="Image-Givest"
                       />
                     </div>
                     <div className="shape-style3">
                       <img
                         className="shape-img3"
-                        src="assets/img/shape/banner-line1.png"
+                        src="img/shape/banner-line1.png"
                         alt="Image-Givest"
                       />
                     </div>
                     <div className="shape-style4">
                       <img
                         className="shape-img3"
-                        src="assets/img/shape/banner-line2.png"
+                        src="img/shape/banner-line2.png"
                         alt="Image-Givest"
                       />
                     </div>
@@ -180,7 +180,7 @@ function Home() {
                       <div className="icon-box">
                         <img
                           className="icon-img"
-                          src="assets/img/icons/s1.png"
+                          src="img/icons/s1.png"
                           alt="Icon"
                         />
                       </div>
@@ -189,7 +189,7 @@ function Home() {
                     <div className="content">
                       <div className="separator-line">
                         <img
-                          src="assets/img/shape/line-s1.png"
+                          src="img/shape/line-s1.png"
                           alt="Givest-HasTech"
                         />
                       </div>
@@ -205,7 +205,7 @@ function Home() {
                         View Details
                         <img
                           className="icon icon-img"
-                          src="assets/img/icons/arrow-line-right.png"
+                          src="img/icons/arrow-line-right.png"
                           alt="Icon"
                         />
                       </a>
@@ -218,7 +218,7 @@ function Home() {
                       <div className="icon-box">
                         <img
                           className="icon-img"
-                          src="assets/img/icons/s2.png"
+                          src="img/icons/s2.png"
                           alt="Icon"
                         />
                       </div>
@@ -227,7 +227,7 @@ function Home() {
                     <div className="content">
                       <div className="separator-line">
                         <img
-                          src="assets/img/shape/line-s1.png"
+                          src="img/shape/line-s1.png"
                           alt="Givest-HasTech"
                         />
                       </div>
@@ -243,7 +243,7 @@ function Home() {
                         View Details
                         <img
                           className="icon icon-img"
-                          src="assets/img/icons/arrow-line-right.png"
+                          src="img/icons/arrow-line-right.png"
                           alt="Icon"
                         />
                       </a>
@@ -256,7 +256,7 @@ function Home() {
                       <div className="icon-box">
                         <img
                           className="icon-img"
-                          src="assets/img/icons/s3.png"
+                          src="img/icons/s3.png"
                           alt="Icon"
                         />
                       </div>
@@ -265,7 +265,7 @@ function Home() {
                     <div className="content">
                       <div className="separator-line">
                         <img
-                          src="assets/img/shape/line-s1.png"
+                          src="img/shape/line-s1.png"
                           alt="Givest-HasTech"
                         />
                       </div>
@@ -281,7 +281,7 @@ function Home() {
                         View Details
                         <img
                           className="icon icon-img"
-                          src="assets/img/icons/arrow-line-right.png"
+                          src="img/icons/arrow-line-right.png"
                           alt="Icon"
                         />
                       </a>
@@ -321,14 +321,14 @@ function Home() {
                       <div className="row m-0">
                         <div className="col-sm-4 col-md-4 col-lg-4 col-xl-4 p-0 d-none d-sm-block d-lg-none d-xl-block tilt-animation">
                           <img
-                            src="assets/img/about/1.jpg"
+                            src="img/about/1.jpg"
                             alt="Image-Givest"
                           />
                         </div>
                         <div className="col-sm-8 col-md-8 col-lg-12 col-xl-8 p-0 tilt-animation">
                           <img
                             className="img-two"
-                            src="assets/img/about/2.jpg"
+                            src="img/about/2.jpg"
                             alt="Image-Givest"
                           />
                         </div>
@@ -360,7 +360,7 @@ function Home() {
                       <li>
                         <img
                           className="icon-img"
-                          src="assets/img/icons/check-double-line.png"
+                          src="img/icons/check-double-line.png"
                           alt="Image-Givest"
                         />
                         Need your simple help <br />
@@ -370,7 +370,7 @@ function Home() {
                       <li>
                         <img
                           className="icon-img"
-                          src="assets/img/icons/check-double-line.png"
+                          src="img/icons/check-double-line.png"
                           alt="Image-Givest"
                         />
                         Need your simple help <br />
@@ -381,7 +381,7 @@ function Home() {
                       Donate Now
                       <img
                         className="icon icon-img"
-                        src="assets/img/icons/arrow-line-right2.png"
+                        src="img/icons/arrow-line-right2.png"
                         alt="Icon"
                       />
                     </a>
@@ -407,7 +407,7 @@ function Home() {
                       Donate For Poor People. Causes of Givest
                       <img
                         className="img-shape"
-                        src="assets/img/shape/3.png"
+                        src="img/shape/3.png"
                         alt="Image-Givest"
                       />
                     </h2>
@@ -419,7 +419,7 @@ function Home() {
                   <div className="causes-item mb-md-30">
                     <div className="thumb">
                       <img
-                        src="assets/img/causes/01.jpg"
+                        src="img/causes/01.jpg"
                         alt="Givest-HasTech"
                       />
                     </div>
@@ -454,7 +454,7 @@ function Home() {
                           <a href="causes.html">
                             <span className="icon-img">
                               <img
-                                src="assets/img/icons/admin1.png"
+                                src="img/icons/admin1.png"
                                 alt="Icon"
                               />
                             </span>
@@ -470,7 +470,7 @@ function Home() {
                           Donate Now
                           <img
                             className="icon icon-img"
-                            src="assets/img/icons/arrow-line-right-gradient.png"
+                            src="img/icons/arrow-line-right-gradient.png"
                             alt="Icon"
                           />
                         </span>
@@ -482,7 +482,7 @@ function Home() {
                   <div className="causes-item mb-md-30">
                     <div className="thumb">
                       <img
-                        src="assets/img/causes/02.jpg"
+                        src="img/causes/02.jpg"
                         alt="Givest-HasTech"
                       />
                     </div>
@@ -517,7 +517,7 @@ function Home() {
                           <a href="causes.html">
                             <span className="icon-img">
                               <img
-                                src="assets/img/icons/admin1.png"
+                                src="img/icons/admin1.png"
                                 alt="Icon"
                               />
                             </span>
@@ -533,7 +533,7 @@ function Home() {
                           Donate Now
                           <img
                             className="icon icon-img"
-                            src="assets/img/icons/arrow-line-right-gradient.png"
+                            src="img/icons/arrow-line-right-gradient.png"
                             alt="Icon"
                           />
                         </span>
@@ -545,7 +545,7 @@ function Home() {
                   <div className="causes-item">
                     <div className="thumb">
                       <img
-                        src="assets/img/causes/03.jpg"
+                        src="img/causes/03.jpg"
                         alt="Givest-HasTech"
                       />
                     </div>
@@ -580,7 +580,7 @@ function Home() {
                           <a href="causes.html">
                             <span className="icon-img">
                               <img
-                                src="assets/img/icons/admin1.png"
+                                src="img/icons/admin1.png"
                                 alt="Icon"
                               />
                             </span>
@@ -596,7 +596,7 @@ function Home() {
                           Donate Now
                           <img
                             className="icon icon-img"
-                            src="assets/img/icons/arrow-line-right-gradient.png"
+                            src="img/icons/arrow-line-right-gradient.png"
                             alt="Icon"
                           />
                         </span>
@@ -627,7 +627,7 @@ function Home() {
                         Need Pure Water For Mozambique People.
                         <img
                           className="img-shape"
-                          src="assets/img/shape/3.png"
+                          src="img/shape/3.png"
                           alt="Image-Givest"
                         />
                       </h2>
@@ -654,7 +654,7 @@ function Home() {
                             Donate Now
                             <img
                               className="icon icon-img"
-                              src="assets/img/icons/arrow-line-right2.png"
+                              src="img/icons/arrow-line-right2.png"
                               alt="Icon"
                             />
                           </a>
@@ -665,7 +665,7 @@ function Home() {
                             Join Events
                             <img
                               className="icon icon-img"
-                              src="assets/img/icons/arrow-line-right2-gradient.png"
+                              src="img/icons/arrow-line-right2-gradient.png"
                               alt="Icon"
                             />
                           </a>
@@ -680,7 +680,7 @@ function Home() {
                       className="thumb-bg-layer"
                       data-aos="fade-left"
                       data-aos-duration="1000"
-                      data-bg-img="assets/img/photos/bg-donate1.jpg"
+                      data-bg-img="img/photos/bg-donate1.jpg"
                     ></div>
                     <div
                       className="donners-info"
@@ -695,19 +695,19 @@ function Home() {
                       <div className="donners-item">
                         <div className="donner-item">
                           <img
-                            src="assets/img/photos/donner1.png"
+                            src="img/photos/donner1.png"
                             alt="Image-Givest"
                           />
                         </div>
                         <div className="donner-item">
                           <img
-                            src="assets/img/photos/donner2.png"
+                            src="img/photos/donner2.png"
                             alt="Image-Givest"
                           />
                         </div>
                         <div className="donner-item">
                           <img
-                            src="assets/img/photos/donner3.png"
+                            src="img/photos/donner3.png"
                             alt="Image-Givest"
                           />
                         </div>
@@ -734,12 +734,12 @@ function Home() {
                     <div className="icon-box">
                       <img
                         className="icon"
-                        src="assets/img/icons/f1.png"
+                        src="img/icons/f1.png"
                         alt="Image-Givest"
                       />
                       <img
                         className="shape-img"
-                        src="assets/img/shape/4.png"
+                        src="img/shape/4.png"
                         alt="Image-Givest"
                       />
                     </div>
@@ -751,7 +751,7 @@ function Home() {
                       </div>
                       <img
                         className="line-shape"
-                        src="assets/img/shape/funfact-line1.png"
+                        src="img/shape/funfact-line1.png"
                         alt="Image-Givest"
                       />
                       <p className="title">// Poor People</p>
@@ -763,12 +763,12 @@ function Home() {
                     <div className="icon-box">
                       <img
                         className="icon"
-                        src="assets/img/icons/f2.png"
+                        src="img/icons/f2.png"
                         alt="Image-Givest"
                       />
                       <img
                         className="shape-img"
-                        src="assets/img/shape/4.png"
+                        src="img/shape/4.png"
                         alt="Image-Givest"
                       />
                     </div>
@@ -780,7 +780,7 @@ function Home() {
                       </div>
                       <img
                         className="line-shape"
-                        src="assets/img/shape/funfact-line1.png"
+                        src="img/shape/funfact-line1.png"
                         alt="Image-Givest"
                       />
                       <p className="title">// Fund raised</p>
@@ -792,12 +792,12 @@ function Home() {
                     <div className="icon-box">
                       <img
                         className="icon"
-                        src="assets/img/icons/f3.png"
+                        src="img/icons/f3.png"
                         alt="Image-Givest"
                       />
                       <img
                         className="shape-img"
-                        src="assets/img/shape/4.png"
+                        src="img/shape/4.png"
                         alt="Image-Givest"
                       />
                     </div>
@@ -809,7 +809,7 @@ function Home() {
                       </div>
                       <img
                         className="line-shape"
-                        src="assets/img/shape/funfact-line1.png"
+                        src="img/shape/funfact-line1.png"
                         alt="Image-Givest"
                       />
                       <p className="title">// Active Member</p>
@@ -838,7 +838,7 @@ function Home() {
                       Join Recent Fundraising Event Of Givest.
                       <img
                         className="img-shape"
-                        src="assets/img/shape/3.png"
+                        src="img/shape/3.png"
                         alt="Image-Givest"
                       />
                     </h2>
@@ -852,7 +852,7 @@ function Home() {
                       <div className="thumb">
                         <img
                           className="thumb-img"
-                          src="assets/img/events/1.jpg"
+                          src="img/events/1.jpg"
                           alt="Image-Givest"
                         />
                         <a
@@ -862,7 +862,7 @@ function Home() {
                           Join Now
                           <img
                             className="icon icon-img"
-                            src="assets/img/icons/arrow-line-right.png"
+                            src="img/icons/arrow-line-right.png"
                             alt="Icon"
                           />
                         </a>
@@ -882,7 +882,7 @@ function Home() {
                       <div className="thumb">
                         <img
                           className="thumb-img"
-                          src="assets/img/events/2.jpg"
+                          src="img/events/2.jpg"
                           alt="Image-Givest"
                         />
                         <a
@@ -892,7 +892,7 @@ function Home() {
                           Join Now
                           <img
                             className="icon icon-img"
-                            src="assets/img/icons/arrow-line-right.png"
+                            src="img/icons/arrow-line-right.png"
                             alt="Icon"
                           />
                         </a>
@@ -912,7 +912,7 @@ function Home() {
                       <div className="thumb">
                         <img
                           className="thumb-img"
-                          src="assets/img/events/3.jpg"
+                          src="img/events/3.jpg"
                           alt="Image-Givest"
                         />
                         <a
@@ -922,7 +922,7 @@ function Home() {
                           Join Now
                           <img
                             className="icon icon-img"
-                            src="assets/img/icons/arrow-line-right.png"
+                            src="img/icons/arrow-line-right.png"
                             alt="Icon"
                           />
                         </a>
@@ -948,7 +948,7 @@ function Home() {
                   >
                     <div className="thumb tilt-animation">
                       <img
-                        src="assets/img/photos/event1.png"
+                        src="img/photos/event1.png"
                         alt="Image-Givest"
                       />
                       <div className="play-video-btn">
@@ -960,32 +960,32 @@ function Home() {
                           <span></span>
                           <span></span>
                           <div className="icon">
-                            <img src="assets/img/icons/play.png" alt="Icon" />
+                            <img src="img/icons/play.png" alt="Icon" />
                           </div>
                         </a>
                       </div>
                     </div>
                     <div className="shape-style1">
                       <img
-                        src="assets/img/shape/line1.png"
+                        src="img/shape/line1.png"
                         alt="Image-Givest"
                       />
                     </div>
                     <div className="shape-style2">
                       <img
-                        src="assets/img/shape/line2.png"
+                        src="img/shape/line2.png"
                         alt="Image-Givest"
                       />
                     </div>
                     <div className="shape-style3">
                       <img
-                        src="assets/img/shape/line3.png"
+                        src="img/shape/line3.png"
                         alt="Image-Givest"
                       />
                     </div>
                     <div className="shape-style4">
                       <img
-                        src="assets/img/shape/line4.png"
+                        src="img/shape/line4.png"
                         alt="Image-Givest"
                       />
                     </div>
@@ -1003,7 +1003,7 @@ function Home() {
                 <div className="col-md-12 col-lg-4 col-xl-5">
                   <div
                     className="title-wrp"
-                    data-bg-img="assets/img/testimonial/bg-testi1.jpg"
+                    data-bg-img="img/testimonial/bg-testi1.jpg"
                     data-aos="fade-right"
                     data-aos-duration="1000"
                   >
@@ -1015,7 +1015,7 @@ function Home() {
                         What People Say About Us.
                         <img
                           className="img-shape"
-                          src="assets/img/shape/3.png"
+                          src="img/shape/3.png"
                           alt="Image-Givest"
                         />
                       </h2>
@@ -1035,7 +1035,7 @@ function Home() {
                             <div className="client-thumb-wrp">
                               <div className="client-thumb">
                                 <img
-                                  src="assets/img/testimonial/1.png"
+                                  src="img/testimonial/1.png"
                                   alt="Image-Givest"
                                 />
                               </div>
@@ -1053,7 +1053,7 @@ function Home() {
                             <div className="client-info">
                               <img
                                 className="shape-line-img"
-                                src="assets/img/shape/line-t1.png"
+                                src="img/shape/line-t1.png"
                                 alt="Image-Givest"
                               />
                               <h4 className="name">Harvey Harrington</h4>
@@ -1064,7 +1064,7 @@ function Home() {
                             <div className="client-thumb-wrp">
                               <div className="client-thumb">
                                 <img
-                                  src="assets/img/testimonial/2.png"
+                                  src="img/testimonial/2.png"
                                   alt="Image-Givest"
                                 />
                               </div>
@@ -1081,7 +1081,7 @@ function Home() {
                             <div className="client-info">
                               <img
                                 className="shape-line-img"
-                                src="assets/img/shape/line-t1.png"
+                                src="img/shape/line-t1.png"
                                 alt="Image-Givest"
                               />
                               <h4 className="name">Julia Steve</h4>
@@ -1094,14 +1094,14 @@ function Home() {
                           <div className="swiper-button-prev">
                             <img
                               className="icon-img"
-                              src="assets/img/icons/test-arrow-left.png"
+                              src="img/icons/test-arrow-left.png"
                               alt="Image-Icon"
                             />
                           </div>
                           <div className="swiper-button-next">
                             <img
                               className="icon-img"
-                              src="assets/img/icons/test-arrow-right.png"
+                              src="img/icons/test-arrow-right.png"
                               alt="Image-Icon"
                             />
                           </div>
@@ -1130,7 +1130,7 @@ function Home() {
                       Latest News From Givest Blog
                       <img
                         className="img-shape"
-                        src="assets/img/shape/3.png"
+                        src="img/shape/3.png"
                         alt="Image-Givest"
                       />
                     </h2>
@@ -1143,7 +1143,7 @@ function Home() {
                   <div className="post-item mb-md-150">
                     <div className="thumb">
                       <a href="blog-details.html">
-                        <img src="assets/img/blog/1.jpg" alt="Givest-Blog" />
+                        <img src="img/blog/1.jpg" alt="Givest-Blog" />
                       </a>
                       <div className="meta-date">
                         <a href="blog.html">
@@ -1161,7 +1161,7 @@ function Home() {
                           <div className="post-share">
                             <a className="icon-share" href="blog.html">
                               <img
-                                src="assets/img/icons/share-line-gradient.png"
+                                src="img/icons/share-line-gradient.png"
                                 alt="Icon"
                               />
                             </a>
@@ -1208,7 +1208,7 @@ function Home() {
                             Details
                             <img
                               className="icon icon-img"
-                              src="assets/img/icons/arrow-line-right-gradient.png"
+                              src="img/icons/arrow-line-right-gradient.png"
                               alt="Icon"
                             />
                           </span>
@@ -1227,7 +1227,7 @@ function Home() {
                   <div className="post-item mb-md-150">
                     <div className="thumb">
                       <a href="blog-details.html">
-                        <img src="assets/img/blog/2.jpg" alt="Givest-Blog" />
+                        <img src="img/blog/2.jpg" alt="Givest-Blog" />
                       </a>
                       <div className="meta-date">
                         <a href="blog.html">
@@ -1245,7 +1245,7 @@ function Home() {
                           <div className="post-share">
                             <a className="icon-share" href="blog.html">
                               <img
-                                src="assets/img/icons/share-line-gradient.png"
+                                src="img/icons/share-line-gradient.png"
                                 alt="Icon"
                               />
                             </a>
@@ -1292,7 +1292,7 @@ function Home() {
                             Details
                             <img
                               className="icon icon-img"
-                              src="assets/img/icons/arrow-line-right-gradient.png"
+                              src="img/icons/arrow-line-right-gradient.png"
                               alt="Icon"
                             />
                           </span>
@@ -1311,7 +1311,7 @@ function Home() {
                   <div className="post-item">
                     <div className="thumb">
                       <a href="blog-details.html">
-                        <img src="assets/img/blog/3.jpg" alt="Givest-Blog" />
+                        <img src="img/blog/3.jpg" alt="Givest-Blog" />
                       </a>
                       <div className="meta-date">
                         <a href="blog.html">
@@ -1329,7 +1329,7 @@ function Home() {
                           <div className="post-share">
                             <a className="icon-share" href="blog.html">
                               <img
-                                src="assets/img/icons/share-line-gradient.png"
+                                src="img/icons/share-line-gradient.png"
                                 alt="Icon"
                               />
                             </a>
@@ -1376,7 +1376,7 @@ function Home() {
                             Details
                             <img
                               className="icon icon-img"
-                              src="assets/img/icons/arrow-line-right-gradient.png"
+                              src="img/icons/arrow-line-right-gradient.png"
                               alt="Icon"
                             />
                           </span>
@@ -1404,7 +1404,7 @@ function Home() {
                       Our Current Sponsors.
                       <img
                         className="img-shape"
-                        src="assets/img/shape/3.png"
+                        src="img/shape/3.png"
                         alt="Image-Givest"
                       />
                     </h2>
@@ -1416,7 +1416,7 @@ function Home() {
                       <div className="col">
                         <div className="brand-logo-item">
                           <img
-                            src="assets/img/brand-logo/1.png"
+                            src="img/brand-logo/1.png"
                             alt="Image-Givest"
                           />
                         </div>
@@ -1424,7 +1424,7 @@ function Home() {
                       <div className="col">
                         <div className="brand-logo-item">
                           <img
-                            src="assets/img/brand-logo/2.png"
+                            src="img/brand-logo/2.png"
                             alt="Image-Givest"
                           />
                         </div>
@@ -1432,7 +1432,7 @@ function Home() {
                       <div className="col">
                         <div className="brand-logo-item">
                           <img
-                            src="assets/img/brand-logo/3.png"
+                            src="img/brand-logo/3.png"
                             alt="Image-Givest"
                           />
                         </div>
@@ -1440,7 +1440,7 @@ function Home() {
                       <div className="col">
                         <div className="brand-logo-item">
                           <img
-                            src="assets/img/brand-logo/4.png"
+                            src="img/brand-logo/4.png"
                             alt="Image-Givest"
                           />
                         </div>
@@ -1448,7 +1448,7 @@ function Home() {
                       <div className="col">
                         <div className="brand-logo-item">
                           <img
-                            src="assets/img/brand-logo/5.png"
+                            src="img/brand-logo/5.png"
                             alt="Image-Givest"
                           />
                         </div>
@@ -1456,7 +1456,7 @@ function Home() {
                       <div className="col">
                         <div className="brand-logo-item">
                           <img
-                            src="assets/img/brand-logo/6.png"
+                            src="img/brand-logo/6.png"
                             alt="Image-Givest"
                           />
                         </div>
@@ -1464,7 +1464,7 @@ function Home() {
                       <div className="col">
                         <div className="brand-logo-item">
                           <img
-                            src="assets/img/brand-logo/7.png"
+                            src="img/brand-logo/7.png"
                             alt="Image-Givest"
                           />
                         </div>
@@ -1472,7 +1472,7 @@ function Home() {
                       <div className="col">
                         <div className="brand-logo-item">
                           <img
-                            src="assets/img/brand-logo/8.png"
+                            src="img/brand-logo/8.png"
                             alt="Image-Givest"
                           />
                         </div>
@@ -1480,7 +1480,7 @@ function Home() {
                       <div className="col">
                         <div className="brand-logo-item">
                           <img
-                            src="assets/img/brand-logo/9.png"
+                            src="img/brand-logo/9.png"
                             alt="Image-Givest"
                           />
                         </div>
@@ -1488,7 +1488,7 @@ function Home() {
                       <div className="col">
                         <div className="brand-logo-item">
                           <img
-                            src="assets/img/brand-logo/10.png"
+                            src="img/brand-logo/10.png"
                             alt="Image-Givest"
                           />
                         </div>

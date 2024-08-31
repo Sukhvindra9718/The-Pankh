@@ -133,7 +133,7 @@ export default class DonationListContent extends React.Component {
                       <img
                         src={
                           publicUrl +
-                          "assets/images/resources/donations-list-img-1.jpg"
+                          "images/resources/donations-list-img-1.jpg"
                         }
                         alt=""
                       />
@@ -187,7 +187,7 @@ export default class DonationListContent extends React.Component {
                       <img
                         src={
                           publicUrl +
-                          "assets/images/resources/donations-list-img-2.jpg"
+                          "images/resources/donations-list-img-2.jpg"
                         }
                         alt=""
                       />
@@ -241,7 +241,7 @@ export default class DonationListContent extends React.Component {
                       <img
                         src={
                           publicUrl +
-                          "assets/images/resources/donations-list-img-3.jpg"
+                          "images/resources/donations-list-img-3.jpg"
                         }
                         alt=""
                       />
@@ -295,7 +295,7 @@ export default class DonationListContent extends React.Component {
                       <img
                         src={
                           publicUrl +
-                          "assets/images/resources/donations-list-img-4.jpg"
+                          "images/resources/donations-list-img-4.jpg"
                         }
                         alt=""
                       />

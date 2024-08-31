@@ -18,7 +18,7 @@ export default class SingleBlogDetails extends React.Component {
                             <div className="col-xl-8 col-lg-7">
                                 <div className="blog-details__left">
                                     <div className="blog-details__img">
-                                        <img src={publicUrl+"assets/images/blog/blog-details-img-1.jpg"} alt="" />
+                                        <img src={publicUrl+"images/blog/blog-details-img-1.jpg"} alt="" />
                                         <div className="blog-details__date">
                                             <p>10 <br /> Oct</p>
                                         </div>
@@ -46,7 +46,7 @@ export default class SingleBlogDetails extends React.Component {
                                     </div>
                                     <div className="blog-details__content-two">
                                         <div className="blog-details__content-two-img">
-                                            <img src={publicUrl+"assets/images/blog/blog-details-img-2.jpg"} alt="" />
+                                            <img src={publicUrl+"images/blog/blog-details-img-2.jpg"} alt="" />
                                         </div>
                                         <div className="blog-details__content-two-details">
                                             <h3 className="blog-details__content-two-title">Donation</h3>
@@ -80,7 +80,7 @@ export default class SingleBlogDetails extends React.Component {
                                     </div>
                                     <div className="author-one">
                                         <div className="author-one__image">
-                                            <img src={publicUrl+"assets/images/blog/author-1-1.jpg"} alt="" />
+                                            <img src={publicUrl+"images/blog/author-1-1.jpg"} alt="" />
                                         </div>
                                         <div className="author-one__content">
                                             <h3>Hover Cameron</h3>
@@ -92,7 +92,7 @@ export default class SingleBlogDetails extends React.Component {
                                         <h3 className="comment-one__title">2 Comments</h3>
                                         <div className="comment-one__single">
                                             <div className="comment-one__image">
-                                                <img src={publicUrl+"assets/images/blog/comment-1-1.jpg"} alt="" />
+                                                <img src={publicUrl+"images/blog/comment-1-1.jpg"} alt="" />
                                             </div>
                                             <div className="comment-one__content">
                                                 <h3>Kevin Martin</h3>
@@ -105,7 +105,7 @@ export default class SingleBlogDetails extends React.Component {
                                         </div>
                                         <div className="comment-one__single">
                                             <div className="comment-one__image">
-                                                <img src={publicUrl+"assets/images/blog/comment-1-2.jpg"} alt="" />
+                                                <img src={publicUrl+"images/blog/comment-1-2.jpg"} alt="" />
                                             </div>
                                             <div className="comment-one__content">
                                                 <h3>Jessica Brown</h3>
