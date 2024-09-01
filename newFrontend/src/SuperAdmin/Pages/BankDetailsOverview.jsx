@@ -76,7 +76,7 @@ function BankDetailsOverview() {
     setLoading(true);
     try {
       const { data } = await axios.post(
-        "https://thepankh.info/api/v1/BankDetails/upload",
+        "http://localhost:3001/api/v1/BankDetails/upload",
         { ...BankDetails, file },
         config
       );
@@ -118,7 +118,7 @@ function BankDetailsOverview() {
     setLoading(true);
     try {
       const { data } = await axios.put(
-        `https://thepankh.info/api/v1/BankDetails/${updateId}`,
+        `http://localhost:3001/api/v1/BankDetails/${updateId}`,
         Data,
         config
       );
@@ -172,7 +172,7 @@ function BankDetailsOverview() {
   // Read All BankDetails
   const getAllBankDetails = async () => {
     try {
-      const res = await axios.get("https://thepankh.info/api/v1/BankDetails");
+      const res = await axios.get("http://localhost:3001/api/v1/BankDetails");
       console.log(res.data);
       if (res.data.success) {
         setData(res.data.BankDetails);
@@ -196,7 +196,7 @@ function BankDetailsOverview() {
           Authorization: `${getTokenFromCookie()}`,
         },
       };
-      const { data } = await axios.delete(`https://thepankh.info/api/v1/BankDetails/${id}`, config);
+      const { data } = await axios.delete(`http://localhost:3001/api/v1/BankDetails/${id}`, config);
 
       if (data.success) {
         setIsDelete(!isDelete);

@@ -22,7 +22,7 @@ function ContactUs() {
 
     try {
       const ContactResponse = await fetch(
-        `https://thepankh.info/api/common/contact/register`,
+        `http://localhost:3001/api/common/contact/register`,
         {
           method: "POST",
           headers: {

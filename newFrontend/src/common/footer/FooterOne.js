@@ -30,7 +30,7 @@ function FooterOne() {
     };
     try {
       const { data } = await axios.get(
-        "https://thepankh.info/api/v1/images",
+        "http://localhost:3001/api/v1/images",
         config
       );
       console.log(data)
@@ -83,7 +83,7 @@ function FooterOne() {
 
   const getTwoNews = async () => {
     try {
-      const res = await axios.get("https://thepankh.info/api/v1/twonews");
+      const res = await axios.get("http://localhost:3001/api/v1/twonews");
       if (res.data.success) {
         console.log("Fetched news data:", res.data.news); // Log the raw data
 

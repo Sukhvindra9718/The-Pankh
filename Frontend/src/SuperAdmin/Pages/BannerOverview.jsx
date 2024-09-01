@@ -65,7 +65,7 @@ function BannerOverview() {
 
     try {
       const { data } = await axios.post(
-        "https://thepankh.info/api/v1/banner/upload",
+        "http://localhost:3001/api/v1/banner/upload",
         { pagename, file },
         config
       );
@@ -91,7 +91,7 @@ function BannerOverview() {
       };
 
       const res = await axios.get(
-        "https://thepankh.info/api/v1/banners",
+        "http://localhost:3001/api/v1/banners",
         config
       );
 
@@ -121,7 +121,7 @@ function BannerOverview() {
     };
     try {
       const { data } = await axios.put(
-        `https://thepankh.info/api/v1/banner/${updateId}`,
+        `http://localhost:3001/api/v1/banner/${updateId}`,
         Data,
         config
       );
@@ -165,7 +165,7 @@ function BannerOverview() {
         },
       };
       const { data } = await axios.delete(
-        `https://thepankh.info/api/v1/banner/${id}`,
+        `http://localhost:3001/api/v1/banner/${id}`,
         config
       );
 

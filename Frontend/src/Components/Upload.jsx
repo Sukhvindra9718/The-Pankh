@@ -55,7 +55,7 @@ function Upload({ setIsUpload, setUploadFormOpen, Uploadtitle, UploadType }) {
       formData.append("description", description);
       formData.append("video", video);
 
-      await fetch("https://thepankh.info/api/v1/video/upload", {
+      await fetch("http://localhost:3001/api/v1/video/upload", {
         mode: "no-cors",
         method: "POST",
         body: formData,
@@ -89,7 +89,7 @@ function Upload({ setIsUpload, setUploadFormOpen, Uploadtitle, UploadType }) {
         },
       };
       try {
-        const { data } = await axios.post("https://thepankh.info/api/v1/image/upload",{title,description,image},config);
+        const { data } = await axios.post("http://localhost:3001/api/v1/image/upload",{title,description,image},config);
         console.log(data);
       } catch (error) {
         console.log(error);

@@ -30,7 +30,7 @@ function ProjectTwo() {
     };
     try {
       const { data } = await axios.get(
-        "https://thepankh.info/api/v1/projects",
+        "http://localhost:3001/api/v1/projects",
         config
       );
       if (data.success) {

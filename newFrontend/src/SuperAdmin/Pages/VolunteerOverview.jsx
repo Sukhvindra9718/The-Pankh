@@ -76,7 +76,7 @@ function VolunteerOverview() {
     setLoading(true)
     try {
       const { data } = await axios.post(
-        "https://thepankh.info/api/v1/volunteer/upload",
+        "http://localhost:3001/api/v1/volunteer/upload",
         { ...volunteer, file },
         config
       );
@@ -105,7 +105,7 @@ function VolunteerOverview() {
   // Read All Volunteer
   const getAllVolunteers = async () => {
     try {
-      const res = await axios.get("https://thepankh.info/api/v1/volunteers");
+      const res = await axios.get("http://localhost:3001/api/v1/volunteers");
 
       if (res.data.success) {
         setData(res.data.volunteers);
@@ -136,7 +136,7 @@ function VolunteerOverview() {
     };
     try {
       const { data } = await axios.put(
-        `https://thepankh.info/api/v1/volunteer/${updateId}`,
+        `http://localhost:3001/api/v1/volunteer/${updateId}`,
         Data,
         config
       );
@@ -206,7 +206,7 @@ function VolunteerOverview() {
         },
       };
       const { data } = await axios.delete(
-        `https://thepankh.info/api/v1/volunteer/${id}`,
+        `http://localhost:3001/api/v1/volunteer/${id}`,
         config
       );
 

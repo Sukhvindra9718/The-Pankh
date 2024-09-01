@@ -37,7 +37,7 @@ export default class GalleryTwo extends React.Component {
 
   getAllVideos = async () => {
     try {
-      const res = await axios.get("https://thepankh.info/api/v1/videos");
+      const res = await axios.get("http://localhost:3001/api/v1/videos");
 
       if (res.data.success) {
         this.setState({ videos: res.data.videos }); // Update state with the fetched images
@@ -92,7 +92,7 @@ export default class GalleryTwo extends React.Component {
                 ))
               ) : (
                 <div className="col-12">
-                  <p className="text-center">No images found!</p>
+                  <p className="text-center">No video found!</p>
                 </div>
               )}
             </div>

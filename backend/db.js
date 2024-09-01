@@ -8,7 +8,7 @@ const pool = mysql.createPool({
   password: config.database.password, // Replace with your MySQL password
   database: config.database.database,     // Replace with your MySQL database name
   waitForConnections: true,
-  connectionLimit: 1000,          // Maximum number of connections in the pool
+  connectionLimit: 20,          // Maximum number of connections in the pool
   queueLimit: 0                 // Maximum number of queued connection requests (0 means no limit)
 });
 

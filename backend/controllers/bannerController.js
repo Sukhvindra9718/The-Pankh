@@ -8,23 +8,32 @@ exports.addBanner = async (req, res) => {
         const { pagename, file } = req.body;
         const created_at = new Date();
         const id = uuid.v4();
+
+        if(!file){
+            res.status(500).send({
+                success:false,
+                message:"Please upload a file"
+
+            })
+        }
         const myCloud = await cloudinary.v2.uploader.upload(file, {
             folder: "thepankh/banner",
             crop: "fill",
         });
+        console.log(myCloud);
         await pool.query(
             "INSERT INTO banner (id, pagename, fileid, fileurl, createdat) VALUES (?, ?, ?, ?, ?)",
             [id, pagename, myCloud.public_id, myCloud.secure_url, created_at]
         );
-
         res.status(200).json({
             success: true,
             message: "Banner Uploaded Successfully",
         });
     } catch (error) {
+        console.log(error);
         res.status(500).send({
             success: false,
-            userError: "Server Error",
+            userError: "Upload failed, try again",
             error: error.message,
         });
     }

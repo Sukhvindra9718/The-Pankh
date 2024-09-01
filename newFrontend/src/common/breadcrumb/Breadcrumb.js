@@ -15,7 +15,7 @@ function Breadcrumb(props) {
   const getAllBanner = async () => {
     try {
       const res = await axios.get(
-        `https://thepankh.info/api/v1/banner/${props.currentPage}`
+        `http://localhost:3001/api/v1/banner/${props.currentPage}`
       );
 
       if (res.data.success) {
