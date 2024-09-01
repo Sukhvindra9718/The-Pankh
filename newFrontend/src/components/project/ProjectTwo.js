@@ -65,7 +65,7 @@ function ProjectTwo() {
                   data-wow-delay="200ms"
                   key={index}
                 >
-                  <div className="project-one__single" style={{height:"30vh",width:"20vw"}}>
+                  <div className="project-one__single" style={{height:"30vh"}}>
                     <div className="project-one__img">
                       <img src={project?.fileurl} alt="" />
                       <div className="project-one__content">
