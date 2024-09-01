@@ -73,7 +73,7 @@ function EventsOverview() {
     setLoading(true);
     try {
       const { data } = await axios.post(
-        "http://localhost:3001/api/v1/events/upload",
+        "https://thepankh.info/api/v1/events/upload",
         { ...events, file },
         config
       );
@@ -115,7 +115,7 @@ function EventsOverview() {
     setLoading(true);
     try {
       const { data } = await axios.put(
-        `http://localhost:3001/api/v1/events/${updateId}`,
+        `https://thepankh.info/api/v1/events/${updateId}`,
         Data,
         config
       );
@@ -167,7 +167,7 @@ function EventsOverview() {
   // Read All events
   const getAllEvents = async () => {
     try {
-      const res = await axios.get("http://localhost:3001/api/v1/events");
+      const res = await axios.get("https://thepankh.info/api/v1/events");
       console.log(res.data);
       if (res.data.success) {
         setData(res.data.events);
@@ -191,7 +191,7 @@ function EventsOverview() {
           Authorization: `${getTokenFromCookie()}`,
         },
       };
-      const { data } = await axios.delete(`http://localhost:3001/api/v1/events/${id}`, config);
+      const { data } = await axios.delete(`https://thepankh.info/api/v1/events/${id}`, config);
 
       if (data.success) {
         setIsDelete(!isDelete);

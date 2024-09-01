@@ -11,7 +11,7 @@ function HeroOne() {
 
   const getAllCarousals = async () => {
     try {
-      const res = await axios.get("http://localhost:3001/api/v1/carousals");
+      const res = await axios.get("https://thepankh.info/api/v1/carousals");
 
       console.log(res.data);
       if (res.data.success) {

@@ -1,0 +1,59 @@
+{
+  "ignoreUnresolved": [
+    [
+      "../common/footer/FooterOne",
+      [
+        "src\\pages\\Team.js",
+        "src\\pages\\Projects.js",
+        "src\\pages\\ProjectDetails.js",
+        "src\\pages\\Testimonials.js",
+        "src\\pages\\Gallery.js",
+        "src\\pages\\Donation.js",
+        "src\\pages\\DonationDetails.js",
+        "src\\pages\\DonateNow.js",
+        "src\\pages\\BlogVersionOne.js",
+        "src\\pages\\BlogDetails.js",
+        "src\\pages\\Contact.js",
+        "src\\pages\\whoweare.js",
+        "src\\pages\\Error.js",
+        "src\\pages\\ThePankhModel.js",
+        "src\\pages\\SomethingWentWrong.js",
+        "src\\pages\\Images.js"
+      ]
+    ],
+    [
+      "../common/footer/FooterOne",
+      [
+        "src\\pages\\Team.js",
+        "src\\pages\\Projects.js",
+        "src\\pages\\ProjectDetails.js",
+        "src\\pages\\Testimonials.js",
+        "src\\pages\\Gallery.js",
+        "src\\pages\\Donation.js",
+        "src\\pages\\DonationDetails.js",
+        "src\\pages\\DonateNow.js",
+        "src\\pages\\Events.js",
+        "src\\pages\\BlogVersionOne.js",
+        "src\\pages\\BlogDetails.js",
+        "src\\pages\\Contact.js",
+        "src\\pages\\whoweare.js",
+        "src\\pages\\Error.js",
+        "src\\pages\\ThePankhModel.js",
+        "src\\pages\\SomethingWentWrong.js",
+        "src\\pages\\Images.js"
+      ]
+    ]
+  ],
+  "ignoreUnused": [
+    "@testing-library/jest-dom",
+    "@testing-library/react",
+    "@testing-library/user-event",
+    "bootstrap",
+    "react-odometerjs",
+    "react-scripts"
+  ],
+  "ignoreUnimported": [
+    "src/components/blog/BlogSectionThree.js",
+    "src/components/causes/CausesOne.jsx"
+  ]
+}

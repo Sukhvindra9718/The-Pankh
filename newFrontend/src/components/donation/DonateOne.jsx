@@ -69,7 +69,7 @@ const DonateOne = () => {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:3001/api/v1/Donation/upload",
+        "https://thepankh.info/api/v1/Donation/upload",
         { ...Donations, file },
         config
       );
@@ -106,7 +106,7 @@ const DonateOne = () => {
   // Read All BankDetails
   const getAllBankDetails = async () => {
     try {
-      const res = await axios.get("http://localhost:3001/api/v1/BankDetails");
+      const res = await axios.get("https://thepankh.info/api/v1/BankDetails");
       if (res.data.success) {
         if (res.data.BankDetails.length !== 0) {
           setBankDetails(res.data.BankDetails[0]);

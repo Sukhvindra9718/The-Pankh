@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import axios from "axios";
+import React, { Component } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { Link } from "react-router-dom";
 
 
 const responsive = {
@@ -38,7 +38,7 @@ class TeamOne extends Component {
 
   getAllVolunteers = async () => {
     try {
-      const res = await axios.get("http://localhost:3001/api/v1/volunteers");
+      const res = await axios.get("https://thepankh.info/api/v1/volunteers");
 
       if (res.data.success) {
         this.setState({ volunteers: res.data.volunteers }); // Update state with fetched volunteers
