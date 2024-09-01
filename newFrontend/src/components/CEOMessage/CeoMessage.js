@@ -2,8 +2,9 @@ import React from "react";
 
 function CeoMessage() {
   return (
+    <div style={{ marginBottom: "1rem", backgroundColor: "#EFEFEF", height: "100%", paddingTop: "10vh", paddingBottom: "10vh" }}>
     <div className="container">
-      <div style={{ marginBottom: "1rem" }}>
+      <div>
         <h3> CEO's MESSAGE</h3>
       </div>
 
@@ -43,6 +44,7 @@ function CeoMessage() {
           fostering resilience and enabling brighter futures for all
         </p>
       </div>
+    </div>
     </div>
   );
 }
