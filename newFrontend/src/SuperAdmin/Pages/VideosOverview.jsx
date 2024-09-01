@@ -68,7 +68,7 @@ function VideosOverview() {
     setLoading(true)
     try {
       const { data } = await axios.post(
-        "https://thepankh.info/api/v1/video/upload",
+        "http://localhost:3001/api/v1/video/upload",
         { title, description, url,file },
         config
       );
@@ -96,7 +96,7 @@ function VideosOverview() {
     };
     try {
       const { data } = await axios.get(
-        "https://thepankh.info/api/v1/videos",
+        "http://localhost:3001/api/v1/videos",
         config
       );
       setVideos(data.videos);
@@ -126,7 +126,7 @@ function VideosOverview() {
     };
     try {
       const { data } = await axios.put(
-        `https://thepankh.info/api/v1/video/${updateId}`,
+        `http://localhost:3001/api/v1/video/${updateId}`,
         Data,
         config
       );
@@ -185,7 +185,7 @@ function VideosOverview() {
       };
       try {
         const { data } = await axios.delete(
-          `https://thepankh.info/api/v1/video/${id}`,
+          `http://localhost:3001/api/v1/video/${id}`,
           config
         );
         if (data.success) {

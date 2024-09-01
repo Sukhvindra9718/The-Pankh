@@ -80,7 +80,7 @@ function UserOverview() {
     setLoading(true);
     try {
       const { data } = await axios.post(
-        "https://thepankh.info/api/auth/register",
+        "http://localhost:3001/api/auth/register",
         { ...user, file },
         config
       );
@@ -112,7 +112,7 @@ function UserOverview() {
         },
       };
       const res = await axios.get(
-        "https://thepankh.info/api/v1/getallusers",
+        "http://localhost:3001/api/v1/getallusers",
         config
       );
 
@@ -150,7 +150,7 @@ function UserOverview() {
     };
     try {
       const { data } = await axios.put(
-        `https://thepankh.info/api/v1/user/update/${updateId}`,
+        `http://localhost:3001/api/v1/user/update/${updateId}`,
         Data,
         config
       );
@@ -209,7 +209,7 @@ function UserOverview() {
         },
       };
       const { data } = await axios.delete(
-        `https://thepankh.info/api/user/delete/${id}`,
+        `http://localhost:3001/api/user/delete/${id}`,
         config
       );
 

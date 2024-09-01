@@ -74,7 +74,7 @@ function NewsOverview() {
     setLoading(true)
     try {
       const { data } = await axios.post(
-        "https://thepankh.info/api/v1/news/upload",
+        "http://localhost:3001/api/v1/news/upload",
         { ...news, file },
         config
       );
@@ -101,7 +101,7 @@ function NewsOverview() {
   // Read All news
   const getAllNews = async () => {
     try {
-      const res = await axios.get("https://thepankh.info/api/v1/news");
+      const res = await axios.get("http://localhost:3001/api/v1/news");
       if (res.data.success) {
         setData(res.data.news);
         setFilterData(res.data.news);
@@ -131,7 +131,7 @@ function NewsOverview() {
     };
     try {
       const { data } = await axios.put(
-        `https://thepankh.info/api/v1/news/${updateId}`,
+        `http://localhost:3001/api/v1/news/${updateId}`,
         Data,
         config
       );
@@ -196,7 +196,7 @@ function NewsOverview() {
           Authorization: `${getTokenFromCookie()}`,
         },
       };
-      const { data } = await axios.delete(`https://thepankh.info/api/v1/news/${id}`, config);
+      const { data } = await axios.delete(`http://localhost:3001/api/v1/news/${id}`, config);
 
       if (data.success) {
         setIsDelete(!isDelete);
