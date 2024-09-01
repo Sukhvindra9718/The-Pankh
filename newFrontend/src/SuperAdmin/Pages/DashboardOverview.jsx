@@ -30,7 +30,7 @@ function DashboardOverview() {
       };
 
       const {data} = await axios.get(
-        `https://thepankh.info/api/common/getTableRow/count`,
+        `http://localhost:3001/api/common/getTableRow/count`,
         config
       );
 

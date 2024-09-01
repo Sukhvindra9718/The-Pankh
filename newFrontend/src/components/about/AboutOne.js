@@ -32,7 +32,7 @@ export default class AboutOne extends React.Component {
                       <img
                         src={
                           publicUrl +
-                          "images/resources/about-one-img-1.jpg"
+                          "images/resources/about-one-Image.jpeg"
                         }
                         alt=""
                       />
@@ -45,7 +45,7 @@ export default class AboutOne extends React.Component {
                       <img
                         src={
                           publicUrl +
-                          "images/resources/about-one-small-img.jpg"
+                          "images/resources/about-small-image.jpeg"
                         }
                         alt=""
                       />

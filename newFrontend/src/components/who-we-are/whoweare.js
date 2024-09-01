@@ -44,7 +44,7 @@ export default class WhoweareDetails extends React.Component {
                   <div className="team-details__top-right">
                     <div className="team-details__top-content">
                       <h3 className="team-details__top-name">Who We Are</h3>
-                      <p className="team-details__top-text-1">
+                      <p className="team-details__top-text-1" style={{ fontSize: "1.2rem" }}>
                         PANKH is a non-governmental organization established
                         under the Society Registration Act XXI 1860.
                       </p>

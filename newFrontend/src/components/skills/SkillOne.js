@@ -82,7 +82,7 @@ export default class SkillsOne extends React.Component {
                   backgroundImage:
                     "url(" +
                     publicUrl +
-                    "images/backgrounds/skill-one-left-bg.jpg)",
+                    "images/backgrounds/skill-one.jpg)",
                 }}
               ></div>
               <div className="skill-one__arrow-box">
@@ -96,7 +96,7 @@ export default class SkillsOne extends React.Component {
                   backgroundImage:
                     "url(" +
                     publicUrl +
-                    "images/backgrounds/skill-one-right-bg.jpg)",
+                    "images/backgrounds/skill-one-right.jpg)",
                 }}
               ></div>
               <div className="skill-one__content">

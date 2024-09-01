@@ -30,7 +30,7 @@ function ContactForm() {
             return;
         }
         try {
-            const contactResponse = await fetch(`https://thepankh.info/api/common/contact/register`, {
+            const contactResponse = await fetch(`http://localhost:3001/api/common/contact/register`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -143,7 +143,7 @@ function ContactForm() {
                         <div className="col-xl-6 col-lg-6">
                             <div className="contact-page__right">
                                 <div className="contact-page__img">
-                                    <img src={publicUrl + "images/resources/contact-page-img-1.jpg"} alt="" />
+                                    <img src={publicUrl + "images/resources/contact-one-image.jpeg"} alt="" />
                                     <div className="contact-page__img-shape">
                                         <img src={publicUrl + "images/shapes/contact-page-img-shape.png"} alt="" />
                                     </div>
