@@ -154,8 +154,8 @@ function FooterOne() {
                       </div>
                       <div className="text">
                         <p>
-                          <a href="mailto:mail@thepankh.info">
-                            mail@thepankh.info
+                          <a href="mailto:mail@thePANKH.info">
+                            mail@thePANKH.info
                           </a>
                         </p>
                       </div>
@@ -235,7 +235,7 @@ function FooterOne() {
           <div className="container">
             <div className="site-footer__bottom-inner">
               <p className="site-footer__bottom-text">
-                © 2024 Copyright by <a href="">Pankh</a>
+                © 2024 Copyright by <a href="">PANKH</a>
               </p>
             </div>
           </div>
@@ -323,8 +323,8 @@ export default FooterOne;
 //                         </div>
 //                         <div className="text">
 //                           <p>
-//                             <a href="mailto:mail@thepankh.info">
-//                             mail@thepankh.info
+//                             <a href="mailto:mail@thePANKH.info">
+//                             mail@thePANKH.info
 //                             </a>
 //                           </p>
 //                         </div>
@@ -611,7 +611,7 @@ export default FooterOne;
 //             <div className="container">
 //               <div className="site-footer__bottom-inner">
 //                 <p className="site-footer__bottom-text">
-//                   © 2024 Copyright by <a href="">Pankh</a>
+//                   © 2024 Copyright by <a href="">PANKH</a>
 //                 </p>
 //               </div>
 //             </div>
