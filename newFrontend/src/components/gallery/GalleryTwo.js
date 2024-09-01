@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import ReactPlayer from 'react-player/youtube'
+import ReactPlayer from "react-player/youtube";
 
 export default class GalleryTwo extends React.Component {
   constructor(props) {
@@ -12,28 +12,6 @@ export default class GalleryTwo extends React.Component {
 
   componentDidMount() {
     this.getAllVideos();
-
-    // const $ = window.$;
-
-    // $(document).ready(function () {
-    //   $(".video-popup").magnificPopup({
-    //     type: "iframe",
-    //     iframe: {
-    //       patterns: {
-    //         youtube: {
-    //           index: "youtube.com/",
-    //           id: function () {
-    //             // Extract the video ID from the data-video-url attribute
-    //             const videoId = $(this).data("video-url").split("v=")[1];
-    //             return videoId;
-    //           },
-    //           src: "https://www.youtube.com/embed/%id%?autoplay=1",
-    //         },
-    //       },
-    //       srcAction: "iframe_src",
-    //     },
-    //   });
-    // });
   }
 
   getAllVideos = async () => {
@@ -86,14 +64,17 @@ export default class GalleryTwo extends React.Component {
                               <i className="ripple"></i>
                             </div>
                           </a> */}
-                          <ReactPlayer url={video.url} controls/>
+                          <ReactPlayer url={video.url} controls />
                         </div>
                       </div>
                     </div>
                   </div>
                 ))
               ) : (
-                <div className="col-12">
+                <div
+                  className="col-12 d-flex align-items-center justify-content-center"
+                  style={{ height: "20vh" }}
+                >
                   <p className="text-center">No video found!</p>
                 </div>
               )}

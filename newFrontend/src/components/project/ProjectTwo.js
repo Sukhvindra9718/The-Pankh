@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 function ProjectTwo() {
   const [projects, setProjects] = useState([]);
-  const navigate = useNavigate();
 
   // Get Token from Cookie
   const getTokenFromCookie = () => {
@@ -39,12 +38,13 @@ function ProjectTwo() {
         setProjects([]);
       }
     } catch (error) {
-      navigate("/error");
+      // navigate("/error");
     }
   };
 
   useEffect(() => {
     getAllProjects();
+    // eslint-disable-next-line
   }, []);
 
   return (

@@ -74,7 +74,10 @@ export default class Images extends React.Component {
                   </div>
                 ))
               ) : (
-                <div className="col-12">
+                <div
+                  className="col-12 d-flex align-items-center justify-content-center"
+                  style={{ height: "20vh" }}
+                >
                   <p className="text-center">No images found!</p>
                 </div>
               )}

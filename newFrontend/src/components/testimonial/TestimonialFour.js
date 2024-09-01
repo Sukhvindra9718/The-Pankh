@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 
 const TestimonialFour = () => {
   const [testimonial, setTestimonial] = useState([]);
-
-  const navigate = useNavigate();
   const getAllTestimonials = async () => {
     try {
       const res = await axios.get("https://thepankh.info/api/v1/testimonials");
@@ -16,7 +13,7 @@ const TestimonialFour = () => {
         setTestimonial([]);
       }
     } catch (error) {
-      navigate("/error");
+      // navigate("/error");
     }
   };
 
@@ -59,8 +56,11 @@ const TestimonialFour = () => {
           </div>
         </section>
       ) : (
-        <div className="container">
-          <h1>No Testimonials Found</h1>
+        <div
+          className="col-12 d-flex align-items-center justify-content-center"
+          style={{ height: "20vh" }}
+        >
+          <p className="text-center">No testimonials found!</p>
         </div>
       )}
     </>
