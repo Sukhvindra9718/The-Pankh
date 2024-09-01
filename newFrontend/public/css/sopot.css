@@ -1441,7 +1441,7 @@ a.sc-hLBbgP {
     transition:
         transform 7000ms ease,
         opacity 1500ms ease-in;
-    opacity: 0.2;
+    opacity: 0.8;
     background-color: var(--sopot-black);
     z-index: 1;
 }
@@ -3188,6 +3188,7 @@ a.sc-hLBbgP {
 .team-one__img {
     position: relative;
     display: block;
+    width:20rem;
     overflow: hidden;
     margin-right: 25px;
     margin-left: 25px;
@@ -3423,7 +3424,7 @@ a.sc-hLBbgP {
     left: 0;
     right: 0;
     content: "";
-    background-color: rgba(37, 38, 40, 0.9);
+    background-color: rgba(37, 38, 40, 0.6);
     z-index: -1;
 }
 
@@ -3605,6 +3606,7 @@ a.sc-hLBbgP {
 
 .testimonial-one__img img {
     width: 90px !important;
+    height: 90px;
     border-radius: 50%;
 }
 
@@ -6909,7 +6911,7 @@ a.sc-hLBbgP {
     background-size: cover;
     background-position: center;
     mix-blend-mode: luminosity;
-    opacity: 0.2;
+    opacity: 0.8;
     z-index: -1;
 }
 
@@ -9801,6 +9803,7 @@ a.sc-hLBbgP {
 
 .gallery-page__img img {
     width: 100%;
+    height: 30vh;
     border-radius: var(--sopot-bdr-radius);
     -webkit-transform: scale(1);
     transform: scale(1);

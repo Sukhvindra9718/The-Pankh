@@ -720,7 +720,7 @@ th {
 
   .close-btn {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     svg {
       cursor: pointer;
     }
@@ -784,7 +784,7 @@ th {
   width: 100%;
   gap: 1.5rem;
   padding: 1rem;
-  justify-content: start;
+  justify-content: flex-start;
 }
 
 .Count-Card {

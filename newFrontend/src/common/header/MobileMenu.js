@@ -64,7 +64,7 @@ const menuData = [
     subNav: [
       {
         title: "Images",
-        path: "/images",
+        path: "/image",
         cName: "sub-nav",
       },
       {

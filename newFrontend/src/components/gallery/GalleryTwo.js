@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import ReactPlayer from 'react-player/youtube'
 
 export default class GalleryTwo extends React.Component {
   constructor(props) {
@@ -12,32 +13,32 @@ export default class GalleryTwo extends React.Component {
   componentDidMount() {
     this.getAllVideos();
 
-    const $ = window.$;
+    // const $ = window.$;
 
-    $(document).ready(function () {
-      $(".video-popup").magnificPopup({
-        type: "iframe",
-        iframe: {
-          patterns: {
-            youtube: {
-              index: "youtube.com/",
-              id: function () {
-                // Extract the video ID from the data-video-url attribute
-                const videoId = $(this).data("video-url").split("v=")[1];
-                return videoId;
-              },
-              src: "https://www.youtube.com/embed/%id%?autoplay=1",
-            },
-          },
-          srcAction: "iframe_src",
-        },
-      });
-    });
+    // $(document).ready(function () {
+    //   $(".video-popup").magnificPopup({
+    //     type: "iframe",
+    //     iframe: {
+    //       patterns: {
+    //         youtube: {
+    //           index: "youtube.com/",
+    //           id: function () {
+    //             // Extract the video ID from the data-video-url attribute
+    //             const videoId = $(this).data("video-url").split("v=")[1];
+    //             return videoId;
+    //           },
+    //           src: "https://www.youtube.com/embed/%id%?autoplay=1",
+    //         },
+    //       },
+    //       srcAction: "iframe_src",
+    //     },
+    //   });
+    // });
   }
 
   getAllVideos = async () => {
     try {
-      const res = await axios.get("http://localhost:3001/api/v1/videos");
+      const res = await axios.get("https://thepankh.info/api/v1/videos");
 
       if (res.data.success) {
         this.setState({ videos: res.data.videos }); // Update state with the fetched images
@@ -75,7 +76,7 @@ export default class GalleryTwo extends React.Component {
                           className="gallery-page__icon about-one__video-link"
                           style={{ marginLeft: 0 }}
                         >
-                          <a
+                          {/* <a
                             href={video.url}
                             data-video-url={video.url}
                             className="video-popup"
@@ -84,7 +85,8 @@ export default class GalleryTwo extends React.Component {
                               <span className="fa fa-play"></span>
                               <i className="ripple"></i>
                             </div>
-                          </a>
+                          </a> */}
+                          <ReactPlayer url={video.url} controls/>
                         </div>
                       </div>
                     </div>

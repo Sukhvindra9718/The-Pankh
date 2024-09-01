@@ -11,7 +11,7 @@ function HeroOne() {
 
   const getAllCarousals = async () => {
     try {
-      const res = await axios.get("http://localhost:3001/api/v1/carousals");
+      const res = await axios.get("https://thepankh.info/api/v1/carousals");
 
       console.log(res.data);
       if (res.data.success) {
@@ -114,10 +114,10 @@ function HeroOne() {
                       <div className="col-xl-7">
                         <div className="main-slider__content">
                           <h2>
-                           Lets Chenge The World With Humanity.
+                           Lets Change The World With Humanity.
                           </h2>
                           <p>
-                           There are many variations of passages of Lorem Ipsum Fasts by injected humour, or randomised words which...  Leran More  There are many variations of passages of Lorem Ipsum Fasts by injected humour, or randomised words which...  Leran More  There are many variations of passages of Lorem Ipsum Fasts by injected humour, or randomised words which..
+                           There are many variations of passages of Lorem Ipsum Fasts by injected humour, or randomised words which...  Learn More  There are many variations of passages of Lorem Ipsum Fasts by injected humour, or randomised words which...  Learn More  There are many variations of passages of Lorem Ipsum Fasts by injected humour, or randomised words which..
                           </p>
                           <Link
                             to={process.env.PUBLIC_URL + `/about`}
@@ -158,7 +158,7 @@ function HeroOne() {
                       <div className="col-xl-7">
                         <div className="main-slider__content">
                           <h2>
-                            Lets <span>Chenge</span> The World <br /> With
+                            Lets <span>Change</span> The World <br /> With
                             Humanity.
                           </h2>
                           <p>
@@ -217,7 +217,7 @@ function HeroOne() {
                             to={process.env.PUBLIC_URL + `/about`}
                             className="thm-btn main-slider__btn"
                           >
-                            Leran More
+                            Learn More
                           </Link>
                           <div className="main-slider-arrow">
                             <img

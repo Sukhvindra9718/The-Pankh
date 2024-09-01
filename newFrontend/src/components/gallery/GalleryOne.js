@@ -11,37 +11,11 @@ export default class GalleryOne extends React.Component {
 
     componentDidMount() {
         this.getAllImages();
-
-        const $ = window.$;
-
-        if ($(".img-popup").length) {
-            var groups = {};
-            $(".img-popup").each(function () {
-                var id = parseInt($(this).attr("data-group"), 10);
-
-                if (!groups[id]) {
-                    groups[id] = [];
-                }
-
-                groups[id].push(this);
-            });
-
-            $.each(groups, function () {
-                $(this).magnificPopup({
-                    type: "image",
-                    closeOnContentClick: true,
-                    closeBtnInside: false,
-                    gallery: {
-                        enabled: true
-                    }
-                });
-            });
-        }
     }
 
     getAllImages = async () => {
         try {
-            const res = await axios.get("http://localhost:3001/api/v1/images");
+            const res = await axios.get("https://thepankh.info/api/v1/images");
 
             if (res.data.success) {
                 this.setState({ images: res.data.images }); // Update state with the fetched images

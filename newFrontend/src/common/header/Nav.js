@@ -8,11 +8,11 @@ const Nav = () => {
     <div className="main-menu text-center">
       <nav>
         <ul className="main-menu__list">
-          <li className={`dropdown ${location.pathname =="/" ? "current" : ""}`}>
+          <li className={`dropdown ${location.pathname ==="/" ? "current" : ""}`}>
             <Link to={process.env.PUBLIC_URL + `/`}>Home</Link>
           </li>
 
-          <li className={`dropdown ${location.pathname =="/about" || location.pathname == "/whoweare" || location.pathname == "/thepankhmodel" ? "current" : ""}`}>
+          <li className={`dropdown ${location.pathname ==="/about" || location.pathname === "/whoweare" || location.pathname === "/thepankhmodel" ? "current" : ""}`}>
             <Link to={process.env.PUBLIC_URL + `/about`}>About</Link>
             <ul>
               <li>
@@ -29,7 +29,7 @@ const Nav = () => {
             </ul>
           </li>
 
-          <li className={`dropdown ${location.pathname == "/team" || location.pathname == "/projects" || location.pathname == "/testimonials" ? "current":''}`}>
+          <li className={`dropdown ${location.pathname === "/team" || location.pathname === "/projects" || location.pathname === "/testimonials" ? "current":''}`}>
             <Link to={process.env.PUBLIC_URL + `#`} >Pages</Link>
             <ul>
               <li>
@@ -46,11 +46,11 @@ const Nav = () => {
               </li>
             </ul>
           </li>
-          <li className={`dropdown ${location.pathname =="/images" || location.pathname == "/videos" ? "current" : ""}`}>
+          <li className={`dropdown ${location.pathname ==="/image" || location.pathname === "/videos" ? "current" : ""}`}>
             <Link to={process.env.PUBLIC_URL + `#`}>Gallery</Link>
             <ul>
               <li>
-                <Link to={process.env.PUBLIC_URL + `/images`}>Images</Link>
+                <Link to={process.env.PUBLIC_URL + `/image`}>Images</Link>
               </li>
               <li>
                 <Link to={process.env.PUBLIC_URL + `/videos`}>Videos</Link>
@@ -58,16 +58,16 @@ const Nav = () => {
             </ul>
           </li>
 
-          <li className={`${location.pathname =="/donate-now" ? "current" : ""}`}>
+          <li className={`${location.pathname ==="/donate-now" ? "current" : ""}`}>
             <Link to={process.env.PUBLIC_URL + `/donate-now`}>Donation</Link>
           </li>
-          <li className={`${location.pathname =="/events" ? "current" : ""}`}>
+          <li className={`${location.pathname ==="/events" ? "current" : ""}`}>
             <Link to={process.env.PUBLIC_URL + `/events`}>Events</Link>
           </li>
-          {/* <li className={`${location.pathname =="/blogs" ? "current" : ""}`}>
+          {/* <li className={`${location.pathname ==="/blogs" ? "current" : ""}`}>
             <Link to={process.env.PUBLIC_URL + `/blogs`}>Blog</Link>
           </li> */}
-          <li className={`${location.pathname =="/contact" ? "current" : ""}`}>
+          <li className={`${location.pathname ==="/contact" ? "current" : ""}`}>
             <Link to={process.env.PUBLIC_URL + `/contact`}>Contact</Link>
           </li>
         </ul>

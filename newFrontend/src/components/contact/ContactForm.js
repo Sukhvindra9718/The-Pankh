@@ -30,7 +30,7 @@ function ContactForm() {
             return;
         }
         try {
-            const contactResponse = await fetch(`http://localhost:3001/api/common/contact/register`, {
+            const contactResponse = await fetch(`https://thepankh.info/api/common/contact/register`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

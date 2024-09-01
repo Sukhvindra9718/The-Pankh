@@ -30,7 +30,7 @@ function ProjectOne() {
     };
     try {
       const { data } = await axios.get(
-        "http://localhost:3001/api/v1/projects",
+        "https://thepankh.info/api/v1/projects",
         config
       );
       if (data.success) {
@@ -85,7 +85,7 @@ function ProjectOne() {
                 data-wow-delay="200ms"
               >
                 {/* Project Two Single */}
-                <div className="project-one__single">
+               {projects[1]?.title && <div className="project-one__single">
                   <div className="project-one__img">
                     <img src={projects[1]?.fileurl} alt="" />
                     <div className="project-one__content">
@@ -99,9 +99,9 @@ function ProjectOne() {
                       </h3>
                     </div>
                   </div>
-                </div>
+                </div>}
                 {/* Project Three Single */}
-                <div className="project-one__single">
+                {projects[2]?.title && <div className="project-one__single">
                   <div className="project-one__img">
                     <img src={projects[2]?.fileurl} alt="" />
                     <div className="project-one__content">
@@ -115,14 +115,14 @@ function ProjectOne() {
                       </h3>
                     </div>
                   </div>
-                </div>
+                </div>}
               </div>
               <div
                 className="col-xl-4 col-lg-4 col-md-6 wow fadeInUp"
                 data-wow-delay="300ms"
               >
                 {/* Project Four Single */}
-                <div className="project-one__single">
+                {projects[3]?.title && <div className="project-one__single">
                   <div className="project-one__img">
                     <img src={projects[3]?.fileurl} alt="" />
                     <div className="project-one__content">
@@ -136,9 +136,9 @@ function ProjectOne() {
                       </h3>
                     </div>
                   </div>
-                </div>
+                </div>}
                 {/* Project Five Single */}
-                <div className="project-one__single">
+                {projects[4]?.title && <div className="project-one__single">
                   <div className="project-one__img">
                     <img src={projects[4]?.fileurl} alt="" />
                     <div className="project-one__content">
@@ -152,7 +152,7 @@ function ProjectOne() {
                       </h3>
                     </div>
                   </div>
-                </div>
+                </div>}
               </div>
             </div>
           </div>

@@ -21,7 +21,7 @@ const CausesFour = () => {
   }, []);
 
 
-  let apiBaseUrl = "http://localhost:3001/api/v1";
+  let apiBaseUrl = "https://thepankh.info/api/v1";
   const [fund, setFund] = useState([]);
 
   const getAllFunds = async () => {

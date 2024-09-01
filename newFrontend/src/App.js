@@ -31,6 +31,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 import SomethingWentWrong from "./pages/SomethingWentWrong";
+import Images from "./pages/Images";
 
 function App() {
   useEffect(() => {
@@ -50,7 +51,7 @@ function App() {
         <Route path={`/project-details`} exact element={<ProjectDetails />} />
         <Route path={`/testimonials`} exact element={<Testimonials />} />
         <Route path={`/videos`} exact element={<Gallery />} />
-        <Route path={`/images`} exact element={<Gallery />} />
+        <Route path={`/image`} element={<Images />} />
         <Route path={`/donation`} exact element={<Donation />} />
         <Route path={`/donation-details`} exact element={<DonationDetails />} />
         <Route path={`/donate-now`} exact element={<DonateNow />} />
