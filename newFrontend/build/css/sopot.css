@@ -2128,7 +2128,7 @@ a.sc-hLBbgP {
 .feature-one__title {
     position: relative;
     display: inline-block;
-    font-size: 24px;
+    font-size: 18px;
     line-height: 25px;
     font-weight: 500;
     margin-left: 19px;
@@ -8311,9 +8311,9 @@ a.sc-hLBbgP {
 }
 
 .team-details__top-text-1 {
-    font-size: 30px;
+    font-size: 18px;
     color: var(--sopot-base);
-    line-height: 46px;
+    line-height: 24px;
 }
 
 .team-details__top-text-2 {
