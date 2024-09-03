@@ -6,7 +6,7 @@ const CeoMessage = () => {
       <div style={styles.container}>
         <div style={styles.imageContainer}>
           <img
-            src="https://res.cloudinary.com/dhk1toauk/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1724582768/thepankh/volunteer/dahcum2mtl9ps0vuwfkp.jpg" // Replace with the actual image URL
+            src="https://res.cloudinary.com/dhk1toauk/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1725383817/Picture2_yjlglk.jpg" // Replace with the actual image URL
             alt="Aarti Thapa"
             style={styles.image}
           />
