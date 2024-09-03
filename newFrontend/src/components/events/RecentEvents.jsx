@@ -31,22 +31,41 @@ const RecentEvents = () => {
 
   return (
     <>
-      <section className="gallery-page" style={{ backgroundColor: "#EFEFEF", height: "100%", paddingTop: "10vh"}}>
+      <section
+        className="gallery-page"
+        style={{
+          backgroundColor: "#EFEFEF",
+          height: "100%",
+          paddingTop: "8vh",
+        }}
+      >
         <div className="container">
+          <div className="section-title text-center">
+            <span className="section-title__tagline">Media Coverage</span>
+            <h2 className="section-title__title">
+              Key Details are as mentioned below :
+            </h2>
+          </div>
+
           <div className="row">
-            <div className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp"
+            <div
+              className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp"
               data-wow-delay={`${100 * (9 + 1)}ms`}
             >
               <div className="gallery-page__single">
                 <div className="gallery-page__img">
                   <img
-                    src={"https://res.cloudinary.com/dhk1toauk/image/upload/v1725383818/Picture10_qbzadq.jpg"}
+                    src={
+                      "https://res.cloudinary.com/dhk1toauk/image/upload/v1725383818/Picture10_qbzadq.jpg"
+                    }
                     alt={"Gallery Image"}
                   />
                   <div className="gallery-page__icon">
                     <a
                       className="img-popup"
-                      href={"https://res.cloudinary.com/dhk1toauk/image/upload/v1725383818/Picture10_qbzadq.jpg"}
+                      href={
+                        "https://res.cloudinary.com/dhk1toauk/image/upload/v1725383818/Picture10_qbzadq.jpg"
+                      }
                       target="_blank"
                     >
                       <i class="fas fa-eye"></i>
@@ -56,19 +75,24 @@ const RecentEvents = () => {
               </div>
             </div>
 
-            <div className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp"
+            <div
+              className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp"
               data-wow-delay={`${100 * (9 + 1)}ms`}
             >
               <div className="gallery-page__single">
                 <div className="gallery-page__img">
                   <img
-                    src={"https://res.cloudinary.com/dhk1toauk/image/upload/v1725383818/Picture3_zgyqyk.jpg"}
+                    src={
+                      "https://res.cloudinary.com/dhk1toauk/image/upload/v1725383818/Picture3_zgyqyk.jpg"
+                    }
                     alt={"Gallery Image"}
                   />
                   <div className="gallery-page__icon">
                     <a
                       className="img-popup"
-                      href={"https://res.cloudinary.com/dhk1toauk/image/upload/v1725383818/Picture3_zgyqyk.jpg"}
+                      href={
+                        "https://res.cloudinary.com/dhk1toauk/image/upload/v1725383818/Picture3_zgyqyk.jpg"
+                      }
                       target="_blank"
                     >
                       <i class="fas fa-eye"></i>
@@ -78,20 +102,24 @@ const RecentEvents = () => {
               </div>
             </div>
 
-
-            <div className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp"
+            <div
+              className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp"
               data-wow-delay={`${100 * (9 + 1)}ms`}
             >
               <div className="gallery-page__single">
                 <div className="gallery-page__img">
                   <img
-                    src={"https://res.cloudinary.com/dhk1toauk/image/upload/v1725383817/Picture12_pkmmr1.jpg"}
+                    src={
+                      "https://res.cloudinary.com/dhk1toauk/image/upload/v1725383817/Picture12_pkmmr1.jpg"
+                    }
                     alt={"Gallery Image"}
                   />
                   <div className="gallery-page__icon">
                     <a
                       className="img-popup"
-                      href={"https://res.cloudinary.com/dhk1toauk/image/upload/v1725383817/Picture12_pkmmr1.jpg"}
+                      href={
+                        "https://res.cloudinary.com/dhk1toauk/image/upload/v1725383817/Picture12_pkmmr1.jpg"
+                      }
                       target="_blank"
                     >
                       <i class="fas fa-eye"></i>
@@ -101,19 +129,24 @@ const RecentEvents = () => {
               </div>
             </div>
 
-            <div className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp"
+            <div
+              className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp"
               data-wow-delay={`${100 * (9 + 1)}ms`}
             >
               <div className="gallery-page__single">
                 <div className="gallery-page__img">
                   <img
-                    src={"https://res.cloudinary.com/dhk1toauk/image/upload/v1725383817/Picture6_uorqf5.jpg"}
+                    src={
+                      "https://res.cloudinary.com/dhk1toauk/image/upload/v1725383817/Picture6_uorqf5.jpg"
+                    }
                     alt={"Gallery Image"}
                   />
                   <div className="gallery-page__icon">
                     <a
                       className="img-popup"
-                      href={"https://res.cloudinary.com/dhk1toauk/image/upload/v1725383817/Picture6_uorqf5.jpg"}
+                      href={
+                        "https://res.cloudinary.com/dhk1toauk/image/upload/v1725383817/Picture6_uorqf5.jpg"
+                      }
                       target="_blank"
                     >
                       <i class="fas fa-eye"></i>
@@ -123,19 +156,24 @@ const RecentEvents = () => {
               </div>
             </div>
 
-            <div className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp"
+            <div
+              className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp"
               data-wow-delay={`${100 * (9 + 1)}ms`}
             >
               <div className="gallery-page__single">
                 <div className="gallery-page__img">
                   <img
-                    src={"https://res.cloudinary.com/dhk1toauk/image/upload/v1725383817/Picture5_rlycpk.jpg"}
+                    src={
+                      "https://res.cloudinary.com/dhk1toauk/image/upload/v1725383817/Picture5_rlycpk.jpg"
+                    }
                     alt={"Gallery Image"}
                   />
                   <div className="gallery-page__icon">
                     <a
                       className="img-popup"
-                      href={"https://res.cloudinary.com/dhk1toauk/image/upload/v1725383817/Picture5_rlycpk.jpg"}
+                      href={
+                        "https://res.cloudinary.com/dhk1toauk/image/upload/v1725383817/Picture5_rlycpk.jpg"
+                      }
                       target="_blank"
                     >
                       <i class="fas fa-eye"></i>
@@ -145,19 +183,24 @@ const RecentEvents = () => {
               </div>
             </div>
 
-            <div className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp"
+            <div
+              className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp"
               data-wow-delay={`${100 * (9 + 1)}ms`}
             >
               <div className="gallery-page__single">
                 <div className="gallery-page__img">
                   <img
-                    src={"https://res.cloudinary.com/dhk1toauk/image/upload/v1725383818/Picture7_n9a8nf.jpg"}
+                    src={
+                      "https://res.cloudinary.com/dhk1toauk/image/upload/v1725383818/Picture7_n9a8nf.jpg"
+                    }
                     alt={"Gallery Image"}
                   />
                   <div className="gallery-page__icon">
                     <a
                       className="img-popup"
-                      href={"https://res.cloudinary.com/dhk1toauk/image/upload/v1725383818/Picture7_n9a8nf.jpg"}
+                      href={
+                        "https://res.cloudinary.com/dhk1toauk/image/upload/v1725383818/Picture7_n9a8nf.jpg"
+                      }
                       target="_blank"
                     >
                       <i class="fas fa-eye"></i>
