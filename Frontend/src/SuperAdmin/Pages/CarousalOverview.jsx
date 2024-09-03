@@ -67,7 +67,7 @@ function CarousalOverview() {
 
     try {
       const { data } = await axios.post(
-        "https://thepankh.info/api/v1/carousal/upload",
+        "http://localhost:3001/api/v1/carousal/upload",
         { title, description, file },
         config
       );
@@ -94,7 +94,7 @@ function CarousalOverview() {
       };
 
       const res = await axios.get(
-        "https://thepankh.info/api/v1/carousals",
+        "http://localhost:3001/api/v1/carousals",
         config
       );
 
@@ -125,7 +125,7 @@ function CarousalOverview() {
     }
     try {
       const { data } = await axios.put(
-        `https://thepankh.info/api/v1/carousal/${id}`,
+        `http://localhost:3001/api/v1/carousal/${id}`,
         Data,
         config
       );
@@ -172,7 +172,7 @@ function CarousalOverview() {
         },
       };
       const { data } = await axios.delete(
-        `https://thepankh.info/api/v1/carousal/${id}`,
+        `http://localhost:3001/api/v1/carousal/${id}`,
         config
       );
 

@@ -69,7 +69,7 @@ function ProjectOverview() {
     setLoading(true)
     try {
       const { data } = await axios.post(
-        "https://thepankh.info/api/v1/project/upload",
+        "http://localhost:3001/api/v1/project/upload",
         { title, description, file },
         config
       );
@@ -96,7 +96,7 @@ function ProjectOverview() {
     };
     try {
       const { data } = await axios.get(
-        "https://thepankh.info/api/v1/projects",
+        "http://localhost:3001/api/v1/projects",
         config
       );
       setImages(data.projects);
@@ -126,7 +126,7 @@ function ProjectOverview() {
     };
     try {
       const { data } = await axios.put(
-        `https://thepankh.info/api/v1/project/${updateId}`,
+        `http://localhost:3001/api/v1/project/${updateId}`,
         Data,
         config
       );
@@ -183,7 +183,7 @@ function ProjectOverview() {
       };
       try {
         const { data } = await axios.delete(
-          `https://thepankh.info/api/v1/project/${id}`,
+          `http://localhost:3001/api/v1/project/${id}`,
           config
         );
         if (data.success) {
