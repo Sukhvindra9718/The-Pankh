@@ -49,6 +49,7 @@ export default class HeaderOne extends React.Component {
                       </div>
                     </li>
                   </ul>
+                  
                 </div>
                 <div className="main-header__top-right">
                   <ul className="list-unstyled main-header__top-right-content">
