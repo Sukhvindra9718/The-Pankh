@@ -2,7 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Nav from "./Nav";
 import MobileMenu from "./MobileMenu";
-import SearchButton from "./SearchButton";
+import { FaFacebook, FaInstagramSquare, FaLinkedin } from "react-icons/fa";
+// import SearchButton from "./SearchButton";
 
 export default class HeaderOne extends React.Component {
   render() {
@@ -48,9 +49,29 @@ export default class HeaderOne extends React.Component {
                         </p>
                       </div>
                     </li>
+
+                    <li style={{ gap: "2rem" }}>
+                      <div className="icon">
+                        <Link to={process.env.PUBLIC_URL + `https://www.facebook.com/`}>
+                          <span className="icon-facebook"></span>
+                        </Link>
+                      </div>
+
+                      <div className="icon">
+                      <Link to={process.env.PUBLIC_URL + `https://x.com/?lang=en-in`}>
+                          <span className="icon-twitter"></span>
+                        </Link>
+                      </div>
+
+                      <div className="icon">
+                      <Link to={process.env.PUBLIC_URL + `https://www.linkedin.com/`}>
+                          <span className="icon-linkedin"></span>
+                        </Link>
+                      </div>
+                    </li>
                   </ul>
-                  
                 </div>
+
                 <div className="main-header__top-right">
                   <ul className="list-unstyled main-header__top-right-content">
                     <li>
@@ -63,6 +84,7 @@ export default class HeaderOne extends React.Component {
                   </ul>
                 </div>
               </div>
+              
             </div>
           </div>
           <nav className="main-menu clearfix">

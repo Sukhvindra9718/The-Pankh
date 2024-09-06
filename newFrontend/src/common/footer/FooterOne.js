@@ -33,7 +33,7 @@ function FooterOne() {
         "http://localhost:3001/api/v1/images",
         config
       );
-      console.log(data)
+      console.log(data);
       setImages(data.images);
     } catch (error) {
       console.log(error);
@@ -181,22 +181,24 @@ function FooterOne() {
                 <div className="footer-widget__column footer-widget-one__gallery clearfix">
                   <h3 className="footer-widget-one__title">Gallery</h3>
                   <ul className="footer-widget-one__gallery-list list-unstyled clearfix">
-                    {
-                      images.map((image, index) => (
-                        index < 20 && <li key={index}>
-                          <div className="footer-widget-one__gallery-img">
-                            <img src={image.fileurl} alt="" />
-                            <Link
-                              to={
-                                process.env.PUBLIC_URL +
-                                `/project-details/${image.id}`
-                              }
-                            >
-                              <span className="fa fa-link"></span>
-                            </Link>
-                          </div>
-                        </li>
-                      ))}
+                    {images.map(
+                      (image, index) =>
+                        index < 20 && (
+                          <li key={index}>
+                            <div className="footer-widget-one__gallery-img">
+                              <img src={image.fileurl} alt="" />
+                              <Link
+                                to={
+                                  process.env.PUBLIC_URL +
+                                  `/project-details/${image.id}`
+                                }
+                              >
+                                <span className="fa fa-link"></span>
+                              </Link>
+                            </div>
+                          </li>
+                        )
+                    )}
                   </ul>
                 </div>
               </div>
@@ -207,24 +209,27 @@ function FooterOne() {
                 <div className="footer-widget__column footer-widget-one__latest-works clearfix">
                   <h3 className="footer-widget-one__title">Latest News</h3>
                   <ul>
-                    {news.map((newsItem, index) => (
-                      index < 6 && <li key={index}>
-                        <div className="footer-widget-one__latest-works-content">
-                          <h4 className="footer-widget-one__latest-works-title">
-                            <a
-                              href={newsItem.link}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              {newsItem.title}
-                            </a>
-                          </h4>
-                          <p className="footer-widget-one__latest-works-date">
-                            {newsItem.localeDate}, {newsItem.localeTime}
-                          </p>
-                        </div>
-                      </li>
-                    ))}
+                    {news.map(
+                      (newsItem, index) =>
+                        index < 6 && (
+                          <li key={index}>
+                            <div className="footer-widget-one__latest-works-content">
+                              <h4 className="footer-widget-one__latest-works-title">
+                                <a
+                                  href={newsItem.link}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                >
+                                  {newsItem.title}
+                                </a>
+                              </h4>
+                              <p className="footer-widget-one__latest-works-date">
+                                {newsItem.localeDate}, {newsItem.localeTime}
+                              </p>
+                            </div>
+                          </li>
+                        )
+                    )}
                   </ul>
                 </div>
               </div>
