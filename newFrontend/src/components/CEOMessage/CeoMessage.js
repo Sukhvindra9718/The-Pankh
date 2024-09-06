@@ -55,6 +55,7 @@ const styles = {
     flex: "0 0 350px",
     marginRight: "20px",
   },
+  
   image: {
     width: "100%",
     borderRadius: "50%",
@@ -70,17 +71,18 @@ const styles = {
   },
   author: {
     color: "#FF6F0F",
-    fontWeight: "bold",
     marginBottom: "5px",
+    fontSize:"20px"
   },
   title: {
-    fontSize: "14px",
+    fontSize: "13px",
     marginBottom: "10px",
+    color: "black",
+    fontWeight:"bold",
   },
   link: {
     color: "#FF6F0F",
     textDecoration: "none",
-    fontWeight: "bold",
   },
   linkContainer: {
     display: "flex",
