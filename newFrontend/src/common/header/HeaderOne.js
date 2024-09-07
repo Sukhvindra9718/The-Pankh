@@ -48,9 +48,20 @@ export default class HeaderOne extends React.Component {
                           (UP)-201307
                         </p>
                       </div>
-                    </li>
+                    </li>   
+                  </ul>
+                </div>
 
-                    <li style={{ gap: "2rem" }}>
+                <div className="main-header__top-right">
+                  <ul className="list-unstyled main-header__top-right-content">
+                    <li>
+                      <Link to={process.env.PUBLIC_URL + `/login`}>Login</Link>
+                    </li>
+                    {/* <li>
+                      <Link to={process.env.PUBLIC_URL + `/`}>Help You</Link>
+                    </li> */}
+                    {/* <SearchButton /> */}
+                    <li style={{ display: "flex", flexDirection:"row", gap:"1rem" }}>
                       <div className="icon">
                         <Link to={`https://www.facebook.com/`}>
                           <span className="icon-facebook"></span>
@@ -70,18 +81,9 @@ export default class HeaderOne extends React.Component {
                       </div>
                     </li>
                   </ul>
-                </div>
 
-                <div className="main-header__top-right">
-                  <ul className="list-unstyled main-header__top-right-content">
-                    <li>
-                      <Link to={process.env.PUBLIC_URL + `/login`}>Login</Link>
-                    </li>
-                    {/* <li>
-                      <Link to={process.env.PUBLIC_URL + `/`}>Help You</Link>
-                    </li> */}
-                    {/* <SearchButton /> */}
-                  </ul>
+                  
+
                 </div>
               </div>
               
