@@ -48,7 +48,7 @@ export default class HeaderOne extends React.Component {
                           (UP)-201307
                         </p>
                       </div>
-                    </li>   
+                    </li>
                   </ul>
                 </div>
 
@@ -57,36 +57,46 @@ export default class HeaderOne extends React.Component {
                     <li>
                       <Link to={process.env.PUBLIC_URL + `/login`}>Login</Link>
                     </li>
+
                     {/* <li>
                       <Link to={process.env.PUBLIC_URL + `/`}>Help You</Link>
                     </li> */}
                     {/* <SearchButton /> */}
-                    <li style={{ display: "flex", flexDirection:"row", gap:"1rem" }}>
+
+                    <li
+                      style={{
+                        display: "flex",
+                        flexDirection: "row",
+                        gap: "1.5rem",
+                      }}
+                    >
                       <div className="icon">
-                        <Link to={`https://www.facebook.com/`}>
-                          <span className="icon-facebook"></span>
-                        </Link>
+                        <a href="https://www.facebook.com/society.pankh05">
+                          <span className="fab fa-facebook-square"></span>
+                        </a>
                       </div>
 
                       <div className="icon">
-                      <Link to={ `https://x.com/?lang=en-in`}>
-                          <span className="icon-twitter"></span>
-                        </Link>
+                        <a href="https://www.instagram.com/pankhsociety/">
+                          <span className="fab fa-instagram"></span>
+                        </a>
                       </div>
 
                       <div className="icon">
-                      <Link to={ `https://www.linkedin.com/`}>
-                          <span className="icon-linkedin"></span>
-                        </Link>
+                        <a href="https://twitter.com/ ">
+                          <span className="fab fa-twitter"></span>
+                        </a>
+                      </div>
+
+                      <div className="icon">
+                        <a href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7224380283993612288/?actorCompanyId=97907319/">
+                          <span className="fab fa-linkedin"></span>
+                        </a>
                       </div>
                     </li>
                   </ul>
-
-                  
-
                 </div>
               </div>
-              
             </div>
           </div>
           <nav className="main-menu clearfix">
