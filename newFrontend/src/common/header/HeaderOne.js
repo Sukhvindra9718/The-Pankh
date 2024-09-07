@@ -52,19 +52,19 @@ export default class HeaderOne extends React.Component {
 
                     <li style={{ gap: "2rem" }}>
                       <div className="icon">
-                        <Link to={process.env.PUBLIC_URL + `https://www.facebook.com/`}>
+                        <Link to={`https://www.facebook.com/`}>
                           <span className="icon-facebook"></span>
                         </Link>
                       </div>
 
                       <div className="icon">
-                      <Link to={process.env.PUBLIC_URL + `https://x.com/?lang=en-in`}>
+                      <Link to={ `https://x.com/?lang=en-in`}>
                           <span className="icon-twitter"></span>
                         </Link>
                       </div>
 
                       <div className="icon">
-                      <Link to={process.env.PUBLIC_URL + `https://www.linkedin.com/`}>
+                      <Link to={ `https://www.linkedin.com/`}>
                           <span className="icon-linkedin"></span>
                         </Link>
                       </div>
