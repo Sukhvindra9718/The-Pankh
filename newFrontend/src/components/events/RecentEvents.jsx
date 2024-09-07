@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const RecentEvents = () => {
   let publicUrl = process.env.PUBLIC_URL + "/";
-  let apiBaseUrl = "http://localhost:3001/api/v1";
+  let apiBaseUrl = "https://thepankh.info/api/v1";
   const [events, setEvents] = useState([]);
 
   const getAllEvents = async () => {

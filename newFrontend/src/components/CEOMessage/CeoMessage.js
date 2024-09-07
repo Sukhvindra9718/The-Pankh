@@ -38,7 +38,7 @@ const CeoMessage = () => {
 const styles = {
   outerContainer: {
     width: "100%",
-    backgroundColor: "#f5f5f5",
+    backgroundColor: "#f3f6f8",
     display: "flex",
     justifyContent: "center",
     padding: "20px 0",

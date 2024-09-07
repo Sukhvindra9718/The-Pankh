@@ -1443,7 +1443,9 @@ a.sc-hLBbgP {
         opacity 1500ms ease-in;
     /* opacity: 0.8; */
     /* background-color: var(--sopot-black); */
+    
     z-index: 1;
+    /* background: rgba(0, 0, 0, 0.50); */
 }
 
 .main-slider .swiper-slide-active .image-layer {

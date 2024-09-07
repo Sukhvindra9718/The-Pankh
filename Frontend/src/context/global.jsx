@@ -19,7 +19,7 @@ const reducer = (state, action) => {
                     ...action.payload.map((video) => {
                         return{
                             ...video,
-                            videoUrl: `http://localhost:3001/public/videos/${video.filename}`
+                            videoUrl: `https://thepankh.info/public/videos/${video.filename}`
                         }
                     })
                 ]
@@ -32,7 +32,7 @@ const reducer = (state, action) => {
                     ...action.payload.map((image) => {
                         return{
                             ...image,
-                            imageUrl: `http://localhost:3001/public/images/${image.filename}`
+                            imageUrl: `https://thepankh.info/public/images/${image.filename}`
                         }
                     })
                 ]
@@ -59,7 +59,7 @@ export const GlobalProvider = ({children}) => {
                     'Content-Type': 'application/json',
                 }
             }
-            const {data} = await axios.get('http://localhost:3001/api/v1/videos',config);
+            const {data} = await axios.get('https://thepankh.info/api/v1/videos',config);
             dispatch({type: SET_VIDEOS, payload: data.videos})
         } catch (error) {
             console.log(error)
@@ -72,7 +72,7 @@ export const GlobalProvider = ({children}) => {
                     'Content-Type': 'application/json',
                 }
             }
-            const {data} = await axios.get('http://localhost:3001/api/v1/images',config);
+            const {data} = await axios.get('https://thepankh.info/api/v1/images',config);
   
             dispatch({type: SET_IMAGES, payload: data.images})
         } catch (error) {

@@ -12,7 +12,7 @@ export default class TeamTwo extends React.Component {
 
   getAllVolunteers = async () => {
     try {
-      const res = await axios.get("http://localhost:3001/api/v1/volunteers");
+      const res = await axios.get("https://thepankh.info/api/v1/volunteers");
 
       if (res.data.success) {
         this.setState({ volunteers: res.data.volunteers }); // Update state with fetched volunteers
