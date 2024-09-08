@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import ReactPlayer from "react-player/youtube";
-
+import { API_URL,PROD_URL,ENV } from "../../config";
 export default class GalleryTwo extends React.Component {
   constructor(props) {
     super(props);
@@ -16,7 +16,7 @@ export default class GalleryTwo extends React.Component {
 
   getAllVideos = async () => {
     try {
-      const res = await axios.get("https://thepankh.info/api/v1/videos");
+      const res = await axios.get(`${ENV === "dev" ? API_URL:PROD_URL}/api/v1/videos`);
 
       if (res.data.success) {
         this.setState({ videos: res.data.videos }); // Update state with the fetched images

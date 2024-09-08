@@ -19,7 +19,7 @@ const reducer = (state, action) => {
                     ...action.payload.map((video) => {
                         return{
                             ...video,
-                            videoUrl: `https://thepankh.info/public/videos/${video.filename}`
+                            videoUrl: `${ENV === "dev" ? API_URL:PROD_URL}/public/videos/${video.filename}`
                         }
                     })
                 ]
@@ -32,7 +32,7 @@ const reducer = (state, action) => {
                     ...action.payload.map((image) => {
                         return{
                             ...image,
-                            imageUrl: `https://thepankh.info/public/images/${image.filename}`
+                            imageUrl: `${ENV === "dev" ? API_URL:PROD_URL}/public/images/${image.filename}`
                         }
                     })
                 ]
@@ -59,7 +59,7 @@ export const GlobalProvider = ({children}) => {
                     'Content-Type': 'application/json',
                 }
             }
-            const {data} = await axios.get('https://thepankh.info/api/v1/videos',config);
+            const {data} = await axios.get('${ENV === "dev" ? API_URL:PROD_URL}/api/v1/videos',config);
             dispatch({type: SET_VIDEOS, payload: data.videos})
         } catch (error) {
             console.log(error)
@@ -72,7 +72,7 @@ export const GlobalProvider = ({children}) => {
                     'Content-Type': 'application/json',
                 }
             }
-            const {data} = await axios.get('https://thepankh.info/api/v1/images',config);
+            const {data} = await axios.get('${ENV === "dev" ? API_URL:PROD_URL}/api/v1/images',config);
   
             dispatch({type: SET_IMAGES, payload: data.images})
         } catch (error) {

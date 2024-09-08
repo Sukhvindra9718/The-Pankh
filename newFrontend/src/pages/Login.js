@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../style/Login.css"
 import {useNavigate} from "react-router-dom";
-
+import { API_URL,PROD_URL,ENV } from "../config";
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -10,7 +10,7 @@ const Login = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const response = await fetch("https://thepankh.info/api/auth/login", {
+    const response = await fetch(`${ENV === "dev" ? API_URL:PROD_URL}/api/auth/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { toast } from "react-hot-toast";
+import { API_URL,PROD_URL,ENV } from "../../config";
 function ContactForm() {
     let publicUrl = process.env.PUBLIC_URL + '/'
     const defaultContact =
@@ -30,7 +31,7 @@ function ContactForm() {
             return;
         }
         try {
-            const contactResponse = await fetch(`https://thepankh.info/api/common/contact/register`, {
+            const contactResponse = await fetch(`${ENV === "dev" ? API_URL:PROD_URL}/api/common/contact/register`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

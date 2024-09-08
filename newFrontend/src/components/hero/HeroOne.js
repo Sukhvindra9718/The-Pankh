@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectFade, Pagination, Navigation,Autoplay } from "swiper";
 import axios from "axios";
-
+import { API_URL,PROD_URL,ENV } from "../../config";
 function HeroOne() {
   const [sliderData, setSliderData] = useState([]);
   let publicUrl = process.env.PUBLIC_URL + "/";
@@ -11,7 +11,7 @@ function HeroOne() {
 
   const getAllCarousals = async () => {
     try {
-      const res = await axios.get("https://thepankh.info/api/v1/carousals");
+      const res = await axios.get(`${ENV === "dev" ? API_URL:PROD_URL}/api/v1/carousals`);
 
       console.log(res.data);
       if (res.data.success) {

@@ -10,6 +10,7 @@ import {
 } from "react-icons/ai";
 import Loader from "../../common/Loader";
 import { toast } from "react-hot-toast";
+import { API_URL,PROD_URL,ENV } from "../../config";
 const sortList = ["Newest", "Oldest"];
 
 function CarousalOverview() {
@@ -72,7 +73,7 @@ function CarousalOverview() {
     setLoading(true);
     try {
       const { data } = await axios.post(
-        "https://thepankh.info/api/v1/carousal/upload",
+        `${ENV === "dev" ? API_URL:PROD_URL}/api/v1/carousal/upload`,
         { title, description, file },
         config
       );
@@ -101,7 +102,7 @@ function CarousalOverview() {
       };
 
       const res = await axios.get(
-        "https://thepankh.info/api/v1/carousals",
+        `${ENV === "dev" ? API_URL:PROD_URL}/api/v1/carousals`,
         config
       );
 
@@ -135,7 +136,7 @@ function CarousalOverview() {
     setLoading(true);
     try {
       const { data } = await axios.put(
-        `https://thepankh.info/api/v1/carousal/${id}`,
+        `${ENV === "dev" ? API_URL:PROD_URL}/api/v1/carousal/${id}`,
         Data,
         config
       );
@@ -184,7 +185,7 @@ function CarousalOverview() {
         },
       };
       const { data } = await axios.delete(
-        `https://thepankh.info/api/v1/carousal/${id}`,
+        `${ENV === "dev" ? API_URL:PROD_URL}/api/v1/carousal/${id}`,
         config
       );
 

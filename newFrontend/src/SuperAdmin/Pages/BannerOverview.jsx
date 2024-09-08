@@ -5,7 +5,7 @@ import "../../style/Dashboard.css";
 import axios from "axios";
 import Loader from "../../common/Loader";
 import { toast } from "react-hot-toast";
-
+import { API_URL,PROD_URL,ENV } from "../../config";
 import {
   AiFillEdit,
   AiOutlinePlus,
@@ -71,7 +71,7 @@ function BannerOverview() {
     setLoading(true);
     try {
       const { data } = await axios.post(
-        "https://thepankh.info/api/v1/banner/upload",
+        `${ENV === "dev" ? API_URL:PROD_URL}/api/v1/banner/upload`,
         { pagename, file },
         config
       );
@@ -99,7 +99,7 @@ function BannerOverview() {
       };
 
       const res = await axios.get(
-        "https://thepankh.info/api/v1/banners",
+        `${ENV === "dev" ? API_URL:PROD_URL}/api/v1/banners`,
         config
       );
 
@@ -132,7 +132,7 @@ function BannerOverview() {
     };
     try {
       const { data } = await axios.put(
-        `https://thepankh.info/api/v1/banner/${updateId}`,
+        `${ENV === "dev" ? API_URL:PROD_URL}/api/v1/banner/${updateId}`,
         Data,
         config
       );
@@ -178,7 +178,7 @@ function BannerOverview() {
         },
       };
       const { data } = await axios.delete(
-        `https://thepankh.info/api/v1/banner/${id}`,
+        `${ENV === "dev" ? API_URL:PROD_URL}/api/v1/banner/${id}`,
         config
       );
 

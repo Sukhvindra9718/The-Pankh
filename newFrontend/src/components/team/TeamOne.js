@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { Link } from "react-router-dom";
-
+import { API_URL,PROD_URL,ENV } from "../../config";
 
 const responsive = {
   superLargeDesktop: {
@@ -38,7 +38,7 @@ class TeamOne extends Component {
 
   getAllVolunteers = async () => {
     try {
-      const res = await axios.get("https://thepankh.info/api/v1/volunteers");
+      const res = await axios.get(`${ENV === "dev" ? API_URL:PROD_URL}/api/v1/volunteers`);
 
       if (res.data.success) {
         this.setState({ volunteers: res.data.volunteers }); // Update state with fetched volunteers

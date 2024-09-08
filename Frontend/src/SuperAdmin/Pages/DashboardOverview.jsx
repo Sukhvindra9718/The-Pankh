@@ -32,7 +32,7 @@ function DashboardOverview() {
         // Use Promise.all to wait for all API calls
         const responses = await Promise.all(
           urls.map(async (url) => {
-            const res = await axios.get(`https://thepankh.info/api/${url}/count`, config);
+            const res = await axios.get(`${ENV === "dev" ? API_URL:PROD_URL}/api/${url}/count`, config);
             return res.data;
           })
         );

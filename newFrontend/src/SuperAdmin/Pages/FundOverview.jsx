@@ -6,6 +6,7 @@ import axios from "axios";
 import { AiFillEdit, AiOutlinePlus, AiFillCloseCircle } from "react-icons/ai";
 import Loader from "../../common/Loader";
 import { toast } from "react-hot-toast";
+import { API_URL,PROD_URL,ENV } from "../../config";
 const sortList = ["Newest", "Oldest"];
 function FundOverview() {
   const [isDelete, setIsDelete] = React.useState(false);
@@ -75,7 +76,7 @@ function FundOverview() {
     setLoading(true);
     try {
       const { data } = await axios.post(
-        "https://thepankh.info/api/v1/fundDetails/upload",
+        `${ENV === "dev" ? API_URL:PROD_URL}/api/v1/fundDetails/upload`,
         { ...fund, file },
         config
       );
@@ -117,7 +118,7 @@ function FundOverview() {
     setLoading(true);
     try {
       const { data } = await axios.put(
-        `https://thepankh.info/api/v1/fundDetails/${updateId}`,
+        `${ENV === "dev" ? API_URL:PROD_URL}/api/v1/fundDetails/${updateId}`,
         Data,
         config
       );
@@ -168,7 +169,7 @@ function FundOverview() {
   // Read All fund
   const getAllfund = async () => {
     try {
-      const res = await axios.get("https://thepankh.info/api/v1/fundDetails");
+      const res = await axios.get(`${ENV === "dev" ? API_URL:PROD_URL}/api/v1/fundDetails`);
       console.log(res.data);
       if (res.data.success) {
         setData(res.data.fund);
@@ -192,7 +193,7 @@ function FundOverview() {
           Authorization: `${getTokenFromCookie()}`,
         },
       };
-      const { data } = await axios.delete(`https://thepankh.info/api/v1/fundDetails/${id}`, config);
+      const { data } = await axios.delete(`${ENV === "dev" ? API_URL:PROD_URL}/api/v1/fundDetails/${id}`, config);
 
       if (data.success) {
         setIsDelete(!isDelete);

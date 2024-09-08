@@ -7,6 +7,7 @@ import { AiFillEdit, AiOutlinePlus, AiFillCloseCircle } from "react-icons/ai";
 import { FaRegEye } from "react-icons/fa";
 import Loader from "../../common/Loader";
 import { toast } from "react-hot-toast";
+import { API_URL,PROD_URL,ENV } from "../../config";
 const sortList = ["Newest", "Oldest"];
 
 function DonationsOverview() {
@@ -82,7 +83,7 @@ function DonationsOverview() {
     setLoading(true);
     try {
       const { data } = await axios.post(
-        "https://thepankh.info/api/v1/Donation/upload",
+        `${ENV === "dev" ? API_URL:PROD_URL}/api/v1/Donation/upload`,
         { ...Donations, file },
         config
       );
@@ -129,7 +130,7 @@ function DonationsOverview() {
     setLoading(true);
     try {
       const { data } = await axios.put(
-        `https://thepankh.info/api/v1/Donation/${updateId}`,
+        `${ENV === "dev" ? API_URL:PROD_URL}/api/v1/Donation/${updateId}`,
         Data,
         config
       );
@@ -194,7 +195,7 @@ function DonationsOverview() {
   // Read All Donations
   const getAllDonations = async () => {
     try {
-      const res = await axios.get("https://thepankh.info/api/v1/Donations");
+      const res = await axios.get(`${ENV === "dev" ? API_URL:PROD_URL}/api/v1/Donations`);
       console.log(res.data);
       if (res.data.success) {
         setData(res.data.Donations);
@@ -218,7 +219,7 @@ function DonationsOverview() {
           Authorization: `${getTokenFromCookie()}`,
         },
       };
-      const { data } = await axios.delete(`https://thepankh.info/api/v1/Donation/${id}`, config);
+      const { data } = await axios.delete(`${ENV === "dev" ? API_URL:PROD_URL}/api/v1/Donation/${id}`, config);
 
       if (data.success) {
         setIsDelete(!isDelete);

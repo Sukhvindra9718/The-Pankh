@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-
+import { API_URL,PROD_URL,ENV } from "../../config";
 function FooterOne() {
   let publicUrl = process.env.PUBLIC_URL + "/";
   const [images, setImages] = useState([]);
@@ -30,7 +30,7 @@ function FooterOne() {
     };
     try {
       const { data } = await axios.get(
-        "https://thepankh.info/api/v1/images",
+        `${ENV === "dev" ? API_URL:PROD_URL}/api/v1/images`,
         config
       );
       console.log(data);
@@ -83,7 +83,7 @@ function FooterOne() {
 
   const getTwoNews = async () => {
     try {
-      const res = await axios.get("https://thepankh.info/api/v1/twonews");
+      const res = await axios.get(`${ENV === "dev" ? API_URL:PROD_URL}/api/v1/twonews`);
       if (res.data.success) {
         console.log("Fetched news data:", res.data.news); // Log the raw data
 

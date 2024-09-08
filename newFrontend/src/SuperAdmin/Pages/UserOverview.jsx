@@ -6,6 +6,7 @@ import axios from "axios";
 import { AiFillEdit, AiOutlinePlus, AiFillCloseCircle } from "react-icons/ai";
 import Loader from "../../common/Loader";
 import { toast } from "react-hot-toast";
+import { API_URL,PROD_URL,ENV } from "../../config";
 const sortList = ["Newest", "Oldest"];
 
 function UserOverview() {
@@ -80,7 +81,7 @@ function UserOverview() {
     setLoading(true);
     try {
       const { data } = await axios.post(
-        "https://thepankh.info/api/auth/register",
+        `${ENV === "dev" ? API_URL:PROD_URL}/api/auth/register`,
         { ...user, file },
         config
       );
@@ -112,7 +113,7 @@ function UserOverview() {
         },
       };
       const res = await axios.get(
-        "https://thepankh.info/api/v1/getallusers",
+        `${ENV === "dev" ? API_URL:PROD_URL}/api/v1/getallusers`,
         config
       );
 
@@ -150,7 +151,7 @@ function UserOverview() {
     };
     try {
       const { data } = await axios.put(
-        `https://thepankh.info/api/v1/user/update/${updateId}`,
+        `${ENV === "dev" ? API_URL:PROD_URL}/api/v1/user/update/${updateId}`,
         Data,
         config
       );
@@ -209,7 +210,7 @@ function UserOverview() {
         },
       };
       const { data } = await axios.delete(
-        `https://thepankh.info/api/user/delete/${id}`,
+        `${ENV === "dev" ? API_URL:PROD_URL}/api/user/delete/${id}`,
         config
       );
 

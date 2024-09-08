@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-
+import { API_URL,PROD_URL,ENV } from "../../config";
 const TestimonialFour = () => {
   const [testimonial, setTestimonial] = useState([]);
   const getAllTestimonials = async () => {
     try {
-      const res = await axios.get("https://thepankh.info/api/v1/testimonials");
+      const res = await axios.get(`${ENV === "dev" ? API_URL:PROD_URL}/api/v1/testimonials`);
 
       if (res.data.success) {
         setTestimonial(res.data.testimonial);

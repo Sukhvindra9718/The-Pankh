@@ -68,14 +68,14 @@ export default class SingleBlogDetails extends React.Component {
                                     <div className="blog-details__bottom">
                                         <p className="blog-details__tags">
                                             <span>Tags</span>
-                                            <a href="#">Fundraising</a>
-                                            <a href="#">Charity</a>
+                                            <a>Fundraising</a>
+                                            <a>Charity</a>
                                         </p>
                                         <div className="blog-details__social-list">
-                                            <a href="#"><i className="fab fa-twitter"></i></a>
-                                            <a href="#"><i className="fab fa-facebook"></i></a>
-                                            <a href="#"><i className="fab fa-pinterest-p"></i></a>
-                                            <a href="#"><i className="fab fa-instagram"></i></a>
+                                            <a><i className="fab fa-twitter"></i></a>
+                                            <a><i className="fab fa-facebook"></i></a>
+                                            <a><i className="fab fa-pinterest-p"></i></a>
+                                            <a><i className="fab fa-instagram"></i></a>
                                         </div>
                                     </div>
                                     <div className="author-one">

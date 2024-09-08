@@ -6,6 +6,7 @@ import axios from "axios";
 import { AiFillEdit, AiOutlinePlus, AiFillCloseCircle } from "react-icons/ai";
 import Loader from "../../common/Loader";
 import { toast } from "react-hot-toast";
+import { API_URL,PROD_URL,ENV } from "../../config";
 const sortList = ["Newest", "Oldest"];
 function NewsOverview() {
   const [isDelete, setIsDelete] = React.useState(false);
@@ -74,7 +75,7 @@ function NewsOverview() {
     setLoading(true)
     try {
       const { data } = await axios.post(
-        "https://thepankh.info/api/v1/news/upload",
+        `${ENV === "dev" ? API_URL:PROD_URL}/api/v1/news/upload`,
         { ...news, file },
         config
       );
@@ -101,7 +102,7 @@ function NewsOverview() {
   // Read All news
   const getAllNews = async () => {
     try {
-      const res = await axios.get("https://thepankh.info/api/v1/news");
+      const res = await axios.get(`${ENV === "dev" ? API_URL:PROD_URL}/api/v1/news`);
       if (res.data.success) {
         setData(res.data.news);
         setFilterData(res.data.news);
@@ -131,7 +132,7 @@ function NewsOverview() {
     };
     try {
       const { data } = await axios.put(
-        `https://thepankh.info/api/v1/news/${updateId}`,
+        `${ENV === "dev" ? API_URL:PROD_URL}/api/v1/news/${updateId}`,
         Data,
         config
       );
@@ -196,7 +197,7 @@ function NewsOverview() {
           Authorization: `${getTokenFromCookie()}`,
         },
       };
-      const { data } = await axios.delete(`https://thepankh.info/api/v1/news/${id}`, config);
+      const { data } = await axios.delete(`${ENV === "dev" ? API_URL:PROD_URL}/api/v1/news/${id}`, config);
 
       if (data.success) {
         setIsDelete(!isDelete);

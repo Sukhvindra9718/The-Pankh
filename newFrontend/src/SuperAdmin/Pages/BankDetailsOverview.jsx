@@ -7,6 +7,7 @@ import { FaRegEye } from "react-icons/fa";
 import { AiFillEdit, AiOutlinePlus, AiFillCloseCircle } from "react-icons/ai";
 import Loader from "../../common/Loader"
 import { toast } from "react-hot-toast";
+import { API_URL,PROD_URL,ENV } from "../../config";
 const sortList = ["Newest", "Oldest"];
 
 function BankDetailsOverview() {
@@ -76,7 +77,7 @@ function BankDetailsOverview() {
     setLoading(true);
     try {
       const { data } = await axios.post(
-        "https://thepankh.info/api/v1/BankDetails/upload",
+        `${ENV === "dev" ? API_URL:PROD_URL}/api/v1/BankDetails/upload`,
         { ...BankDetails, file },
         config
       );
@@ -92,10 +93,15 @@ function BankDetailsOverview() {
           upiid: "",
         });
         setFile(null);
+        toast.success(data.message)
+      }else{
+        toast.error(data.error)
       }
+
       setLoading(false);
     } catch (error) {
       console.log(error);
+      toast.error(error.message)
       setLoading(false);
     }
   };
@@ -118,7 +124,7 @@ function BankDetailsOverview() {
     setLoading(true);
     try {
       const { data } = await axios.put(
-        `https://thepankh.info/api/v1/BankDetails/${updateId}`,
+        `${ENV === "dev" ? API_URL:PROD_URL}/api/v1/BankDetails/${updateId}`,
         Data,
         config
       );
@@ -172,7 +178,7 @@ function BankDetailsOverview() {
   // Read All BankDetails
   const getAllBankDetails = async () => {
     try {
-      const res = await axios.get("https://thepankh.info/api/v1/BankDetails");
+      const res = await axios.get(`${ENV === "dev" ? API_URL:PROD_URL}/api/v1/BankDetails`);
       console.log(res.data);
       if (res.data.success) {
         setData(res.data.BankDetails);
@@ -196,7 +202,7 @@ function BankDetailsOverview() {
           Authorization: `${getTokenFromCookie()}`,
         },
       };
-      const { data } = await axios.delete(`https://thepankh.info/api/v1/BankDetails/${id}`, config);
+      const { data } = await axios.delete(`${ENV === "dev" ? API_URL:PROD_URL}/api/v1/BankDetails/${id}`, config);
 
       if (data.success) {
         setIsDelete(!isDelete);

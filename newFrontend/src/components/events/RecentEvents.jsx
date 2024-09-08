@@ -1,10 +1,10 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
+import { API_URL,PROD_URL,ENV } from "../../config";
 const RecentEvents = () => {
-  let publicUrl = process.env.PUBLIC_URL + "/";
-  let apiBaseUrl = "https://thepankh.info/api/v1";
+
+  let apiBaseUrl = `${ENV === "dev" ? API_URL:PROD_URL}/api/v1`;
   const [events, setEvents] = useState([]);
 
   const getAllEvents = async () => {

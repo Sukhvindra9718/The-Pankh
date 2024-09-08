@@ -1,6 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import RecentDonation from "../donate-sidebar/RecentDonation";
 
 export default class DonationListContent extends React.Component {
   componentDidMount() {

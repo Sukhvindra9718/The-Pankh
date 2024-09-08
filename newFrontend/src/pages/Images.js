@@ -3,6 +3,7 @@ import axios from "axios";
 import HeaderOne from "../common/header/HeaderOne";
 import Breadcrumb from "../common/breadcrumb/Breadcrumb";
 import FooterOne from "../common/footer/FooterOne";
+import { API_URL,PROD_URL,ENV } from "../config";
 export default class Images extends React.Component {
   constructor(props) {
     super(props);
@@ -17,7 +18,7 @@ export default class Images extends React.Component {
 
   getAllImages = async () => {
     try {
-      const res = await axios.get("https://thepankh.info/api/v1/images");
+      const res = await axios.get(`${ENV === "dev" ? API_URL:PROD_URL}/api/v1/images`);
 
       if (res.data.success) {
         this.setState({ images: res.data.images }); // Update state with the fetched images
