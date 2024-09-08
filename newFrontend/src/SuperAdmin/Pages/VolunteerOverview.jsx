@@ -95,9 +95,13 @@ function VolunteerOverview() {
           linkedinurl: "",
         });
         setFile(null);
+        toast.success("Volunteer Created Successfully")
+      }else{
+        toast.error(data.message)
       }
       setLoading(false)
     } catch (error) {
+      toast.error("Something went wrong")
       console.log(error);
       setLoading(false)
     }
@@ -156,9 +160,13 @@ function VolunteerOverview() {
         });
         setUpdateId("");
         setFile(null);
+        toast.success("Volunteer Updated Successfully")
+      }else{
+        toast.error(data.message)
       }
       setLoading(false)
     } catch (error) {
+      toast.error("Something went wrong")
       console.log(error);
       setLoading(false)
     }

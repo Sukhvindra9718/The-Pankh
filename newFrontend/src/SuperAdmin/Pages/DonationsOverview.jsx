@@ -103,10 +103,14 @@ function DonationsOverview() {
           remarks: "",
         });
         setFile(null);
+        toast.success("Donation Created Successfully");
+      }else{
+        toast.error("Donation Creation Failed");
       }
       setLoading(false);
     } catch (error) {
       console.log(error);
+      toast.error("Donation Creation Failed");
       setLoading(false);
     }
   };
@@ -150,9 +154,13 @@ function DonationsOverview() {
         });
         setUpdateId("");
         setFile(null);
+        toast.success("Donation Updated Successfully");
+      }else{
+        toast.error("Donation Updation Failed");
       }
       setLoading(false);
     } catch (error) {
+      toast.error("Donation Updation Failed");
       console.log(error);
       setLoading(false);
     }

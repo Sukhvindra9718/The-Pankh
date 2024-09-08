@@ -81,10 +81,14 @@ function BannerOverview() {
         setIsDelete(!isDelete);
         setPageName("");
         setFile(null);
+        toast.success("Banner Uploaded Successfully");
+      }else{
+        toast.error("Something went wrong")
       }
       setLoading(false);
     } catch (error) {
       console.log(error);
+      toast.error("Something went wrong")
       setLoading(false);
     }
   };
@@ -143,10 +147,14 @@ function BannerOverview() {
         setPageName("");
         setUpdateId("");
         setFile(null);
+        toast.success("Banner Updated Successfully");
+      }else{
+        toast.error("Something went wrong")
       }
       setLoading(false);
     } catch (error) {
       console.log(error);
+      toast.error("Something went wrong")
       setLoading(false);
     }
   };

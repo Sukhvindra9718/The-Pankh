@@ -87,9 +87,13 @@ function TestimonialOverview() {
           role: "",
         });
         setFile(null);
+        toast.success("Testimonial uploaded successfully");
+      }else{
+        toast.error("Something went wrong");
       }
       setLoading(false)
     } catch (error) {
+      toast.error("Something went wrong");
       console.log(error);
       setLoading(false)
     }
@@ -144,10 +148,14 @@ function TestimonialOverview() {
         });
         setUpdateId("");
         setFile(null);
+        toast.success("Testimonial updated successfully");
+      }else{
+        toast.error("Something went wrong");
       }
       setLoading(false)
     } catch (error) {
       console.log(error);
+      toast.error("Something went wrong");
       setLoading(false)
     }
   };

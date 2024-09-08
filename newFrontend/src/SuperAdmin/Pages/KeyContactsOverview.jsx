@@ -96,9 +96,13 @@ function KeyContactsOverview() {
           organization: "",
           designation: "",
         });
+        toast.success("Key Contact Added Successfully");
+      }else{
+        toast.error("Something Went Wrong")
       }
       setLoading(false)
     } catch (error) {
+      toast.error("Something Went Wrong")
       console.log(error);
       setLoading(false)
     }
@@ -172,9 +176,13 @@ function KeyContactsOverview() {
           organization: "",
           designation: "",
         });
+        toast.success("Key Contact Updated Successfully");
+      }else{
+        toast.error("Something Went Wrong")
       }
       setLoading(false)
     } catch (error) {
+      toast.error("Something Went Wrong")
       console.log(error);
       setLoading(false)
     }

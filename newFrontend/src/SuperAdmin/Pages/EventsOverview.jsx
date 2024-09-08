@@ -89,10 +89,14 @@ function EventsOverview() {
           link: "",
         });
         setFile(null);
+        toast.success("Events created successfully");
+      }else{
+        toast.error("Something went wrong");
       }
       setLoading(false);
     } catch (error) {
       console.log(error);
+      toast.error("Something went wrong");
       setLoading(false);
     }
   };
@@ -132,10 +136,14 @@ function EventsOverview() {
         });
         setUpdateId("");
         setFile(null);
+        toast.success("Events updated successfully");
+      }else{
+        toast.error("Something went wrong");
       }
       setLoading(false);
     } catch (error) {
       console.log(error);
+      toast.error("Something went wrong");
       setLoading(false);
     }
   };

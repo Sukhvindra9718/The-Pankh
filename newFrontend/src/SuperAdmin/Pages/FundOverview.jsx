@@ -91,10 +91,14 @@ function FundOverview() {
           raisedprice: ""
         });
         setFile(null);
+        toast.success("Fund created successfully");
+      }else{
+        toast.error("Fund creation failed");
       }
       setLoading(false);
     } catch (error) {
       console.log(error);
+      toast.error("Fund creation failed");
       setLoading(false);
     }
   };
@@ -133,10 +137,14 @@ function FundOverview() {
         });
         setUpdateId("");
         setFile(null);
+        toast.success("Fund updated successfully");
+      }else{
+        toast.error("Fund updation failed");
       }
       setLoading(false);
     } catch (error) {
       console.log(error);
+      toast.error("Fund updation failed");
       setLoading(false);
     }
   };

@@ -81,9 +81,13 @@ function ProjectOverview() {
         setTitle("");
         setDescription("");
         setFile(null);
+        toast.success("Project uploaded successfully")
+      }else{
+        toast.error("Something went wrong")
       }
       setLoading(false)
     } catch (error) {
+      toast.error("Something went wrong")
       console.log(error);
       setLoading(false)
     }
@@ -139,9 +143,13 @@ function ProjectOverview() {
         setDescription("")
         setUpdateId("");
         setFile(null);
+        toast.success("Project updated successfully")
+      }else{
+        toast.error("Something went wrong")
       }
       setLoading(false)
     } catch (error) {
+      toast.error("Something went wrong")
       console.log(error);
       setLoading(false)
     }

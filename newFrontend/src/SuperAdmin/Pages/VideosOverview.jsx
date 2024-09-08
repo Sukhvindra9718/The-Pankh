@@ -81,10 +81,14 @@ function VideosOverview() {
         setDescription("");
         setUrl("");
         setFile(null);
+        toast.success("Video uploaded successfully");
+      }else{
+        toast.error("Something went wrong");
       }
       setLoading(false)
     } catch (error) {
       console.log(error);
+      toast.error("Something went wrong");
       setLoading(false)
     }
   };
@@ -141,9 +145,13 @@ function VideosOverview() {
         setIsUpdate(false);
         setUrl("");
         setFile(null);
+        toast.success("Video updated successfully");
+      }else{
+        toast.error("Something went wrong");
       }
       setLoading(false)
     } catch (error) {
+      toast.error("Something went wrong");
       console.log(error);
       setLoading(false)
     }

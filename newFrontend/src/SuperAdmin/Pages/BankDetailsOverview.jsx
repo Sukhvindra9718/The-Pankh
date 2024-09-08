@@ -140,10 +140,14 @@ function BankDetailsOverview() {
         });
         setUpdateId("");
         setFile(null);
+        toast.success(data.message)
+      }else{
+        toast.error(data.error)
       }
       setLoading(false);
     } catch (error) {
       console.log(error);
+      toast.error(error.message)
       setLoading(false);
     }
   };

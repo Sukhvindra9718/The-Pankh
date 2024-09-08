@@ -91,9 +91,13 @@ function NewsOverview() {
           link: "",
         });
         setFile(null);
+        toast.success("News uploaded successfully")
+      }else{
+        toast.error(data.message)
       }
       setLoading(false)
     } catch (error) {
+      toast.error("Something went wrong")
       console.log(error);
       setLoading(false)
     }
@@ -149,10 +153,14 @@ function NewsOverview() {
         });
         setUpdateId("");
         setFile(null);
+        toast.success("News updated successfully")
+      }else{
+        toast.error(data.message)
       }
       setLoading(false)
     } catch (error) {
       console.log(error);
+      toast.error("Something went wrong")
       setLoading(false)
     }
   };

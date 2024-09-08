@@ -84,10 +84,14 @@ function CarousalOverview() {
         setTitle("");
         setDescription("");
         setFile(null);
+        toast.success("Carousal Uploaded Successfully");
+      }else{
+        toast.error(data.message);
       }
       setLoading(false);
     } catch (error) {
       console.log(error);
+      toast.error("Something went wrong");
       setLoading(false);
     }
   };
@@ -148,10 +152,14 @@ function CarousalOverview() {
         setDescription("");
         setId("");
         setFile(null);
+        toast.success("Carousal Updated Successfully");
+      }else{
+        toast.error(data.message);
       }
       setLoading(false);
     } catch (error) {
       console.log(error);
+      toast.error("Something went wrong");
       setLoading(false);
     }
   };

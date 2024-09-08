@@ -96,9 +96,13 @@ function UserOverview() {
           role: "",
         });
         setFile(null);
+        toast.success("User created successfully");
+      }else{
+        toast.error(data.message);
       }
       setLoading(false);
     } catch (error) {
+      toast.error("Something went wrong");
       console.log(error);
       setLoading(false);
     }
@@ -167,10 +171,14 @@ function UserOverview() {
         });
         setUpdateId("");
         setFile(null);
+        toast.success("User updated successfully");
+      }else{
+        toast.error(data.message);
       }
       setLoading(false);
     } catch (error) {
       console.log(error);
+      toast.error("Something went wrong");
       setLoading(false);
     }
   };
