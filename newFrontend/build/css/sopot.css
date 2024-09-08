@@ -1443,9 +1443,8 @@ a.sc-hLBbgP {
         opacity 1500ms ease-in;
     /* opacity: 0.8; */
     /* background-color: var(--sopot-black); */
-    
+    background: rgba(0, 0, 0, 0.50);
     z-index: 1;
-    /* background: rgba(0, 0, 0, 0.50); */
 }
 
 .main-slider .swiper-slide-active .image-layer {
@@ -1610,7 +1609,7 @@ a.sc-hLBbgP {
 
 .main-slider p {
     font-size: 21px;
-    font-weight: bold;
+    font-weight: 400;
     color: var(--sopot-white);
     margin: 0;
     letter-spacing: 0.002em;
