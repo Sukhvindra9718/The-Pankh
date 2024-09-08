@@ -29,6 +29,35 @@ const Nav = () => {
             </ul>
           </li>
 
+          <li className={`dropdown ${location.pathname ==="" || location.pathname === "/education" || location.pathname === "/health" || location.pathname === "/livelihood" || location.pathname === "/women-empowerment" ? "current" : ""}`}>
+            <Link to={process.env.PUBLIC_URL + ``}>What We Do?</Link>
+            <ul>
+              <li>
+                <Link to={process.env.PUBLIC_URL + ``}>
+                  Education
+                </Link>
+              </li>
+
+              <li>
+                <Link to={process.env.PUBLIC_URL + ``}>
+                  Health
+                </Link>
+              </li>
+
+              <li>
+                <Link to={process.env.PUBLIC_URL + ``}>
+                  Livelihood
+                </Link>
+              </li>
+
+              <li>
+                <Link to={process.env.PUBLIC_URL + ``}>
+                  Women Empowerment
+                </Link>
+              </li>
+            </ul>
+          </li>
+
           <li className={`dropdown ${location.pathname === "/team" || location.pathname === "/projects" || location.pathname === "/testimonials" ? "current":''}`}>
             <Link to={process.env.PUBLIC_URL + `#`} >Pages</Link>
             <ul>
