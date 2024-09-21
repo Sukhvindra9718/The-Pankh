@@ -11,6 +11,7 @@ import "../../style/Dashboard.css";
 import axios from "axios";
 import Loader from "../../common/Loader";
 import { toast } from "react-hot-toast";
+import { API_URL,PROD_URL,ENV } from "../../config";
 const sortList = ["Newest", "Oldest"];
 function ProjectOverview() {
   const [isDelete, setIsDelete] = React.useState(false);
@@ -69,7 +70,7 @@ function ProjectOverview() {
     setLoading(true)
     try {
       const { data } = await axios.post(
-        "https://thepankh.info/api/v1/project/upload",
+        `${ENV === "dev" ? API_URL:PROD_URL}/api/v1/project/upload`,
         { title, description, file },
         config
       );
@@ -80,9 +81,13 @@ function ProjectOverview() {
         setTitle("");
         setDescription("");
         setFile(null);
+        toast.success("Project uploaded successfully")
+      }else{
+        toast.error("Something went wrong")
       }
       setLoading(false)
     } catch (error) {
+      toast.error("Something went wrong")
       console.log(error);
       setLoading(false)
     }
@@ -96,7 +101,7 @@ function ProjectOverview() {
     };
     try {
       const { data } = await axios.get(
-        "https://thepankh.info/api/v1/projects",
+        `${ENV === "dev" ? API_URL:PROD_URL}/api/v1/projects`,
         config
       );
       setImages(data.projects);
@@ -126,7 +131,7 @@ function ProjectOverview() {
     };
     try {
       const { data } = await axios.put(
-        `https://thepankh.info/api/v1/project/${updateId}`,
+        `${ENV === "dev" ? API_URL:PROD_URL}/api/v1/project/${updateId}`,
         Data,
         config
       );
@@ -138,9 +143,13 @@ function ProjectOverview() {
         setDescription("")
         setUpdateId("");
         setFile(null);
+        toast.success("Project updated successfully")
+      }else{
+        toast.error("Something went wrong")
       }
       setLoading(false)
     } catch (error) {
+      toast.error("Something went wrong")
       console.log(error);
       setLoading(false)
     }
@@ -183,7 +192,7 @@ function ProjectOverview() {
       };
       try {
         const { data } = await axios.delete(
-          `https://thepankh.info/api/v1/project/${id}`,
+          `${ENV === "dev" ? API_URL:PROD_URL}/api/v1/project/${id}`,
           config
         );
         if (data.success) {

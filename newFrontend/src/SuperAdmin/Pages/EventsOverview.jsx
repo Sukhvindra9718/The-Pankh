@@ -6,6 +6,7 @@ import axios from "axios";
 import { AiFillEdit, AiOutlinePlus, AiFillCloseCircle } from "react-icons/ai";
 import Loader from "../../common/Loader";
 import { toast } from "react-hot-toast";
+import { API_URL,PROD_URL,ENV } from "../../config";
 const sortList = ["Newest", "Oldest"];
 function EventsOverview() {
   const [isDelete, setIsDelete] = React.useState(false);
@@ -73,7 +74,7 @@ function EventsOverview() {
     setLoading(true);
     try {
       const { data } = await axios.post(
-        "https://thepankh.info/api/v1/events/upload",
+        `${ENV === "dev" ? API_URL:PROD_URL}/api/v1/events/upload`,
         { ...events, file },
         config
       );
@@ -88,10 +89,14 @@ function EventsOverview() {
           link: "",
         });
         setFile(null);
+        toast.success("Events created successfully");
+      }else{
+        toast.error("Something went wrong");
       }
       setLoading(false);
     } catch (error) {
       console.log(error);
+      toast.error("Something went wrong");
       setLoading(false);
     }
   };
@@ -115,7 +120,7 @@ function EventsOverview() {
     setLoading(true);
     try {
       const { data } = await axios.put(
-        `https://thepankh.info/api/v1/events/${updateId}`,
+        `${ENV === "dev" ? API_URL:PROD_URL}/api/v1/events/${updateId}`,
         Data,
         config
       );
@@ -131,10 +136,14 @@ function EventsOverview() {
         });
         setUpdateId("");
         setFile(null);
+        toast.success("Events updated successfully");
+      }else{
+        toast.error("Something went wrong");
       }
       setLoading(false);
     } catch (error) {
       console.log(error);
+      toast.error("Something went wrong");
       setLoading(false);
     }
   };
@@ -167,7 +176,7 @@ function EventsOverview() {
   // Read All events
   const getAllEvents = async () => {
     try {
-      const res = await axios.get("https://thepankh.info/api/v1/events");
+      const res = await axios.get(`${ENV === "dev" ? API_URL:PROD_URL}/api/v1/events`);
       console.log(res.data);
       if (res.data.success) {
         setData(res.data.events);
@@ -191,7 +200,7 @@ function EventsOverview() {
           Authorization: `${getTokenFromCookie()}`,
         },
       };
-      const { data } = await axios.delete(`https://thepankh.info/api/v1/events/${id}`, config);
+      const { data } = await axios.delete(`${ENV === "dev" ? API_URL:PROD_URL}/api/v1/events/${id}`, config);
 
       if (data.success) {
         setIsDelete(!isDelete);

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import { API_URL,PROD_URL,ENV } from "../../config";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
@@ -15,7 +15,7 @@ function Breadcrumb(props) {
   const getAllBanner = async () => {
     try {
       const res = await axios.get(
-        `https://thepankh.info/api/v1/banner/${props.currentPage}`
+        `${ENV === "dev" ? API_URL:PROD_URL}/api/v1/banner/${props.currentPage}`
       );
 
       if (res.data.success) {

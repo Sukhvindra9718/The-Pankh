@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-
+import { API_URL,PROD_URL,ENV } from "../../config";
 export default class TeamTwo extends React.Component {
   constructor(props) {
     super(props);
@@ -12,7 +12,7 @@ export default class TeamTwo extends React.Component {
 
   getAllVolunteers = async () => {
     try {
-      const res = await axios.get("https://thepankh.info/api/v1/volunteers");
+      const res = await axios.get(`${ENV === "dev" ? API_URL:PROD_URL}/api/v1/volunteers`);
 
       if (res.data.success) {
         this.setState({ volunteers: res.data.volunteers }); // Update state with fetched volunteers

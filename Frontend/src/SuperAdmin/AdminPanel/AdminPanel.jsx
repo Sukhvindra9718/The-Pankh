@@ -33,7 +33,7 @@ function Dashboard() {
         "Content-Type": "application/json",
       },
     };
-    const {data} = await axios.post("https://thepankh.info/api/auth/verify",{}, config);
+    const {data} = await axios.post("${ENV === "dev" ? API_URL:PROD_URL}/api/auth/verify",{}, config);
 
     if(data.msg === "Token is not valid" || data.msg === "Authorization denied" || data.msg === "Not authorized"){
       // Clear cookie

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-
+import { API_URL,PROD_URL,ENV } from "../../config";
 const responsive = {
   superLargeDesktop: {
     breakpoint: { max: 4000, min: 3000 },
@@ -36,7 +36,7 @@ class TestimonialOne extends Component {
 
   getAllTestimonials = async () => {
     try {
-      const res = await axios.get("https://thepankh.info/api/v1/testimonials");
+      const res = await axios.get(`${ENV === "dev" ? API_URL:PROD_URL}/api/v1/testimonials`);
 
       if (res.data.success) {
         this.setState({ testimonial: res.data.testimonial });

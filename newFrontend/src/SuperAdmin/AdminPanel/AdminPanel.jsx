@@ -4,7 +4,7 @@ import Main from './Main'
 import '../../style/Dashboard.css'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
-
+import { API_URL,PROD_URL,ENV } from "../../config";
 function Dashboard() {
   const [menuActive,setMenuActive]=React.useState(0)
   const [submenuActive,setSubmenuActive]=React.useState(-1)
@@ -33,7 +33,7 @@ function Dashboard() {
         "Content-Type": "application/json",
       },
     };
-    const {data} = await axios.post("https://thepankh.info/api/auth/verify",{}, config);
+    const {data} = await axios.post(`${ENV === "dev" ? API_URL:PROD_URL}/api/auth/verify`,{}, config);
 
     if(data.msg === "Token is not valid" || data.msg === "Authorization denied" || data.msg === "Not authorized"){
       // Clear cookie

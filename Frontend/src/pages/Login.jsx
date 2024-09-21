@@ -10,7 +10,7 @@ const Login = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const response = await fetch("https://thepankh.info/api/auth/login", {
+    const response = await fetch("${ENV === "dev" ? API_URL:PROD_URL}/api/auth/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

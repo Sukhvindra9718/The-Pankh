@@ -38,7 +38,7 @@ function ContactOverview() {
       };
 
       const res = await axios.get(
-        "https://thepankh.info/api/common/contact/all",
+        "${ENV === "dev" ? API_URL:PROD_URL}/api/common/contact/all",
         config
       );
       if (res.data.success) {
@@ -71,7 +71,7 @@ function ContactOverview() {
           Authorization: `${getTokenFromCookie()}`,
         },
       };
-      const { data } = await axios.delete(`https://thepankh.info/api/common/contact/delete/${id}`,config);
+      const { data } = await axios.delete(`${ENV === "dev" ? API_URL:PROD_URL}/api/common/contact/delete/${id}`,config);
       console.log(data);
       if (data.success) {
         setIsDelete(!isDelete);

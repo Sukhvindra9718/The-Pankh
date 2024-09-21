@@ -10,6 +10,7 @@ import "../../style/Dashboard.css";
 import axios from "axios";
 import Loader from "../../common/Loader";
 import { toast } from "react-hot-toast";
+import { API_URL,PROD_URL,ENV } from "../../config";
 const sortList = ["Newest", "Oldest"];
 function VideosOverview() {
   const [isDelete, setIsDelete] = React.useState(false);
@@ -68,7 +69,7 @@ function VideosOverview() {
     setLoading(true)
     try {
       const { data } = await axios.post(
-        "https://thepankh.info/api/v1/video/upload",
+        `${ENV === "dev" ? API_URL:PROD_URL}/api/v1/video/upload`,
         { title, description, url,file },
         config
       );
@@ -80,10 +81,14 @@ function VideosOverview() {
         setDescription("");
         setUrl("");
         setFile(null);
+        toast.success("Video uploaded successfully");
+      }else{
+        toast.error("Something went wrong");
       }
       setLoading(false)
     } catch (error) {
       console.log(error);
+      toast.error("Something went wrong");
       setLoading(false)
     }
   };
@@ -96,7 +101,7 @@ function VideosOverview() {
     };
     try {
       const { data } = await axios.get(
-        "https://thepankh.info/api/v1/videos",
+        `${ENV === "dev" ? API_URL:PROD_URL}/api/v1/videos`,
         config
       );
       setVideos(data.videos);
@@ -126,7 +131,7 @@ function VideosOverview() {
     };
     try {
       const { data } = await axios.put(
-        `https://thepankh.info/api/v1/video/${updateId}`,
+        `${ENV === "dev" ? API_URL:PROD_URL}/api/v1/video/${updateId}`,
         Data,
         config
       );
@@ -140,9 +145,13 @@ function VideosOverview() {
         setIsUpdate(false);
         setUrl("");
         setFile(null);
+        toast.success("Video updated successfully");
+      }else{
+        toast.error("Something went wrong");
       }
       setLoading(false)
     } catch (error) {
+      toast.error("Something went wrong");
       console.log(error);
       setLoading(false)
     }
@@ -185,7 +194,7 @@ function VideosOverview() {
       };
       try {
         const { data } = await axios.delete(
-          `https://thepankh.info/api/v1/video/${id}`,
+          `${ENV === "dev" ? API_URL:PROD_URL}/api/v1/video/${id}`,
           config
         );
         if (data.success) {

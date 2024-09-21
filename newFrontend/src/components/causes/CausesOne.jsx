@@ -22,7 +22,7 @@ const CausesOne = () => {
 
 
 
-  let apiBaseUrl = "https://thepankh.info/api/v1";
+  let apiBaseUrl = "${ENV === "dev" ? API_URL:PROD_URL}/api/v1";
   const [fund, setFund] = useState([]);
 
   const getAllFunds = async () => {

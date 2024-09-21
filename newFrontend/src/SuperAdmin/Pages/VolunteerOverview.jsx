@@ -6,6 +6,7 @@ import axios from "axios";
 import { AiFillEdit, AiOutlinePlus, AiFillCloseCircle } from "react-icons/ai";
 import Loader from "../../common/Loader";
 import { toast } from "react-hot-toast";
+import { API_URL,PROD_URL,ENV } from "../../config";
 const sortList = ["Newest", "Oldest"];
 function VolunteerOverview() {
   const [isDelete, setIsDelete] = React.useState(false);
@@ -76,7 +77,7 @@ function VolunteerOverview() {
     setLoading(true)
     try {
       const { data } = await axios.post(
-        "https://thepankh.info/api/v1/volunteer/upload",
+        `${ENV === "dev" ? API_URL:PROD_URL}/api/v1/volunteer/upload`,
         { ...volunteer, file },
         config
       );
@@ -94,9 +95,13 @@ function VolunteerOverview() {
           linkedinurl: "",
         });
         setFile(null);
+        toast.success("Volunteer Created Successfully")
+      }else{
+        toast.error(data.message)
       }
       setLoading(false)
     } catch (error) {
+      toast.error("Something went wrong")
       console.log(error);
       setLoading(false)
     }
@@ -105,7 +110,7 @@ function VolunteerOverview() {
   // Read All Volunteer
   const getAllVolunteers = async () => {
     try {
-      const res = await axios.get("https://thepankh.info/api/v1/volunteers");
+      const res = await axios.get(`${ENV === "dev" ? API_URL:PROD_URL}/api/v1/volunteers`);
 
       if (res.data.success) {
         setData(res.data.volunteers);
@@ -136,7 +141,7 @@ function VolunteerOverview() {
     };
     try {
       const { data } = await axios.put(
-        `https://thepankh.info/api/v1/volunteer/${updateId}`,
+        `${ENV === "dev" ? API_URL:PROD_URL}/api/v1/volunteer/${updateId}`,
         Data,
         config
       );
@@ -155,9 +160,13 @@ function VolunteerOverview() {
         });
         setUpdateId("");
         setFile(null);
+        toast.success("Volunteer Updated Successfully")
+      }else{
+        toast.error(data.message)
       }
       setLoading(false)
     } catch (error) {
+      toast.error("Something went wrong")
       console.log(error);
       setLoading(false)
     }
@@ -206,7 +215,7 @@ function VolunteerOverview() {
         },
       };
       const { data } = await axios.delete(
-        `https://thepankh.info/api/v1/volunteer/${id}`,
+        `${ENV === "dev" ? API_URL:PROD_URL}/api/v1/volunteer/${id}`,
         config
       );
 

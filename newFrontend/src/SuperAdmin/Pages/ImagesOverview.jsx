@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import {
   AiFillEdit,
   AiOutlinePlus,
@@ -11,6 +10,7 @@ import "../../style/Dashboard.css";
 import axios from "axios";
 import Loader from "../../common/Loader";
 import { toast } from "react-hot-toast";
+import { API_URL,PROD_URL,ENV } from "../../config";
 const sortList = ["Newest", "Oldest"];
 function ImagesOverview() {
   const [isDelete, setIsDelete] = React.useState(false);
@@ -71,7 +71,7 @@ function ImagesOverview() {
     setLoading(true)
     try {
       const { data } = await axios.post(
-        "https://thepankh.info/api/v1/image/upload",
+        `${ENV === "dev" ? API_URL:PROD_URL}/api/v1/image/upload`,
         { title, description, file },
         config
       );
@@ -82,10 +82,14 @@ function ImagesOverview() {
         setTitle("");
         setDescription("");
         setFile(null);
+        toast.success("Image uploaded successfully");
+      }else{
+        toast.error("Error in uploading image")
       }
       setLoading(false)
     } catch (error) {
       console.log(error);
+      toast.error("Error in uploading image")
       setLoading(false)
     }
   };
@@ -98,7 +102,7 @@ function ImagesOverview() {
     };
     try {
       const { data } = await axios.get(
-        "https://thepankh.info/api/v1/images",
+        `${ENV === "dev" ? API_URL:PROD_URL}/api/v1/images`,
         config
       );
       setImages(data.images);
@@ -129,7 +133,7 @@ function ImagesOverview() {
     };
     try {
       const { data } = await axios.put(
-        `https://thepankh.info/api/v1/image/${updateId}`,
+        `${ENV === "dev" ? API_URL:PROD_URL}/api/v1/image/${updateId}`,
         Data,
         config
       );
@@ -141,9 +145,13 @@ function ImagesOverview() {
         setDescription("")
         setUpdateId("");
         setFile(null);
+        toast.success("Image updated successfully");
+      }else{
+        toast.error("Error in updating image")
       }
       setLoading(false)
     } catch (error) {
+      toast.error("Error in updating image")
       console.log(error);
       setLoading(false)
     }
@@ -185,7 +193,7 @@ function ImagesOverview() {
       };
       try {
         const { data } = await axios.delete(
-          `https://thepankh.info/api/v1/image/${id}`,
+          `${ENV === "dev" ? API_URL:PROD_URL}/api/v1/image/${id}`,
           config
         );
         if (data.success) {

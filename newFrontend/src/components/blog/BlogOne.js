@@ -174,11 +174,11 @@ export default class BlogOne extends React.Component {
                             <div className="col-xl-12">
                                 <div className="blog-page__pagination">
                                     <ul className="pg-pagination list-unstyled">
-                                        <li className="count"><a href="#">1</a></li>
-                                        <li className="count"><a href="#">2</a></li>
-                                        <li className="count"><a href="#">3</a></li>
+                                        <li className="count"><a>1</a></li>
+                                        <li className="count"><a>2</a></li>
+                                        <li className="count"><a >3</a></li>
                                         <li className="next">
-                                            <a href="#" aria-label="Next"><i className="fa fa-angle-right"></i></a>
+                                            <a aria-label="Next"><i className="fa fa-angle-right"></i></a>
                                         </li>
                                     </ul>
                                 </div>

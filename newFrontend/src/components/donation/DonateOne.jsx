@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Form from "react-bootstrap/Form";
 import axios from "axios";
 import { toast } from "react-hot-toast";
-
+import { API_URL,PROD_URL,ENV } from "../../config";
 const DonateOne = () => {
   const [file, setFile] = React.useState("");
   const [Donations, setDonations] = React.useState({
@@ -69,7 +69,7 @@ const DonateOne = () => {
 
     try {
       const { data } = await axios.post(
-        "https://thepankh.info/api/v1/Donation/upload",
+        `${ENV === "dev" ? API_URL:PROD_URL}/api/v1/Donation/upload`,
         { ...Donations, file },
         config
       );
@@ -106,7 +106,7 @@ const DonateOne = () => {
   // Read All BankDetails
   const getAllBankDetails = async () => {
     try {
-      const res = await axios.get("https://thepankh.info/api/v1/BankDetails");
+      const res = await axios.get(`${ENV === "dev" ? API_URL:PROD_URL}/api/v1/BankDetails`);
       if (res.data.success) {
         if (res.data.BankDetails.length !== 0) {
           setBankDetails(res.data.BankDetails[0]);

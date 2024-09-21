@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-
+import { API_URL,PROD_URL,ENV } from "../../config";
 function ProjectOne() {
   const [projects, setProjects] = useState([]);
 
@@ -29,7 +29,7 @@ function ProjectOne() {
     };
     try {
       const { data } = await axios.get(
-        "https://thepankh.info/api/v1/projects",
+        `${ENV === "dev" ? API_URL:PROD_URL}/api/v1/projects`,
         config
       );
       if (data.success) {

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../../style/Dashboard.css";
 import axios from "axios";
 import Loader from "../../common/Loader";
-
+import { API_URL,PROD_URL,ENV } from "../../config";
 function DashboardOverview() {
   const [rowCount, setRowCount] = useState([]);
   const [Loading, setLoading] = useState(false);
@@ -30,7 +30,7 @@ function DashboardOverview() {
       };
 
       const {data} = await axios.get(
-        `https://thepankh.info/api/common/getTableRow/count`,
+        `${ENV === "dev" ? API_URL:PROD_URL}/api/common/getTableRow/count`,
         config
       );
 
