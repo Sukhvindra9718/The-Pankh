@@ -16,7 +16,7 @@ const Contact = () => {
             />
             <ContactForm />
             <ContactInfo />
-            <ContactMap />
+            {/* <ContactMap /> */}
             <FooterOne />
         </>
     )
