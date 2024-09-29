@@ -1,7 +1,7 @@
 import React from "react";
 
+const width = window.innerWidth;
 const CeoMessage = () => {
-  const width = window.innerWidth;
   return (
     <div style={styles.outerContainer}>
       <div style={styles.container}>
@@ -55,7 +55,7 @@ const styles = {
   },
   imageContainer: {
     flex: "0 0 350px",
-    marginRight: width > 768 ? "0px":"20px",
+    marginRight: width > 768 ? "20px":"0px",
   },
   
   image: {

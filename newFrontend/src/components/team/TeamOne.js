@@ -81,7 +81,7 @@ class TeamOne extends Component {
               itemClass="carousel-item-padding-40-px"
             >
               {volunteers.map((volunteer, index) => (
-                <div className="team-one__single" key={index} style={{marginRight:width > 768 ?0: "1.5rem",marginBottom:width > 768 ?0:"1.5rem"}}>
+                <div className="team-one__single" key={index} style={{marginRight:width > 768 ?"1.5rem":0,marginBottom:width > 768 ?"1.5rem":0}}>
                   <div className="team-one__img">
                     <img src={volunteer.fileurl} alt="Volunteer Image" />
                   </div>

@@ -391,6 +391,13 @@
 
 /* Mobile Layout: 320px. */
 @media only screen and (max-width: 767px) {
+    .page-header {
+        padding: 55px 0 40px;
+    }
+    .page-header__inner h2 {
+        font-size: 30px;
+        line-height: 40px;
+    }
     .section-title__title br {
         display: none;
     }

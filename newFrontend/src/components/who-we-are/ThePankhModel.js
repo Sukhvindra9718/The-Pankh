@@ -19,14 +19,15 @@ export default class ThePankhModelDetails extends React.Component {
     $('input[name="time"]').ptTimeSelect();
   }
   render() {
+    const width = window.innerWidth;
     let publicUrl = process.env.PUBLIC_URL + "/";
     return (
       <>
         {/* Team Details Start */}
-        <section className="team-details">
+        <section className="team-details" style={width > 768 ? {} : {padding: "0px"}}>
           <div className="container">
             <div className="team-details__inner">
-              <div className="row">
+              <div className={`${width > 768 ? 'row': 'd-flex flex-column-reverse'}`}>
                 <div className="col-xl-6 col-lg-6">
                   <div className="team-details__top-right">
                     <div className="team-details__top-content">

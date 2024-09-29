@@ -19,11 +19,12 @@ export default class WhoweareDetails extends React.Component {
     $('input[name="time"]').ptTimeSelect();
   }
   render() {
+    const width = window.innerWidth;
     let publicUrl = process.env.PUBLIC_URL + "/";
     return (
       <>
         {/* Team Details Start */}
-        <section className="team-details">
+        <section className="team-details" style={width > 768 ? {} : {padding: "0px"}}>
           <div className="container">
             <div className="team-details__inner">
               <div className="row">
