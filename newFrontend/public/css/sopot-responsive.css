@@ -497,8 +497,13 @@
 
     .skill-one__left {
         width: 100%;
+        min-height: 200px;
     }
-
+    .team-one__img{
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+    }
     .skill-one__right {
         width: 100%;
     }

@@ -31,15 +31,15 @@ class TeamOne extends Component {
       volunteers: [], // Initialize state for volunteers
     };
   }
-
+  
   componentDidMount() {
     this.getAllVolunteers();
   }
-
+  
   getAllVolunteers = async () => {
     try {
       const res = await axios.get(`${ENV === "dev" ? API_URL:PROD_URL}/api/v1/volunteers`);
-
+      
       if (res.data.success) {
         this.setState({ volunteers: res.data.volunteers }); // Update state with fetched volunteers
       } else {
@@ -49,8 +49,9 @@ class TeamOne extends Component {
       console.log(error);
     }
   };
-
+  
   render() {
+    const width = window.innerWidth;
     const { volunteers } = this.state;
 
     return (
@@ -80,7 +81,7 @@ class TeamOne extends Component {
               itemClass="carousel-item-padding-40-px"
             >
               {volunteers.map((volunteer, index) => (
-                <div className="team-one__single" key={index} style={{marginRight:"1.5rem",marginBottom:"1.5rem"}}>
+                <div className="team-one__single" key={index} style={{marginRight:width > 768 ?0: "1.5rem",marginBottom:width > 768 ?0:"1.5rem"}}>
                   <div className="team-one__img">
                     <img src={volunteer.fileurl} alt="Volunteer Image" />
                   </div>

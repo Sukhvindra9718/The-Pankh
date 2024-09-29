@@ -6,6 +6,7 @@ import { GrGallery } from "react-icons/gr";
 import { MdContacts } from "react-icons/md";
 import { GiKnightBanner } from "react-icons/gi";
 import { BiCarousel } from "react-icons/bi";
+import {Link} from "react-router-dom";
 
 function Sidebar({
   menuActive,
@@ -17,9 +18,9 @@ function Sidebar({
 
   return (
     <div>
-      <div className="sidebar-logo">
+      <Link to="/" className="sidebar-logo" style={{cursor:"pointer"}}>
         <img className="sidebar-img" src="./images/Logo.jpeg" alt="Logo" />
-      </div>
+      </Link>
 
       <div className="sidebar-menu">
         <div

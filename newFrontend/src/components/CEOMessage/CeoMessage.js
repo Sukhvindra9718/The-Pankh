@@ -1,6 +1,7 @@
 import React from "react";
 
 const CeoMessage = () => {
+  const width = window.innerWidth;
   return (
     <div style={styles.outerContainer}>
       <div style={styles.container}>
@@ -50,10 +51,11 @@ const styles = {
     width: "100%",
     padding: "20px",
     borderRadius: "10px", // If you want the content box to have a different background color
+    flexDirection: width > 768 ? "row" : "column",
   },
   imageContainer: {
     flex: "0 0 350px",
-    marginRight: "20px",
+    marginRight: width > 768 ? "0px":"20px",
   },
   
   image: {
