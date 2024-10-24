@@ -1443,7 +1443,7 @@ a.sc-hLBbgP {
         opacity 1500ms ease-in;
     /* opacity: 0.8; */
     /* background-color: var(--sopot-black); */
-    background: rgba(0, 0, 0, 0.50);
+    background-color: rgba(0, 0, 0, 0.50);
     z-index: 1;
 }
 

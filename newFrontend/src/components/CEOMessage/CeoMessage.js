@@ -1,13 +1,14 @@
 import React from "react";
 
 const width = window.innerWidth;
+console.log(width)
 const CeoMessage = () => {
   return (
     <div style={styles.outerContainer}>
       <div style={styles.container}>
         <div style={styles.imageContainer}>
           <img
-            src="https://res.cloudinary.com/dhk1toauk/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1725383817/Picture2_yjlglk.jpg" // Replace with the actual image URL
+            src="https://res.cloudinary.com/dhk1toauk/image/upload/v1729746433/CEO%20Image/mx05vd2xmgkgwbmgu8ex.jpg" // Replace with the actual image URL
             alt="Aarti Thapa"
             style={styles.image}
           />
@@ -59,15 +60,17 @@ const styles = {
   },
   
   image: {
-    width: "100%",
+    width: width > 768 ? "400px" : "300px",
+    height: width > 768 ? "400px" : "300px",
     borderRadius: "50%",
+    objectFit:"cover"
   },
   textContainer: {
     flex: 1,
     color: "#333",
   },
   quote: {
-    fontSize: "18px",
+    fontSize: width > 768 ? "18px": "14px",
     fontStyle: "italic",
     marginBottom: "10px",
   },
